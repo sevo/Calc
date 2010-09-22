@@ -1,0 +1,7 @@
+D:\skola\stu\3.rocnik\zima\ICP\projekt\Calc\Calc\bin\Debug\Calc.exe
+D:\skola\stu\3.rocnik\zima\ICP\projekt\Calc\Calc\bin\Debug\Calc.pdb
+D:\skola\stu\3.rocnik\zima\ICP\projekt\Calc\Calc\obj\Debug\ResolveAssemblyReference.cache
+D:\skola\stu\3.rocnik\zima\ICP\projekt\Calc\Calc\obj\Debug\Calc.Properties.Resources.resources
+D:\skola\stu\3.rocnik\zima\ICP\projekt\Calc\Calc\obj\Debug\Calc.csproj.GenerateResource.Cache
+D:\skola\stu\3.rocnik\zima\ICP\projekt\Calc\Calc\obj\Debug\Calc.exe
+D:\skola\stu\3.rocnik\zima\ICP\projekt\Calc\Calc\obj\Debug\Calc.pdb
