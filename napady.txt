@@ -1,0 +1,8 @@
+historia napisanych prikazov
+prekryvanie grafov
+rotacia grafov
+dobre vyuzit priestor
+pamatove miesta
+menu
+zoom out/in na graf
+nastavenie definicneho oboru grafu

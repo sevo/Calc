@@ -37,7 +37,7 @@ namespace Calc
 
     enum Type {number, paranthesis }//root,number,+,-,...,(
 
-    class EvaluationTreeNode
+    class EvaluationTreeNode : IComparable
     {
         Type type;
         float value;
@@ -49,7 +49,7 @@ namespace Calc
         switch (type) 
             {
                 case Type.number: return value;
-                case Type.paranthesis: return accessors.Count;//return ((EvaluationTreeNode)accessors[0]).Evaluate();
+                case Type.paranthesis: return ((EvaluationTreeNode)accessors[0]).Evaluate();
                 default: return -1.0f;
             }
         }
@@ -57,27 +57,25 @@ namespace Calc
         {
 
             if (input.CompareTo("") == 0) { type = Type.number; value = 0; }
-            else if (input.IndexOf("(") == 0) 
-            {
-                type = Type.paranthesis;
-                
-            
-            }
-            else if (float.Parse("2").ToString().CompareTo("2") == 0) 
+            try 
             {
                 value = float.Parse(input);
                 type = Type.number;
             }
-            else if (input[0] == '(') 
+            catch (FormatException e)
             {
-                type = Type.paranthesis;
-                EvaluationTreeNode accessor = new EvaluationTreeNode();
-                accessors.Insert(1, accessor);
-                if (input.LastIndexOf(")") == input.Length - 1) accessor.Create(input.Substring(1, input.Length - 2));
-                else 
+                if (input[0] == '(') 
                 {
-                    type = Type.number;
-                    return 1;
+                    type = Type.paranthesis;
+                    EvaluationTreeNode accessor = new EvaluationTreeNode();
+                    accessors.Add(accessor);
+                    if (input.LastIndexOf(")") == input.Length - 1) 
+                        accessor.Create(input.Substring(1, input.Length - 2));
+                    else 
+                    {
+                        type = Type.number;
+                        return 1;
+                    }
                 }
             }
 
@@ -85,6 +83,7 @@ namespace Calc
 
             return 0;
         }
+        public int CompareTo(object o) { return 0; }
     }
 
     class EvaluationTree
