@@ -35,15 +35,25 @@ namespace Calc
         }
     }
 
+    /// <summary>
+    /// typ uzlu stromu vyrazu
+    /// </summary>
     enum Type {number, paranthesis }//root,number,+,-,...,(
 
-    class EvaluationTreeNode : IComparable
+    /// <summary>
+    /// uzol stromu s vyrazom
+    /// </summary>
+    class EvaluationTreeNode
     {
         Type type;
         float value;
-        //ArrayList accessors=new ArrayList();
         List<EvaluationTreeNode> accessors = new List<EvaluationTreeNode>();
         public EvaluationTreeNode() {}
+
+        /// <summary>
+        /// vyhodnotenie vyrazu zo stromu
+        /// </summary>
+        /// <returns></returns>
         public float Evaluate() 
         {
         switch (type) 
@@ -53,6 +63,11 @@ namespace Calc
                 default: return -1.0f;
             }
         }
+        /// <summary>
+        /// vytvori strom pre zadany vyraz
+        /// </summary>
+        /// <param name="input"></param>
+        /// <returns></returns>
         public int Create(String input)
         {
 
@@ -78,19 +93,38 @@ namespace Calc
                     }
                 }
             }
-
-
-
             return 0;
         }
-        public int CompareTo(object o) { return 0; }
+
+        /// <summary>
+        /// spracuje vyraz zo vstupu na ozatvorkovanu formu
+        /// </summary>
+        /// <param name="input"></param>
+        /// <returns></returns>
+        String ProcessUserInput(String input)
+        {
+            return "";
+        }
     }
 
+    /// <summary>
+    /// obalenie stromu vyrazu
+    /// </summary>
     class EvaluationTree
     {
         EvaluationTreeNode root;
         public EvaluationTree() { root = new EvaluationTreeNode(); }
+        /// <summary>
+        /// vytvorenie stromu
+        /// </summary>
+        /// <param name="input"></param>
+        /// <returns></returns>
         public int Create(String input) { return root.Create(input); }
+
+        /// <summary>
+        /// vyhodnotenie stromu
+        /// </summary>
+        /// <returns></returns>
         public float Evaluate() { return root.Evaluate(); }
     }
 }
