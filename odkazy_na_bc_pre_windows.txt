@@ -1,0 +1,4 @@
+program samotny:   http://gnuwin32.sourceforge.net/packages/bc.htm
+wikipedia: http://gnuwin32.sourceforge.net/packages/bc.htm
+pridavne kniznice: http://phodd.net/gnu-bc/
+manual: http://www.gnu.org/software/bc/manual/html_mono/bc.html

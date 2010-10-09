@@ -7,6 +7,10 @@ namespace Calc
 {
     static class Program
     {
+        
+
+
+
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
@@ -103,7 +107,7 @@ namespace Calc
         /// <returns></returns>
         String ProcessUserInput(String input)
         {
-            return "";
+        return "";
         }
     }
 

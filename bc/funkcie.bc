@@ -1,0 +1,201 @@
+scale=10;
+define pi(){return(a(1)*4)}         ; pi  = pi()
+                                      e   = e(1)
+define phi(){return((1+sqrt(5))/2)} ; phi = phi()
+define psi(){return((1-sqrt(5))/2)} ; psi = psi()
+
+obase=ibase=A;
+d0=0;d1=1;d2=2;d3=3;d4=4;d5=5;d6=6;d7=7;d8=8;d9=9
+d10=10;d11=11;d12=12;d13=13;d14=14;d15=15;d16=16;d17=17;d18=18;d19=19
+d20=20;d21=21;d22=22;d23=23;d24=24;d25=25;d26=26;d27=27;d28=28;d29=29
+d30=30;d31=31;d32=32;d33=33;d34=34;d35=35;d36=36;d37=37;d38=38;d39=39
+
+define floor(x) {
+  auto os,xx;os=scale;scale=0
+  xx=x/1;if(xx>x)xx-=1
+  scale=os;return(xx)
+}
+
+# Round to next integer nearest 0:  -1.99 -> 1, 0.99 -> 0
+define int(x)   { auto os;os=scale;scale=0;x/=1;scale=os;return(x) } 
+
+# Round down to integer below x
+define floor(x) {
+  auto os,xx;os=scale;scale=0
+  xx=x/1;if(xx>x)xx-=1
+  scale=os;return(xx)
+}
+
+# Round up to integer above x
+define ceil(x) {
+  auto os,xx;x*=-1;os=scale;scale=0
+  xx=x/1;if(xx>x)xx-=1
+  scale=os;return(-xx)
+}
+
+# Fractional part of x:  12.345 -> 0.345
+define frac(x) {
+  auto os,xx;os=scale;scale=0
+  xx=x/1;if(xx>x)xx-=1
+  scale=os;return(x-xx)
+}
+
+# Absolute value of x
+define abs(x) { if(x<0)return(-x)else return(x) }
+
+# Sign of x
+define sgn(x) { if(x<0)return(-1)else if(x>0)return(1);return(0) }
+
+# Find the remainder of x/y
+define mod(x,y) {
+  auto os;
+  os=scale;scale=0
+   x/=1;y/=1;x%=y
+  scale=os
+  return(x)
+}
+
+# Greatest common divisor of x and y
+define int_gcd(x,y) {
+  auto r,os;
+  os=scale;scale=0
+  x/=1;y/=1
+  while(y>0){r=x%y;x=y;y=r}
+  scale=os
+  return(x)
+}
+define gcd(x,y) {
+  auto r,os;
+  os=scale;scale=0
+   if(x==x/1&&y==y/1){scale=os;return int_gcd(x,y)}
+  scale=os
+  while(y>0){r=remainder(x,y);x=y;y=r}
+  return(x)
+}
+
+# Lowest common multiple of x and y
+define lcm(x,y) {
+  auto r,m,os;
+  os=scale;scale=0
+  x/=1;y/=1
+  m=x*y
+  while(y>0){r=x%y;x=y;y=r}
+  m/=x
+  scale=os
+  return(m)
+}
+
+define sin(x) { 
+return s(x) 
+}
+
+define cos(x) { 
+return c(x) 
+}
+
+# Cotangent
+define cotan(x) { auto s;s=s(x);if(s==0)s=A^-scale;return(c(x)/s) }
+
+# Arcsine
+define arcsin(x) { if(x==-1||x==1)return(2*a(1)*x);return( a(x/sqrt(1-x^2)) ) } 
+# Arccosine
+define arccos(x) { if(x==0)return(0);return 2*a(1)-arcsin(x) }
+
+# Arctangent (one argument)
+define arctan(x)  { return a(x) } # alias for standard library
+# Arccotangent (one argument)
+define arccotan(x)    { return( a(x)+2*a(1) ) }
+
+
+# Hyperbolic Sine
+define sinh(x) { auto t;t=e(x);return((t-1/t)/2) }
+# Hyperbolic Cosine
+define cosh(x) { auto t;t=e(x);return((t+1/t)/2) }
+# Hyperbolic Tangent
+define tanh(x) { auto t;t=e(2*x)-1;return(t/(t+2)) }
+
+# Hyperbolic Arcsine
+define arcsinh(x) { return( l(x+sqrt(x^2+1)) ) }
+# Hyperbolic Arccosine
+define arccosh(x) { return( l(x+sqrt(x^2-1)) ) }
+# Hyperbolic Arctangent
+define arctanh(x) { return( l((1+x)/(1-x))/2 ) }
+
+# Hyperbolic Arccotangent
+define arccoth(x)   { return( l((x+1)/(x-1))/2 ) }
+
+# Exponential e^x
+define exp(x) { return e(x) }
+
+# Natural Logarithm (base e)
+define ln(x) {
+  if(x< 0){print "ln error: logarithm of a negative number\n";return 0}
+  if(x==0)print "ln error: logarithm of zero; negative infinity\n"
+  return l(x)
+}
+
+# y-th root of x [ x^(1/y) ]
+define root(x,y) {
+  auto os,iy,iz,z,xn;
+  z = x^(1/y)
+  os=scale;scale=0;if(x==x/1&&y==(iy=y/1)){
+   if((xn=(iz=1+z/1)^iy)==x){scale=os;return iz}
+   if((xn=(iz-=1)^iy)==x){scale=os;return iz}
+  }
+  scale=os;return z
+}
+
+define log(base,x) {
+  auto os,i,l,sx,st;
+  if(base==x)return 1;
+  if(x==0){print "log error: logarithm of zero; negative infinity\n"; return  l(0)}
+  if(x==1)return 0;
+  if(base==0){print "log error: zero-based logarithm\n";                 return    0 }
+  if(base==1){print "log error: one-based logarithm;positive infinity\n";return -l(0)}
+  scale+=6
+  if((-1<base&&base<0)||(0<base&&base<1)){x=-log(1/base,x);scale-=6;return x/1}
+  if((-1<x   &&   x<0)||(0<x   &&   x<1)){x=-log(base,1/x);scale-=6;return x/1}
+  if(base<0){
+    sx=1;if(x<0){x*=-1;sx=-1}
+    l=log(-base,x)
+    st=id_frac_(l)
+    if((st==0&&sx==1)||(st==1&&sx==-1))return l;
+    print "log error: -ve base: "
+    if(st<=1)print "wrong sign for "
+    print "implied "
+    if(st<=1)print "odd root/integer power\n"
+    if(st==2)print "even root\n"
+    if(st==3)print "irrational power\n"
+    return 0;
+  }
+  if(x<0){
+    print "log error: +ve base: logarithm of a negative number\n"
+    return 0;
+  }
+  x=l(x)/l(base);scale-=6;return x/1
+}
+
+# Number of permutations of r items from a group of n
+# ... using integers only
+define permutation(n,r) {
+ auto i,p,os;
+ os=scale;scale=0;n/=1;r/=1
+ if(n<0||r<0||r>n)return(0)
+ p=1;for(i=n;i>n-r;i--)p*=i
+ scale=os;return(p)
+}
+
+# Number of combinations of r items from a group of n
+# ... using integers only
+define combination(n,r) {
+ auto c,os;
+ os=scale;scale=0;n/=1;r/=1
+ if(n<0||r<0||r>n)return(0)
+ if(2*r>n)r=n-r
+ c=int_permutation(n,r)/factorial(r)
+ scale=os;return(c) 
+}
+
+define factorial(x) {
+return permutation(x,x);
+}

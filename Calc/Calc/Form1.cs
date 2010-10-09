@@ -6,16 +6,50 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.IO;
+
 
 namespace Calc
 {
     public partial class Form1 : Form
     {
-        Parser parser;
+        System.Diagnostics.Process bc;
+        StreamReader bcOut;
+        StreamWriter bcIn;
+
+        //Parser parser;
         public Form1()
         {
             InitializeComponent();
-            parser = new Parser();
+            //parser = new Parser();
+            bc = new System.Diagnostics.Process();
+
+            String strCommand = "D:\\skola\\stu\\3.rocnik\\zima\\ICP\\projekt\\bc\\bc.exe";//cesta k programu
+            bc.StartInfo.FileName = strCommand;
+
+            bc.StartInfo.UseShellExecute = false;
+
+            bc.StartInfo.RedirectStandardOutput = true;//presmerovanie standardneho vstupu a vystupu programu
+            bc.StartInfo.RedirectStandardInput = true;
+            bc.StartInfo.CreateNoWindow = true;//aby sa nezobrazovalo to cierne okno konzoly ked sa spusti program
+            bc.StartInfo.Arguments = "-l";
+
+            bc.Start();//spustenie programu bc
+            bcOut = bc.StandardOutput;
+            bcIn = bc.StandardInput;
+
+            TextReader functions = new StreamReader("D:\\skola\\stu\\3.rocnik\\zima\\ICP\\projekt\\bc\\funkcie.bc");
+            String line = "";
+            //richTextBox1.Text = line;
+            while ((line = functions.ReadLine()) != null)
+            {
+               bcIn.WriteLine(line);
+            }
+        }
+
+        ~Form1()
+        {
+            bc.StandardInput.WriteLine("quit");//ukoncenie programu bc
         }
 
         private void button8_Click(object sender, EventArgs e)
@@ -100,8 +134,12 @@ namespace Calc
 
         private void button19_Click(object sender, EventArgs e)
         {
-            richTextBox2.Text = parser.Parse(richTextBox1.Text);
-            if (!parser.IsValid(richTextBox1.Text)) richTextBox1.ForeColor = Color.Red;
+            bcIn.WriteLine(richTextBox1.Text);//vlozenie vyrazu na vstup programu                        
+            string line = "";
+            if ((line = bcOut.ReadLine()) != null)
+            {
+                richTextBox2.Text = line;
+            }
         }
     }
 }

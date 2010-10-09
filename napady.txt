@@ -6,3 +6,15 @@ pamatove miesta
 menu
 zoom out/in na graf
 nastavenie definicneho oboru grafu
+
+ten parser na pocitanie je na takyto projekt prilis komplikovany.
+urcite existuje aj ina moznost
+napriklad nejaky program ktory by sa dal zolat napriklad ako program bc v unixe
+pripadne volat z konzoly Octave
+
+Octave:
+http://www.gnu.org/software/octave/docs.html
+http://www.octave.cz/pages/kapitoly.html
+
+C#:
+http://stackoverflow.com/questions/206323/how-to-execute-command-line-in-c-get-std-out-results
