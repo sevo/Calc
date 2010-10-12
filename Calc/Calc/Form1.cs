@@ -259,6 +259,10 @@ namespace Calc
 
         private void buttonMS_Click(object sender, EventArgs e)
         {
+            Thread t = new Thread(getResult);
+            System.Threading.Timer timer = new System.Threading.Timer(abortGettingResult, t, 1000, Timeout.Infinite);
+            t.Start();
+            t.Join();
             try
             {
                 memory = float.Parse(resultTextBox.Text);
