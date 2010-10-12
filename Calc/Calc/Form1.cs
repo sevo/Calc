@@ -70,82 +70,122 @@ namespace Calc
 
         private void button8_Click(object sender, EventArgs e)
         {
-            richTextBox1.Text += "8";
-        }
-
-        private void richTextBox1_TextChanged(object sender, EventArgs e)
-        {
-
+            //richTextBox1.Text += "8";
+            int cursorPosition = richTextBox1.SelectionStart;
+            richTextBox1.Text = richTextBox1.Text.Substring(0, cursorPosition) + "8" + richTextBox1.Text.Substring(cursorPosition, richTextBox1.Text.Length - cursorPosition);
+            richTextBox1.SelectionStart = cursorPosition + 1;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            richTextBox1.Text += "1";
+            //richTextBox1.Text += "1";
+            int cursorPosition = richTextBox1.SelectionStart;
+            richTextBox1.Text = richTextBox1.Text.Substring(0, cursorPosition) + "1" + richTextBox1.Text.Substring(cursorPosition, richTextBox1.Text.Length - cursorPosition);
+            richTextBox1.SelectionStart = cursorPosition + 1;
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            richTextBox1.Text += "2";
+            //richTextBox1.Text += "2";
+            int cursorPosition = richTextBox1.SelectionStart;
+            richTextBox1.Text = richTextBox1.Text.Substring(0, cursorPosition) + "2" + richTextBox1.Text.Substring(cursorPosition, richTextBox1.Text.Length - cursorPosition);
+            richTextBox1.SelectionStart = cursorPosition + 1;
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            richTextBox1.Text += "3";
+            //richTextBox1.Text += "3";
+            int cursorPosition = richTextBox1.SelectionStart;
+            richTextBox1.Text = richTextBox1.Text.Substring(0, cursorPosition) + "3" + richTextBox1.Text.Substring(cursorPosition, richTextBox1.Text.Length - cursorPosition);
+            richTextBox1.SelectionStart = cursorPosition + 1;
         }
 
         private void button10_Click(object sender, EventArgs e)
         {
-            richTextBox1.Text += "0";
+            //richTextBox1.Text += "0";
+            int cursorPosition = richTextBox1.SelectionStart;
+            richTextBox1.Text = richTextBox1.Text.Substring(0, cursorPosition) + "0" + richTextBox1.Text.Substring(cursorPosition, richTextBox1.Text.Length - cursorPosition);
+            richTextBox1.SelectionStart = cursorPosition + 1;
         }
 
         private void button11_Click(object sender, EventArgs e)
         {
-            richTextBox1.Text += ",";
+            //richTextBox1.Text += ".";
+            int cursorPosition = richTextBox1.SelectionStart;
+            richTextBox1.Text = richTextBox1.Text.Substring(0, cursorPosition) + "." + richTextBox1.Text.Substring(cursorPosition, richTextBox1.Text.Length - cursorPosition);
+            richTextBox1.SelectionStart = cursorPosition + 1;
         }
 
         private void button14_Click(object sender, EventArgs e)
         {
-            richTextBox1.Text += "+";
+            //richTextBox1.Text += "+";
+            int cursorPosition = richTextBox1.SelectionStart;
+            richTextBox1.Text = richTextBox1.Text.Substring(0, cursorPosition) + "+" + richTextBox1.Text.Substring(cursorPosition, richTextBox1.Text.Length - cursorPosition);
+            richTextBox1.SelectionStart = cursorPosition + 1;
         }
 
         private void button15_Click(object sender, EventArgs e)
         {
-            richTextBox1.Text += "-";
+            //richTextBox1.Text += "-";
+            int cursorPosition = richTextBox1.SelectionStart;
+            richTextBox1.Text = richTextBox1.Text.Substring(0, cursorPosition) + "-" + richTextBox1.Text.Substring(cursorPosition, richTextBox1.Text.Length - cursorPosition);
+            richTextBox1.SelectionStart = cursorPosition + 1;
         }
 
         private void button16_Click(object sender, EventArgs e)
         {
-            richTextBox1.Text += "*";
+            //richTextBox1.Text += "*";
+            int cursorPosition = richTextBox1.SelectionStart;
+            richTextBox1.Text = richTextBox1.Text.Substring(0, cursorPosition) + "*" + richTextBox1.Text.Substring(cursorPosition, richTextBox1.Text.Length - cursorPosition);
+            richTextBox1.SelectionStart = cursorPosition + 1;
         }
 
         private void button17_Click(object sender, EventArgs e)
         {
-            richTextBox1.Text += "/";
+            //richTextBox1.Text += "/";
+            int cursorPosition = richTextBox1.SelectionStart;
+            richTextBox1.Text = richTextBox1.Text.Substring(0, cursorPosition) + "/" + richTextBox1.Text.Substring(cursorPosition, richTextBox1.Text.Length - cursorPosition);
+            richTextBox1.SelectionStart = cursorPosition + 1;
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            richTextBox1.Text += "4";
+            //richTextBox1.Text += "4";
+            int cursorPosition = richTextBox1.SelectionStart;
+            richTextBox1.Text = richTextBox1.Text.Substring(0, cursorPosition) + "4" + richTextBox1.Text.Substring(cursorPosition, richTextBox1.Text.Length - cursorPosition);
+            richTextBox1.SelectionStart = cursorPosition + 1;
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-            richTextBox1.Text += "5";
+            //richTextBox1.Text += "5";
+            int cursorPosition = richTextBox1.SelectionStart;
+            richTextBox1.Text = richTextBox1.Text.Substring(0, cursorPosition) + "5" + richTextBox1.Text.Substring(cursorPosition, richTextBox1.Text.Length - cursorPosition);
+            richTextBox1.SelectionStart = cursorPosition + 1;
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
-            richTextBox1.Text += "6";
+            //richTextBox1.Text += "6";
+            int cursorPosition = richTextBox1.SelectionStart;
+            richTextBox1.Text = richTextBox1.Text.Substring(0, cursorPosition) + "6" + richTextBox1.Text.Substring(cursorPosition, richTextBox1.Text.Length - cursorPosition);
+            richTextBox1.SelectionStart = cursorPosition + 1;
         }
 
         private void button7_Click(object sender, EventArgs e)
         {
-            richTextBox1.Text += "7";
+            //richTextBox1.Text += "7";
+            int cursorPosition = richTextBox1.SelectionStart;
+            richTextBox1.Text = richTextBox1.Text.Substring(0, cursorPosition) + "7" + richTextBox1.Text.Substring(cursorPosition, richTextBox1.Text.Length - cursorPosition);
+            richTextBox1.SelectionStart = cursorPosition + 1;
         }
 
         private void button9_Click(object sender, EventArgs e)
         {
-            richTextBox1.Text += "9";
+            //richTextBox1.Text += "9";
+            int cursorPosition = richTextBox1.SelectionStart;
+            richTextBox1.Text = richTextBox1.Text.Substring(0, cursorPosition) + "9" + richTextBox1.Text.Substring(cursorPosition, richTextBox1.Text.Length - cursorPosition);
+            richTextBox1.SelectionStart = cursorPosition +1;
         }
 
         private void button19_Click(object sender, EventArgs e)
