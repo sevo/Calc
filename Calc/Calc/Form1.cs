@@ -34,10 +34,11 @@ namespace Calc
 
         private void startBC() 
         {
+            
             bc = new System.Diagnostics.Process();
-
             try
             {
+         
                 String strCommand = "..\\..\\..\\..\\bc\\bc.exe";//cesta k programu
 
                 bc.StartInfo.FileName = strCommand;
@@ -152,10 +153,14 @@ namespace Calc
             Thread t = new Thread(getResult);
             System.Threading.Timer timer = new System.Threading.Timer(abortGettingResult, t, 1000, Timeout.Infinite);
             t.Start();
-
         }
 
-        void getResult()
+        private void richTextBox1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter) button19_Click(sender, e);
+        }
+
+        private void getResult()
         {
             try
             {
@@ -166,10 +171,10 @@ namespace Calc
                     richTextBox2.Text = line;
                 }
             }
-            catch (ThreadAbortException e) { richTextBox2.Text = "Calculation timeout."; }
+            catch (ThreadAbortException e) { richTextBox2.Text = "Calculation timeout."; }            
         }
 
-        void abortGettingResult(object data)
+        private void abortGettingResult(object data)
         {
             if (((Thread)data).IsAlive)
             {
@@ -178,6 +183,6 @@ namespace Calc
                 bc.Kill();
                 startBC();
             }
-        }
+        }        
     }
 }
