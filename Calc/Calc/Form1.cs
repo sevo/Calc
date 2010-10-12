@@ -24,7 +24,8 @@ namespace Calc
             //parser = new Parser();
             bc = new System.Diagnostics.Process();
 
-            String strCommand = "D:\\skola\\stu\\3.rocnik\\zima\\ICP\\projekt\\bc\\bc.exe";//cesta k programu
+            String strCommand = "..\\..\\..\\..\\bc\\bc.exe";//cesta k programu
+
             bc.StartInfo.FileName = strCommand;
 
             bc.StartInfo.UseShellExecute = false;
@@ -38,7 +39,7 @@ namespace Calc
             bcOut = bc.StandardOutput;
             bcIn = bc.StandardInput;
 
-            TextReader functions = new StreamReader("D:\\skola\\stu\\3.rocnik\\zima\\ICP\\projekt\\bc\\funkcie.bc");
+            TextReader functions = new StreamReader("..\\..\\..\\..\\bc\\funkcie.bc");
             String line = "";
             //richTextBox1.Text = line;
             while ((line = functions.ReadLine()) != null)
