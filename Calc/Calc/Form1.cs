@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.IO;
+using System.Threading;
 
 
 namespace Calc
@@ -22,20 +23,38 @@ namespace Calc
         {
             InitializeComponent();
             //parser = new Parser();
+            startBC();
+            
+        }
+
+        ~Form1()
+        {
+            bc.StandardInput.WriteLine("quit");//ukoncenie programu bc
+        }
+
+        private void startBC() 
+        {
             bc = new System.Diagnostics.Process();
 
-            String strCommand = "..\\..\\..\\..\\bc\\bc.exe";//cesta k programu
+            try
+            {
+                String strCommand = "..\\..\\..\\..\\bc\\bc.exe";//cesta k programu
 
-            bc.StartInfo.FileName = strCommand;
+                bc.StartInfo.FileName = strCommand;
 
-            bc.StartInfo.UseShellExecute = false;
+                bc.StartInfo.UseShellExecute = false;
 
-            bc.StartInfo.RedirectStandardOutput = true;//presmerovanie standardneho vstupu a vystupu programu
-            bc.StartInfo.RedirectStandardInput = true;
-            bc.StartInfo.CreateNoWindow = true;//aby sa nezobrazovalo to cierne okno konzoly ked sa spusti program
-            bc.StartInfo.Arguments = "-l";
+                bc.StartInfo.RedirectStandardOutput = true;//presmerovanie standardneho vstupu a vystupu programu
+                bc.StartInfo.RedirectStandardInput = true;
+                bc.StartInfo.CreateNoWindow = true;//aby sa nezobrazovalo to cierne okno konzoly ked sa spusti program
+                bc.StartInfo.Arguments = "-l";
 
-            bc.Start();//spustenie programu bc
+                bc.Start();//spustenie programu bc                
+            }
+            catch (Exception e)
+            {
+                richTextBox2.Text = "Error: unable to run bc.exe";
+            }
             bcOut = bc.StandardOutput;
             bcIn = bc.StandardInput;
 
@@ -44,13 +63,8 @@ namespace Calc
             //richTextBox1.Text = line;
             while ((line = functions.ReadLine()) != null)
             {
-               bcIn.WriteLine(line);
+                bcIn.WriteLine(line);
             }
-        }
-
-        ~Form1()
-        {
-            bc.StandardInput.WriteLine("quit");//ukoncenie programu bc
         }
 
         private void button8_Click(object sender, EventArgs e)
@@ -135,11 +149,34 @@ namespace Calc
 
         private void button19_Click(object sender, EventArgs e)
         {
-            bcIn.WriteLine(richTextBox1.Text);//vlozenie vyrazu na vstup programu                        
-            string line = "";
-            if ((line = bcOut.ReadLine()) != null)
+            Thread t = new Thread(getResult);
+            System.Threading.Timer timer = new System.Threading.Timer(abortGettingResult, t, 1000, Timeout.Infinite);
+            t.Start();
+
+        }
+
+        void getResult()
+        {
+            try
             {
-                richTextBox2.Text = line;
+                bcIn.WriteLine(richTextBox1.Text);//vlozenie vyrazu na vstup programu                        
+                string line = "";
+                if ((line = bcOut.ReadLine()) != null)
+                {
+                    richTextBox2.Text = line;
+                }
+            }
+            catch (ThreadAbortException e) { richTextBox2.Text = "Calculation timeout."; }
+        }
+
+        void abortGettingResult(object data)
+        {
+            if (((Thread)data).IsAlive)
+            {
+                ((Thread)data).Abort();
+                //richTextBox2.Text = "thread aborded";
+                bc.Kill();
+                startBC();
             }
         }
     }
