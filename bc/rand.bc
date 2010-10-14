@@ -1,0 +1,48 @@
+### Rand.BC - Random number generator for GNU BC
+
+# Random number generator algorithm and code  - (c) 2003- CyrekSoft
+# Not guaranteed for any purpose
+# Chi-square tests prove this algorithm to be favourable
+
+# To use this library an external seed source is required!
+# See the bash randbc script for an example of how to do this.
+
+scale=50;ibase=A
+rand_seed = 3482.2023+sqrt(8)
+rand_mult = sqrt(2)+sqrt(3)
+rand_smax = 2^32
+rand_last = 0
+
+define srand(x) {
+  x += 20/x
+  x -= 13/x
+  rand_seed = x
+  return 0;
+}
+
+define rand(x) {
+  auto i, f, os;
+
+  if(x<0)return srand(-x)
+  if(x<1)return(rand_last)
+
+  os = scale + 10
+  scale = 0  ; i = rand_seed / 1
+  scale = os ; f = rand_seed - i
+
+  rand_seed = rand_mult * (1+i) * (1+f)
+
+  while(rand_seed>rand_smax)rand_seed-=rand_smax
+
+  scale = 0  ; i = rand_seed / 1
+  scale = os ; f = rand_seed - i
+
+  rand_last = f
+  if(x==1){scale-=10;return(rand_last/1)}
+
+  rand_last = f * x + 1
+  scale = 0 ; rand_last /= 1
+  scale = os - 10
+  
+  return(rand_last)
+}

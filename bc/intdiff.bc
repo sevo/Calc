@@ -1,0 +1,76 @@
+### IntDiff.BC - numeric differentiation and integration of 
+###              a single variable function
+
+define f(x) { return x^2 } # example - redefine in later code/bc session
+
+# Numerically differentiate the global function f(x)
+define dfxdx(x) {
+   auto eps, os;
+      os = scale
+   scale = 0
+     eps = os/2
+   scale = os
+     eps = A^-eps
+   return (f(x+eps)-f(x-eps))/(2*eps)
+}
+
+# New global variable like 'scale' - determines accuracy of numerical
+#   integration at the expense of time. Don't set above 15 unless this
+#   is running on a really fast machine!
+depth = 10
+
+# Numerically integrate the global function f(x) between x = a and x = b
+define ifxdx(a,b) {
+  auto h,s,t
+  h = 2^-depth 
+  s = (b - a) * h
+  for(i=a+s;i<b;i+=s)t+=f(i);t+=(f(a)+f(b))/2;t*=s
+  return t
+}
+
+# glai - guess limit at infinity
+#   Assumes p, q and r are 3 consecutive convergents to a limit and
+#   attempts to extrapolate precisely what that limit is after an infinite 
+#   number of iterations.
+
+# 0 = glai returns function result only
+# 1 = glai commentates on interesting convergents
+glaitalk = 1
+
+define glai(p,q,r) {
+  auto m,n 
+  m = q^2-p*r
+  n = 2*q-p-r
+  if(n==0)if(m==0){
+   if(glaitalk)print "glai: Constant series detected\n"
+   return p
+  }else{
+   if(glaitalk)print "glai: Arithmetic progression detected: limit is infinite\n"
+   return 1/0
+  }
+  if(m==0){
+   if(glaitalk)print "glai: Geometric progression detected: limit wraps to zero!\n"
+   return 0
+  }
+  return m/n
+}
+
+# Examples:
+#   glai(x,x+1,x+2) causes a division by zero error as the limit of
+#                   an arithmetic progression is infinite
+#   glai(a*k,a*k^2,a*k^3) returns zero! The limit of a geometric
+#                         progression in p-adics is precisely that,
+#                         and somehow this simple function 'knows'.
+#   glai(63.9, 63.99, 63.999) returns 64 - correctly predicting the
+#                             limit of the sequence.
+
+# Run consecutive convergents to the ifxdx function through glai() 
+#   attaining "better" accuracy with slightly fewer calculations
+define ifxdx_g(a,b) {
+  auto p,q,r
+  depth -= 3 ; p = ifxdx(a,b)
+  depth += 1 ; q = ifxdx(a,b)
+  depth += 1 ; r = ifxdx(a,b)
+  depth += 1
+  return glai(p,q,r)
+}

@@ -14,3 +14,4 @@ D:\skola\stu\3.rocnik\zima\ICP\projekt\Calc\Calc\Calc\obj\Debug\ResolveAssemblyR
 D:\skola\stu\3.rocnik\zima\ICP\projekt\Calc\Calc\Calc\obj\Debug\Calc.Form1.resources
 D:\skola\stu\3.rocnik\zima\ICP\projekt\Calc\Calc\Calc\obj\Debug\Calc.Properties.Resources.resources
 D:\skola\stu\3.rocnik\zima\ICP\projekt\Calc\Calc\Calc\obj\Debug\Calc.csproj.GenerateResource.Cache
+D:\skola\stu\3.rocnik\zima\ICP\projekt\Calc\Calc\Calc\obj\Debug\Calc.GrafForm.resources

@@ -199,3 +199,34 @@ define combination(n,r) {
 define factorial(x) {
 return permutation(x,x);
 }
+
+# Length of the diagonal vector (0,0)-(x,y) [pythagoras]
+define pyth(x,y) { return(sqrt(x^2+y^2)) }
+define pyth3(x,y,z) { return(sqrt(x^2+y^2+z^2)) }
+
+# n-th Fibonacci number over the reals
+define fibonacci(n){
+  auto a,b,c,intn,count,fracn,s5,os
+  if(n==0)return 0
+  os=scale;scale=0;count=intn=n/1
+  if(n<0){
+    scale=os;
+    a=-fibonacci(-n)
+    if(n==intn)return a*(-1)^(-intn)
+    return a*c(a(1)*4*n)
+  }
+  count+=2;
+  a=-1;b=1;c=0
+  while(--count){
+    c=a+b;a=b;b=c
+  }
+  scale=os;
+  if(n==intn)return c
+  
+  fracn=n-intn
+  s5=sqrt(5)
+  a=e(fracn*l( (1+s5)/2 ))
+  a*=(s5*c+sqrt(5*c^2+4*(-1)^intn))/2
+  a=(a-c(a(1)*4*n)/a)/s5
+  return a
+}

@@ -88,16 +88,20 @@ namespace Calc
         /// </summary>
         private void getResult()
         {
+            resultTextBox.Text = "";
             try
             {
                 bcIn.WriteLine(expressionTextBox.Text);//vlozenie vyrazu na vstup programu                        
                 string line = "";
-                if ((line = bcOut.ReadLine()) != null)
+                while ((line = bcOut.ReadLine()) != null)
                 {
-                    resultTextBox.Text = line;
+                    resultTextBox.Text += line;
                 }
             }
-            catch (ThreadAbortException e) { resultTextBox.Text = "Calculation timeout."; }
+            catch (ThreadAbortException e) 
+            {
+                if (resultTextBox.Text == "") resultTextBox.Text = "Calculation timeout."; 
+            }           
         }
 
         /// <summary>
@@ -235,14 +239,21 @@ namespace Calc
 
         private void buttonEquals_Click(object sender, EventArgs e)
         {
-            Thread t = new Thread(getResult);
-            System.Threading.Timer timer = new System.Threading.Timer(abortGettingResult, t, 1000, Timeout.Infinite);
-            t.Start();
+            if (expressionTextBox.Text.StartsWith("f(x)=") || expressionTextBox.Text.StartsWith("y="))
+            {
+                Form grafoveOkno = new GrafForm();
+                grafoveOkno.Visible = true;
+            }
+            else { 
+                Thread t = new Thread(getResult);
+                System.Threading.Timer timer = new System.Threading.Timer(abortGettingResult, t, 1000, Timeout.Infinite);
+                t.Start();
+            }
         }
 
         private void expressionTextBox_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter) buttonEquals_Click(sender, e);
+            if (e.KeyCode == Keys.Enter) buttonEquals_Click(sender, e);            
         }        
 
         private void buttonC_Click(object sender, EventArgs e)
@@ -336,6 +347,130 @@ namespace Calc
             int cursorPosition = expressionTextBox.SelectionStart;
             expressionTextBox.Text = expressionTextBox.Text.Substring(0, cursorPosition) + ans + expressionTextBox.Text.Substring(cursorPosition, expressionTextBox.Text.Length - cursorPosition);
             expressionTextBox.SelectionStart = cursorPosition + ans.Length;
+        }
+
+        private void HexRadioButton_CheckedChanged(object sender, EventArgs e)
+        {
+            buttonA.Enabled = true;
+            buttonB.Enabled = true;
+            buttonC.Enabled = true;
+            buttonD.Enabled = true;
+            buttonE.Enabled = true;
+            buttonF.Enabled = true;
+            button2.Enabled = true;
+            button3.Enabled = true;
+            button4.Enabled = true;
+            button5.Enabled = true;
+            button6.Enabled = true;
+            button7.Enabled = true;
+            button8.Enabled = true;
+            button9.Enabled = true;
+        }
+
+        private void DecRadioButton_CheckedChanged(object sender, EventArgs e)
+        {
+            buttonA.Enabled = false;
+            buttonB.Enabled = false;
+            buttonC.Enabled = false;
+            buttonD.Enabled = false;
+            buttonE.Enabled = false;
+            buttonF.Enabled = false;
+            button2.Enabled = true;
+            button3.Enabled = true;
+            button4.Enabled = true;
+            button5.Enabled = true;
+            button6.Enabled = true;
+            button7.Enabled = true;
+            button8.Enabled = true;
+            button9.Enabled = true;
+
+        }
+
+        private void OctRadioButton_CheckedChanged(object sender, EventArgs e)
+        {
+            buttonA.Enabled = false;
+            buttonB.Enabled = false;
+            buttonC.Enabled = false;
+            buttonD.Enabled = false;
+            buttonE.Enabled = false;
+            buttonF.Enabled = false;
+            button2.Enabled = true;
+            button3.Enabled = true;
+            button4.Enabled = true;
+            button5.Enabled = true;
+            button6.Enabled = true;
+            button7.Enabled = true;
+            button8.Enabled = false;
+            button9.Enabled = false;
+        }
+
+        private void BinRadioButton_CheckedChanged(object sender, EventArgs e)
+        {
+            buttonA.Enabled = false;
+            buttonB.Enabled = false;
+            buttonC.Enabled = false;
+            buttonD.Enabled = false;
+            buttonE.Enabled = false;
+            buttonF.Enabled = false;
+            button2.Enabled = false;
+            button3.Enabled = false;
+            button4.Enabled = false;
+            button5.Enabled = false;
+            button6.Enabled = false;
+            button7.Enabled = false;
+            button8.Enabled = false;
+            button9.Enabled = false;
+            }
+
+        private void expressionTextBox_TextChanged(object sender, EventArgs e)
+        {
+            int length = expressionTextBox.Text.Length;
+            int cursor_position = expressionTextBox.SelectionStart;
+            
+            if (DecRadioButton.Checked == true)
+            {
+                expressionTextBox.Text = expressionTextBox.Text.Replace("A", "");
+                expressionTextBox.Text = expressionTextBox.Text.Replace("B", "");
+                expressionTextBox.Text = expressionTextBox.Text.Replace("C", "");
+                expressionTextBox.Text = expressionTextBox.Text.Replace("D", "");
+                expressionTextBox.Text = expressionTextBox.Text.Replace("E", "");
+                expressionTextBox.Text = expressionTextBox.Text.Replace("F", "");                
+            }
+            if (OctRadioButton.Checked == true)
+            {
+                expressionTextBox.Text = expressionTextBox.Text.Replace("A", "");
+                expressionTextBox.Text = expressionTextBox.Text.Replace("B", "");
+                expressionTextBox.Text = expressionTextBox.Text.Replace("C", "");
+                expressionTextBox.Text = expressionTextBox.Text.Replace("D", "");
+                expressionTextBox.Text = expressionTextBox.Text.Replace("E", "");
+                expressionTextBox.Text = expressionTextBox.Text.Replace("F", "");
+                expressionTextBox.Text = expressionTextBox.Text.Replace("8", "");
+                expressionTextBox.Text = expressionTextBox.Text.Replace("9", "");
+            }
+            if (BinRadioButton.Checked == true)
+            {
+                expressionTextBox.Text = expressionTextBox.Text.Replace("A", "");
+                expressionTextBox.Text = expressionTextBox.Text.Replace("B", "");
+                expressionTextBox.Text = expressionTextBox.Text.Replace("C", "");
+                expressionTextBox.Text = expressionTextBox.Text.Replace("D", "");
+                expressionTextBox.Text = expressionTextBox.Text.Replace("E", "");
+                expressionTextBox.Text = expressionTextBox.Text.Replace("F", "");
+                expressionTextBox.Text = expressionTextBox.Text.Replace("2", "");
+                expressionTextBox.Text = expressionTextBox.Text.Replace("3", "");
+                expressionTextBox.Text = expressionTextBox.Text.Replace("4", "");
+                expressionTextBox.Text = expressionTextBox.Text.Replace("5", "");
+                expressionTextBox.Text = expressionTextBox.Text.Replace("6", "");
+                expressionTextBox.Text = expressionTextBox.Text.Replace("7", "");
+                expressionTextBox.Text = expressionTextBox.Text.Replace("8", "");
+                expressionTextBox.Text = expressionTextBox.Text.Replace("9", "");
+            }
+
+
+
+
+            //if (expressionTextBox.Text.Length < length) 
+                expressionTextBox.SelectionStart = cursor_position - (expressionTextBox.Text.Length - length);
+            //ak sa nejaky znam zmazal tak sa posunie nastavenie kurzora
         }
   
     }

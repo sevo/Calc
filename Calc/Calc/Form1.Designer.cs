@@ -28,15 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.TabControl = new System.Windows.Forms.TabControl();
+            this.GeneralTab = new System.Windows.Forms.TabPage();
+            this.ProgrammerTab = new System.Windows.Forms.TabPage();
+            this.TrigonometricTab = new System.Windows.Forms.TabPage();
+            this.PowerTab = new System.Windows.Forms.TabPage();
+            this.StatisticalTab = new System.Windows.Forms.TabPage();
+            this.ConversionTab = new System.Windows.Forms.TabPage();
+            this.ConstantsTab = new System.Windows.Forms.TabPage();
+            this.OwnTab = new System.Windows.Forms.TabPage();
             this.expressionTextBox = new System.Windows.Forms.RichTextBox();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.radioButton4 = new System.Windows.Forms.RadioButton();
+            this.DecRadioButton = new System.Windows.Forms.RadioButton();
+            this.HexRadioButton = new System.Windows.Forms.RadioButton();
+            this.OctRadioButton = new System.Windows.Forms.RadioButton();
+            this.BinRadioButton = new System.Windows.Forms.RadioButton();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -49,7 +54,7 @@
             this.button0 = new System.Windows.Forms.Button();
             this.buttonPoint = new System.Windows.Forms.Button();
             this.buttonDel = new System.Windows.Forms.Button();
-            this.buttonC = new System.Windows.Forms.Button();
+            this.buttonCE = new System.Windows.Forms.Button();
             this.buttonPlus = new System.Windows.Forms.Button();
             this.buttonMinus = new System.Windows.Forms.Button();
             this.buttonTimes = new System.Windows.Forms.Button();
@@ -64,51 +69,116 @@
             this.buttonAns = new System.Windows.Forms.Button();
             this.buttonParanO = new System.Windows.Forms.Button();
             this.buttonParanC = new System.Windows.Forms.Button();
-            this.tabControl1.SuspendLayout();
+            this.buttonA = new System.Windows.Forms.Button();
+            this.buttonB = new System.Windows.Forms.Button();
+            this.buttonC = new System.Windows.Forms.Button();
+            this.buttonD = new System.Windows.Forms.Button();
+            this.buttonE = new System.Windows.Forms.Button();
+            this.buttonF = new System.Windows.Forms.Button();
+            this.TabControl.SuspendLayout();
             this.SuspendLayout();
             // 
-            // tabControl1
+            // TabControl
             // 
-            this.tabControl1.Alignment = System.Windows.Forms.TabAlignment.Right;
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Controls.Add(this.tabPage3);
-            this.tabControl1.Controls.Add(this.tabPage4);
-            this.tabControl1.Location = new System.Drawing.Point(0, 4);
-            this.tabControl1.Multiline = true;
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(515, 537);
-            this.tabControl1.TabIndex = 0;
+            this.TabControl.Alignment = System.Windows.Forms.TabAlignment.Right;
+            this.TabControl.Controls.Add(this.GeneralTab);
+            this.TabControl.Controls.Add(this.ProgrammerTab);
+            this.TabControl.Controls.Add(this.TrigonometricTab);
+            this.TabControl.Controls.Add(this.PowerTab);
+            this.TabControl.Controls.Add(this.StatisticalTab);
+            this.TabControl.Controls.Add(this.ConversionTab);
+            this.TabControl.Controls.Add(this.ConstantsTab);
+            this.TabControl.Controls.Add(this.OwnTab);
+            this.TabControl.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.TabControl.Location = new System.Drawing.Point(0, 4);
+            this.TabControl.Multiline = true;
+            this.TabControl.Name = "TabControl";
+            this.TabControl.SelectedIndex = 0;
+            this.TabControl.Size = new System.Drawing.Size(515, 537);
+            this.TabControl.SizeMode = System.Windows.Forms.TabSizeMode.FillToRight;
+            this.TabControl.TabIndex = 0;
             // 
-            // tabPage2
+            // GeneralTab
             // 
-            this.tabPage2.Location = new System.Drawing.Point(4, 4);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(488, 529);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "tabPage2";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.GeneralTab.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.GeneralTab.Location = new System.Drawing.Point(4, 4);
+            this.GeneralTab.Name = "GeneralTab";
+            this.GeneralTab.Padding = new System.Windows.Forms.Padding(3);
+            this.GeneralTab.Size = new System.Drawing.Size(457, 529);
+            this.GeneralTab.TabIndex = 1;
+            this.GeneralTab.Text = "General";
+            this.GeneralTab.UseVisualStyleBackColor = true;
             // 
-            // tabPage3
+            // ProgrammerTab
             // 
-            this.tabPage3.Location = new System.Drawing.Point(4, 4);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(488, 529);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "tabPage3";
-            this.tabPage3.UseVisualStyleBackColor = true;
+            this.ProgrammerTab.Location = new System.Drawing.Point(4, 4);
+            this.ProgrammerTab.Name = "ProgrammerTab";
+            this.ProgrammerTab.Padding = new System.Windows.Forms.Padding(3);
+            this.ProgrammerTab.Size = new System.Drawing.Size(457, 529);
+            this.ProgrammerTab.TabIndex = 2;
+            this.ProgrammerTab.Text = "Programmer";
+            this.ProgrammerTab.UseVisualStyleBackColor = true;
             // 
-            // tabPage4
+            // TrigonometricTab
             // 
-            this.tabPage4.Location = new System.Drawing.Point(4, 4);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(488, 529);
-            this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "tabPage4";
-            this.tabPage4.UseVisualStyleBackColor = true;
+            this.TrigonometricTab.Location = new System.Drawing.Point(4, 4);
+            this.TrigonometricTab.Name = "TrigonometricTab";
+            this.TrigonometricTab.Padding = new System.Windows.Forms.Padding(3);
+            this.TrigonometricTab.Size = new System.Drawing.Size(457, 529);
+            this.TrigonometricTab.TabIndex = 3;
+            this.TrigonometricTab.Text = "Trigonometric";
+            this.TrigonometricTab.UseVisualStyleBackColor = true;
+            // 
+            // PowerTab
+            // 
+            this.PowerTab.Location = new System.Drawing.Point(4, 4);
+            this.PowerTab.Name = "PowerTab";
+            this.PowerTab.Padding = new System.Windows.Forms.Padding(3);
+            this.PowerTab.Size = new System.Drawing.Size(457, 529);
+            this.PowerTab.TabIndex = 4;
+            this.PowerTab.Text = "Power";
+            this.PowerTab.UseVisualStyleBackColor = true;
+            // 
+            // StatisticalTab
+            // 
+            this.StatisticalTab.Location = new System.Drawing.Point(4, 4);
+            this.StatisticalTab.Name = "StatisticalTab";
+            this.StatisticalTab.Padding = new System.Windows.Forms.Padding(3);
+            this.StatisticalTab.Size = new System.Drawing.Size(457, 529);
+            this.StatisticalTab.TabIndex = 5;
+            this.StatisticalTab.Text = "Statistical";
+            this.StatisticalTab.UseVisualStyleBackColor = true;
+            // 
+            // ConversionTab
+            // 
+            this.ConversionTab.Location = new System.Drawing.Point(4, 4);
+            this.ConversionTab.Name = "ConversionTab";
+            this.ConversionTab.Padding = new System.Windows.Forms.Padding(3);
+            this.ConversionTab.Size = new System.Drawing.Size(457, 529);
+            this.ConversionTab.TabIndex = 6;
+            this.ConversionTab.Text = "Conversion";
+            this.ConversionTab.UseVisualStyleBackColor = true;
+            // 
+            // ConstantsTab
+            // 
+            this.ConstantsTab.Location = new System.Drawing.Point(4, 4);
+            this.ConstantsTab.Name = "ConstantsTab";
+            this.ConstantsTab.Padding = new System.Windows.Forms.Padding(3);
+            this.ConstantsTab.Size = new System.Drawing.Size(457, 529);
+            this.ConstantsTab.TabIndex = 7;
+            this.ConstantsTab.Text = "Constants";
+            this.ConstantsTab.UseVisualStyleBackColor = true;
+            // 
+            // OwnTab
+            // 
+            this.OwnTab.Location = new System.Drawing.Point(4, 4);
+            this.OwnTab.Name = "OwnTab";
+            this.OwnTab.Padding = new System.Windows.Forms.Padding(3);
+            this.OwnTab.Size = new System.Drawing.Size(457, 529);
+            this.OwnTab.TabIndex = 8;
+            this.OwnTab.Text = "Own";
+            this.OwnTab.ToolTipText = "Own selection of functions";
+            this.OwnTab.UseVisualStyleBackColor = true;
             // 
             // expressionTextBox
             // 
@@ -120,55 +190,61 @@
             this.expressionTextBox.TabIndex = 1;
             this.expressionTextBox.Text = "";
             this.expressionTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.expressionTextBox_KeyDown);
+            this.expressionTextBox.TextChanged += new System.EventHandler(this.expressionTextBox_TextChanged);
             // 
-            // radioButton1
+            // DecRadioButton
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(631, 201);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(45, 17);
-            this.radioButton1.TabIndex = 2;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Dec";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.DecRadioButton.AutoSize = true;
+            this.DecRadioButton.Checked = true;
+            this.DecRadioButton.Location = new System.Drawing.Point(610, 179);
+            this.DecRadioButton.Name = "DecRadioButton";
+            this.DecRadioButton.Size = new System.Drawing.Size(45, 17);
+            this.DecRadioButton.TabIndex = 2;
+            this.DecRadioButton.TabStop = true;
+            this.DecRadioButton.Text = "Dec";
+            this.DecRadioButton.UseVisualStyleBackColor = true;
+            this.DecRadioButton.CheckedChanged += new System.EventHandler(this.DecRadioButton_CheckedChanged);
             // 
-            // radioButton2
+            // HexRadioButton
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(581, 201);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(44, 17);
-            this.radioButton2.TabIndex = 3;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Hex";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.HexRadioButton.AutoSize = true;
+            this.HexRadioButton.Location = new System.Drawing.Point(560, 179);
+            this.HexRadioButton.Name = "HexRadioButton";
+            this.HexRadioButton.Size = new System.Drawing.Size(44, 17);
+            this.HexRadioButton.TabIndex = 3;
+            this.HexRadioButton.TabStop = true;
+            this.HexRadioButton.Text = "Hex";
+            this.HexRadioButton.UseVisualStyleBackColor = true;
+            this.HexRadioButton.CheckedChanged += new System.EventHandler(this.HexRadioButton_CheckedChanged);
             // 
-            // radioButton3
+            // OctRadioButton
             // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(681, 201);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(42, 17);
-            this.radioButton3.TabIndex = 4;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "Oct";
-            this.radioButton3.UseVisualStyleBackColor = true;
+            this.OctRadioButton.AutoSize = true;
+            this.OctRadioButton.Location = new System.Drawing.Point(660, 179);
+            this.OctRadioButton.Name = "OctRadioButton";
+            this.OctRadioButton.Size = new System.Drawing.Size(42, 17);
+            this.OctRadioButton.TabIndex = 4;
+            this.OctRadioButton.TabStop = true;
+            this.OctRadioButton.Text = "Oct";
+            this.OctRadioButton.UseVisualStyleBackColor = true;
+            this.OctRadioButton.CheckedChanged += new System.EventHandler(this.OctRadioButton_CheckedChanged);
             // 
-            // radioButton4
+            // BinRadioButton
             // 
-            this.radioButton4.AutoSize = true;
-            this.radioButton4.Location = new System.Drawing.Point(729, 201);
-            this.radioButton4.Name = "radioButton4";
-            this.radioButton4.Size = new System.Drawing.Size(40, 17);
-            this.radioButton4.TabIndex = 5;
-            this.radioButton4.TabStop = true;
-            this.radioButton4.Text = "Bin";
-            this.radioButton4.UseVisualStyleBackColor = true;
+            this.BinRadioButton.AutoSize = true;
+            this.BinRadioButton.Location = new System.Drawing.Point(708, 179);
+            this.BinRadioButton.Name = "BinRadioButton";
+            this.BinRadioButton.Size = new System.Drawing.Size(40, 17);
+            this.BinRadioButton.TabIndex = 5;
+            this.BinRadioButton.TabStop = true;
+            this.BinRadioButton.Text = "Bin";
+            this.BinRadioButton.UseVisualStyleBackColor = true;
+            this.BinRadioButton.CheckedChanged += new System.EventHandler(this.BinRadioButton_CheckedChanged);
             // 
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button1.Location = new System.Drawing.Point(575, 442);
+            this.button1.Location = new System.Drawing.Point(673, 439);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(50, 35);
             this.button1.TabIndex = 6;
@@ -179,7 +255,7 @@
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button2.Location = new System.Drawing.Point(631, 442);
+            this.button2.Location = new System.Drawing.Point(729, 439);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(50, 35);
             this.button2.TabIndex = 7;
@@ -190,7 +266,7 @@
             // button3
             // 
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button3.Location = new System.Drawing.Point(687, 442);
+            this.button3.Location = new System.Drawing.Point(785, 439);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(50, 35);
             this.button3.TabIndex = 8;
@@ -201,7 +277,7 @@
             // button4
             // 
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button4.Location = new System.Drawing.Point(575, 399);
+            this.button4.Location = new System.Drawing.Point(673, 396);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(50, 35);
             this.button4.TabIndex = 0;
@@ -212,7 +288,7 @@
             // button5
             // 
             this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button5.Location = new System.Drawing.Point(631, 399);
+            this.button5.Location = new System.Drawing.Point(729, 396);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(50, 35);
             this.button5.TabIndex = 9;
@@ -223,7 +299,7 @@
             // button6
             // 
             this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button6.Location = new System.Drawing.Point(687, 399);
+            this.button6.Location = new System.Drawing.Point(785, 396);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(50, 35);
             this.button6.TabIndex = 10;
@@ -234,7 +310,7 @@
             // button7
             // 
             this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button7.Location = new System.Drawing.Point(575, 358);
+            this.button7.Location = new System.Drawing.Point(673, 355);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(50, 35);
             this.button7.TabIndex = 11;
@@ -245,7 +321,7 @@
             // button8
             // 
             this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button8.Location = new System.Drawing.Point(631, 358);
+            this.button8.Location = new System.Drawing.Point(729, 355);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(50, 35);
             this.button8.TabIndex = 12;
@@ -256,7 +332,7 @@
             // button9
             // 
             this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button9.Location = new System.Drawing.Point(687, 358);
+            this.button9.Location = new System.Drawing.Point(785, 355);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(50, 35);
             this.button9.TabIndex = 13;
@@ -267,7 +343,7 @@
             // button0
             // 
             this.button0.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button0.Location = new System.Drawing.Point(575, 485);
+            this.button0.Location = new System.Drawing.Point(673, 482);
             this.button0.Name = "button0";
             this.button0.Size = new System.Drawing.Size(106, 35);
             this.button0.TabIndex = 14;
@@ -278,7 +354,7 @@
             // buttonPoint
             // 
             this.buttonPoint.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonPoint.Location = new System.Drawing.Point(687, 485);
+            this.buttonPoint.Location = new System.Drawing.Point(785, 482);
             this.buttonPoint.Name = "buttonPoint";
             this.buttonPoint.Size = new System.Drawing.Size(50, 35);
             this.buttonPoint.TabIndex = 15;
@@ -289,7 +365,7 @@
             // buttonDel
             // 
             this.buttonDel.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonDel.Location = new System.Drawing.Point(575, 317);
+            this.buttonDel.Location = new System.Drawing.Point(673, 314);
             this.buttonDel.Name = "buttonDel";
             this.buttonDel.Size = new System.Drawing.Size(79, 35);
             this.buttonDel.TabIndex = 16;
@@ -297,21 +373,21 @@
             this.buttonDel.UseVisualStyleBackColor = true;
             this.buttonDel.Click += new System.EventHandler(this.buttonDel_Click);
             // 
-            // buttonC
+            // buttonCE
             // 
-            this.buttonC.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonC.Location = new System.Drawing.Point(658, 317);
-            this.buttonC.Name = "buttonC";
-            this.buttonC.Size = new System.Drawing.Size(79, 35);
-            this.buttonC.TabIndex = 17;
-            this.buttonC.Text = "C";
-            this.buttonC.UseVisualStyleBackColor = true;
-            this.buttonC.Click += new System.EventHandler(this.buttonC_Click);
+            this.buttonCE.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonCE.Location = new System.Drawing.Point(756, 314);
+            this.buttonCE.Name = "buttonCE";
+            this.buttonCE.Size = new System.Drawing.Size(79, 35);
+            this.buttonCE.TabIndex = 17;
+            this.buttonCE.Text = "CE";
+            this.buttonCE.UseVisualStyleBackColor = true;
+            this.buttonCE.Click += new System.EventHandler(this.buttonC_Click);
             // 
             // buttonPlus
             // 
             this.buttonPlus.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonPlus.Location = new System.Drawing.Point(743, 317);
+            this.buttonPlus.Location = new System.Drawing.Point(841, 314);
             this.buttonPlus.Name = "buttonPlus";
             this.buttonPlus.Size = new System.Drawing.Size(50, 35);
             this.buttonPlus.TabIndex = 18;
@@ -322,7 +398,7 @@
             // buttonMinus
             // 
             this.buttonMinus.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonMinus.Location = new System.Drawing.Point(743, 358);
+            this.buttonMinus.Location = new System.Drawing.Point(841, 355);
             this.buttonMinus.Name = "buttonMinus";
             this.buttonMinus.Size = new System.Drawing.Size(50, 35);
             this.buttonMinus.TabIndex = 19;
@@ -333,7 +409,7 @@
             // buttonTimes
             // 
             this.buttonTimes.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonTimes.Location = new System.Drawing.Point(743, 399);
+            this.buttonTimes.Location = new System.Drawing.Point(841, 396);
             this.buttonTimes.Name = "buttonTimes";
             this.buttonTimes.Size = new System.Drawing.Size(50, 35);
             this.buttonTimes.TabIndex = 20;
@@ -344,7 +420,7 @@
             // buttonDevide
             // 
             this.buttonDevide.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonDevide.Location = new System.Drawing.Point(743, 442);
+            this.buttonDevide.Location = new System.Drawing.Point(841, 439);
             this.buttonDevide.Name = "buttonDevide";
             this.buttonDevide.Size = new System.Drawing.Size(50, 35);
             this.buttonDevide.TabIndex = 21;
@@ -355,7 +431,7 @@
             // buttonEquals
             // 
             this.buttonEquals.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonEquals.Location = new System.Drawing.Point(799, 399);
+            this.buttonEquals.Location = new System.Drawing.Point(897, 396);
             this.buttonEquals.Name = "buttonEquals";
             this.buttonEquals.Size = new System.Drawing.Size(50, 121);
             this.buttonEquals.TabIndex = 23;
@@ -378,7 +454,7 @@
             // buttonMC
             // 
             this.buttonMC.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonMC.Location = new System.Drawing.Point(575, 276);
+            this.buttonMC.Location = new System.Drawing.Point(673, 273);
             this.buttonMC.Name = "buttonMC";
             this.buttonMC.Size = new System.Drawing.Size(50, 35);
             this.buttonMC.TabIndex = 25;
@@ -389,7 +465,7 @@
             // buttonMR
             // 
             this.buttonMR.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonMR.Location = new System.Drawing.Point(631, 276);
+            this.buttonMR.Location = new System.Drawing.Point(729, 273);
             this.buttonMR.Name = "buttonMR";
             this.buttonMR.Size = new System.Drawing.Size(50, 35);
             this.buttonMR.TabIndex = 26;
@@ -400,7 +476,7 @@
             // buttonMS
             // 
             this.buttonMS.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonMS.Location = new System.Drawing.Point(687, 276);
+            this.buttonMS.Location = new System.Drawing.Point(785, 273);
             this.buttonMS.Name = "buttonMS";
             this.buttonMS.Size = new System.Drawing.Size(50, 35);
             this.buttonMS.TabIndex = 27;
@@ -411,7 +487,7 @@
             // buttonMplus
             // 
             this.buttonMplus.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonMplus.Location = new System.Drawing.Point(743, 276);
+            this.buttonMplus.Location = new System.Drawing.Point(841, 273);
             this.buttonMplus.Name = "buttonMplus";
             this.buttonMplus.Size = new System.Drawing.Size(50, 35);
             this.buttonMplus.TabIndex = 28;
@@ -422,7 +498,7 @@
             // buttonMminus
             // 
             this.buttonMminus.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonMminus.Location = new System.Drawing.Point(799, 276);
+            this.buttonMminus.Location = new System.Drawing.Point(897, 273);
             this.buttonMminus.Name = "buttonMminus";
             this.buttonMminus.Size = new System.Drawing.Size(50, 35);
             this.buttonMminus.TabIndex = 29;
@@ -433,7 +509,7 @@
             // buttonAns
             // 
             this.buttonAns.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonAns.Location = new System.Drawing.Point(743, 485);
+            this.buttonAns.Location = new System.Drawing.Point(841, 482);
             this.buttonAns.Name = "buttonAns";
             this.buttonAns.Size = new System.Drawing.Size(50, 35);
             this.buttonAns.TabIndex = 30;
@@ -444,7 +520,7 @@
             // buttonParanO
             // 
             this.buttonParanO.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonParanO.Location = new System.Drawing.Point(799, 317);
+            this.buttonParanO.Location = new System.Drawing.Point(897, 314);
             this.buttonParanO.Name = "buttonParanO";
             this.buttonParanO.Size = new System.Drawing.Size(50, 35);
             this.buttonParanO.TabIndex = 31;
@@ -455,7 +531,7 @@
             // buttonParanC
             // 
             this.buttonParanC.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonParanC.Location = new System.Drawing.Point(799, 358);
+            this.buttonParanC.Location = new System.Drawing.Point(897, 355);
             this.buttonParanC.Name = "buttonParanC";
             this.buttonParanC.Size = new System.Drawing.Size(50, 35);
             this.buttonParanC.TabIndex = 32;
@@ -463,12 +539,84 @@
             this.buttonParanC.UseVisualStyleBackColor = true;
             this.buttonParanC.Click += new System.EventHandler(this.buttonParanC_Click);
             // 
+            // buttonA
+            // 
+            this.buttonA.Enabled = false;
+            this.buttonA.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonA.Location = new System.Drawing.Point(617, 482);
+            this.buttonA.Name = "buttonA";
+            this.buttonA.Size = new System.Drawing.Size(50, 35);
+            this.buttonA.TabIndex = 33;
+            this.buttonA.Text = "A";
+            this.buttonA.UseVisualStyleBackColor = true;
+            // 
+            // buttonB
+            // 
+            this.buttonB.Enabled = false;
+            this.buttonB.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonB.Location = new System.Drawing.Point(617, 439);
+            this.buttonB.Name = "buttonB";
+            this.buttonB.Size = new System.Drawing.Size(50, 35);
+            this.buttonB.TabIndex = 34;
+            this.buttonB.Text = "B";
+            this.buttonB.UseVisualStyleBackColor = true;
+            // 
+            // buttonC
+            // 
+            this.buttonC.Enabled = false;
+            this.buttonC.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonC.Location = new System.Drawing.Point(617, 396);
+            this.buttonC.Name = "buttonC";
+            this.buttonC.Size = new System.Drawing.Size(50, 35);
+            this.buttonC.TabIndex = 35;
+            this.buttonC.Text = "C";
+            this.buttonC.UseVisualStyleBackColor = true;
+            // 
+            // buttonD
+            // 
+            this.buttonD.Enabled = false;
+            this.buttonD.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonD.Location = new System.Drawing.Point(617, 355);
+            this.buttonD.Name = "buttonD";
+            this.buttonD.Size = new System.Drawing.Size(50, 35);
+            this.buttonD.TabIndex = 36;
+            this.buttonD.Text = "D";
+            this.buttonD.UseVisualStyleBackColor = true;
+            // 
+            // buttonE
+            // 
+            this.buttonE.Enabled = false;
+            this.buttonE.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonE.Location = new System.Drawing.Point(617, 314);
+            this.buttonE.Name = "buttonE";
+            this.buttonE.Size = new System.Drawing.Size(50, 35);
+            this.buttonE.TabIndex = 37;
+            this.buttonE.Text = "E";
+            this.buttonE.UseVisualStyleBackColor = true;
+            // 
+            // buttonF
+            // 
+            this.buttonF.Enabled = false;
+            this.buttonF.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonF.Location = new System.Drawing.Point(617, 273);
+            this.buttonF.Name = "buttonF";
+            this.buttonF.Size = new System.Drawing.Size(50, 35);
+            this.buttonF.TabIndex = 38;
+            this.buttonF.Text = "F";
+            this.buttonF.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1008, 562);
+            this.Controls.Add(this.buttonF);
+            this.Controls.Add(this.buttonE);
+            this.Controls.Add(this.buttonD);
+            this.Controls.Add(this.buttonC);
+            this.Controls.Add(this.buttonB);
+            this.Controls.Add(this.buttonA);
             this.Controls.Add(this.buttonParanC);
             this.Controls.Add(this.buttonParanO);
             this.Controls.Add(this.buttonAns);
@@ -483,7 +631,7 @@
             this.Controls.Add(this.buttonTimes);
             this.Controls.Add(this.buttonMinus);
             this.Controls.Add(this.buttonPlus);
-            this.Controls.Add(this.buttonC);
+            this.Controls.Add(this.buttonCE);
             this.Controls.Add(this.buttonDel);
             this.Controls.Add(this.buttonPoint);
             this.Controls.Add(this.button0);
@@ -496,15 +644,15 @@
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.radioButton4);
-            this.Controls.Add(this.radioButton3);
-            this.Controls.Add(this.radioButton2);
-            this.Controls.Add(this.radioButton1);
+            this.Controls.Add(this.BinRadioButton);
+            this.Controls.Add(this.OctRadioButton);
+            this.Controls.Add(this.HexRadioButton);
+            this.Controls.Add(this.DecRadioButton);
             this.Controls.Add(this.expressionTextBox);
-            this.Controls.Add(this.tabControl1);
+            this.Controls.Add(this.TabControl);
             this.Name = "Form1";
             this.Text = "Form1";
-            this.tabControl1.ResumeLayout(false);
+            this.TabControl.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -512,15 +660,15 @@
 
         #endregion
 
-        private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.TabPage tabPage3;
-        private System.Windows.Forms.TabPage tabPage4;
+        private System.Windows.Forms.TabControl TabControl;
+        private System.Windows.Forms.TabPage GeneralTab;
+        private System.Windows.Forms.TabPage ProgrammerTab;
+        private System.Windows.Forms.TabPage TrigonometricTab;
         private System.Windows.Forms.RichTextBox expressionTextBox;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton3;
-        private System.Windows.Forms.RadioButton radioButton4;
+        private System.Windows.Forms.RadioButton DecRadioButton;
+        private System.Windows.Forms.RadioButton HexRadioButton;
+        private System.Windows.Forms.RadioButton OctRadioButton;
+        private System.Windows.Forms.RadioButton BinRadioButton;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
@@ -533,7 +681,7 @@
         private System.Windows.Forms.Button button0;
         private System.Windows.Forms.Button buttonPoint;
         private System.Windows.Forms.Button buttonDel;
-        private System.Windows.Forms.Button buttonC;
+        private System.Windows.Forms.Button buttonCE;
         private System.Windows.Forms.Button buttonPlus;
         private System.Windows.Forms.Button buttonMinus;
         private System.Windows.Forms.Button buttonTimes;
@@ -548,6 +696,17 @@
         private System.Windows.Forms.Button buttonAns;
         private System.Windows.Forms.Button buttonParanO;
         private System.Windows.Forms.Button buttonParanC;
+        private System.Windows.Forms.TabPage PowerTab;
+        private System.Windows.Forms.TabPage StatisticalTab;
+        private System.Windows.Forms.TabPage ConversionTab;
+        private System.Windows.Forms.TabPage ConstantsTab;
+        private System.Windows.Forms.TabPage OwnTab;
+        private System.Windows.Forms.Button buttonA;
+        private System.Windows.Forms.Button buttonB;
+        private System.Windows.Forms.Button buttonC;
+        private System.Windows.Forms.Button buttonD;
+        private System.Windows.Forms.Button buttonE;
+        private System.Windows.Forms.Button buttonF;
     }
 }
 
