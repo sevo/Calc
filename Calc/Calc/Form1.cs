@@ -18,11 +18,14 @@ namespace Calc
         StreamReader bcOut;
         StreamWriter bcIn;
         float memory = 0.0f;
+        protected bool graphOpened;
+        protected GrafForm grafoveOkno;
 
         public Form1()
         {
             InitializeComponent();
             startBC();
+            graphOpened = false;
             
         }
 
@@ -117,132 +120,38 @@ namespace Calc
             }
         }
 
-        private void button8_Click(object sender, EventArgs e)
+        /// <summary>
+        /// Funkcia ktora sluzi ako event na spracovanie stlaceny zakladnych tlacidiel (hodnot)
+        /// </summary>
+        /// <param name="sender">No fucking idee</param>
+        /// <param name="e">same as sender</param>
+        private void buttonNum_Click(object sender, EventArgs e)
         {
-            //resultTextBox.Text += "8";
+            Button s = sender as Button;
             int cursorPosition = expressionTextBox.SelectionStart;
-            expressionTextBox.Text = expressionTextBox.Text.Substring(0, cursorPosition) + "8" + expressionTextBox.Text.Substring(cursorPosition, expressionTextBox.Text.Length - cursorPosition);
+            expressionTextBox.Text = expressionTextBox.Text.Substring(0, cursorPosition) + s.Text + expressionTextBox.Text.Substring(cursorPosition, expressionTextBox.Text.Length - cursorPosition);
             expressionTextBox.SelectionStart = cursorPosition + 1;
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            //resultTextBox.Text += "1";
-            int cursorPosition = expressionTextBox.SelectionStart;
-            expressionTextBox.Text = expressionTextBox.Text.Substring(0, cursorPosition) + "1" + expressionTextBox.Text.Substring(cursorPosition, expressionTextBox.Text.Length - cursorPosition);
-            expressionTextBox.SelectionStart = cursorPosition + 1;
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            //resultTextBox.Text += "2";
-            int cursorPosition = expressionTextBox.SelectionStart;
-            expressionTextBox.Text = expressionTextBox.Text.Substring(0, cursorPosition) + "2" + expressionTextBox.Text.Substring(cursorPosition, expressionTextBox.Text.Length - cursorPosition);
-            expressionTextBox.SelectionStart = cursorPosition + 1;
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            //resultTextBox.Text += "3";
-            int cursorPosition = expressionTextBox.SelectionStart;
-            expressionTextBox.Text = expressionTextBox.Text.Substring(0, cursorPosition) + "3" + expressionTextBox.Text.Substring(cursorPosition, expressionTextBox.Text.Length - cursorPosition);
-            expressionTextBox.SelectionStart = cursorPosition + 1;
-        }
-
-        private void button0_Click(object sender, EventArgs e)
-        {
-            //resultTextBox.Text += "0";
-            int cursorPosition = expressionTextBox.SelectionStart;
-            expressionTextBox.Text = expressionTextBox.Text.Substring(0, cursorPosition) + "0" + expressionTextBox.Text.Substring(cursorPosition, expressionTextBox.Text.Length - cursorPosition);
-            expressionTextBox.SelectionStart = cursorPosition + 1;
-        }
-
-        private void buttonPoint_Click(object sender, EventArgs e)
-        {
-            //resultTextBox.Text += ".";
-            int cursorPosition = expressionTextBox.SelectionStart;
-            expressionTextBox.Text = expressionTextBox.Text.Substring(0, cursorPosition) + "." + expressionTextBox.Text.Substring(cursorPosition, expressionTextBox.Text.Length - cursorPosition);
-            expressionTextBox.SelectionStart = cursorPosition + 1;
-        }
-
-        private void buttonPlus_Click(object sender, EventArgs e)
-        {
-            //resultTextBox.Text += "+";
-            int cursorPosition = expressionTextBox.SelectionStart;
-            expressionTextBox.Text = expressionTextBox.Text.Substring(0, cursorPosition) + "+" + expressionTextBox.Text.Substring(cursorPosition, expressionTextBox.Text.Length - cursorPosition);
-            expressionTextBox.SelectionStart = cursorPosition + 1;
-        }
-
-        private void buttonMinus_Click(object sender, EventArgs e)
-        {
-            //resultTextBox.Text += "-";
-            int cursorPosition = expressionTextBox.SelectionStart;
-            expressionTextBox.Text = expressionTextBox.Text.Substring(0, cursorPosition) + "-" + expressionTextBox.Text.Substring(cursorPosition, expressionTextBox.Text.Length - cursorPosition);
-            expressionTextBox.SelectionStart = cursorPosition + 1;
-        }
-
-        private void buttonTimes_Click(object sender, EventArgs e)
-        {
-            //resultTextBox.Text += "*";
-            int cursorPosition = expressionTextBox.SelectionStart;
-            expressionTextBox.Text = expressionTextBox.Text.Substring(0, cursorPosition) + "*" + expressionTextBox.Text.Substring(cursorPosition, expressionTextBox.Text.Length - cursorPosition);
-            expressionTextBox.SelectionStart = cursorPosition + 1;
-        }
-
-        private void buttonDevide_Click(object sender, EventArgs e)
-        {
-            //resultTextBox.Text += "/";
-            int cursorPosition = expressionTextBox.SelectionStart;
-            expressionTextBox.Text = expressionTextBox.Text.Substring(0, cursorPosition) + "/" + expressionTextBox.Text.Substring(cursorPosition, expressionTextBox.Text.Length - cursorPosition);
-            expressionTextBox.SelectionStart = cursorPosition + 1;
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-            //resultTextBox.Text += "4";
-            int cursorPosition = expressionTextBox.SelectionStart;
-            expressionTextBox.Text = expressionTextBox.Text.Substring(0, cursorPosition) + "4" + expressionTextBox.Text.Substring(cursorPosition, expressionTextBox.Text.Length - cursorPosition);
-            expressionTextBox.SelectionStart = cursorPosition + 1;
-        }
-
-        private void button5_Click(object sender, EventArgs e)
-        {
-            //resultTextBox.Text += "5";
-            int cursorPosition = expressionTextBox.SelectionStart;
-            expressionTextBox.Text = expressionTextBox.Text.Substring(0, cursorPosition) + "5" + expressionTextBox.Text.Substring(cursorPosition, expressionTextBox.Text.Length - cursorPosition);
-            expressionTextBox.SelectionStart = cursorPosition + 1;
-        }
-
-        private void button6_Click(object sender, EventArgs e)
-        {
-            //resultTextBox.Text += "6";
-            int cursorPosition = expressionTextBox.SelectionStart;
-            expressionTextBox.Text = expressionTextBox.Text.Substring(0, cursorPosition) + "6" + expressionTextBox.Text.Substring(cursorPosition, expressionTextBox.Text.Length - cursorPosition);
-            expressionTextBox.SelectionStart = cursorPosition + 1;
-        }
-
-        private void button7_Click(object sender, EventArgs e)
-        {
-            //resultTextBox.Text += "7";
-            int cursorPosition = expressionTextBox.SelectionStart;
-            expressionTextBox.Text = expressionTextBox.Text.Substring(0, cursorPosition) + "7" + expressionTextBox.Text.Substring(cursorPosition, expressionTextBox.Text.Length - cursorPosition);
-            expressionTextBox.SelectionStart = cursorPosition + 1;
-        }
-
-        private void button9_Click(object sender, EventArgs e)
-        {
-            //resultTextBox.Text += "9";
-            int cursorPosition = expressionTextBox.SelectionStart;
-            expressionTextBox.Text = expressionTextBox.Text.Substring(0, cursorPosition) + "9" + expressionTextBox.Text.Substring(cursorPosition, expressionTextBox.Text.Length - cursorPosition);
-            expressionTextBox.SelectionStart = cursorPosition +1;
         }
 
         private void buttonEquals_Click(object sender, EventArgs e)
         {
             if (expressionTextBox.Text.StartsWith("f(x)=") || expressionTextBox.Text.StartsWith("y="))
             {
-                Form grafoveOkno = new GrafForm();
-                grafoveOkno.Visible = true;
+                if (!graphOpened)   //grafove okno este neni otvorene
+                {
+                    grafoveOkno = new GrafForm(expressionTextBox.Text, ref graphOpened);
+                    grafoveOkno.Visible = true;
+                    graphOpened = true;
+                }
+                else                //grafove okno uz je otvorene
+                {
+                    grafoveOkno.AddFunkcia(expressionTextBox.Text);
+                    grafoveOkno.Show();
+                    grafoveOkno.TopMost = true;
+                    grafoveOkno.Focus();
+                    grafoveOkno.BringToFront();
+                    grafoveOkno.TopMost = false;
+                }
             }
             else { 
                 Thread t = new Thread(getResult);
@@ -263,6 +172,9 @@ namespace Calc
 
         private void buttonDel_Click(object sender, EventArgs e)
         {
+            if(expressionTextBox.Text=="") {
+                return;
+            }
             int cursorPosition = expressionTextBox.SelectionStart;
             expressionTextBox.Text = expressionTextBox.Text.Substring(0, cursorPosition-1) + expressionTextBox.Text.Substring(cursorPosition, expressionTextBox.Text.Length - cursorPosition);
             expressionTextBox.SelectionStart = cursorPosition - 1;
@@ -320,20 +232,6 @@ namespace Calc
                     memory = float.Parse(resultTextBox.Text);
             }
             catch (FormatException err) { }
-        }
-
-        private void buttonParanO_Click(object sender, EventArgs e)
-        {
-            int cursorPosition = expressionTextBox.SelectionStart;
-            expressionTextBox.Text = expressionTextBox.Text.Substring(0, cursorPosition) + "(" + expressionTextBox.Text.Substring(cursorPosition, expressionTextBox.Text.Length - cursorPosition);
-            expressionTextBox.SelectionStart = cursorPosition + 1;
-        }
-
-        private void buttonParanC_Click(object sender, EventArgs e)
-        {
-            int cursorPosition = expressionTextBox.SelectionStart;
-            expressionTextBox.Text = expressionTextBox.Text.Substring(0, cursorPosition) + ")" + expressionTextBox.Text.Substring(cursorPosition, expressionTextBox.Text.Length - cursorPosition);
-            expressionTextBox.SelectionStart = cursorPosition + 1;
         }
 
         private void buttonAns_Click(object sender, EventArgs e)

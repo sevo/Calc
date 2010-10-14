@@ -15,3 +15,12 @@ D:\skola\stu\3.rocnik\zima\ICP\projekt\Calc\Calc\Calc\obj\Debug\Calc.Form1.resou
 D:\skola\stu\3.rocnik\zima\ICP\projekt\Calc\Calc\Calc\obj\Debug\Calc.Properties.Resources.resources
 D:\skola\stu\3.rocnik\zima\ICP\projekt\Calc\Calc\Calc\obj\Debug\Calc.csproj.GenerateResource.Cache
 D:\skola\stu\3.rocnik\zima\ICP\projekt\Calc\Calc\Calc\obj\Debug\Calc.GrafForm.resources
+E:\C++\ICP\Calc\Calc\obj\Debug\Calc.exe
+E:\C++\ICP\Calc\Calc\obj\Debug\Calc.pdb
+E:\C++\ICP\Calc\Calc\bin\Debug\Calc.exe
+E:\C++\ICP\Calc\Calc\bin\Debug\Calc.pdb
+E:\C++\ICP\Calc\Calc\obj\Debug\ResolveAssemblyReference.cache
+E:\C++\ICP\Calc\Calc\obj\Debug\Calc.Form1.resources
+E:\C++\ICP\Calc\Calc\obj\Debug\Calc.GrafForm.resources
+E:\C++\ICP\Calc\Calc\obj\Debug\Calc.Properties.Resources.resources
+E:\C++\ICP\Calc\Calc\obj\Debug\Calc.csproj.GenerateResource.Cache
