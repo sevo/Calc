@@ -464,14 +464,8 @@ namespace Calc
                 expressionTextBox.Text = expressionTextBox.Text.Replace("8", "");
                 expressionTextBox.Text = expressionTextBox.Text.Replace("9", "");
             }
-
-
-
-
-            //if (expressionTextBox.Text.Length < length) 
-                expressionTextBox.SelectionStart = cursor_position - (expressionTextBox.Text.Length - length);
-            //ak sa nejaky znam zmazal tak sa posunie nastavenie kurzora
-        }
-  
+            expressionTextBox.SelectionStart = cursor_position - (expressionTextBox.Text.Length - length);
+            //ak sa nejaky znak zmazal tak sa posunie nastavenie kurzora
+        }  
     }
 }

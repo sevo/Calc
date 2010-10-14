@@ -80,7 +80,6 @@
             // 
             // TabControl
             // 
-            this.TabControl.Alignment = System.Windows.Forms.TabAlignment.Right;
             this.TabControl.Controls.Add(this.GeneralTab);
             this.TabControl.Controls.Add(this.ProgrammerTab);
             this.TabControl.Controls.Add(this.TrigonometricTab);
@@ -101,80 +100,80 @@
             // GeneralTab
             // 
             this.GeneralTab.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.GeneralTab.Location = new System.Drawing.Point(4, 4);
+            this.GeneralTab.Location = new System.Drawing.Point(4, 54);
             this.GeneralTab.Name = "GeneralTab";
             this.GeneralTab.Padding = new System.Windows.Forms.Padding(3);
-            this.GeneralTab.Size = new System.Drawing.Size(457, 529);
+            this.GeneralTab.Size = new System.Drawing.Size(507, 479);
             this.GeneralTab.TabIndex = 1;
             this.GeneralTab.Text = "General";
             this.GeneralTab.UseVisualStyleBackColor = true;
             // 
             // ProgrammerTab
             // 
-            this.ProgrammerTab.Location = new System.Drawing.Point(4, 4);
+            this.ProgrammerTab.Location = new System.Drawing.Point(4, 29);
             this.ProgrammerTab.Name = "ProgrammerTab";
             this.ProgrammerTab.Padding = new System.Windows.Forms.Padding(3);
-            this.ProgrammerTab.Size = new System.Drawing.Size(457, 529);
+            this.ProgrammerTab.Size = new System.Drawing.Size(507, 504);
             this.ProgrammerTab.TabIndex = 2;
             this.ProgrammerTab.Text = "Programmer";
             this.ProgrammerTab.UseVisualStyleBackColor = true;
             // 
             // TrigonometricTab
             // 
-            this.TrigonometricTab.Location = new System.Drawing.Point(4, 4);
+            this.TrigonometricTab.Location = new System.Drawing.Point(4, 29);
             this.TrigonometricTab.Name = "TrigonometricTab";
             this.TrigonometricTab.Padding = new System.Windows.Forms.Padding(3);
-            this.TrigonometricTab.Size = new System.Drawing.Size(457, 529);
+            this.TrigonometricTab.Size = new System.Drawing.Size(507, 504);
             this.TrigonometricTab.TabIndex = 3;
             this.TrigonometricTab.Text = "Trigonometric";
             this.TrigonometricTab.UseVisualStyleBackColor = true;
             // 
             // PowerTab
             // 
-            this.PowerTab.Location = new System.Drawing.Point(4, 4);
+            this.PowerTab.Location = new System.Drawing.Point(4, 29);
             this.PowerTab.Name = "PowerTab";
             this.PowerTab.Padding = new System.Windows.Forms.Padding(3);
-            this.PowerTab.Size = new System.Drawing.Size(457, 529);
+            this.PowerTab.Size = new System.Drawing.Size(507, 504);
             this.PowerTab.TabIndex = 4;
             this.PowerTab.Text = "Power";
             this.PowerTab.UseVisualStyleBackColor = true;
             // 
             // StatisticalTab
             // 
-            this.StatisticalTab.Location = new System.Drawing.Point(4, 4);
+            this.StatisticalTab.Location = new System.Drawing.Point(4, 29);
             this.StatisticalTab.Name = "StatisticalTab";
             this.StatisticalTab.Padding = new System.Windows.Forms.Padding(3);
-            this.StatisticalTab.Size = new System.Drawing.Size(457, 529);
+            this.StatisticalTab.Size = new System.Drawing.Size(507, 504);
             this.StatisticalTab.TabIndex = 5;
             this.StatisticalTab.Text = "Statistical";
             this.StatisticalTab.UseVisualStyleBackColor = true;
             // 
             // ConversionTab
             // 
-            this.ConversionTab.Location = new System.Drawing.Point(4, 4);
+            this.ConversionTab.Location = new System.Drawing.Point(4, 54);
             this.ConversionTab.Name = "ConversionTab";
             this.ConversionTab.Padding = new System.Windows.Forms.Padding(3);
-            this.ConversionTab.Size = new System.Drawing.Size(457, 529);
+            this.ConversionTab.Size = new System.Drawing.Size(507, 479);
             this.ConversionTab.TabIndex = 6;
             this.ConversionTab.Text = "Conversion";
             this.ConversionTab.UseVisualStyleBackColor = true;
             // 
             // ConstantsTab
             // 
-            this.ConstantsTab.Location = new System.Drawing.Point(4, 4);
+            this.ConstantsTab.Location = new System.Drawing.Point(4, 54);
             this.ConstantsTab.Name = "ConstantsTab";
             this.ConstantsTab.Padding = new System.Windows.Forms.Padding(3);
-            this.ConstantsTab.Size = new System.Drawing.Size(457, 529);
+            this.ConstantsTab.Size = new System.Drawing.Size(507, 479);
             this.ConstantsTab.TabIndex = 7;
             this.ConstantsTab.Text = "Constants";
             this.ConstantsTab.UseVisualStyleBackColor = true;
             // 
             // OwnTab
             // 
-            this.OwnTab.Location = new System.Drawing.Point(4, 4);
+            this.OwnTab.Location = new System.Drawing.Point(4, 54);
             this.OwnTab.Name = "OwnTab";
             this.OwnTab.Padding = new System.Windows.Forms.Padding(3);
-            this.OwnTab.Size = new System.Drawing.Size(457, 529);
+            this.OwnTab.Size = new System.Drawing.Size(507, 479);
             this.OwnTab.TabIndex = 8;
             this.OwnTab.Text = "Own";
             this.OwnTab.ToolTipText = "Own selection of functions";
