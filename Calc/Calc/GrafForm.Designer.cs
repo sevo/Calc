@@ -133,7 +133,7 @@
             this.checkedListBox1.FormattingEnabled = true;
             this.checkedListBox1.Location = new System.Drawing.Point(12, 30);
             this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(193, 319);
+            this.checkedListBox1.Size = new System.Drawing.Size(193, 274);
             this.checkedListBox1.TabIndex = 8;
             // 
             // yTrackBar
@@ -248,7 +248,7 @@
             // 
             // buttonSelectAll
             // 
-            this.buttonSelectAll.Location = new System.Drawing.Point(12, 353);
+            this.buttonSelectAll.Location = new System.Drawing.Point(12, 313);
             this.buttonSelectAll.Name = "buttonSelectAll";
             this.buttonSelectAll.Size = new System.Drawing.Size(75, 23);
             this.buttonSelectAll.TabIndex = 22;
@@ -257,7 +257,7 @@
             // 
             // buttonInverseSellection
             // 
-            this.buttonInverseSellection.Location = new System.Drawing.Point(105, 353);
+            this.buttonInverseSellection.Location = new System.Drawing.Point(105, 313);
             this.buttonInverseSellection.Name = "buttonInverseSellection";
             this.buttonInverseSellection.Size = new System.Drawing.Size(100, 23);
             this.buttonInverseSellection.TabIndex = 23;
@@ -266,7 +266,7 @@
             // 
             // buttonRemove
             // 
-            this.buttonRemove.Location = new System.Drawing.Point(12, 382);
+            this.buttonRemove.Location = new System.Drawing.Point(12, 342);
             this.buttonRemove.Name = "buttonRemove";
             this.buttonRemove.Size = new System.Drawing.Size(75, 23);
             this.buttonRemove.TabIndex = 24;
@@ -275,7 +275,7 @@
             // 
             // buttonZoomIn
             // 
-            this.buttonZoomIn.Location = new System.Drawing.Point(12, 420);
+            this.buttonZoomIn.Location = new System.Drawing.Point(12, 403);
             this.buttonZoomIn.Name = "buttonZoomIn";
             this.buttonZoomIn.Size = new System.Drawing.Size(75, 23);
             this.buttonZoomIn.TabIndex = 25;
@@ -284,7 +284,7 @@
             // 
             // buttonZoomOut
             // 
-            this.buttonZoomOut.Location = new System.Drawing.Point(105, 420);
+            this.buttonZoomOut.Location = new System.Drawing.Point(105, 403);
             this.buttonZoomOut.Name = "buttonZoomOut";
             this.buttonZoomOut.Size = new System.Drawing.Size(75, 23);
             this.buttonZoomOut.TabIndex = 26;
@@ -294,7 +294,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(31, 485);
+            this.button1.Location = new System.Drawing.Point(31, 468);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(45, 35);
             this.button1.TabIndex = 27;
@@ -303,7 +303,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(117, 486);
+            this.button2.Location = new System.Drawing.Point(117, 469);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(45, 35);
             this.button2.TabIndex = 28;
@@ -312,7 +312,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(74, 519);
+            this.button3.Location = new System.Drawing.Point(74, 502);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(45, 35);
             this.button3.TabIndex = 29;
@@ -321,7 +321,7 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(74, 452);
+            this.button4.Location = new System.Drawing.Point(74, 435);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(45, 35);
             this.button4.TabIndex = 30;
