@@ -61,6 +61,9 @@
             this.buttonMS = new System.Windows.Forms.Button();
             this.buttonMplus = new System.Windows.Forms.Button();
             this.buttonMminus = new System.Windows.Forms.Button();
+            this.buttonAns = new System.Windows.Forms.Button();
+            this.buttonParanO = new System.Windows.Forms.Button();
+            this.buttonParanC = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -330,7 +333,7 @@
             // buttonTimes
             // 
             this.buttonTimes.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonTimes.Location = new System.Drawing.Point(799, 317);
+            this.buttonTimes.Location = new System.Drawing.Point(743, 399);
             this.buttonTimes.Name = "buttonTimes";
             this.buttonTimes.Size = new System.Drawing.Size(50, 35);
             this.buttonTimes.TabIndex = 20;
@@ -341,7 +344,7 @@
             // buttonDevide
             // 
             this.buttonDevide.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonDevide.Location = new System.Drawing.Point(799, 358);
+            this.buttonDevide.Location = new System.Drawing.Point(743, 442);
             this.buttonDevide.Name = "buttonDevide";
             this.buttonDevide.Size = new System.Drawing.Size(50, 35);
             this.buttonDevide.TabIndex = 21;
@@ -352,9 +355,9 @@
             // buttonEquals
             // 
             this.buttonEquals.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonEquals.Location = new System.Drawing.Point(743, 399);
+            this.buttonEquals.Location = new System.Drawing.Point(799, 399);
             this.buttonEquals.Name = "buttonEquals";
-            this.buttonEquals.Size = new System.Drawing.Size(106, 121);
+            this.buttonEquals.Size = new System.Drawing.Size(50, 121);
             this.buttonEquals.TabIndex = 23;
             this.buttonEquals.Text = "=";
             this.buttonEquals.UseVisualStyleBackColor = true;
@@ -427,12 +430,48 @@
             this.buttonMminus.UseVisualStyleBackColor = true;
             this.buttonMminus.Click += new System.EventHandler(this.buttonMminus_Click);
             // 
+            // buttonAns
+            // 
+            this.buttonAns.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonAns.Location = new System.Drawing.Point(743, 485);
+            this.buttonAns.Name = "buttonAns";
+            this.buttonAns.Size = new System.Drawing.Size(50, 35);
+            this.buttonAns.TabIndex = 30;
+            this.buttonAns.Text = "Ans";
+            this.buttonAns.UseVisualStyleBackColor = true;
+            this.buttonAns.Click += new System.EventHandler(this.buttonAns_Click);
+            // 
+            // buttonParanO
+            // 
+            this.buttonParanO.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonParanO.Location = new System.Drawing.Point(799, 317);
+            this.buttonParanO.Name = "buttonParanO";
+            this.buttonParanO.Size = new System.Drawing.Size(50, 35);
+            this.buttonParanO.TabIndex = 31;
+            this.buttonParanO.Text = "(";
+            this.buttonParanO.UseVisualStyleBackColor = true;
+            this.buttonParanO.Click += new System.EventHandler(this.buttonParanO_Click);
+            // 
+            // buttonParanC
+            // 
+            this.buttonParanC.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonParanC.Location = new System.Drawing.Point(799, 358);
+            this.buttonParanC.Name = "buttonParanC";
+            this.buttonParanC.Size = new System.Drawing.Size(50, 35);
+            this.buttonParanC.TabIndex = 32;
+            this.buttonParanC.Text = ")";
+            this.buttonParanC.UseVisualStyleBackColor = true;
+            this.buttonParanC.Click += new System.EventHandler(this.buttonParanC_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1008, 562);
+            this.Controls.Add(this.buttonParanC);
+            this.Controls.Add(this.buttonParanO);
+            this.Controls.Add(this.buttonAns);
             this.Controls.Add(this.buttonMminus);
             this.Controls.Add(this.buttonMplus);
             this.Controls.Add(this.buttonMS);
@@ -506,6 +545,9 @@
         private System.Windows.Forms.Button buttonMS;
         private System.Windows.Forms.Button buttonMplus;
         private System.Windows.Forms.Button buttonMminus;
+        private System.Windows.Forms.Button buttonAns;
+        private System.Windows.Forms.Button buttonParanO;
+        private System.Windows.Forms.Button buttonParanC;
     }
 }
 

@@ -310,6 +310,33 @@ namespace Calc
             }
             catch (FormatException err) { }
         }
+
+        private void buttonParanO_Click(object sender, EventArgs e)
+        {
+            int cursorPosition = expressionTextBox.SelectionStart;
+            expressionTextBox.Text = expressionTextBox.Text.Substring(0, cursorPosition) + "(" + expressionTextBox.Text.Substring(cursorPosition, expressionTextBox.Text.Length - cursorPosition);
+            expressionTextBox.SelectionStart = cursorPosition + 1;
+        }
+
+        private void buttonParanC_Click(object sender, EventArgs e)
+        {
+            int cursorPosition = expressionTextBox.SelectionStart;
+            expressionTextBox.Text = expressionTextBox.Text.Substring(0, cursorPosition) + ")" + expressionTextBox.Text.Substring(cursorPosition, expressionTextBox.Text.Length - cursorPosition);
+            expressionTextBox.SelectionStart = cursorPosition + 1;
+        }
+
+        private void buttonAns_Click(object sender, EventArgs e)
+        {
+            String ans;
+            try
+            {
+                ans = float.Parse(resultTextBox.Text).ToString();
+            }
+            catch (FormatException err) { ans="0";}
+            int cursorPosition = expressionTextBox.SelectionStart;
+            expressionTextBox.Text = expressionTextBox.Text.Substring(0, cursorPosition) + ans + expressionTextBox.Text.Substring(cursorPosition, expressionTextBox.Text.Length - cursorPosition);
+            expressionTextBox.SelectionStart = cursorPosition + ans.Length;
+        }
   
     }
 }
