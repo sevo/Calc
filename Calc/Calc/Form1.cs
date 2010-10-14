@@ -364,6 +364,7 @@ namespace Calc
             }
             expressionTextBox.SelectionStart = cursor_position - (expressionTextBox.Text.Length - length);
             //ak sa nejaky znak zmazal tak sa posunie nastavenie kurzora
-        }  
+        }
+
     }
 }
