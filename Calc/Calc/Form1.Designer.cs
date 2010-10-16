@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.TabControl = new System.Windows.Forms.TabControl();
             this.GeneralTab = new System.Windows.Forms.TabPage();
             this.fibonacciButton = new System.Windows.Forms.Button();
@@ -94,6 +95,15 @@
             this.radDegButton = new System.Windows.Forms.Button();
             this.degRadButton = new System.Windows.Forms.Button();
             this.ConstantsTab = new System.Windows.Forms.TabPage();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.ggButton = new System.Windows.Forms.Button();
+            this.GButton = new System.Windows.Forms.Button();
+            this.hButton = new System.Windows.Forms.Button();
+            this.cButton = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.goldenButton = new System.Windows.Forms.Button();
+            this.eButton = new System.Windows.Forms.Button();
+            this.piButton = new System.Windows.Forms.Button();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.expressionTextBox = new System.Windows.Forms.RichTextBox();
             this.DecRadioButton = new System.Windows.Forms.RadioButton();
@@ -177,15 +187,7 @@
             this.tabPage7 = new System.Windows.Forms.TabPage();
             this.tabPage8 = new System.Windows.Forms.TabPage();
             this.tabPage9 = new System.Windows.Forms.TabPage();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.piButton = new System.Windows.Forms.Button();
-            this.eButton = new System.Windows.Forms.Button();
-            this.goldenButton = new System.Windows.Forms.Button();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.GButton = new System.Windows.Forms.Button();
-            this.hButton = new System.Windows.Forms.Button();
-            this.cButton = new System.Windows.Forms.Button();
-            this.ggButton = new System.Windows.Forms.Button();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.TabControl.SuspendLayout();
             this.GeneralTab.SuspendLayout();
             this.ProgrammerTab.SuspendLayout();
@@ -194,11 +196,11 @@
             this.StatisticalTab.SuspendLayout();
             this.ConversionTab.SuspendLayout();
             this.ConstantsTab.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.tabPage4.SuspendLayout();
-            this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // TabControl
@@ -251,6 +253,7 @@
             this.fibonacciButton.TabIndex = 12;
             this.fibonacciButton.Text = "Fibonacci";
             this.fibonacciButton.UseVisualStyleBackColor = true;
+            this.fibonacciButton.Click += new System.EventHandler(this.buttonFun_Click);
             // 
             // pytagorasButton
             // 
@@ -261,6 +264,7 @@
             this.pytagorasButton.TabIndex = 11;
             this.pytagorasButton.Text = "Pytagoras";
             this.pytagorasButton.UseVisualStyleBackColor = true;
+            this.pytagorasButton.Click += new System.EventHandler(this.buttonFun_Click);
             // 
             // modButton
             // 
@@ -271,6 +275,7 @@
             this.modButton.TabIndex = 10;
             this.modButton.Text = "Mod";
             this.modButton.UseVisualStyleBackColor = true;
+            this.modButton.Click += new System.EventHandler(this.buttonNum_Click);
             // 
             // randomButton
             // 
@@ -281,6 +286,7 @@
             this.randomButton.TabIndex = 9;
             this.randomButton.Text = "Random";
             this.randomButton.UseVisualStyleBackColor = true;
+            this.randomButton.Click += new System.EventHandler(this.buttonFun_Click);
             // 
             // factorialButton
             // 
@@ -291,6 +297,7 @@
             this.factorialButton.TabIndex = 8;
             this.factorialButton.Text = "Factorial";
             this.factorialButton.UseVisualStyleBackColor = true;
+            this.factorialButton.Click += new System.EventHandler(this.buttonFun_Click);
             // 
             // primeButton
             // 
@@ -301,6 +308,7 @@
             this.primeButton.TabIndex = 7;
             this.primeButton.Text = "Prime";
             this.primeButton.UseVisualStyleBackColor = true;
+            this.primeButton.Click += new System.EventHandler(this.buttonFun_Click);
             // 
             // sumButton
             // 
@@ -311,6 +319,7 @@
             this.sumButton.TabIndex = 6;
             this.sumButton.Text = "Sum";
             this.sumButton.UseVisualStyleBackColor = true;
+            this.sumButton.Click += new System.EventHandler(this.buttonFun_Click);
             // 
             // digitButton
             // 
@@ -321,6 +330,7 @@
             this.digitButton.TabIndex = 5;
             this.digitButton.Text = "Digits Sum";
             this.digitButton.UseVisualStyleBackColor = true;
+            this.digitButton.Click += new System.EventHandler(this.buttonFun_Click);
             // 
             // roundButton
             // 
@@ -331,6 +341,7 @@
             this.roundButton.TabIndex = 4;
             this.roundButton.Text = "Round";
             this.roundButton.UseVisualStyleBackColor = true;
+            this.roundButton.Click += new System.EventHandler(this.buttonFun_Click);
             // 
             // floorButton
             // 
@@ -341,6 +352,7 @@
             this.floorButton.TabIndex = 3;
             this.floorButton.Text = "Floor";
             this.floorButton.UseVisualStyleBackColor = true;
+            this.floorButton.Click += new System.EventHandler(this.buttonFun_Click);
             // 
             // absButton
             // 
@@ -351,6 +363,7 @@
             this.absButton.TabIndex = 2;
             this.absButton.Text = "Absolute";
             this.absButton.UseVisualStyleBackColor = true;
+            this.absButton.Click += new System.EventHandler(this.buttonFun_Click);
             // 
             // ProgrammerTab
             // 
@@ -380,6 +393,7 @@
             this.gcdButton.TabIndex = 40;
             this.gcdButton.Text = "GCD";
             this.gcdButton.UseVisualStyleBackColor = true;
+            this.gcdButton.Click += new System.EventHandler(this.buttonFun_Click);
             // 
             // lcmButton
             // 
@@ -390,6 +404,7 @@
             this.lcmButton.TabIndex = 39;
             this.lcmButton.Text = "LCM";
             this.lcmButton.UseVisualStyleBackColor = true;
+            this.lcmButton.Click += new System.EventHandler(this.buttonFun_Click);
             // 
             // andButton
             // 
@@ -400,6 +415,7 @@
             this.andButton.TabIndex = 10;
             this.andButton.Text = "And";
             this.andButton.UseVisualStyleBackColor = true;
+            this.andButton.Click += new System.EventHandler(this.buttonNum_Click);
             // 
             // orButton
             // 
@@ -410,6 +426,7 @@
             this.orButton.TabIndex = 9;
             this.orButton.Text = "Or";
             this.orButton.UseVisualStyleBackColor = true;
+            this.orButton.Click += new System.EventHandler(this.buttonNum_Click);
             // 
             // binRightButton
             // 
@@ -420,6 +437,7 @@
             this.binRightButton.TabIndex = 8;
             this.binRightButton.Text = ">>";
             this.binRightButton.UseVisualStyleBackColor = true;
+            this.binRightButton.Click += new System.EventHandler(this.buttonNum_Click);
             // 
             // binLeftButton
             // 
@@ -430,6 +448,7 @@
             this.binLeftButton.TabIndex = 7;
             this.binLeftButton.Text = "<<";
             this.binLeftButton.UseVisualStyleBackColor = true;
+            this.binLeftButton.Click += new System.EventHandler(this.buttonNum_Click);
             // 
             // fracButton
             // 
@@ -440,6 +459,7 @@
             this.fracButton.TabIndex = 6;
             this.fracButton.Text = "Frac";
             this.fracButton.UseVisualStyleBackColor = true;
+            this.fracButton.Click += new System.EventHandler(this.buttonFun_Click);
             // 
             // coielButton
             // 
@@ -450,6 +470,7 @@
             this.coielButton.TabIndex = 5;
             this.coielButton.Text = "Coiel";
             this.coielButton.UseVisualStyleBackColor = true;
+            this.coielButton.Click += new System.EventHandler(this.buttonFun_Click);
             // 
             // binNegButton
             // 
@@ -460,6 +481,7 @@
             this.binNegButton.TabIndex = 4;
             this.binNegButton.Text = "!";
             this.binNegButton.UseVisualStyleBackColor = true;
+            this.binNegButton.Click += new System.EventHandler(this.buttonNum_Click);
             // 
             // TrigonometricTab
             // 
@@ -496,6 +518,7 @@
             this.archypcothButton.TabIndex = 20;
             this.archypcothButton.Text = "Hyparcotg";
             this.archypcothButton.UseVisualStyleBackColor = true;
+            this.archypcothButton.Click += new System.EventHandler(this.buttonFun_Click);
             // 
             // archyptgButton
             // 
@@ -506,6 +529,7 @@
             this.archyptgButton.TabIndex = 19;
             this.archyptgButton.Text = "Hyparctg";
             this.archyptgButton.UseVisualStyleBackColor = true;
+            this.archyptgButton.Click += new System.EventHandler(this.buttonFun_Click);
             // 
             // archypcosButton
             // 
@@ -516,6 +540,7 @@
             this.archypcosButton.TabIndex = 18;
             this.archypcosButton.Text = "Hyparcos";
             this.archypcosButton.UseVisualStyleBackColor = true;
+            this.archypcosButton.Click += new System.EventHandler(this.buttonFun_Click);
             // 
             // archypsinButton
             // 
@@ -526,6 +551,7 @@
             this.archypsinButton.TabIndex = 17;
             this.archypsinButton.Text = "Hyparcsin";
             this.archypsinButton.UseVisualStyleBackColor = true;
+            this.archypsinButton.Click += new System.EventHandler(this.buttonFun_Click);
             // 
             // hypcotgButton
             // 
@@ -536,6 +562,7 @@
             this.hypcotgButton.TabIndex = 16;
             this.hypcotgButton.Text = "Hypcotg";
             this.hypcotgButton.UseVisualStyleBackColor = true;
+            this.hypcotgButton.Click += new System.EventHandler(this.buttonFun_Click);
             // 
             // hyptgButton
             // 
@@ -546,6 +573,7 @@
             this.hyptgButton.TabIndex = 15;
             this.hyptgButton.Text = "Hyptg";
             this.hyptgButton.UseVisualStyleBackColor = true;
+            this.hyptgButton.Click += new System.EventHandler(this.buttonFun_Click);
             // 
             // hypcosbutton
             // 
@@ -556,6 +584,7 @@
             this.hypcosbutton.TabIndex = 14;
             this.hypcosbutton.Text = "Hypcos";
             this.hypcosbutton.UseVisualStyleBackColor = true;
+            this.hypcosbutton.Click += new System.EventHandler(this.buttonFun_Click);
             // 
             // hypsinButton
             // 
@@ -566,6 +595,7 @@
             this.hypsinButton.TabIndex = 13;
             this.hypsinButton.Text = "Hypsin";
             this.hypsinButton.UseVisualStyleBackColor = true;
+            this.hypsinButton.Click += new System.EventHandler(this.buttonFun_Click);
             // 
             // arcotgButton
             // 
@@ -576,6 +606,7 @@
             this.arcotgButton.TabIndex = 12;
             this.arcotgButton.Text = "Arcotg";
             this.arcotgButton.UseVisualStyleBackColor = true;
+            this.arcotgButton.Click += new System.EventHandler(this.buttonFun_Click);
             // 
             // arctgButton
             // 
@@ -586,6 +617,7 @@
             this.arctgButton.TabIndex = 11;
             this.arctgButton.Text = "Arctg";
             this.arctgButton.UseVisualStyleBackColor = true;
+            this.arctgButton.Click += new System.EventHandler(this.buttonFun_Click);
             // 
             // arcosButton
             // 
@@ -596,6 +628,7 @@
             this.arcosButton.TabIndex = 10;
             this.arcosButton.Text = "Arcos";
             this.arcosButton.UseVisualStyleBackColor = true;
+            this.arcosButton.Click += new System.EventHandler(this.buttonFun_Click);
             // 
             // arcsinButton
             // 
@@ -606,6 +639,7 @@
             this.arcsinButton.TabIndex = 9;
             this.arcsinButton.Text = "Arcsin";
             this.arcsinButton.UseVisualStyleBackColor = true;
+            this.arcsinButton.Click += new System.EventHandler(this.buttonFun_Click);
             // 
             // cotgButton
             // 
@@ -616,6 +650,7 @@
             this.cotgButton.TabIndex = 8;
             this.cotgButton.Text = "Cotg";
             this.cotgButton.UseVisualStyleBackColor = true;
+            this.cotgButton.Click += new System.EventHandler(this.buttonFun_Click);
             // 
             // tgButton
             // 
@@ -626,6 +661,7 @@
             this.tgButton.TabIndex = 7;
             this.tgButton.Text = "Tg";
             this.tgButton.UseVisualStyleBackColor = true;
+            this.tgButton.Click += new System.EventHandler(this.buttonFun_Click);
             // 
             // cosButton
             // 
@@ -636,6 +672,7 @@
             this.cosButton.TabIndex = 6;
             this.cosButton.Text = "Cos";
             this.cosButton.UseVisualStyleBackColor = true;
+            this.cosButton.Click += new System.EventHandler(this.buttonFun_Click);
             // 
             // sinButton
             // 
@@ -646,6 +683,7 @@
             this.sinButton.TabIndex = 5;
             this.sinButton.Text = "Sin";
             this.sinButton.UseVisualStyleBackColor = true;
+            this.sinButton.Click += new System.EventHandler(this.buttonFun_Click);
             // 
             // PowerTab
             // 
@@ -672,6 +710,7 @@
             this.logButton.TabIndex = 8;
             this.logButton.Text = "Log";
             this.logButton.UseVisualStyleBackColor = true;
+            this.logButton.Click += new System.EventHandler(this.buttonFun_Click);
             // 
             // lnButton
             // 
@@ -682,6 +721,7 @@
             this.lnButton.TabIndex = 7;
             this.lnButton.Text = "Ln";
             this.lnButton.UseVisualStyleBackColor = true;
+            this.lnButton.Click += new System.EventHandler(this.buttonFun_Click);
             // 
             // lgButton
             // 
@@ -692,6 +732,7 @@
             this.lgButton.TabIndex = 6;
             this.lgButton.Text = "Lg";
             this.lgButton.UseVisualStyleBackColor = true;
+            this.lgButton.Click += new System.EventHandler(this.buttonFun_Click);
             // 
             // rootButton
             // 
@@ -702,6 +743,7 @@
             this.rootButton.TabIndex = 5;
             this.rootButton.Text = "Root";
             this.rootButton.UseVisualStyleBackColor = true;
+            this.rootButton.Click += new System.EventHandler(this.buttonFun_Click);
             // 
             // powerButton
             // 
@@ -712,6 +754,7 @@
             this.powerButton.TabIndex = 4;
             this.powerButton.Text = "Power";
             this.powerButton.UseVisualStyleBackColor = true;
+            this.powerButton.Click += new System.EventHandler(this.buttonFun_Click);
             // 
             // expButton
             // 
@@ -722,6 +765,7 @@
             this.expButton.TabIndex = 3;
             this.expButton.Text = "Exp";
             this.expButton.UseVisualStyleBackColor = true;
+            this.expButton.Click += new System.EventHandler(this.buttonFun_Click);
             // 
             // StatisticalTab
             // 
@@ -748,6 +792,7 @@
             this.medianButton.TabIndex = 8;
             this.medianButton.Text = "Median";
             this.medianButton.UseVisualStyleBackColor = true;
+            this.medianButton.Click += new System.EventHandler(this.buttonFun_Click);
             // 
             // dispButton
             // 
@@ -758,6 +803,7 @@
             this.dispButton.TabIndex = 7;
             this.dispButton.Text = "Dispersion";
             this.dispButton.UseVisualStyleBackColor = true;
+            this.dispButton.Click += new System.EventHandler(this.buttonFun_Click);
             // 
             // avgButton
             // 
@@ -768,6 +814,7 @@
             this.avgButton.TabIndex = 6;
             this.avgButton.Text = "Average";
             this.avgButton.UseVisualStyleBackColor = true;
+            this.avgButton.Click += new System.EventHandler(this.buttonFun_Click);
             // 
             // valButton
             // 
@@ -778,6 +825,7 @@
             this.valButton.TabIndex = 5;
             this.valButton.Text = "Variation";
             this.valButton.UseVisualStyleBackColor = true;
+            this.valButton.Click += new System.EventHandler(this.buttonFun_Click);
             // 
             // combButton
             // 
@@ -788,6 +836,7 @@
             this.combButton.TabIndex = 4;
             this.combButton.Text = "Combination";
             this.combButton.UseVisualStyleBackColor = true;
+            this.combButton.Click += new System.EventHandler(this.buttonFun_Click);
             // 
             // permuButton
             // 
@@ -798,6 +847,7 @@
             this.permuButton.TabIndex = 3;
             this.permuButton.Text = "Permutation";
             this.permuButton.UseVisualStyleBackColor = true;
+            this.permuButton.Click += new System.EventHandler(this.buttonFun_Click);
             // 
             // ConversionTab
             // 
@@ -930,6 +980,101 @@
             this.ConstantsTab.TabIndex = 7;
             this.ConstantsTab.Text = "Constants";
             this.ConstantsTab.UseVisualStyleBackColor = true;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.ggButton);
+            this.groupBox2.Controls.Add(this.GButton);
+            this.groupBox2.Controls.Add(this.hButton);
+            this.groupBox2.Controls.Add(this.cButton);
+            this.groupBox2.Location = new System.Drawing.Point(257, 13);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(200, 237);
+            this.groupBox2.TabIndex = 1;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Physics";
+            // 
+            // ggButton
+            // 
+            this.ggButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.ggButton.Location = new System.Drawing.Point(51, 179);
+            this.ggButton.Name = "ggButton";
+            this.ggButton.Size = new System.Drawing.Size(90, 28);
+            this.ggButton.TabIndex = 6;
+            this.ggButton.Text = "g";
+            this.ggButton.UseVisualStyleBackColor = true;
+            // 
+            // GButton
+            // 
+            this.GButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.GButton.Location = new System.Drawing.Point(51, 131);
+            this.GButton.Name = "GButton";
+            this.GButton.Size = new System.Drawing.Size(90, 28);
+            this.GButton.TabIndex = 5;
+            this.GButton.Text = "G";
+            this.GButton.UseVisualStyleBackColor = true;
+            // 
+            // hButton
+            // 
+            this.hButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.hButton.Location = new System.Drawing.Point(51, 83);
+            this.hButton.Name = "hButton";
+            this.hButton.Size = new System.Drawing.Size(90, 28);
+            this.hButton.TabIndex = 4;
+            this.hButton.Text = "h";
+            this.hButton.UseVisualStyleBackColor = true;
+            // 
+            // cButton
+            // 
+            this.cButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.cButton.Location = new System.Drawing.Point(51, 37);
+            this.cButton.Name = "cButton";
+            this.cButton.Size = new System.Drawing.Size(90, 28);
+            this.cButton.TabIndex = 3;
+            this.cButton.Text = "c";
+            this.cButton.UseVisualStyleBackColor = true;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.goldenButton);
+            this.groupBox1.Controls.Add(this.eButton);
+            this.groupBox1.Controls.Add(this.piButton);
+            this.groupBox1.Location = new System.Drawing.Point(10, 13);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(200, 177);
+            this.groupBox1.TabIndex = 0;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Mathematics";
+            // 
+            // goldenButton
+            // 
+            this.goldenButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.goldenButton.Location = new System.Drawing.Point(51, 131);
+            this.goldenButton.Name = "goldenButton";
+            this.goldenButton.Size = new System.Drawing.Size(90, 28);
+            this.goldenButton.TabIndex = 5;
+            this.goldenButton.Text = "Golden";
+            this.goldenButton.UseVisualStyleBackColor = true;
+            // 
+            // eButton
+            // 
+            this.eButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.eButton.Location = new System.Drawing.Point(51, 83);
+            this.eButton.Name = "eButton";
+            this.eButton.Size = new System.Drawing.Size(90, 28);
+            this.eButton.TabIndex = 4;
+            this.eButton.Text = "e";
+            this.eButton.UseVisualStyleBackColor = true;
+            // 
+            // piButton
+            // 
+            this.piButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.piButton.Location = new System.Drawing.Point(51, 37);
+            this.piButton.Name = "piButton";
+            this.piButton.Size = new System.Drawing.Size(90, 28);
+            this.piButton.TabIndex = 3;
+            this.piButton.Text = "PI";
+            this.piButton.UseVisualStyleBackColor = true;
             // 
             // tabPage1
             // 
@@ -1847,101 +1992,6 @@
             this.tabPage9.Text = "Favorites";
             this.tabPage9.UseVisualStyleBackColor = true;
             // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.goldenButton);
-            this.groupBox1.Controls.Add(this.eButton);
-            this.groupBox1.Controls.Add(this.piButton);
-            this.groupBox1.Location = new System.Drawing.Point(10, 13);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(200, 177);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Mathematics";
-            // 
-            // piButton
-            // 
-            this.piButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.piButton.Location = new System.Drawing.Point(51, 37);
-            this.piButton.Name = "piButton";
-            this.piButton.Size = new System.Drawing.Size(90, 28);
-            this.piButton.TabIndex = 3;
-            this.piButton.Text = "PI";
-            this.piButton.UseVisualStyleBackColor = true;
-            // 
-            // eButton
-            // 
-            this.eButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.eButton.Location = new System.Drawing.Point(51, 83);
-            this.eButton.Name = "eButton";
-            this.eButton.Size = new System.Drawing.Size(90, 28);
-            this.eButton.TabIndex = 4;
-            this.eButton.Text = "e";
-            this.eButton.UseVisualStyleBackColor = true;
-            // 
-            // goldenButton
-            // 
-            this.goldenButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.goldenButton.Location = new System.Drawing.Point(51, 131);
-            this.goldenButton.Name = "goldenButton";
-            this.goldenButton.Size = new System.Drawing.Size(90, 28);
-            this.goldenButton.TabIndex = 5;
-            this.goldenButton.Text = "Golden";
-            this.goldenButton.UseVisualStyleBackColor = true;
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.ggButton);
-            this.groupBox2.Controls.Add(this.GButton);
-            this.groupBox2.Controls.Add(this.hButton);
-            this.groupBox2.Controls.Add(this.cButton);
-            this.groupBox2.Location = new System.Drawing.Point(257, 13);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(200, 237);
-            this.groupBox2.TabIndex = 1;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Physics";
-            // 
-            // GButton
-            // 
-            this.GButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.GButton.Location = new System.Drawing.Point(51, 131);
-            this.GButton.Name = "GButton";
-            this.GButton.Size = new System.Drawing.Size(90, 28);
-            this.GButton.TabIndex = 5;
-            this.GButton.Text = "G";
-            this.GButton.UseVisualStyleBackColor = true;
-            // 
-            // hButton
-            // 
-            this.hButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.hButton.Location = new System.Drawing.Point(51, 83);
-            this.hButton.Name = "hButton";
-            this.hButton.Size = new System.Drawing.Size(90, 28);
-            this.hButton.TabIndex = 4;
-            this.hButton.Text = "h";
-            this.hButton.UseVisualStyleBackColor = true;
-            // 
-            // cButton
-            // 
-            this.cButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.cButton.Location = new System.Drawing.Point(51, 37);
-            this.cButton.Name = "cButton";
-            this.cButton.Size = new System.Drawing.Size(90, 28);
-            this.cButton.TabIndex = 3;
-            this.cButton.Text = "c";
-            this.cButton.UseVisualStyleBackColor = true;
-            // 
-            // ggButton
-            // 
-            this.ggButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.ggButton.Location = new System.Drawing.Point(51, 179);
-            this.ggButton.Name = "ggButton";
-            this.ggButton.Size = new System.Drawing.Size(90, 28);
-            this.ggButton.TabIndex = 6;
-            this.ggButton.Text = "g";
-            this.ggButton.UseVisualStyleBackColor = true;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1997,13 +2047,22 @@
             this.StatisticalTab.ResumeLayout(false);
             this.ConversionTab.ResumeLayout(false);
             this.ConstantsTab.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
             this.tabPage4.ResumeLayout(false);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
+
+            // 
+            // toolTip1
+            // 
+            this.toolTip1.AutoPopDelay = 8000;
+            this.toolTip1.InitialDelay = 500;
+            this.toolTip1.ReshowDelay = 100;
+            InitializeTooltips();
+            this.toolTip1.SetToolTip(fibonacciButton, Tooltipy[fibonacciButton]);
 
         }
 
@@ -2167,6 +2226,7 @@
         private System.Windows.Forms.Button hButton;
         private System.Windows.Forms.Button cButton;
         private System.Windows.Forms.Button ggButton;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }
 

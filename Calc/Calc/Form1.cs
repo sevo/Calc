@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.IO;
 using System.Threading;
+using DMSoft;
 
 
 namespace Calc
@@ -20,12 +21,14 @@ namespace Calc
         float memory = 0.0f;
         protected bool graphOpened;
         protected GrafForm grafoveOkno;
+        protected SkinCrafter skin;
 
         public Form1()
         {
             InitializeComponent();
             startBC();
             graphOpened = false;
+            skin = new SkinCrafter();
             
         }
 
@@ -127,11 +130,27 @@ namespace Calc
         /// <param name="e">same as sender</param>
         private void buttonNum_Click(object sender, EventArgs e)
         {
-            Button s = sender as Button;
+            Button b = sender as Button;
+            String s = b.Text;
+            if (s.Length > 1)
+            {
+                s = s.ToLower();
+            }
             int cursorPosition = expressionTextBox.SelectionStart;
-            expressionTextBox.Text = expressionTextBox.Text.Substring(0, cursorPosition) + s.Text + expressionTextBox.Text.Substring(cursorPosition, expressionTextBox.Text.Length - cursorPosition);
-            expressionTextBox.SelectionStart = cursorPosition + 1;
+            expressionTextBox.Text = expressionTextBox.Text.Substring(0, cursorPosition) + s + expressionTextBox.Text.Substring(cursorPosition, expressionTextBox.Text.Length - cursorPosition);
+            expressionTextBox.SelectionStart = cursorPosition + s.Length;
         }
+
+        private void buttonFun_Click(object sender, EventArgs e)
+        {
+            Button b = sender as Button;
+            string s = b.Text.ToLower();
+            s = s.Insert(s.Length, "()");
+            int cursorPosition = expressionTextBox.SelectionStart;
+            expressionTextBox.Text = expressionTextBox.Text.Substring(0, cursorPosition) + s + expressionTextBox.Text.Substring(cursorPosition, expressionTextBox.Text.Length - cursorPosition);
+            expressionTextBox.SelectionStart = cursorPosition + s.Length - 1;
+        }
+
 
         private void buttonEquals_Click(object sender, EventArgs e)
         {
@@ -365,6 +384,7 @@ namespace Calc
             expressionTextBox.SelectionStart = cursor_position - (expressionTextBox.Text.Length - length);
             //ak sa nejaky znak zmazal tak sa posunie nastavenie kurzora
         }
+
 
     }
 }
