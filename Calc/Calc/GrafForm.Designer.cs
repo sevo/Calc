@@ -365,7 +365,7 @@
             this.Controls.Add(this.yMinTextBox);
             this.Controls.Add(this.yBox);
             this.Name = "GrafForm";
-            this.Text = "GrafForm";
+            this.Text = "Graf";
             ((System.ComponentModel.ISupportInitialize)(this.grafBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xTrackBar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.yTrackBar)).EndInit();
