@@ -423,19 +423,18 @@
             // 
             this.expressionTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.expressionTextBox.Location = new System.Drawing.Point(557, 117);
-            this.expressionTextBox.Multiline = false;
             this.expressionTextBox.Name = "expressionTextBox";
-            this.expressionTextBox.Size = new System.Drawing.Size(409, 54);
+            this.expressionTextBox.Size = new System.Drawing.Size(409, 116);
             this.expressionTextBox.TabIndex = 1;
             this.expressionTextBox.Text = "";
-            this.expressionTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.expressionTextBox_KeyDown);
+            this.expressionTextBox.WordWrap = false;
             this.expressionTextBox.TextChanged += new System.EventHandler(this.expressionTextBox_TextChanged);
             // 
             // DecRadioButton
             // 
             this.DecRadioButton.AutoSize = true;
             this.DecRadioButton.Checked = true;
-            this.DecRadioButton.Location = new System.Drawing.Point(610, 179);
+            this.DecRadioButton.Location = new System.Drawing.Point(607, 239);
             this.DecRadioButton.Name = "DecRadioButton";
             this.DecRadioButton.Size = new System.Drawing.Size(45, 17);
             this.DecRadioButton.TabIndex = 2;
@@ -447,7 +446,7 @@
             // HexRadioButton
             // 
             this.HexRadioButton.AutoSize = true;
-            this.HexRadioButton.Location = new System.Drawing.Point(560, 179);
+            this.HexRadioButton.Location = new System.Drawing.Point(557, 239);
             this.HexRadioButton.Name = "HexRadioButton";
             this.HexRadioButton.Size = new System.Drawing.Size(44, 17);
             this.HexRadioButton.TabIndex = 3;
@@ -459,7 +458,7 @@
             // OctRadioButton
             // 
             this.OctRadioButton.AutoSize = true;
-            this.OctRadioButton.Location = new System.Drawing.Point(660, 179);
+            this.OctRadioButton.Location = new System.Drawing.Point(657, 239);
             this.OctRadioButton.Name = "OctRadioButton";
             this.OctRadioButton.Size = new System.Drawing.Size(42, 17);
             this.OctRadioButton.TabIndex = 4;
@@ -471,7 +470,7 @@
             // BinRadioButton
             // 
             this.BinRadioButton.AutoSize = true;
-            this.BinRadioButton.Location = new System.Drawing.Point(708, 179);
+            this.BinRadioButton.Location = new System.Drawing.Point(705, 239);
             this.BinRadioButton.Name = "BinRadioButton";
             this.BinRadioButton.Size = new System.Drawing.Size(40, 17);
             this.BinRadioButton.TabIndex = 5;
@@ -681,14 +680,15 @@
             // resultTextBox
             // 
             this.resultTextBox.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.resultTextBox.DetectUrls = false;
             this.resultTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.resultTextBox.Location = new System.Drawing.Point(557, 49);
-            this.resultTextBox.Multiline = false;
             this.resultTextBox.Name = "resultTextBox";
             this.resultTextBox.ReadOnly = true;
             this.resultTextBox.Size = new System.Drawing.Size(409, 70);
             this.resultTextBox.TabIndex = 24;
             this.resultTextBox.Text = "";
+            this.resultTextBox.WordWrap = false;
             // 
             // buttonMC
             // 

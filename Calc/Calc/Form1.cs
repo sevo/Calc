@@ -92,9 +92,11 @@ namespace Calc
         private void getResult()
         {
             resultTextBox.Text = "";
+            String text = "";
+            for (int i = 0; i < expressionTextBox.Lines.Length; i++) text += expressionTextBox.Lines[i];
             try
             {
-                bcIn.WriteLine(expressionTextBox.Text);//vlozenie vyrazu na vstup programu                        
+                bcIn.WriteLine(text);//vlozenie vyrazu na vstup programu                        
                 string line = "";
                 while ((line = bcOut.ReadLine()) != null)
                 {
@@ -135,17 +137,20 @@ namespace Calc
 
         private void buttonEquals_Click(object sender, EventArgs e)
         {
-            if (expressionTextBox.Text.StartsWith("f(x)=") || expressionTextBox.Text.StartsWith("y="))
+            String text = "";
+            for (int i = 0; i < expressionTextBox.Lines.Length; i++) text += expressionTextBox.Lines[i];   
+                //text = text.Replace("\n", "");
+            if (text.StartsWith("f(x)=") || text.StartsWith("y="))
             {
                 if (!graphOpened)   //grafove okno este neni otvorene
                 {
-                    grafoveOkno = new GrafForm(expressionTextBox.Text, ref graphOpened);
+                    grafoveOkno = new GrafForm(text, ref graphOpened);
                     grafoveOkno.Visible = true;
                     graphOpened = true;
                 }
                 else                //grafove okno uz je otvorene
                 {
-                    grafoveOkno.AddFunkcia(expressionTextBox.Text);
+                    grafoveOkno.AddFunkcia(text);
                     grafoveOkno.Show();
                     grafoveOkno.TopMost = true;
                     grafoveOkno.Focus();
@@ -160,10 +165,10 @@ namespace Calc
             }
         }
 
-        private void expressionTextBox_KeyDown(object sender, KeyEventArgs e)
+        /*private void expressionTextBox_KeyDown(object sender, KeyEventArgs e)//odstranil som lebo chceme aby sa dal ten vyraz nejako formatovat
         {
             if (e.KeyCode == Keys.Enter) buttonEquals_Click(sender, e);            
-        }        
+        } */       
 
         private void buttonC_Click(object sender, EventArgs e)
         {
