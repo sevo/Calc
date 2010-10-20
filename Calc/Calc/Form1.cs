@@ -346,40 +346,27 @@ namespace Calc
             
             if (DecRadioButton.Checked == true)
             {
-                expressionTextBox.Text = expressionTextBox.Text.Replace("A", "");
-                expressionTextBox.Text = expressionTextBox.Text.Replace("B", "");
-                expressionTextBox.Text = expressionTextBox.Text.Replace("C", "");
-                expressionTextBox.Text = expressionTextBox.Text.Replace("D", "");
-                expressionTextBox.Text = expressionTextBox.Text.Replace("E", "");
-                expressionTextBox.Text = expressionTextBox.Text.Replace("F", "");                
+                String[] num = {"A","B","C","D","E","F"};
+                for (int i = 0; i < num.Length; i++)
+                {
+                    expressionTextBox.Text = expressionTextBox.Text.Replace(num[i], "");
+                }
             }
             if (OctRadioButton.Checked == true)
             {
-                expressionTextBox.Text = expressionTextBox.Text.Replace("A", "");
-                expressionTextBox.Text = expressionTextBox.Text.Replace("B", "");
-                expressionTextBox.Text = expressionTextBox.Text.Replace("C", "");
-                expressionTextBox.Text = expressionTextBox.Text.Replace("D", "");
-                expressionTextBox.Text = expressionTextBox.Text.Replace("E", "");
-                expressionTextBox.Text = expressionTextBox.Text.Replace("F", "");
-                expressionTextBox.Text = expressionTextBox.Text.Replace("8", "");
-                expressionTextBox.Text = expressionTextBox.Text.Replace("9", "");
+                String[] num = { "A", "B", "C", "D", "E", "F" , "9","8"};
+                for (int i = 0; i < num.Length; i++)
+                {
+                    expressionTextBox.Text = expressionTextBox.Text.Replace(num[i], "");
+                }
             }
             if (BinRadioButton.Checked == true)
             {
-                expressionTextBox.Text = expressionTextBox.Text.Replace("A", "");
-                expressionTextBox.Text = expressionTextBox.Text.Replace("B", "");
-                expressionTextBox.Text = expressionTextBox.Text.Replace("C", "");
-                expressionTextBox.Text = expressionTextBox.Text.Replace("D", "");
-                expressionTextBox.Text = expressionTextBox.Text.Replace("E", "");
-                expressionTextBox.Text = expressionTextBox.Text.Replace("F", "");
-                expressionTextBox.Text = expressionTextBox.Text.Replace("2", "");
-                expressionTextBox.Text = expressionTextBox.Text.Replace("3", "");
-                expressionTextBox.Text = expressionTextBox.Text.Replace("4", "");
-                expressionTextBox.Text = expressionTextBox.Text.Replace("5", "");
-                expressionTextBox.Text = expressionTextBox.Text.Replace("6", "");
-                expressionTextBox.Text = expressionTextBox.Text.Replace("7", "");
-                expressionTextBox.Text = expressionTextBox.Text.Replace("8", "");
-                expressionTextBox.Text = expressionTextBox.Text.Replace("9", "");
+                String[] num = { "A", "B", "C", "D", "E", "F" ,"2","3","4","5","6","7","8","9"};
+                for (int i = 0; i < num.Length; i++)
+                {
+                    expressionTextBox.Text = expressionTextBox.Text.Replace(num[i], "");
+                }                
             }
             expressionTextBox.SelectionStart = cursor_position - (expressionTextBox.Text.Length - length);
             //ak sa nejaky znak zmazal tak sa posunie nastavenie kurzora
