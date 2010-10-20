@@ -9,6 +9,8 @@ using System.Windows.Forms;
 using System.IO;
 using System.Threading;
 using System.Collections;
+using System.Text.RegularExpressions;
+
 
 
 
@@ -143,9 +145,16 @@ namespace Calc
         private void buttonEquals_Click(object sender, EventArgs e)
         {
             String text = "";
+            String expression = expressionTextBox.Lines[0];
+            for (int i = 1; i < expressionTextBox.Lines.Length; i++) expression = expression + "\n" + expressionTextBox.Lines[i];
+            history.Add(expression);
+            history_index = history.Count - 1;
+
+            Regex regex = new Regex(@"^\w+\((x|x,y)?\)=");
+
             for (int i = 0; i < expressionTextBox.Lines.Length; i++) text += expressionTextBox.Lines[i];   
-                //text = text.Replace("\n", "");
-            if (text.StartsWith("f(x)=") || text.StartsWith("y="))
+
+            if(regex.Match(text).Success)
             {
                 if (!graphOpened)   //grafove okno este neni otvorene
                 {
@@ -164,12 +173,7 @@ namespace Calc
                 }
             }
             else
-            {
-                String expression = expressionTextBox.Lines[0];
-                for (int i = 1; i < expressionTextBox.Lines.Length; i++) expression = expression + "\n" + expressionTextBox.Lines[i];
-                history.Add(expression);
-                history_index = history.Count-1;
-
+            {               
                 Thread t = new Thread(getResult);
                 System.Threading.Timer timer = new System.Threading.Timer(abortGettingResult, t, 1000, Timeout.Infinite);
                 t.Start();

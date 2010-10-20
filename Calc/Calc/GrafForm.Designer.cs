@@ -35,7 +35,6 @@
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
             this.yTrackBar = new System.Windows.Forms.TrackBar();
-            this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -61,6 +60,7 @@
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.grafBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xTrackBar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.yTrackBar)).BeginInit();
@@ -105,10 +105,11 @@
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(51, 310);
+            this.textBox4.Location = new System.Drawing.Point(12, 323);
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(154, 20);
+            this.textBox4.Size = new System.Drawing.Size(193, 20);
             this.textBox4.TabIndex = 5;
+            this.textBox4.Text = "f(x)=";
             // 
             // checkedListBox1
             // 
@@ -127,16 +128,6 @@
             this.yTrackBar.Size = new System.Drawing.Size(45, 427);
             this.yTrackBar.TabIndex = 9;
             this.yTrackBar.TickStyle = System.Windows.Forms.TickStyle.None;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label3.Location = new System.Drawing.Point(8, 308);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(47, 22);
-            this.label3.TabIndex = 10;
-            this.label3.Text = "f(x)=";
             // 
             // label4
             // 
@@ -327,7 +318,7 @@
             // 
             // buttonCreate
             // 
-            this.buttonCreate.Location = new System.Drawing.Point(130, 336);
+            this.buttonCreate.Location = new System.Drawing.Point(130, 349);
             this.buttonCreate.Name = "buttonCreate";
             this.buttonCreate.Size = new System.Drawing.Size(75, 23);
             this.buttonCreate.TabIndex = 37;
@@ -364,11 +355,21 @@
             this.label2.Text = "y=";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(9, 307);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(106, 13);
+            this.label3.TabIndex = 41;
+            this.label3.Text = "Function declaration:";
+            // 
             // GrafForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1008, 562);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.xBox);
@@ -398,7 +399,6 @@
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.yTrackBar);
             this.Controls.Add(this.checkedListBox1);
             this.Controls.Add(this.textBox4);
@@ -427,7 +427,6 @@
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.CheckedListBox checkedListBox1;
         private System.Windows.Forms.TrackBar yTrackBar;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
@@ -453,5 +452,6 @@
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
     }
 }
