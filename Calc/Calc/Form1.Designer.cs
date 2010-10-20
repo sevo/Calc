@@ -428,6 +428,8 @@
             this.expressionTextBox.TabIndex = 1;
             this.expressionTextBox.Text = "";
             this.expressionTextBox.WordWrap = false;
+            this.expressionTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.expressionTextBox_KeyDown);
+            this.expressionTextBox.KeyUp += new System.Windows.Forms.KeyEventHandler(this.expressionTextBox_KeyUp);
             this.expressionTextBox.TextChanged += new System.EventHandler(this.expressionTextBox_TextChanged);
             // 
             // DecRadioButton

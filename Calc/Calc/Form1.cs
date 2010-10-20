@@ -20,6 +20,7 @@ namespace Calc
         float memory = 0.0f;
         protected bool graphOpened;
         protected GrafForm grafoveOkno;
+        private bool isShiftDown=false;
 
         public Form1()
         {
@@ -165,10 +166,23 @@ namespace Calc
             }
         }
 
-        /*private void expressionTextBox_KeyDown(object sender, KeyEventArgs e)//odstranil som lebo chceme aby sa dal ten vyraz nejako formatovat
+        private void expressionTextBox_KeyDown(object sender, KeyEventArgs e)//odstranil som lebo chceme aby sa dal ten vyraz nejako formatovat
         {
-            if (e.KeyCode == Keys.Enter) buttonEquals_Click(sender, e);            
-        } */       
+            if (e.KeyCode == Keys.ShiftKey)isShiftDown = true;
+            if (e.KeyCode == Keys.Enter && isShiftDown)buttonEquals_Click(sender, e);                
+        }
+
+
+        private void expressionTextBox_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter && isShiftDown)//a zmaz enter ktory sa zapisal pri odpaleni vypoctu
+            {
+                int cursorPosition = expressionTextBox.SelectionStart;
+                expressionTextBox.Text = expressionTextBox.Text.Substring(0, cursorPosition - 1) + expressionTextBox.Text.Substring(cursorPosition, expressionTextBox.Text.Length - cursorPosition);
+                expressionTextBox.SelectionStart = cursorPosition - 1;
+            }
+            if (e.KeyCode == Keys.ShiftKey) isShiftDown = false;
+        }  
 
         private void buttonC_Click(object sender, EventArgs e)
         {
@@ -369,6 +383,7 @@ namespace Calc
             }
             expressionTextBox.SelectionStart = cursor_position - (expressionTextBox.Text.Length - length);
             //ak sa nejaky znak zmazal tak sa posunie nastavenie kurzora
-        }  
+        }
+
     }
 }
