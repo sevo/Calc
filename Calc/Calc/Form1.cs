@@ -8,6 +8,8 @@ using System.Text;
 using System.Windows.Forms;
 using System.IO;
 using System.Threading;
+using System.Collections;
+
 
 
 namespace Calc
@@ -21,6 +23,8 @@ namespace Calc
         protected bool graphOpened;
         protected GrafForm grafoveOkno;
         private bool isShiftDown=false;
+        int history_index;
+        ArrayList history = new ArrayList();
 
         public Form1()
         {
@@ -159,7 +163,13 @@ namespace Calc
                     grafoveOkno.TopMost = false;
                 }
             }
-            else { 
+            else
+            {
+                String expression = expressionTextBox.Lines[0];
+                for (int i = 1; i < expressionTextBox.Lines.Length; i++) expression = expression + "\n" + expressionTextBox.Lines[i];
+                history.Add(expression);
+                history_index = history.Count-1;
+
                 Thread t = new Thread(getResult);
                 System.Threading.Timer timer = new System.Threading.Timer(abortGettingResult, t, 1000, Timeout.Infinite);
                 t.Start();
@@ -169,7 +179,26 @@ namespace Calc
         private void expressionTextBox_KeyDown(object sender, KeyEventArgs e)//odstranil som lebo chceme aby sa dal ten vyraz nejako formatovat
         {
             if (e.KeyCode == Keys.ShiftKey)isShiftDown = true;
-            if (e.KeyCode == Keys.Enter && isShiftDown)buttonEquals_Click(sender, e);                
+            if (e.KeyCode == Keys.Enter && isShiftDown)buttonEquals_Click(sender, e);
+            if (e.KeyCode == Keys.PageUp) 
+            {
+                if (history_index>0) history_index--;
+                expressionTextBox.Text = history[history_index].ToString();
+
+            }
+            if (e.KeyCode == Keys.PageDown)
+            {
+                if (history_index < history.Count - 1)
+                {
+                    history_index++;
+                    expressionTextBox.Text = history[history_index].ToString();
+                }
+                else 
+                {
+                    history_index = history.Count;
+                    expressionTextBox.Text = "";
+                }
+            }   
         }
 
 
