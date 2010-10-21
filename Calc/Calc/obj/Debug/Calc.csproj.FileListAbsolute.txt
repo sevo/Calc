@@ -24,3 +24,5 @@ E:\C++\ICP\Calc\Calc\obj\Debug\Calc.Form1.resources
 E:\C++\ICP\Calc\Calc\obj\Debug\Calc.GrafForm.resources
 E:\C++\ICP\Calc\Calc\obj\Debug\Calc.Properties.Resources.resources
 E:\C++\ICP\Calc\Calc\obj\Debug\Calc.csproj.GenerateResource.Cache
+D:\skola\stu\3.rocnik\zima\ICP\projekt\Calc\Calc\Calc\bin\Debug\NPlot.dll
+D:\skola\stu\3.rocnik\zima\ICP\projekt\Calc\Calc\Calc\bin\Debug\NPlot.xml

@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.grafBox = new System.Windows.Forms.PictureBox();
             this.xTrackBar = new System.Windows.Forms.TrackBar();
             this.yBox = new System.Windows.Forms.TextBox();
             this.xBox = new System.Windows.Forms.TextBox();
@@ -61,7 +60,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.grafBox)).BeginInit();
+            this.GrafSurface2D = new NPlot.Windows.PlotSurface2D();
             ((System.ComponentModel.ISupportInitialize)(this.xTrackBar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.yTrackBar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.YMinNumericUpDown)).BeginInit();
@@ -72,19 +71,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.XMaxNumericUpDown)).BeginInit();
             this.SuspendLayout();
             // 
-            // grafBox
-            // 
-            this.grafBox.Location = new System.Drawing.Point(312, 30);
-            this.grafBox.Name = "grafBox";
-            this.grafBox.Size = new System.Drawing.Size(684, 406);
-            this.grafBox.TabIndex = 0;
-            this.grafBox.TabStop = false;
-            // 
             // xTrackBar
             // 
-            this.xTrackBar.Location = new System.Drawing.Point(298, 443);
+            this.xTrackBar.Location = new System.Drawing.Point(326, 443);
             this.xTrackBar.Name = "xTrackBar";
-            this.xTrackBar.Size = new System.Drawing.Size(707, 45);
+            this.xTrackBar.Size = new System.Drawing.Size(669, 45);
             this.xTrackBar.TabIndex = 1;
             this.xTrackBar.TickStyle = System.Windows.Forms.TickStyle.None;
             // 
@@ -122,17 +113,17 @@
             // yTrackBar
             // 
             this.yTrackBar.Enabled = false;
-            this.yTrackBar.Location = new System.Drawing.Point(284, 22);
+            this.yTrackBar.Location = new System.Drawing.Point(284, 33);
             this.yTrackBar.Name = "yTrackBar";
             this.yTrackBar.Orientation = System.Windows.Forms.Orientation.Vertical;
-            this.yTrackBar.Size = new System.Drawing.Size(45, 427);
+            this.yTrackBar.Size = new System.Drawing.Size(45, 393);
             this.yTrackBar.TabIndex = 9;
             this.yTrackBar.TickStyle = System.Windows.Forms.TickStyle.None;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(207, 423);
+            this.label4.Location = new System.Drawing.Point(207, 401);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(34, 13);
             this.label4.TabIndex = 16;
@@ -151,7 +142,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(353, 472);
+            this.label6.Location = new System.Drawing.Point(375, 472);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(34, 13);
             this.label6.TabIndex = 18;
@@ -160,7 +151,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(916, 468);
+            this.label7.Location = new System.Drawing.Point(906, 468);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(37, 13);
             this.label7.TabIndex = 19;
@@ -179,7 +170,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(205, 33);
+            this.label9.Location = new System.Drawing.Point(205, 45);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(37, 13);
             this.label9.TabIndex = 21;
@@ -274,7 +265,7 @@
             // 
             // YMinNumericUpDown
             // 
-            this.YMinNumericUpDown.Location = new System.Drawing.Point(239, 421);
+            this.YMinNumericUpDown.Location = new System.Drawing.Point(239, 399);
             this.YMinNumericUpDown.Name = "YMinNumericUpDown";
             this.YMinNumericUpDown.Size = new System.Drawing.Size(43, 20);
             this.YMinNumericUpDown.TabIndex = 31;
@@ -289,14 +280,14 @@
             // 
             // YMaxNumericUpDown
             // 
-            this.YMaxNumericUpDown.Location = new System.Drawing.Point(239, 30);
+            this.YMaxNumericUpDown.Location = new System.Drawing.Point(239, 42);
             this.YMaxNumericUpDown.Name = "YMaxNumericUpDown";
             this.YMaxNumericUpDown.Size = new System.Drawing.Size(43, 20);
             this.YMaxNumericUpDown.TabIndex = 33;
             // 
             // XMinNumericUpDown
             // 
-            this.XMinNumericUpDown.Location = new System.Drawing.Point(312, 470);
+            this.XMinNumericUpDown.Location = new System.Drawing.Point(334, 470);
             this.XMinNumericUpDown.Name = "XMinNumericUpDown";
             this.XMinNumericUpDown.Size = new System.Drawing.Size(43, 20);
             this.XMinNumericUpDown.TabIndex = 34;
@@ -311,7 +302,7 @@
             // 
             // XMaxNumericUpDown
             // 
-            this.XMaxNumericUpDown.Location = new System.Drawing.Point(953, 466);
+            this.XMaxNumericUpDown.Location = new System.Drawing.Point(943, 466);
             this.XMaxNumericUpDown.Name = "XMaxNumericUpDown";
             this.XMaxNumericUpDown.Size = new System.Drawing.Size(43, 20);
             this.XMaxNumericUpDown.TabIndex = 36;
@@ -364,11 +355,35 @@
             this.label3.TabIndex = 41;
             this.label3.Text = "Function declaration:";
             // 
+            // GrafSurface2D
+            // 
+            this.GrafSurface2D.AutoScaleAutoGeneratedAxes = false;
+            this.GrafSurface2D.AutoScaleTitle = false;
+            this.GrafSurface2D.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.GrafSurface2D.DateTimeToolTip = false;
+            this.GrafSurface2D.Legend = null;
+            this.GrafSurface2D.LegendZOrder = -1;
+            this.GrafSurface2D.Location = new System.Drawing.Point(309, 31);
+            this.GrafSurface2D.Name = "GrafSurface2D";
+            this.GrafSurface2D.RightMenu = null;
+            this.GrafSurface2D.ShowCoordinates = true;
+            this.GrafSurface2D.Size = new System.Drawing.Size(687, 407);
+            this.GrafSurface2D.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.None;
+            this.GrafSurface2D.TabIndex = 42;
+            this.GrafSurface2D.Text = "plotSurface2D1";
+            this.GrafSurface2D.Title = "";
+            this.GrafSurface2D.TitleFont = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.GrafSurface2D.XAxis1 = null;
+            this.GrafSurface2D.XAxis2 = null;
+            this.GrafSurface2D.YAxis1 = null;
+            this.GrafSurface2D.YAxis2 = null;
+            // 
             // GrafForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1008, 562);
+            this.Controls.Add(this.GrafSurface2D);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -394,7 +409,6 @@
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.xTrackBar);
-            this.Controls.Add(this.grafBox);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label5);
@@ -404,7 +418,6 @@
             this.Controls.Add(this.textBox4);
             this.Name = "GrafForm";
             this.Text = "Graf";
-            ((System.ComponentModel.ISupportInitialize)(this.grafBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xTrackBar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.yTrackBar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.YMinNumericUpDown)).EndInit();
@@ -420,7 +433,6 @@
 
         #endregion
 
-        private System.Windows.Forms.PictureBox grafBox;
         private System.Windows.Forms.TrackBar xTrackBar;
         private System.Windows.Forms.TextBox yBox;
         private System.Windows.Forms.TextBox xBox;
@@ -453,5 +465,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+        private NPlot.Windows.PlotSurface2D GrafSurface2D;
     }
 }
