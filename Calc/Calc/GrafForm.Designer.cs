@@ -31,7 +31,7 @@
             this.xTrackBar = new System.Windows.Forms.TrackBar();
             this.yBox = new System.Windows.Forms.TextBox();
             this.xBox = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.functionDeclaration = new System.Windows.Forms.TextBox();
             this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
             this.yTrackBar = new System.Windows.Forms.TrackBar();
             this.label4 = new System.Windows.Forms.Label();
@@ -94,13 +94,13 @@
             this.xBox.Size = new System.Drawing.Size(52, 20);
             this.xBox.TabIndex = 4;
             // 
-            // textBox4
+            // functionDeclaration
             // 
-            this.textBox4.Location = new System.Drawing.Point(12, 323);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(193, 20);
-            this.textBox4.TabIndex = 5;
-            this.textBox4.Text = "f(x)=";
+            this.functionDeclaration.Location = new System.Drawing.Point(12, 323);
+            this.functionDeclaration.Name = "functionDeclaration";
+            this.functionDeclaration.Size = new System.Drawing.Size(193, 20);
+            this.functionDeclaration.TabIndex = 5;
+            this.functionDeclaration.Text = "f(x)=";
             // 
             // checkedListBox1
             // 
@@ -315,6 +315,7 @@
             this.buttonCreate.TabIndex = 37;
             this.buttonCreate.Text = "Create";
             this.buttonCreate.UseVisualStyleBackColor = true;
+            this.buttonCreate.Click += new System.EventHandler(this.buttonCreate_Click);
             // 
             // listBox1
             // 
@@ -415,7 +416,7 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.yTrackBar);
             this.Controls.Add(this.checkedListBox1);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.functionDeclaration);
             this.Name = "GrafForm";
             this.Text = "Graf";
             ((System.ComponentModel.ISupportInitialize)(this.xTrackBar)).EndInit();
@@ -436,7 +437,7 @@
         private System.Windows.Forms.TrackBar xTrackBar;
         private System.Windows.Forms.TextBox yBox;
         private System.Windows.Forms.TextBox xBox;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox functionDeclaration;
         private System.Windows.Forms.CheckedListBox checkedListBox1;
         private System.Windows.Forms.TrackBar yTrackBar;
         private System.Windows.Forms.Label label4;

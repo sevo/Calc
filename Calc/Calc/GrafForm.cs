@@ -112,7 +112,8 @@ namespace Calc
             lp2.Label = "f(x)=sin(x)"; // no legend, but still useful for copy data to clipboard.
             GrafSurface2D.Add(lp2);
 
-            GrafSurface2D.XAxis1 = new PiAxis(GrafSurface2D.XAxis1);
+            //GrafSurface2D.XAxis1 = new PiAxis(GrafSurface2D.XAxis1);
+            GrafSurface2D.XAxis1 = new LinearAxis(GrafSurface2D.XAxis1);
 
             GrafSurface2D.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
 
@@ -125,6 +126,11 @@ namespace Calc
 
             GrafSurface2D.Refresh();
 
+        }
+
+        private void buttonCreate_Click(object sender, EventArgs e)
+        {
+            checkedListBox1.Items.Add(functionDeclaration.Text);
         }
 
     }
