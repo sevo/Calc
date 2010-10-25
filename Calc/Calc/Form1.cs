@@ -8,7 +8,10 @@ using System.Text;
 using System.Windows.Forms;
 using System.IO;
 using System.Threading;
-using DMSoft;
+using System.Collections;
+using System.Text.RegularExpressions;
+
+
 
 
 namespace Calc
@@ -21,14 +24,15 @@ namespace Calc
         float memory = 0.0f;
         protected bool graphOpened;
         protected GrafForm grafoveOkno;
-        protected SkinCrafter skin;
+        private bool isShiftDown=false;
+        int history_index;
+        ArrayList history = new ArrayList();
 
         public Form1()
         {
             InitializeComponent();
             startBC();
             graphOpened = false;
-            skin = new SkinCrafter();
             
         }
 
@@ -95,9 +99,11 @@ namespace Calc
         private void getResult()
         {
             resultTextBox.Text = "";
+            String text = "";
+            for (int i = 0; i < expressionTextBox.Lines.Length; i++) text += expressionTextBox.Lines[i];
             try
             {
-                bcIn.WriteLine(expressionTextBox.Text);//vlozenie vyrazu na vstup programu                        
+                bcIn.WriteLine(text);//vlozenie vyrazu na vstup programu                        
                 string line = "";
                 while ((line = bcOut.ReadLine()) != null)
                 {
@@ -151,20 +157,29 @@ namespace Calc
             expressionTextBox.SelectionStart = cursorPosition + s.Length - 1;
         }
 
-
         private void buttonEquals_Click(object sender, EventArgs e)
         {
-            if (expressionTextBox.Text.StartsWith("f(x)=") || expressionTextBox.Text.StartsWith("y="))
+            String text = "";
+            String expression = expressionTextBox.Lines[0];
+            for (int i = 1; i < expressionTextBox.Lines.Length; i++) expression = expression + "\n" + expressionTextBox.Lines[i];
+            history.Add(expression);
+            history_index = history.Count - 1;
+
+            Regex regex = new Regex(@"^\w+\((x|x,y)?\)=");
+
+            for (int i = 0; i < expressionTextBox.Lines.Length; i++) text += expressionTextBox.Lines[i];   
+
+            if(regex.Match(text).Success)
             {
                 if (!graphOpened)   //grafove okno este neni otvorene
                 {
-                    grafoveOkno = new GrafForm(expressionTextBox.Text, ref graphOpened);
+                    grafoveOkno = new GrafForm(text, ref graphOpened);
                     grafoveOkno.Visible = true;
                     graphOpened = true;
                 }
                 else                //grafove okno uz je otvorene
                 {
-                    grafoveOkno.AddFunkcia(expressionTextBox.Text);
+                    grafoveOkno.AddFunkcia(text);
                     grafoveOkno.Show();
                     grafoveOkno.TopMost = true;
                     grafoveOkno.Focus();
@@ -172,17 +187,50 @@ namespace Calc
                     grafoveOkno.TopMost = false;
                 }
             }
-            else { 
+            else
+            {               
                 Thread t = new Thread(getResult);
                 System.Threading.Timer timer = new System.Threading.Timer(abortGettingResult, t, 1000, Timeout.Infinite);
                 t.Start();
             }
         }
 
-        private void expressionTextBox_KeyDown(object sender, KeyEventArgs e)
+        private void expressionTextBox_KeyDown(object sender, KeyEventArgs e)//odstranil som lebo chceme aby sa dal ten vyraz nejako formatovat
         {
-            if (e.KeyCode == Keys.Enter) buttonEquals_Click(sender, e);            
-        }        
+            if (e.KeyCode == Keys.ShiftKey)isShiftDown = true;
+            if (e.KeyCode == Keys.Enter && isShiftDown)buttonEquals_Click(sender, e);
+            if (e.KeyCode == Keys.PageUp) 
+            {
+                if (history_index>0) history_index--;
+                expressionTextBox.Text = history[history_index].ToString();
+
+            }
+            if (e.KeyCode == Keys.PageDown)
+            {
+                if (history_index < history.Count - 1)
+                {
+                    history_index++;
+                    expressionTextBox.Text = history[history_index].ToString();
+                }
+                else 
+                {
+                    history_index = history.Count;
+                    expressionTextBox.Text = "";
+                }
+            }   
+        }
+
+
+        private void expressionTextBox_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter && isShiftDown)//a zmaz enter ktory sa zapisal pri odpaleni vypoctu
+            {
+                int cursorPosition = expressionTextBox.SelectionStart;
+                expressionTextBox.Text = expressionTextBox.Text.Substring(0, cursorPosition - 1) + expressionTextBox.Text.Substring(cursorPosition, expressionTextBox.Text.Length - cursorPosition);
+                expressionTextBox.SelectionStart = cursorPosition - 1;
+            }
+            if (e.KeyCode == Keys.ShiftKey) isShiftDown = false;
+        }  
 
         private void buttonC_Click(object sender, EventArgs e)
         {
@@ -346,45 +394,31 @@ namespace Calc
             
             if (DecRadioButton.Checked == true)
             {
-                expressionTextBox.Text = expressionTextBox.Text.Replace("A", "");
-                expressionTextBox.Text = expressionTextBox.Text.Replace("B", "");
-                expressionTextBox.Text = expressionTextBox.Text.Replace("C", "");
-                expressionTextBox.Text = expressionTextBox.Text.Replace("D", "");
-                expressionTextBox.Text = expressionTextBox.Text.Replace("E", "");
-                expressionTextBox.Text = expressionTextBox.Text.Replace("F", "");                
+                String[] num = {"A","B","C","D","E","F"};
+                for (int i = 0; i < num.Length; i++)
+                {
+                    expressionTextBox.Text = expressionTextBox.Text.Replace(num[i], "");
+                }
             }
             if (OctRadioButton.Checked == true)
             {
-                expressionTextBox.Text = expressionTextBox.Text.Replace("A", "");
-                expressionTextBox.Text = expressionTextBox.Text.Replace("B", "");
-                expressionTextBox.Text = expressionTextBox.Text.Replace("C", "");
-                expressionTextBox.Text = expressionTextBox.Text.Replace("D", "");
-                expressionTextBox.Text = expressionTextBox.Text.Replace("E", "");
-                expressionTextBox.Text = expressionTextBox.Text.Replace("F", "");
-                expressionTextBox.Text = expressionTextBox.Text.Replace("8", "");
-                expressionTextBox.Text = expressionTextBox.Text.Replace("9", "");
+                String[] num = { "A", "B", "C", "D", "E", "F" , "9","8"};
+                for (int i = 0; i < num.Length; i++)
+                {
+                    expressionTextBox.Text = expressionTextBox.Text.Replace(num[i], "");
+                }
             }
             if (BinRadioButton.Checked == true)
             {
-                expressionTextBox.Text = expressionTextBox.Text.Replace("A", "");
-                expressionTextBox.Text = expressionTextBox.Text.Replace("B", "");
-                expressionTextBox.Text = expressionTextBox.Text.Replace("C", "");
-                expressionTextBox.Text = expressionTextBox.Text.Replace("D", "");
-                expressionTextBox.Text = expressionTextBox.Text.Replace("E", "");
-                expressionTextBox.Text = expressionTextBox.Text.Replace("F", "");
-                expressionTextBox.Text = expressionTextBox.Text.Replace("2", "");
-                expressionTextBox.Text = expressionTextBox.Text.Replace("3", "");
-                expressionTextBox.Text = expressionTextBox.Text.Replace("4", "");
-                expressionTextBox.Text = expressionTextBox.Text.Replace("5", "");
-                expressionTextBox.Text = expressionTextBox.Text.Replace("6", "");
-                expressionTextBox.Text = expressionTextBox.Text.Replace("7", "");
-                expressionTextBox.Text = expressionTextBox.Text.Replace("8", "");
-                expressionTextBox.Text = expressionTextBox.Text.Replace("9", "");
+                String[] num = { "A", "B", "C", "D", "E", "F" ,"2","3","4","5","6","7","8","9"};
+                for (int i = 0; i < num.Length; i++)
+                {
+                    expressionTextBox.Text = expressionTextBox.Text.Replace(num[i], "");
+                }                
             }
             expressionTextBox.SelectionStart = cursor_position - (expressionTextBox.Text.Length - length);
             //ak sa nejaky znak zmazal tak sa posunie nastavenie kurzora
         }
-
 
     }
 }

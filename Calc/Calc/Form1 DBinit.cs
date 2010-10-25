@@ -8,10 +8,10 @@ namespace Calc
 {
     public partial class Form1 : Form
     {
-        public ToolTipDB Tooltipy { get; set; }
+        //public ToolTipDB Tooltipy { get; set; }
         public void InitializeTooltips()
         {
-            Tooltipy = new ToolTipDB();
+            //Tooltipy = new ToolTipDB();
             string str;
 
             // *** fibonacci ***
@@ -23,7 +23,7 @@ namespace Calc
             str += "Fibonacci retracement, and are used in computer\n";
             str += "algorithms such as the Fibonacci search technique\n";
             str += "and the Fibonacci heap data structure.";
-            Tooltipy.Add(fibonacciButton.Text, str);
+            //Tooltipy.Add(fibonacciButton.Text, str);
             toolTip1.SetToolTip(fibonacciButton, str);
 
             // *** pytagor ***

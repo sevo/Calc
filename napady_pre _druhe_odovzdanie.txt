@@ -1,0 +1,14 @@
+pamatove miesta (viacere, ako ich zobrazovat, ako ich pridavat do textu (nie ako cisla ale ako premenne))
+OK: viacriadkovy vstup
+posuvniky na vstup (uzke)
+vacsinu tlacidiel na funkcie
+tlacidlo na y= z= f(x) f(x,y)
+zmensit okno
+OK: pamat prikazov
+pamatove miesta viacere, cez combobox, v nazve comboboxu bude aj nazov premennej aj jej hodnota (pozor na velkost hodnoty, aby nepretiekla von z comboboxu)
+
+okno graf
+OK: okna na max a min treba spravit ako okna so sipkami (velkost kroku by mala zavisiet od rozdielu max a min)
+OK: ako sa bude zobrazovat hodnotu funkcie v bode ak je tam viacero funkcii
+OK: presunut definiciu funkcie k tlacitkam na mazanie a operaciu s pamatou funkcii
+
