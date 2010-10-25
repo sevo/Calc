@@ -34,6 +34,7 @@ namespace Calc
             InitializeComponent();
             startBC();
             graphOpened = false;
+            expressionTextBox.Select();
             grafoveOkno = null;
             
         }
@@ -114,7 +115,7 @@ namespace Calc
             }
             catch (ThreadAbortException e) 
             {
-                if (resultTextBox.Text == "") resultTextBox.Text = "Calculation timeout."; 
+                if (resultTextBox.Text == "") resultTextBox.Text = "Unable to find result."; 
             }           
         }
 
@@ -421,6 +422,56 @@ namespace Calc
             }
             expressionTextBox.SelectionStart = cursor_position - (expressionTextBox.Text.Length - length);
             //ak sa nejaky znak zmazal tak sa posunie nastavenie kurzora
+        }
+
+        private void buttonPlot_Click(object sender, EventArgs e)
+        {
+            String text = "";
+            Regex regex = new Regex(@"^\w+\((x|x,y)?\)=");
+
+            for (int i = 0; i < expressionTextBox.Lines.Length; i++) text += expressionTextBox.Lines[i];
+
+            if (regex.Match(text).Success)
+            {
+                if (!graphOpened)   //grafove okno este neni otvorene
+                {
+                    grafoveOkno = new GrafForm(text, ref graphOpened);
+                    grafoveOkno.Visible = true;
+                    graphOpened = true;
+                }
+                else                //grafove okno uz je otvorene
+                {
+                    grafoveOkno.AddFunkcia(text);
+                    grafoveOkno.Show();
+                    grafoveOkno.TopMost = true;
+                    grafoveOkno.Focus();
+                    grafoveOkno.BringToFront();
+                    grafoveOkno.TopMost = false;
+                }
+            }
+            else if (text.CompareTo("") == 0)
+            {
+                if (!graphOpened)   //grafove okno este neni otvorene
+                {
+                    grafoveOkno = new GrafForm(ref graphOpened);
+                    grafoveOkno.Visible = true;
+                    graphOpened = true;
+                }
+                else                //grafove okno uz je otvorene
+                {
+                    //grafoveOkno.AddFunkcia(text);
+                    grafoveOkno.Show();
+                    grafoveOkno.TopMost = true;
+                    grafoveOkno.Focus();
+                    grafoveOkno.BringToFront();
+                    grafoveOkno.TopMost = false;
+                }
+            }
+            else
+            {
+                resultTextBox.Text = "Not a function.";
+            }
+
         }
 
     }

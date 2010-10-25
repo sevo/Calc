@@ -189,7 +189,7 @@ namespace Calc
             this.tabPage8 = new System.Windows.Forms.TabPage();
             this.tabPage9 = new System.Windows.Forms.TabPage();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.skin = new DMSoft.SkinCrafter();
+            this.buttonPlot = new System.Windows.Forms.Button();
             this.TabControl.SuspendLayout();
             this.GeneralTab.SuspendLayout();
             this.ProgrammerTab.SuspendLayout();
@@ -226,6 +226,7 @@ namespace Calc
             // 
             // GeneralTab
             // 
+            this.GeneralTab.Controls.Add(this.buttonPlot);
             this.GeneralTab.Controls.Add(this.fibonacciButton);
             this.GeneralTab.Controls.Add(this.pytagorasButton);
             this.GeneralTab.Controls.Add(this.modButton);
@@ -1236,7 +1237,7 @@ namespace Calc
             // 
             this.DecRadioButton.AutoSize = true;
             this.DecRadioButton.Checked = true;
-            this.DecRadioButton.Location = new System.Drawing.Point(614, 246);
+            this.DecRadioButton.Location = new System.Drawing.Point(607, 239);
             this.DecRadioButton.Name = "DecRadioButton";
             this.DecRadioButton.Size = new System.Drawing.Size(45, 17);
             this.DecRadioButton.TabIndex = 2;
@@ -1248,7 +1249,7 @@ namespace Calc
             // HexRadioButton
             // 
             this.HexRadioButton.AutoSize = true;
-            this.HexRadioButton.Location = new System.Drawing.Point(564, 246);
+            this.HexRadioButton.Location = new System.Drawing.Point(557, 239);
             this.HexRadioButton.Name = "HexRadioButton";
             this.HexRadioButton.Size = new System.Drawing.Size(44, 17);
             this.HexRadioButton.TabIndex = 3;
@@ -1260,7 +1261,7 @@ namespace Calc
             // OctRadioButton
             // 
             this.OctRadioButton.AutoSize = true;
-            this.OctRadioButton.Location = new System.Drawing.Point(664, 246);
+            this.OctRadioButton.Location = new System.Drawing.Point(657, 239);
             this.OctRadioButton.Name = "OctRadioButton";
             this.OctRadioButton.Size = new System.Drawing.Size(42, 17);
             this.OctRadioButton.TabIndex = 4;
@@ -1272,7 +1273,7 @@ namespace Calc
             // BinRadioButton
             // 
             this.BinRadioButton.AutoSize = true;
-            this.BinRadioButton.Location = new System.Drawing.Point(712, 246);
+            this.BinRadioButton.Location = new System.Drawing.Point(705, 239);
             this.BinRadioButton.Name = "BinRadioButton";
             this.BinRadioButton.Size = new System.Drawing.Size(40, 17);
             this.BinRadioButton.TabIndex = 5;
@@ -1984,10 +1985,25 @@ namespace Calc
             this.toolTip1.AutoPopDelay = 8000;
             this.toolTip1.InitialDelay = 500;
             this.toolTip1.ReshowDelay = 100;
+
             // 
-            // skin
+            // buttonPlot
             // 
-            this.skin.SkinFile = "Micron_xp ST.skf";
+            this.buttonPlot.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonPlot.Location = new System.Drawing.Point(192, 227);
+            this.buttonPlot.Name = "buttonPlot";
+            this.buttonPlot.Size = new System.Drawing.Size(75, 23);
+            this.buttonPlot.TabIndex = 13;
+            this.buttonPlot.Text = "Plot";
+            this.buttonPlot.UseVisualStyleBackColor = true;
+            this.buttonPlot.Click += new System.EventHandler(this.buttonPlot_Click);
+            // 
+            // skinCrafter1
+            // 
+            this.skin = new SkinCrafter();
+            this.skin.SkinFile = "gloss.skf";
+
+
             // 
             // Form1
             // 
@@ -2215,6 +2231,9 @@ namespace Calc
         private System.Windows.Forms.Button cButton;
         private System.Windows.Forms.Button ggButton;
         private System.Windows.Forms.ToolTip toolTip1;
+
+        private System.Windows.Forms.Button buttonPlot;
+
         private SkinCrafter skin;
 
 
