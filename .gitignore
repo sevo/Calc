@@ -1,4 +1,3 @@
-Calc/Calc/bin/Debug/*.exe
-Calc/Calc/bin/Debug/*.pdb
-Calc/Calc/bin/Debug/*.manifest
-Calc/Calc/obj/*
+Calc/Calc/bin/*/*.exe
+Calc/Calc/bin/*/*.pdb
+Calc/Calc/obj/

@@ -10,6 +10,7 @@ using System.IO;
 using System.Threading;
 using System.Collections;
 using System.Text.RegularExpressions;
+using DMSoft;
 
 
 
