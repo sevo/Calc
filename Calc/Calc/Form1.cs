@@ -36,6 +36,7 @@ namespace Calc
             graphOpened = false;
             expressionTextBox.Select();
             grafoveOkno = null;
+            InitializeTooltips();
             
         }
 
@@ -163,6 +164,7 @@ namespace Calc
         private void buttonEquals_Click(object sender, EventArgs e)
         {
             String text = "";
+            if (expressionTextBox.Text == "") return;
             String expression = expressionTextBox.Lines[0];
             for (int i = 1; i < expressionTextBox.Lines.Length; i++) expression = expression + "\n" + expressionTextBox.Lines[i];
             history.Add(expression);
