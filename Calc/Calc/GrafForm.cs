@@ -20,6 +20,12 @@ namespace Calc
             this.grafOpened = grafOpened;
             DrawGraf();
         }
+        public GrafForm( ref bool grafOpened)
+        {
+            InitializeComponent();
+            this.grafOpened = grafOpened;
+            DrawGraf();
+        }
         ~GrafForm()
         {
             grafOpened = false;

@@ -188,6 +188,7 @@
             this.tabPage8 = new System.Windows.Forms.TabPage();
             this.tabPage9 = new System.Windows.Forms.TabPage();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.buttonPlot = new System.Windows.Forms.Button();
             this.TabControl.SuspendLayout();
             this.GeneralTab.SuspendLayout();
             this.ProgrammerTab.SuspendLayout();
@@ -224,6 +225,7 @@
             // 
             // GeneralTab
             // 
+            this.GeneralTab.Controls.Add(this.buttonPlot);
             this.GeneralTab.Controls.Add(this.fibonacciButton);
             this.GeneralTab.Controls.Add(this.pytagorasButton);
             this.GeneralTab.Controls.Add(this.modButton);
@@ -1983,6 +1985,17 @@
             this.toolTip1.InitialDelay = 500;
             this.toolTip1.ReshowDelay = 100;
             // 
+            // buttonPlot
+            // 
+            this.buttonPlot.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonPlot.Location = new System.Drawing.Point(192, 227);
+            this.buttonPlot.Name = "buttonPlot";
+            this.buttonPlot.Size = new System.Drawing.Size(75, 23);
+            this.buttonPlot.TabIndex = 13;
+            this.buttonPlot.Text = "Plot";
+            this.buttonPlot.UseVisualStyleBackColor = true;
+            this.buttonPlot.Click += new System.EventHandler(this.buttonPlot_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2209,6 +2222,7 @@
         private System.Windows.Forms.Button cButton;
         private System.Windows.Forms.Button ggButton;
         private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.Button buttonPlot;
 
 
 
