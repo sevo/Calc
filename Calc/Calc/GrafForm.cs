@@ -12,13 +12,18 @@ namespace Calc
 {
     public partial class GrafForm : Form
     {
-        private bool grafOpened;
-        public GrafForm(string funkcia, ref bool grafOpened)
+        private Boolean grafOpened;
+
+        public GrafForm(string funkcia, ref Boolean grafOpened)
         {   
             InitializeComponent();
             AddFunkcia(funkcia);
             this.grafOpened = grafOpened;
             DrawGraf();
+        }
+        ~GrafForm()
+        {
+            grafOpened = false;
         }
         public GrafForm( ref bool grafOpened)
         {

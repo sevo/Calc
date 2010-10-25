@@ -1,0 +1,9 @@
+E:\C++\ICP\Calc\Calc\bin\Release\Calc.exe
+E:\C++\ICP\Calc\Calc\bin\Release\Calc.pdb
+E:\C++\ICP\Calc\Calc\obj\Release\ResolveAssemblyReference.cache
+E:\C++\ICP\Calc\Calc\obj\Release\Calc.Form1.resources
+E:\C++\ICP\Calc\Calc\obj\Release\Calc.GrafForm.resources
+E:\C++\ICP\Calc\Calc\obj\Release\Calc.Properties.Resources.resources
+E:\C++\ICP\Calc\Calc\obj\Release\Calc.csproj.GenerateResource.Cache
+E:\C++\ICP\Calc\Calc\obj\Release\Calc.exe
+E:\C++\ICP\Calc\Calc\obj\Release\Calc.pdb

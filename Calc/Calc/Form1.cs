@@ -22,7 +22,7 @@ namespace Calc
         StreamReader bcOut;
         StreamWriter bcIn;
         float memory = 0.0f;
-        protected bool graphOpened;
+        protected Boolean graphOpened;
         protected GrafForm grafoveOkno;
         private bool isShiftDown=false;
         int history_index;
@@ -34,6 +34,7 @@ namespace Calc
             startBC();
             graphOpened = false;
             expressionTextBox.Select();
+            grafoveOkno = null;
             
         }
 
@@ -172,11 +173,11 @@ namespace Calc
 
             if(regex.Match(text).Success)
             {
-                if (!graphOpened)   //grafove okno este neni otvorene
+                if (grafoveOkno==null || grafoveOkno.IsDisposed)   //grafove okno este neni otvorene
                 {
-                    grafoveOkno = new GrafForm(text, ref graphOpened);
+                    grafoveOkno = new GrafForm(text,ref graphOpened);
                     grafoveOkno.Visible = true;
-                    graphOpened = true;
+                    graphOpened = true;        
                 }
                 else                //grafove okno uz je otvorene
                 {
