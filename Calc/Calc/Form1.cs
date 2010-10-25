@@ -36,6 +36,7 @@ namespace Calc
             graphOpened = false;
             expressionTextBox.Select();
             grafoveOkno = null;
+            InitializeTooltips();
             
         }
 
@@ -473,6 +474,7 @@ namespace Calc
             }
 
         }
+
 
     }
 }

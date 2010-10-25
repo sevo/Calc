@@ -8,10 +8,9 @@ namespace Calc
 {
     public partial class Form1 : Form
     {
-        //public ToolTipDB Tooltipy { get; set; }
         public void InitializeTooltips()
         {
-            //Tooltipy = new ToolTipDB();
+
             string str;
 
             // *** fibonacci ***

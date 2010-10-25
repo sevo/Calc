@@ -32,6 +32,7 @@ namespace Calc
             this.components = new System.ComponentModel.Container();
             this.TabControl = new System.Windows.Forms.TabControl();
             this.GeneralTab = new System.Windows.Forms.TabPage();
+            this.buttonPlot = new System.Windows.Forms.Button();
             this.fibonacciButton = new System.Windows.Forms.Button();
             this.pytagorasButton = new System.Windows.Forms.Button();
             this.modButton = new System.Windows.Forms.Button();
@@ -188,8 +189,10 @@ namespace Calc
             this.tabPage7 = new System.Windows.Forms.TabPage();
             this.tabPage8 = new System.Windows.Forms.TabPage();
             this.tabPage9 = new System.Windows.Forms.TabPage();
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.buttonPlot = new System.Windows.Forms.Button();
+            this.skin = new DMSoft.SkinCrafter();
+            this.syntaxTextBox = new System.Windows.Forms.TextBox();
+            this.memoryComboBox = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.TabControl.SuspendLayout();
             this.GeneralTab.SuspendLayout();
             this.ProgrammerTab.SuspendLayout();
@@ -246,6 +249,17 @@ namespace Calc
             this.GeneralTab.TabIndex = 1;
             this.GeneralTab.Text = "General";
             this.GeneralTab.UseVisualStyleBackColor = true;
+            // 
+            // buttonPlot
+            // 
+            this.buttonPlot.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonPlot.Location = new System.Drawing.Point(202, 205);
+            this.buttonPlot.Name = "buttonPlot";
+            this.buttonPlot.Size = new System.Drawing.Size(90, 28);
+            this.buttonPlot.TabIndex = 13;
+            this.buttonPlot.Text = "Plot";
+            this.buttonPlot.UseVisualStyleBackColor = true;
+            this.buttonPlot.Click += new System.EventHandler(this.buttonPlot_Click);
             // 
             // fibonacciButton
             // 
@@ -1980,30 +1994,39 @@ namespace Calc
             this.tabPage9.Size = new System.Drawing.Size(200, 100);
             this.tabPage9.TabIndex = 0;
             // 
+            // skin
+            // 
+            this.skin.SkinFile = "micron_xp ST.skf";
+            // 
+            // syntaxTextBox
+            // 
+            this.syntaxTextBox.Location = new System.Drawing.Point(764, 239);
+            this.syntaxTextBox.Name = "syntaxTextBox";
+            this.syntaxTextBox.ReadOnly = true;
+            this.syntaxTextBox.Size = new System.Drawing.Size(183, 20);
+            this.syntaxTextBox.TabIndex = 39;
+            // 
+            // memoryComboBox
+            // 
+            this.memoryComboBox.FormattingEnabled = true;
+            this.memoryComboBox.Location = new System.Drawing.Point(764, 22);
+            this.memoryComboBox.Name = "memoryComboBox";
+            this.memoryComboBox.Size = new System.Drawing.Size(183, 21);
+            this.memoryComboBox.TabIndex = 40;
+            this.memoryComboBox.Text = "M1 = 157";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(667, 25);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(91, 13);
+            this.label1.TabIndex = 41;
+            this.label1.Text = "Memory Location:";
+            // 
             // toolTip1
             // 
-            this.toolTip1.AutoPopDelay = 8000;
-            this.toolTip1.InitialDelay = 500;
-            this.toolTip1.ReshowDelay = 100;
-
-            // 
-            // buttonPlot
-            // 
-            this.buttonPlot.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonPlot.Location = new System.Drawing.Point(192, 227);
-            this.buttonPlot.Name = "buttonPlot";
-            this.buttonPlot.Size = new System.Drawing.Size(75, 23);
-            this.buttonPlot.TabIndex = 13;
-            this.buttonPlot.Text = "Plot";
-            this.buttonPlot.UseVisualStyleBackColor = true;
-            this.buttonPlot.Click += new System.EventHandler(this.buttonPlot_Click);
-            // 
-            // skinCrafter1
-            // 
-            this.skin = new SkinCrafter();
-            this.skin.SkinFile = "gloss.skf";
-
-
+            this.toolTip1 = new System.Windows.Forms.ToolTip();
             // 
             // Form1
             // 
@@ -2011,6 +2034,9 @@ namespace Calc
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1008, 562);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.memoryComboBox);
+            this.Controls.Add(this.syntaxTextBox);
             this.Controls.Add(this.buttonF);
             this.Controls.Add(this.buttonE);
             this.Controls.Add(this.buttonD);
@@ -2235,6 +2261,9 @@ namespace Calc
         private System.Windows.Forms.Button buttonPlot;
 
         private SkinCrafter skin;
+        private System.Windows.Forms.TextBox syntaxTextBox;
+        private System.Windows.Forms.ComboBox memoryComboBox;
+        private System.Windows.Forms.Label label1;
 
 
 
