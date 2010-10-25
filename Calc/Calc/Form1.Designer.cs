@@ -189,6 +189,7 @@ namespace Calc
             this.tabPage8 = new System.Windows.Forms.TabPage();
             this.tabPage9 = new System.Windows.Forms.TabPage();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.skin = new DMSoft.SkinCrafter();
             this.TabControl.SuspendLayout();
             this.GeneralTab.SuspendLayout();
             this.ProgrammerTab.SuspendLayout();
@@ -1235,7 +1236,7 @@ namespace Calc
             // 
             this.DecRadioButton.AutoSize = true;
             this.DecRadioButton.Checked = true;
-            this.DecRadioButton.Location = new System.Drawing.Point(607, 239);
+            this.DecRadioButton.Location = new System.Drawing.Point(614, 246);
             this.DecRadioButton.Name = "DecRadioButton";
             this.DecRadioButton.Size = new System.Drawing.Size(45, 17);
             this.DecRadioButton.TabIndex = 2;
@@ -1247,7 +1248,7 @@ namespace Calc
             // HexRadioButton
             // 
             this.HexRadioButton.AutoSize = true;
-            this.HexRadioButton.Location = new System.Drawing.Point(557, 239);
+            this.HexRadioButton.Location = new System.Drawing.Point(564, 246);
             this.HexRadioButton.Name = "HexRadioButton";
             this.HexRadioButton.Size = new System.Drawing.Size(44, 17);
             this.HexRadioButton.TabIndex = 3;
@@ -1259,7 +1260,7 @@ namespace Calc
             // OctRadioButton
             // 
             this.OctRadioButton.AutoSize = true;
-            this.OctRadioButton.Location = new System.Drawing.Point(657, 239);
+            this.OctRadioButton.Location = new System.Drawing.Point(664, 246);
             this.OctRadioButton.Name = "OctRadioButton";
             this.OctRadioButton.Size = new System.Drawing.Size(42, 17);
             this.OctRadioButton.TabIndex = 4;
@@ -1271,7 +1272,7 @@ namespace Calc
             // BinRadioButton
             // 
             this.BinRadioButton.AutoSize = true;
-            this.BinRadioButton.Location = new System.Drawing.Point(705, 239);
+            this.BinRadioButton.Location = new System.Drawing.Point(712, 246);
             this.BinRadioButton.Name = "BinRadioButton";
             this.BinRadioButton.Size = new System.Drawing.Size(40, 17);
             this.BinRadioButton.TabIndex = 5;
@@ -1983,14 +1984,10 @@ namespace Calc
             this.toolTip1.AutoPopDelay = 8000;
             this.toolTip1.InitialDelay = 500;
             this.toolTip1.ReshowDelay = 100;
-
             // 
-            // skinCrafter1
+            // skin
             // 
-            this.skin = new SkinCrafter();
-            this.skin.SkinFile = "gloss.skf";
-
-
+            this.skin.SkinFile = "Micron_xp ST.skf";
             // 
             // Form1
             // 
