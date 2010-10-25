@@ -31,10 +31,6 @@ namespace Calc
             this.grafOpened = grafOpened;
             DrawGraf();
         }
-        ~GrafForm()
-        {
-            grafOpened = false;
-        }
 
         public void AddFunkcia(string funkcia)
         {
