@@ -136,10 +136,25 @@ namespace Calc
         /// <param name="e">same as sender</param>
         private void buttonNum_Click(object sender, EventArgs e)
         {
-            Button s = sender as Button;
+            Button b = sender as Button;
+            String s = b.Text;
+            if (s.Length > 1)
+            {
+                s = s.ToLower();
+            }
             int cursorPosition = expressionTextBox.SelectionStart;
-            expressionTextBox.Text = expressionTextBox.Text.Substring(0, cursorPosition) + s.Text + expressionTextBox.Text.Substring(cursorPosition, expressionTextBox.Text.Length - cursorPosition);
-            expressionTextBox.SelectionStart = cursorPosition + 1;
+            expressionTextBox.Text = expressionTextBox.Text.Substring(0, cursorPosition) + s + expressionTextBox.Text.Substring(cursorPosition, expressionTextBox.Text.Length - cursorPosition);
+            expressionTextBox.SelectionStart = cursorPosition + s.Length;
+        }
+
+        private void buttonFun_Click(object sender, EventArgs e)
+        {
+            Button b = sender as Button;
+            string s = b.Text.ToLower();
+            s = s.Insert(s.Length, "()");
+            int cursorPosition = expressionTextBox.SelectionStart;
+            expressionTextBox.Text = expressionTextBox.Text.Substring(0, cursorPosition) + s + expressionTextBox.Text.Substring(cursorPosition, expressionTextBox.Text.Length - cursorPosition);
+            expressionTextBox.SelectionStart = cursorPosition + s.Length - 1;
         }
 
         private void buttonEquals_Click(object sender, EventArgs e)

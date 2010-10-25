@@ -114,7 +114,7 @@ namespace Calc
 
             //GrafSurface2D.XAxis1 = new PiAxis(GrafSurface2D.XAxis1);
             GrafSurface2D.XAxis1 = new LinearAxis(GrafSurface2D.XAxis1);
-
+               
             GrafSurface2D.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
 
             GrafSurface2D.Legend = new Legend();
@@ -123,9 +123,10 @@ namespace Calc
             GrafSurface2D.Legend.VerticalEdgePlacement = Legend.Placement.Inside;
             GrafSurface2D.Legend.XOffset = -10;
             GrafSurface2D.Legend.YOffset = -10;
-
+            GrafSurface2D.Legend.NeverShiftAxes = true;
+            
             GrafSurface2D.Refresh();
-
+            
         }
 
         private void buttonCreate_Click(object sender, EventArgs e)

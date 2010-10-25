@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GrafForm));
             this.xTrackBar = new System.Windows.Forms.TrackBar();
             this.yBox = new System.Windows.Forms.TextBox();
             this.xBox = new System.Windows.Forms.TextBox();
@@ -256,6 +257,7 @@
             // button4
             // 
             this.button4.Enabled = false;
+            this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
             this.button4.Location = new System.Drawing.Point(74, 435);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(45, 35);
@@ -265,44 +267,110 @@
             // 
             // YMinNumericUpDown
             // 
+            this.YMinNumericUpDown.DecimalPlaces = 2;
+            this.YMinNumericUpDown.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            65536});
             this.YMinNumericUpDown.Location = new System.Drawing.Point(239, 399);
+            this.YMinNumericUpDown.Minimum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            -2147483648});
             this.YMinNumericUpDown.Name = "YMinNumericUpDown";
             this.YMinNumericUpDown.Size = new System.Drawing.Size(43, 20);
             this.YMinNumericUpDown.TabIndex = 31;
             // 
             // ZMinNumericUpDown
             // 
+            this.ZMinNumericUpDown.DecimalPlaces = 2;
             this.ZMinNumericUpDown.Enabled = false;
+            this.ZMinNumericUpDown.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            65536});
             this.ZMinNumericUpDown.Location = new System.Drawing.Point(239, 470);
+            this.ZMinNumericUpDown.Minimum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            -2147483648});
             this.ZMinNumericUpDown.Name = "ZMinNumericUpDown";
             this.ZMinNumericUpDown.Size = new System.Drawing.Size(43, 20);
             this.ZMinNumericUpDown.TabIndex = 32;
             // 
             // YMaxNumericUpDown
             // 
+            this.YMaxNumericUpDown.DecimalPlaces = 2;
+            this.YMaxNumericUpDown.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            65536});
             this.YMaxNumericUpDown.Location = new System.Drawing.Point(239, 42);
+            this.YMaxNumericUpDown.Minimum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            -2147483648});
             this.YMaxNumericUpDown.Name = "YMaxNumericUpDown";
             this.YMaxNumericUpDown.Size = new System.Drawing.Size(43, 20);
             this.YMaxNumericUpDown.TabIndex = 33;
             // 
             // XMinNumericUpDown
             // 
+            this.XMinNumericUpDown.DecimalPlaces = 2;
+            this.XMinNumericUpDown.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            65536});
             this.XMinNumericUpDown.Location = new System.Drawing.Point(334, 470);
+            this.XMinNumericUpDown.Minimum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            -2147483648});
             this.XMinNumericUpDown.Name = "XMinNumericUpDown";
             this.XMinNumericUpDown.Size = new System.Drawing.Size(43, 20);
             this.XMinNumericUpDown.TabIndex = 34;
             // 
             // ZMaxNumericUpDown
             // 
+            this.ZMaxNumericUpDown.DecimalPlaces = 2;
             this.ZMaxNumericUpDown.Enabled = false;
+            this.ZMaxNumericUpDown.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            65536});
             this.ZMaxNumericUpDown.Location = new System.Drawing.Point(952, 5);
+            this.ZMaxNumericUpDown.Minimum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            -2147483648});
             this.ZMaxNumericUpDown.Name = "ZMaxNumericUpDown";
             this.ZMaxNumericUpDown.Size = new System.Drawing.Size(43, 20);
             this.ZMaxNumericUpDown.TabIndex = 35;
             // 
             // XMaxNumericUpDown
             // 
+            this.XMaxNumericUpDown.DecimalPlaces = 2;
+            this.XMaxNumericUpDown.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            65536});
             this.XMaxNumericUpDown.Location = new System.Drawing.Point(943, 466);
+            this.XMaxNumericUpDown.Minimum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            -2147483648});
             this.XMaxNumericUpDown.Name = "XMaxNumericUpDown";
             this.XMaxNumericUpDown.Size = new System.Drawing.Size(43, 20);
             this.XMaxNumericUpDown.TabIndex = 36;
