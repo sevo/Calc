@@ -26,3 +26,6 @@ E:\C++\ICP\Calc\Calc\obj\Debug\Calc.Properties.Resources.resources
 E:\C++\ICP\Calc\Calc\obj\Debug\Calc.csproj.GenerateResource.Cache
 D:\skola\stu\3.rocnik\zima\ICP\projekt\Calc\Calc\Calc\bin\Debug\NPlot.dll
 D:\skola\stu\3.rocnik\zima\ICP\projekt\Calc\Calc\Calc\bin\Debug\NPlot.xml
+E:\C++\ICP\Calc\Calc\bin\Debug\NPlot.dll
+E:\C++\ICP\Calc\Calc\bin\Debug\NPlot.xml
+E:\C++\ICP\Calc\Calc\bin\Debug\skincrafter_.net2.0_vs2008.dll
