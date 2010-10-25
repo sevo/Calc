@@ -16,7 +16,9 @@
             if (disposing && (components != null))
             {
                 components.Dispose();
+                
             }
+            grafOpened = false;
             base.Dispose(disposing);
         }
 
