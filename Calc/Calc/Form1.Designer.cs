@@ -1,4 +1,5 @@
-﻿namespace Calc
+﻿using DMSoft;
+namespace Calc
 {
     partial class Form1
     {
@@ -1982,6 +1983,14 @@
             this.toolTip1.AutoPopDelay = 8000;
             this.toolTip1.InitialDelay = 500;
             this.toolTip1.ReshowDelay = 100;
+
+            // 
+            // skinCrafter1
+            // 
+            this.skin = new SkinCrafter();
+            this.skin.SkinFile = "gloss.skf";
+
+
             // 
             // Form1
             // 
@@ -2209,7 +2218,7 @@
         private System.Windows.Forms.Button cButton;
         private System.Windows.Forms.Button ggButton;
         private System.Windows.Forms.ToolTip toolTip1;
-
+        private SkinCrafter skin;
 
 
 
