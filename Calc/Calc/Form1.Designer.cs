@@ -225,12 +225,12 @@ namespace Calc
             this.TabControl.Controls.Add(this.ConversionTab);
             this.TabControl.Controls.Add(this.ConstantsTab);
             this.TabControl.Controls.Add(this.tabPage1);
-            this.TabControl.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.TabControl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.TabControl.Location = new System.Drawing.Point(0, 4);
             this.TabControl.Multiline = true;
             this.TabControl.Name = "TabControl";
             this.TabControl.SelectedIndex = 0;
-            this.TabControl.Size = new System.Drawing.Size(460, 482);
+            this.TabControl.Size = new System.Drawing.Size(423, 482);
             this.TabControl.SizeMode = System.Windows.Forms.TabSizeMode.FillToRight;
             this.TabControl.TabIndex = 0;
             // 
@@ -249,40 +249,40 @@ namespace Calc
             this.GeneralTab.Controls.Add(this.roundButton);
             this.GeneralTab.Controls.Add(this.absButton);
             this.GeneralTab.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.GeneralTab.Location = new System.Drawing.Point(4, 54);
+            this.GeneralTab.Location = new System.Drawing.Point(4, 46);
             this.GeneralTab.Name = "GeneralTab";
             this.GeneralTab.Padding = new System.Windows.Forms.Padding(3);
-            this.GeneralTab.Size = new System.Drawing.Size(452, 424);
+            this.GeneralTab.Size = new System.Drawing.Size(415, 432);
             this.GeneralTab.TabIndex = 1;
             this.GeneralTab.Text = "General";
             this.GeneralTab.UseVisualStyleBackColor = true;
             // 
             // gcdButton
             // 
-            this.gcdButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.gcdButton.Location = new System.Drawing.Point(182, 49);
+            this.gcdButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.gcdButton.Location = new System.Drawing.Point(157, 49);
             this.gcdButton.Name = "gcdButton";
-            this.gcdButton.Size = new System.Drawing.Size(100, 40);
+            this.gcdButton.Size = new System.Drawing.Size(90, 35);
             this.gcdButton.TabIndex = 42;
             this.gcdButton.Text = "GCD";
             this.gcdButton.UseVisualStyleBackColor = true;
             // 
             // lcmButton
             // 
-            this.lcmButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lcmButton.Location = new System.Drawing.Point(182, 132);
+            this.lcmButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lcmButton.Location = new System.Drawing.Point(157, 131);
             this.lcmButton.Name = "lcmButton";
-            this.lcmButton.Size = new System.Drawing.Size(100, 40);
+            this.lcmButton.Size = new System.Drawing.Size(90, 35);
             this.lcmButton.TabIndex = 41;
             this.lcmButton.Text = "LCM";
             this.lcmButton.UseVisualStyleBackColor = true;
             // 
             // buttonPlot
             // 
-            this.buttonPlot.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonPlot.Location = new System.Drawing.Point(182, 219);
+            this.buttonPlot.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonPlot.Location = new System.Drawing.Point(157, 219);
             this.buttonPlot.Name = "buttonPlot";
-            this.buttonPlot.Size = new System.Drawing.Size(100, 40);
+            this.buttonPlot.Size = new System.Drawing.Size(90, 35);
             this.buttonPlot.TabIndex = 13;
             this.buttonPlot.Text = "Plot";
             this.buttonPlot.UseVisualStyleBackColor = true;
@@ -290,10 +290,10 @@ namespace Calc
             // 
             // fibonacciButton
             // 
-            this.fibonacciButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.fibonacciButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.fibonacciButton.Location = new System.Drawing.Point(37, 304);
             this.fibonacciButton.Name = "fibonacciButton";
-            this.fibonacciButton.Size = new System.Drawing.Size(100, 40);
+            this.fibonacciButton.Size = new System.Drawing.Size(90, 35);
             this.fibonacciButton.TabIndex = 12;
             this.fibonacciButton.Text = "Fibonacci";
             this.fibonacciButton.UseVisualStyleBackColor = true;
@@ -301,10 +301,10 @@ namespace Calc
             // 
             // pytagorasButton
             // 
-            this.pytagorasButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.pytagorasButton.Location = new System.Drawing.Point(327, 49);
+            this.pytagorasButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.pytagorasButton.Location = new System.Drawing.Point(277, 49);
             this.pytagorasButton.Name = "pytagorasButton";
-            this.pytagorasButton.Size = new System.Drawing.Size(100, 40);
+            this.pytagorasButton.Size = new System.Drawing.Size(90, 35);
             this.pytagorasButton.TabIndex = 11;
             this.pytagorasButton.Text = "Pytagoras";
             this.pytagorasButton.UseVisualStyleBackColor = true;
@@ -312,10 +312,10 @@ namespace Calc
             // 
             // randomButton
             // 
-            this.randomButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.randomButton.Location = new System.Drawing.Point(327, 136);
+            this.randomButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.randomButton.Location = new System.Drawing.Point(277, 134);
             this.randomButton.Name = "randomButton";
-            this.randomButton.Size = new System.Drawing.Size(100, 40);
+            this.randomButton.Size = new System.Drawing.Size(90, 35);
             this.randomButton.TabIndex = 9;
             this.randomButton.Text = "Random";
             this.randomButton.UseVisualStyleBackColor = true;
@@ -323,10 +323,10 @@ namespace Calc
             // 
             // factorialButton
             // 
-            this.factorialButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.factorialButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.factorialButton.Location = new System.Drawing.Point(37, 219);
             this.factorialButton.Name = "factorialButton";
-            this.factorialButton.Size = new System.Drawing.Size(100, 40);
+            this.factorialButton.Size = new System.Drawing.Size(90, 35);
             this.factorialButton.TabIndex = 8;
             this.factorialButton.Text = "Factorial";
             this.factorialButton.UseVisualStyleBackColor = true;
@@ -334,10 +334,10 @@ namespace Calc
             // 
             // primeButton
             // 
-            this.primeButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.primeButton.Location = new System.Drawing.Point(182, 304);
+            this.primeButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.primeButton.Location = new System.Drawing.Point(157, 304);
             this.primeButton.Name = "primeButton";
-            this.primeButton.Size = new System.Drawing.Size(100, 40);
+            this.primeButton.Size = new System.Drawing.Size(90, 35);
             this.primeButton.TabIndex = 7;
             this.primeButton.Text = "Prime";
             this.primeButton.UseVisualStyleBackColor = true;
@@ -345,10 +345,10 @@ namespace Calc
             // 
             // sumButton
             // 
-            this.sumButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.sumButton.Location = new System.Drawing.Point(327, 304);
+            this.sumButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.sumButton.Location = new System.Drawing.Point(277, 304);
             this.sumButton.Name = "sumButton";
-            this.sumButton.Size = new System.Drawing.Size(100, 40);
+            this.sumButton.Size = new System.Drawing.Size(90, 35);
             this.sumButton.TabIndex = 6;
             this.sumButton.Text = "Sum";
             this.sumButton.UseVisualStyleBackColor = true;
@@ -356,10 +356,10 @@ namespace Calc
             // 
             // digitButton
             // 
-            this.digitButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.digitButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.digitButton.Location = new System.Drawing.Point(37, 134);
             this.digitButton.Name = "digitButton";
-            this.digitButton.Size = new System.Drawing.Size(100, 40);
+            this.digitButton.Size = new System.Drawing.Size(90, 35);
             this.digitButton.TabIndex = 5;
             this.digitButton.Text = "Digits Sum";
             this.digitButton.UseVisualStyleBackColor = true;
@@ -367,10 +367,10 @@ namespace Calc
             // 
             // roundButton
             // 
-            this.roundButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.roundButton.Location = new System.Drawing.Point(327, 219);
+            this.roundButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.roundButton.Location = new System.Drawing.Point(277, 219);
             this.roundButton.Name = "roundButton";
-            this.roundButton.Size = new System.Drawing.Size(100, 40);
+            this.roundButton.Size = new System.Drawing.Size(90, 35);
             this.roundButton.TabIndex = 4;
             this.roundButton.Text = "Round";
             this.roundButton.UseVisualStyleBackColor = true;
@@ -378,10 +378,10 @@ namespace Calc
             // 
             // absButton
             // 
-            this.absButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.absButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.absButton.Location = new System.Drawing.Point(37, 49);
             this.absButton.Name = "absButton";
-            this.absButton.Size = new System.Drawing.Size(100, 40);
+            this.absButton.Size = new System.Drawing.Size(90, 35);
             this.absButton.TabIndex = 2;
             this.absButton.Text = "Absolute";
             this.absButton.UseVisualStyleBackColor = true;
@@ -399,49 +399,50 @@ namespace Calc
             this.ProgrammerTab.Controls.Add(this.fracButton);
             this.ProgrammerTab.Controls.Add(this.coielButton);
             this.ProgrammerTab.Controls.Add(this.binNegButton);
-            this.ProgrammerTab.Location = new System.Drawing.Point(4, 54);
+            this.ProgrammerTab.Location = new System.Drawing.Point(4, 46);
             this.ProgrammerTab.Name = "ProgrammerTab";
             this.ProgrammerTab.Padding = new System.Windows.Forms.Padding(3);
-            this.ProgrammerTab.Size = new System.Drawing.Size(452, 424);
+            this.ProgrammerTab.Size = new System.Drawing.Size(415, 432);
             this.ProgrammerTab.TabIndex = 2;
             this.ProgrammerTab.Text = "Programmer";
             this.ProgrammerTab.UseVisualStyleBackColor = true;
             // 
             // button52
             // 
-            this.button52.Location = new System.Drawing.Point(174, 126);
+            this.button52.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button52.Location = new System.Drawing.Point(159, 141);
             this.button52.Name = "button52";
-            this.button52.Size = new System.Drawing.Size(100, 40);
+            this.button52.Size = new System.Drawing.Size(90, 35);
             this.button52.TabIndex = 43;
             this.button52.Text = "XOR";
             this.button52.UseVisualStyleBackColor = true;
             // 
             // modButton
             // 
-            this.modButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.modButton.Location = new System.Drawing.Point(247, 266);
+            this.modButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.modButton.Location = new System.Drawing.Point(219, 282);
             this.modButton.Name = "modButton";
-            this.modButton.Size = new System.Drawing.Size(100, 40);
+            this.modButton.Size = new System.Drawing.Size(90, 35);
             this.modButton.TabIndex = 42;
             this.modButton.Text = "Mod";
             this.modButton.UseVisualStyleBackColor = true;
             // 
             // floorButton
             // 
-            this.floorButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.floorButton.Location = new System.Drawing.Point(101, 266);
+            this.floorButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.floorButton.Location = new System.Drawing.Point(96, 282);
             this.floorButton.Name = "floorButton";
-            this.floorButton.Size = new System.Drawing.Size(100, 40);
+            this.floorButton.Size = new System.Drawing.Size(90, 35);
             this.floorButton.TabIndex = 41;
             this.floorButton.Text = "Floor";
             this.floorButton.UseVisualStyleBackColor = true;
             // 
             // andButton
             // 
-            this.andButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.andButton.Location = new System.Drawing.Point(29, 125);
+            this.andButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.andButton.Location = new System.Drawing.Point(39, 141);
             this.andButton.Name = "andButton";
-            this.andButton.Size = new System.Drawing.Size(100, 40);
+            this.andButton.Size = new System.Drawing.Size(90, 35);
             this.andButton.TabIndex = 10;
             this.andButton.Text = "AND";
             this.andButton.UseVisualStyleBackColor = true;
@@ -449,10 +450,10 @@ namespace Calc
             // 
             // orButton
             // 
-            this.orButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.orButton.Location = new System.Drawing.Point(319, 126);
+            this.orButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.orButton.Location = new System.Drawing.Point(279, 141);
             this.orButton.Name = "orButton";
-            this.orButton.Size = new System.Drawing.Size(100, 40);
+            this.orButton.Size = new System.Drawing.Size(90, 35);
             this.orButton.TabIndex = 9;
             this.orButton.Text = "OR";
             this.orButton.UseVisualStyleBackColor = true;
@@ -460,10 +461,10 @@ namespace Calc
             // 
             // binRightButton
             // 
-            this.binRightButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.binRightButton.Location = new System.Drawing.Point(319, 55);
+            this.binRightButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.binRightButton.Location = new System.Drawing.Point(279, 71);
             this.binRightButton.Name = "binRightButton";
-            this.binRightButton.Size = new System.Drawing.Size(100, 40);
+            this.binRightButton.Size = new System.Drawing.Size(90, 35);
             this.binRightButton.TabIndex = 8;
             this.binRightButton.Text = ">>";
             this.binRightButton.UseVisualStyleBackColor = true;
@@ -471,10 +472,10 @@ namespace Calc
             // 
             // binLeftButton
             // 
-            this.binLeftButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.binLeftButton.Location = new System.Drawing.Point(29, 55);
+            this.binLeftButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.binLeftButton.Location = new System.Drawing.Point(39, 71);
             this.binLeftButton.Name = "binLeftButton";
-            this.binLeftButton.Size = new System.Drawing.Size(100, 40);
+            this.binLeftButton.Size = new System.Drawing.Size(90, 35);
             this.binLeftButton.TabIndex = 7;
             this.binLeftButton.Text = "<<";
             this.binLeftButton.UseVisualStyleBackColor = true;
@@ -482,10 +483,10 @@ namespace Calc
             // 
             // fracButton
             // 
-            this.fracButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.fracButton.Location = new System.Drawing.Point(102, 195);
+            this.fracButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.fracButton.Location = new System.Drawing.Point(96, 211);
             this.fracButton.Name = "fracButton";
-            this.fracButton.Size = new System.Drawing.Size(100, 40);
+            this.fracButton.Size = new System.Drawing.Size(90, 35);
             this.fracButton.TabIndex = 6;
             this.fracButton.Text = "Frac";
             this.fracButton.UseVisualStyleBackColor = true;
@@ -493,10 +494,10 @@ namespace Calc
             // 
             // coielButton
             // 
-            this.coielButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.coielButton.Location = new System.Drawing.Point(247, 196);
+            this.coielButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.coielButton.Location = new System.Drawing.Point(219, 212);
             this.coielButton.Name = "coielButton";
-            this.coielButton.Size = new System.Drawing.Size(100, 40);
+            this.coielButton.Size = new System.Drawing.Size(90, 35);
             this.coielButton.TabIndex = 5;
             this.coielButton.Text = "Coiel";
             this.coielButton.UseVisualStyleBackColor = true;
@@ -504,10 +505,10 @@ namespace Calc
             // 
             // binNegButton
             // 
-            this.binNegButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.binNegButton.Location = new System.Drawing.Point(174, 55);
+            this.binNegButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.binNegButton.Location = new System.Drawing.Point(159, 71);
             this.binNegButton.Name = "binNegButton";
-            this.binNegButton.Size = new System.Drawing.Size(100, 40);
+            this.binNegButton.Size = new System.Drawing.Size(90, 35);
             this.binNegButton.TabIndex = 4;
             this.binNegButton.Text = "!";
             this.binNegButton.UseVisualStyleBackColor = true;
@@ -531,20 +532,20 @@ namespace Calc
             this.TrigonometricTab.Controls.Add(this.tgButton);
             this.TrigonometricTab.Controls.Add(this.cosButton);
             this.TrigonometricTab.Controls.Add(this.sinButton);
-            this.TrigonometricTab.Location = new System.Drawing.Point(4, 54);
+            this.TrigonometricTab.Location = new System.Drawing.Point(4, 46);
             this.TrigonometricTab.Name = "TrigonometricTab";
             this.TrigonometricTab.Padding = new System.Windows.Forms.Padding(3);
-            this.TrigonometricTab.Size = new System.Drawing.Size(452, 424);
+            this.TrigonometricTab.Size = new System.Drawing.Size(415, 432);
             this.TrigonometricTab.TabIndex = 3;
             this.TrigonometricTab.Text = "Trigonometric";
             this.TrigonometricTab.UseVisualStyleBackColor = true;
             // 
             // archypcothButton
             // 
-            this.archypcothButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.archypcothButton.Location = new System.Drawing.Point(341, 321);
+            this.archypcothButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.archypcothButton.Location = new System.Drawing.Point(314, 321);
             this.archypcothButton.Name = "archypcothButton";
-            this.archypcothButton.Size = new System.Drawing.Size(100, 40);
+            this.archypcothButton.Size = new System.Drawing.Size(90, 35);
             this.archypcothButton.TabIndex = 20;
             this.archypcothButton.Text = "Hyparcotg";
             this.archypcothButton.UseVisualStyleBackColor = true;
@@ -552,10 +553,10 @@ namespace Calc
             // 
             // archyptgButton
             // 
-            this.archyptgButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.archyptgButton.Location = new System.Drawing.Point(232, 321);
+            this.archyptgButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.archyptgButton.Location = new System.Drawing.Point(214, 321);
             this.archyptgButton.Name = "archyptgButton";
-            this.archyptgButton.Size = new System.Drawing.Size(100, 40);
+            this.archyptgButton.Size = new System.Drawing.Size(90, 35);
             this.archyptgButton.TabIndex = 19;
             this.archyptgButton.Text = "Hyparctg";
             this.archyptgButton.UseVisualStyleBackColor = true;
@@ -563,10 +564,10 @@ namespace Calc
             // 
             // archypcosButton
             // 
-            this.archypcosButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.archypcosButton.Location = new System.Drawing.Point(123, 321);
+            this.archypcosButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.archypcosButton.Location = new System.Drawing.Point(114, 321);
             this.archypcosButton.Name = "archypcosButton";
-            this.archypcosButton.Size = new System.Drawing.Size(100, 40);
+            this.archypcosButton.Size = new System.Drawing.Size(90, 35);
             this.archypcosButton.TabIndex = 18;
             this.archypcosButton.Text = "Hyparcos";
             this.archypcosButton.UseVisualStyleBackColor = true;
@@ -574,10 +575,10 @@ namespace Calc
             // 
             // archypsinButton
             // 
-            this.archypsinButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.archypsinButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.archypsinButton.Location = new System.Drawing.Point(14, 321);
             this.archypsinButton.Name = "archypsinButton";
-            this.archypsinButton.Size = new System.Drawing.Size(100, 40);
+            this.archypsinButton.Size = new System.Drawing.Size(90, 35);
             this.archypsinButton.TabIndex = 17;
             this.archypsinButton.Text = "Hyparcsin";
             this.archypsinButton.UseVisualStyleBackColor = true;
@@ -585,10 +586,10 @@ namespace Calc
             // 
             // hypcotgButton
             // 
-            this.hypcotgButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.hypcotgButton.Location = new System.Drawing.Point(341, 233);
+            this.hypcotgButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.hypcotgButton.Location = new System.Drawing.Point(314, 231);
             this.hypcotgButton.Name = "hypcotgButton";
-            this.hypcotgButton.Size = new System.Drawing.Size(100, 40);
+            this.hypcotgButton.Size = new System.Drawing.Size(90, 35);
             this.hypcotgButton.TabIndex = 16;
             this.hypcotgButton.Text = "Hypcotg";
             this.hypcotgButton.UseVisualStyleBackColor = true;
@@ -596,10 +597,10 @@ namespace Calc
             // 
             // hyptgButton
             // 
-            this.hyptgButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.hyptgButton.Location = new System.Drawing.Point(232, 231);
+            this.hyptgButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.hyptgButton.Location = new System.Drawing.Point(214, 231);
             this.hyptgButton.Name = "hyptgButton";
-            this.hyptgButton.Size = new System.Drawing.Size(100, 40);
+            this.hyptgButton.Size = new System.Drawing.Size(90, 35);
             this.hyptgButton.TabIndex = 15;
             this.hyptgButton.Text = "Hyptg";
             this.hyptgButton.UseVisualStyleBackColor = true;
@@ -607,10 +608,10 @@ namespace Calc
             // 
             // hypcosbutton
             // 
-            this.hypcosbutton.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.hypcosbutton.Location = new System.Drawing.Point(124, 231);
+            this.hypcosbutton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.hypcosbutton.Location = new System.Drawing.Point(114, 231);
             this.hypcosbutton.Name = "hypcosbutton";
-            this.hypcosbutton.Size = new System.Drawing.Size(100, 40);
+            this.hypcosbutton.Size = new System.Drawing.Size(90, 35);
             this.hypcosbutton.TabIndex = 14;
             this.hypcosbutton.Text = "Hypcos";
             this.hypcosbutton.UseVisualStyleBackColor = true;
@@ -618,10 +619,10 @@ namespace Calc
             // 
             // hypsinButton
             // 
-            this.hypsinButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.hypsinButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.hypsinButton.Location = new System.Drawing.Point(14, 231);
             this.hypsinButton.Name = "hypsinButton";
-            this.hypsinButton.Size = new System.Drawing.Size(100, 40);
+            this.hypsinButton.Size = new System.Drawing.Size(90, 35);
             this.hypsinButton.TabIndex = 13;
             this.hypsinButton.Text = "Hypsin";
             this.hypsinButton.UseVisualStyleBackColor = true;
@@ -629,10 +630,10 @@ namespace Calc
             // 
             // arcotgButton
             // 
-            this.arcotgButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.arcotgButton.Location = new System.Drawing.Point(341, 143);
+            this.arcotgButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.arcotgButton.Location = new System.Drawing.Point(314, 142);
             this.arcotgButton.Name = "arcotgButton";
-            this.arcotgButton.Size = new System.Drawing.Size(100, 40);
+            this.arcotgButton.Size = new System.Drawing.Size(90, 35);
             this.arcotgButton.TabIndex = 12;
             this.arcotgButton.Text = "Arcotg";
             this.arcotgButton.UseVisualStyleBackColor = true;
@@ -640,10 +641,10 @@ namespace Calc
             // 
             // arctgButton
             // 
-            this.arctgButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.arctgButton.Location = new System.Drawing.Point(232, 141);
+            this.arctgButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.arctgButton.Location = new System.Drawing.Point(214, 141);
             this.arctgButton.Name = "arctgButton";
-            this.arctgButton.Size = new System.Drawing.Size(100, 40);
+            this.arctgButton.Size = new System.Drawing.Size(90, 35);
             this.arctgButton.TabIndex = 11;
             this.arctgButton.Text = "Arctg";
             this.arctgButton.UseVisualStyleBackColor = true;
@@ -651,10 +652,10 @@ namespace Calc
             // 
             // arcosButton
             // 
-            this.arcosButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.arcosButton.Location = new System.Drawing.Point(124, 141);
+            this.arcosButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.arcosButton.Location = new System.Drawing.Point(114, 141);
             this.arcosButton.Name = "arcosButton";
-            this.arcosButton.Size = new System.Drawing.Size(100, 40);
+            this.arcosButton.Size = new System.Drawing.Size(90, 35);
             this.arcosButton.TabIndex = 10;
             this.arcosButton.Text = "Arcos";
             this.arcosButton.UseVisualStyleBackColor = true;
@@ -662,10 +663,10 @@ namespace Calc
             // 
             // arcsinButton
             // 
-            this.arcsinButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.arcsinButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.arcsinButton.Location = new System.Drawing.Point(14, 141);
             this.arcsinButton.Name = "arcsinButton";
-            this.arcsinButton.Size = new System.Drawing.Size(100, 40);
+            this.arcsinButton.Size = new System.Drawing.Size(90, 35);
             this.arcsinButton.TabIndex = 9;
             this.arcsinButton.Text = "Arcsin";
             this.arcsinButton.UseVisualStyleBackColor = true;
@@ -673,10 +674,10 @@ namespace Calc
             // 
             // cotgButton
             // 
-            this.cotgButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.cotgButton.Location = new System.Drawing.Point(341, 51);
+            this.cotgButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.cotgButton.Location = new System.Drawing.Point(314, 51);
             this.cotgButton.Name = "cotgButton";
-            this.cotgButton.Size = new System.Drawing.Size(100, 40);
+            this.cotgButton.Size = new System.Drawing.Size(90, 35);
             this.cotgButton.TabIndex = 8;
             this.cotgButton.Text = "Cotg";
             this.cotgButton.UseVisualStyleBackColor = true;
@@ -684,10 +685,10 @@ namespace Calc
             // 
             // tgButton
             // 
-            this.tgButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.tgButton.Location = new System.Drawing.Point(232, 51);
+            this.tgButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.tgButton.Location = new System.Drawing.Point(214, 51);
             this.tgButton.Name = "tgButton";
-            this.tgButton.Size = new System.Drawing.Size(100, 40);
+            this.tgButton.Size = new System.Drawing.Size(90, 35);
             this.tgButton.TabIndex = 7;
             this.tgButton.Text = "Tg";
             this.tgButton.UseVisualStyleBackColor = true;
@@ -695,10 +696,10 @@ namespace Calc
             // 
             // cosButton
             // 
-            this.cosButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.cosButton.Location = new System.Drawing.Point(124, 51);
+            this.cosButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.cosButton.Location = new System.Drawing.Point(114, 51);
             this.cosButton.Name = "cosButton";
-            this.cosButton.Size = new System.Drawing.Size(100, 40);
+            this.cosButton.Size = new System.Drawing.Size(90, 35);
             this.cosButton.TabIndex = 6;
             this.cosButton.Text = "Cos";
             this.cosButton.UseVisualStyleBackColor = true;
@@ -706,10 +707,10 @@ namespace Calc
             // 
             // sinButton
             // 
-            this.sinButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.sinButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.sinButton.Location = new System.Drawing.Point(14, 51);
             this.sinButton.Name = "sinButton";
-            this.sinButton.Size = new System.Drawing.Size(100, 40);
+            this.sinButton.Size = new System.Drawing.Size(90, 35);
             this.sinButton.TabIndex = 5;
             this.sinButton.Text = "Sin";
             this.sinButton.UseVisualStyleBackColor = true;
@@ -724,30 +725,30 @@ namespace Calc
             this.PowerTab.Controls.Add(this.rootButton);
             this.PowerTab.Controls.Add(this.powerButton);
             this.PowerTab.Controls.Add(this.expButton);
-            this.PowerTab.Location = new System.Drawing.Point(4, 54);
+            this.PowerTab.Location = new System.Drawing.Point(4, 46);
             this.PowerTab.Name = "PowerTab";
             this.PowerTab.Padding = new System.Windows.Forms.Padding(3);
-            this.PowerTab.Size = new System.Drawing.Size(452, 424);
+            this.PowerTab.Size = new System.Drawing.Size(415, 432);
             this.PowerTab.TabIndex = 4;
             this.PowerTab.Text = "Power";
             this.PowerTab.UseVisualStyleBackColor = true;
             // 
             // button51
             // 
-            this.button51.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button51.Location = new System.Drawing.Point(257, 177);
+            this.button51.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button51.Location = new System.Drawing.Point(234, 177);
             this.button51.Name = "button51";
-            this.button51.Size = new System.Drawing.Size(100, 40);
+            this.button51.Size = new System.Drawing.Size(90, 35);
             this.button51.TabIndex = 9;
             this.button51.Text = "xth Root";
             this.button51.UseVisualStyleBackColor = true;
             // 
             // logButton
             // 
-            this.logButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.logButton.Location = new System.Drawing.Point(327, 277);
+            this.logButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.logButton.Location = new System.Drawing.Point(304, 277);
             this.logButton.Name = "logButton";
-            this.logButton.Size = new System.Drawing.Size(100, 40);
+            this.logButton.Size = new System.Drawing.Size(90, 35);
             this.logButton.TabIndex = 8;
             this.logButton.Text = "Log";
             this.logButton.UseVisualStyleBackColor = true;
@@ -755,10 +756,10 @@ namespace Calc
             // 
             // lnButton
             // 
-            this.lnButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lnButton.Location = new System.Drawing.Point(187, 277);
+            this.lnButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lnButton.Location = new System.Drawing.Point(164, 277);
             this.lnButton.Name = "lnButton";
-            this.lnButton.Size = new System.Drawing.Size(100, 40);
+            this.lnButton.Size = new System.Drawing.Size(90, 35);
             this.lnButton.TabIndex = 7;
             this.lnButton.Text = "Ln";
             this.lnButton.UseVisualStyleBackColor = true;
@@ -766,10 +767,10 @@ namespace Calc
             // 
             // lgButton
             // 
-            this.lgButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lgButton.Location = new System.Drawing.Point(47, 277);
+            this.lgButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lgButton.Location = new System.Drawing.Point(24, 277);
             this.lgButton.Name = "lgButton";
-            this.lgButton.Size = new System.Drawing.Size(100, 40);
+            this.lgButton.Size = new System.Drawing.Size(90, 35);
             this.lgButton.TabIndex = 6;
             this.lgButton.Text = "Lg";
             this.lgButton.UseVisualStyleBackColor = true;
@@ -777,10 +778,10 @@ namespace Calc
             // 
             // rootButton
             // 
-            this.rootButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.rootButton.Location = new System.Drawing.Point(117, 177);
+            this.rootButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.rootButton.Location = new System.Drawing.Point(94, 177);
             this.rootButton.Name = "rootButton";
-            this.rootButton.Size = new System.Drawing.Size(100, 40);
+            this.rootButton.Size = new System.Drawing.Size(90, 35);
             this.rootButton.TabIndex = 5;
             this.rootButton.Text = "2nd Root";
             this.rootButton.UseVisualStyleBackColor = true;
@@ -788,10 +789,10 @@ namespace Calc
             // 
             // powerButton
             // 
-            this.powerButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.powerButton.Location = new System.Drawing.Point(257, 77);
+            this.powerButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.powerButton.Location = new System.Drawing.Point(234, 77);
             this.powerButton.Name = "powerButton";
-            this.powerButton.Size = new System.Drawing.Size(100, 40);
+            this.powerButton.Size = new System.Drawing.Size(90, 35);
             this.powerButton.TabIndex = 4;
             this.powerButton.Text = "Power";
             this.powerButton.UseVisualStyleBackColor = true;
@@ -799,10 +800,10 @@ namespace Calc
             // 
             // expButton
             // 
-            this.expButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.expButton.Location = new System.Drawing.Point(117, 77);
+            this.expButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.expButton.Location = new System.Drawing.Point(94, 77);
             this.expButton.Name = "expButton";
-            this.expButton.Size = new System.Drawing.Size(100, 40);
+            this.expButton.Size = new System.Drawing.Size(90, 35);
             this.expButton.TabIndex = 3;
             this.expButton.Text = "Exp";
             this.expButton.UseVisualStyleBackColor = true;
@@ -819,17 +820,17 @@ namespace Calc
             this.StatisticalTab.Location = new System.Drawing.Point(4, 54);
             this.StatisticalTab.Name = "StatisticalTab";
             this.StatisticalTab.Padding = new System.Windows.Forms.Padding(3);
-            this.StatisticalTab.Size = new System.Drawing.Size(452, 424);
+            this.StatisticalTab.Size = new System.Drawing.Size(415, 424);
             this.StatisticalTab.TabIndex = 5;
             this.StatisticalTab.Text = "Statistical";
             this.StatisticalTab.UseVisualStyleBackColor = true;
             // 
             // medianButton
             // 
-            this.medianButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.medianButton.Location = new System.Drawing.Point(277, 73);
+            this.medianButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.medianButton.Location = new System.Drawing.Point(256, 93);
             this.medianButton.Name = "medianButton";
-            this.medianButton.Size = new System.Drawing.Size(140, 40);
+            this.medianButton.Size = new System.Drawing.Size(120, 35);
             this.medianButton.TabIndex = 8;
             this.medianButton.Text = "Median";
             this.medianButton.UseVisualStyleBackColor = true;
@@ -837,10 +838,10 @@ namespace Calc
             // 
             // dispButton
             // 
-            this.dispButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.dispButton.Location = new System.Drawing.Point(277, 167);
+            this.dispButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.dispButton.Location = new System.Drawing.Point(256, 187);
             this.dispButton.Name = "dispButton";
-            this.dispButton.Size = new System.Drawing.Size(140, 40);
+            this.dispButton.Size = new System.Drawing.Size(120, 35);
             this.dispButton.TabIndex = 7;
             this.dispButton.Text = "Dispersion";
             this.dispButton.UseVisualStyleBackColor = true;
@@ -848,10 +849,10 @@ namespace Calc
             // 
             // avgButton
             // 
-            this.avgButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.avgButton.Location = new System.Drawing.Point(277, 263);
+            this.avgButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.avgButton.Location = new System.Drawing.Point(256, 283);
             this.avgButton.Name = "avgButton";
-            this.avgButton.Size = new System.Drawing.Size(140, 40);
+            this.avgButton.Size = new System.Drawing.Size(120, 35);
             this.avgButton.TabIndex = 6;
             this.avgButton.Text = "Average";
             this.avgButton.UseVisualStyleBackColor = true;
@@ -859,10 +860,10 @@ namespace Calc
             // 
             // valButton
             // 
-            this.valButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.valButton.Location = new System.Drawing.Point(57, 263);
+            this.valButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.valButton.Location = new System.Drawing.Point(36, 283);
             this.valButton.Name = "valButton";
-            this.valButton.Size = new System.Drawing.Size(140, 40);
+            this.valButton.Size = new System.Drawing.Size(120, 35);
             this.valButton.TabIndex = 5;
             this.valButton.Text = "Variation";
             this.valButton.UseVisualStyleBackColor = true;
@@ -870,10 +871,10 @@ namespace Calc
             // 
             // combButton
             // 
-            this.combButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.combButton.Location = new System.Drawing.Point(57, 168);
+            this.combButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.combButton.Location = new System.Drawing.Point(36, 188);
             this.combButton.Name = "combButton";
-            this.combButton.Size = new System.Drawing.Size(140, 40);
+            this.combButton.Size = new System.Drawing.Size(120, 35);
             this.combButton.TabIndex = 4;
             this.combButton.Text = "Combination";
             this.combButton.UseVisualStyleBackColor = true;
@@ -881,10 +882,10 @@ namespace Calc
             // 
             // permuButton
             // 
-            this.permuButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.permuButton.Location = new System.Drawing.Point(57, 73);
+            this.permuButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.permuButton.Location = new System.Drawing.Point(36, 93);
             this.permuButton.Name = "permuButton";
-            this.permuButton.Size = new System.Drawing.Size(140, 40);
+            this.permuButton.Size = new System.Drawing.Size(120, 35);
             this.permuButton.TabIndex = 3;
             this.permuButton.Text = "Permutation";
             this.permuButton.UseVisualStyleBackColor = true;
@@ -902,10 +903,10 @@ namespace Calc
             this.ConversionTab.Controls.Add(this.metYardbutton);
             this.ConversionTab.Controls.Add(this.radDegButton);
             this.ConversionTab.Controls.Add(this.degRadButton);
-            this.ConversionTab.Location = new System.Drawing.Point(4, 54);
+            this.ConversionTab.Location = new System.Drawing.Point(4, 46);
             this.ConversionTab.Name = "ConversionTab";
             this.ConversionTab.Padding = new System.Windows.Forms.Padding(3);
-            this.ConversionTab.Size = new System.Drawing.Size(452, 424);
+            this.ConversionTab.Size = new System.Drawing.Size(415, 432);
             this.ConversionTab.TabIndex = 6;
             this.ConversionTab.Text = "Conversion";
             this.ConversionTab.UseVisualStyleBackColor = true;
@@ -913,7 +914,7 @@ namespace Calc
             // kgLbbutton
             // 
             this.kgLbbutton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.kgLbbutton.Location = new System.Drawing.Point(234, 266);
+            this.kgLbbutton.Location = new System.Drawing.Point(221, 294);
             this.kgLbbutton.Name = "kgLbbutton";
             this.kgLbbutton.Size = new System.Drawing.Size(150, 28);
             this.kgLbbutton.TabIndex = 42;
@@ -923,7 +924,7 @@ namespace Calc
             // lbKgButton
             // 
             this.lbKgButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lbKgButton.Location = new System.Drawing.Point(234, 232);
+            this.lbKgButton.Location = new System.Drawing.Point(221, 260);
             this.lbKgButton.Name = "lbKgButton";
             this.lbKgButton.Size = new System.Drawing.Size(150, 28);
             this.lbKgButton.TabIndex = 41;
@@ -933,7 +934,7 @@ namespace Calc
             // button46
             // 
             this.button46.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button46.Location = new System.Drawing.Point(54, 266);
+            this.button46.Location = new System.Drawing.Point(41, 294);
             this.button46.Name = "button46";
             this.button46.Size = new System.Drawing.Size(150, 28);
             this.button46.TabIndex = 40;
@@ -943,7 +944,7 @@ namespace Calc
             // usdEurButton
             // 
             this.usdEurButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.usdEurButton.Location = new System.Drawing.Point(54, 232);
+            this.usdEurButton.Location = new System.Drawing.Point(41, 260);
             this.usdEurButton.Name = "usdEurButton";
             this.usdEurButton.Size = new System.Drawing.Size(150, 28);
             this.usdEurButton.TabIndex = 39;
@@ -953,7 +954,7 @@ namespace Calc
             // kelCelbutton
             // 
             this.kelCelbutton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.kelCelbutton.Location = new System.Drawing.Point(294, 154);
+            this.kelCelbutton.Location = new System.Drawing.Point(259, 182);
             this.kelCelbutton.Name = "kelCelbutton";
             this.kelCelbutton.Size = new System.Drawing.Size(150, 28);
             this.kelCelbutton.TabIndex = 9;
@@ -963,7 +964,7 @@ namespace Calc
             // celKelButton
             // 
             this.celKelButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.celKelButton.Location = new System.Drawing.Point(294, 120);
+            this.celKelButton.Location = new System.Drawing.Point(259, 148);
             this.celKelButton.Name = "celKelButton";
             this.celKelButton.Size = new System.Drawing.Size(150, 28);
             this.celKelButton.TabIndex = 8;
@@ -973,7 +974,7 @@ namespace Calc
             // yardMetButton
             // 
             this.yardMetButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.yardMetButton.Location = new System.Drawing.Point(148, 70);
+            this.yardMetButton.Location = new System.Drawing.Point(131, 98);
             this.yardMetButton.Name = "yardMetButton";
             this.yardMetButton.Size = new System.Drawing.Size(150, 28);
             this.yardMetButton.TabIndex = 7;
@@ -983,7 +984,7 @@ namespace Calc
             // metYardbutton
             // 
             this.metYardbutton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.metYardbutton.Location = new System.Drawing.Point(148, 36);
+            this.metYardbutton.Location = new System.Drawing.Point(131, 64);
             this.metYardbutton.Name = "metYardbutton";
             this.metYardbutton.Size = new System.Drawing.Size(150, 28);
             this.metYardbutton.TabIndex = 6;
@@ -993,7 +994,7 @@ namespace Calc
             // radDegButton
             // 
             this.radDegButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.radDegButton.Location = new System.Drawing.Point(3, 154);
+            this.radDegButton.Location = new System.Drawing.Point(3, 182);
             this.radDegButton.Name = "radDegButton";
             this.radDegButton.Size = new System.Drawing.Size(150, 28);
             this.radDegButton.TabIndex = 5;
@@ -1003,7 +1004,7 @@ namespace Calc
             // degRadButton
             // 
             this.degRadButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.degRadButton.Location = new System.Drawing.Point(3, 120);
+            this.degRadButton.Location = new System.Drawing.Point(3, 148);
             this.degRadButton.Name = "degRadButton";
             this.degRadButton.Size = new System.Drawing.Size(150, 28);
             this.degRadButton.TabIndex = 4;
@@ -1014,10 +1015,10 @@ namespace Calc
             // 
             this.ConstantsTab.Controls.Add(this.groupBox2);
             this.ConstantsTab.Controls.Add(this.groupBox1);
-            this.ConstantsTab.Location = new System.Drawing.Point(4, 54);
+            this.ConstantsTab.Location = new System.Drawing.Point(4, 46);
             this.ConstantsTab.Name = "ConstantsTab";
             this.ConstantsTab.Padding = new System.Windows.Forms.Padding(3);
-            this.ConstantsTab.Size = new System.Drawing.Size(452, 424);
+            this.ConstantsTab.Size = new System.Drawing.Size(415, 432);
             this.ConstantsTab.TabIndex = 7;
             this.ConstantsTab.Text = "Constants";
             this.ConstantsTab.UseVisualStyleBackColor = true;
@@ -1031,79 +1032,79 @@ namespace Calc
             this.groupBox2.Controls.Add(this.GButton);
             this.groupBox2.Controls.Add(this.hButton);
             this.groupBox2.Controls.Add(this.cButton);
-            this.groupBox2.Location = new System.Drawing.Point(222, 14);
+            this.groupBox2.Location = new System.Drawing.Point(181, 14);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(236, 366);
+            this.groupBox2.Size = new System.Drawing.Size(225, 366);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Physical";
             // 
             // button50
             // 
-            this.button50.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button50.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.button50.Location = new System.Drawing.Point(17, 296);
             this.button50.Name = "button50";
-            this.button50.Size = new System.Drawing.Size(100, 40);
+            this.button50.Size = new System.Drawing.Size(90, 35);
             this.button50.TabIndex = 9;
             this.button50.Text = "e";
             this.button50.UseVisualStyleBackColor = true;
             // 
             // button49
             // 
-            this.button49.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button49.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.button49.Location = new System.Drawing.Point(128, 230);
             this.button49.Name = "button49";
-            this.button49.Size = new System.Drawing.Size(100, 40);
+            this.button49.Size = new System.Drawing.Size(90, 35);
             this.button49.TabIndex = 8;
             this.button49.Text = "me";
             this.button49.UseVisualStyleBackColor = true;
             // 
             // button48
             // 
-            this.button48.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button48.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.button48.Location = new System.Drawing.Point(17, 231);
             this.button48.Name = "button48";
-            this.button48.Size = new System.Drawing.Size(100, 40);
+            this.button48.Size = new System.Drawing.Size(90, 35);
             this.button48.TabIndex = 7;
             this.button48.Text = "mp";
             this.button48.UseVisualStyleBackColor = true;
             // 
             // ggButton
             // 
-            this.ggButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.ggButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.ggButton.Location = new System.Drawing.Point(128, 165);
             this.ggButton.Name = "ggButton";
-            this.ggButton.Size = new System.Drawing.Size(100, 40);
+            this.ggButton.Size = new System.Drawing.Size(90, 35);
             this.ggButton.TabIndex = 6;
             this.ggButton.Text = "g";
             this.ggButton.UseVisualStyleBackColor = true;
             // 
             // GButton
             // 
-            this.GButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.GButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.GButton.Location = new System.Drawing.Point(17, 165);
             this.GButton.Name = "GButton";
-            this.GButton.Size = new System.Drawing.Size(100, 40);
+            this.GButton.Size = new System.Drawing.Size(90, 35);
             this.GButton.TabIndex = 5;
             this.GButton.Text = "G";
             this.GButton.UseVisualStyleBackColor = true;
             // 
             // hButton
             // 
-            this.hButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.hButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.hButton.Location = new System.Drawing.Point(17, 100);
             this.hButton.Name = "hButton";
-            this.hButton.Size = new System.Drawing.Size(100, 40);
+            this.hButton.Size = new System.Drawing.Size(90, 35);
             this.hButton.TabIndex = 4;
             this.hButton.Text = "h";
             this.hButton.UseVisualStyleBackColor = true;
             // 
             // cButton
             // 
-            this.cButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.cButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.cButton.Location = new System.Drawing.Point(16, 37);
             this.cButton.Name = "cButton";
-            this.cButton.Size = new System.Drawing.Size(100, 40);
+            this.cButton.Size = new System.Drawing.Size(90, 35);
             this.cButton.TabIndex = 3;
             this.cButton.Text = "c";
             this.cButton.UseVisualStyleBackColor = true;
@@ -1117,7 +1118,7 @@ namespace Calc
             this.groupBox1.Controls.Add(this.piButton);
             this.groupBox1.Location = new System.Drawing.Point(10, 13);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(201, 366);
+            this.groupBox1.Size = new System.Drawing.Size(161, 366);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Mathematical";
@@ -1125,9 +1126,9 @@ namespace Calc
             // button47
             // 
             this.button47.Font = new System.Drawing.Font("Times New Roman", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button47.Location = new System.Drawing.Point(33, 296);
+            this.button47.Location = new System.Drawing.Point(19, 296);
             this.button47.Name = "button47";
-            this.button47.Size = new System.Drawing.Size(100, 40);
+            this.button47.Size = new System.Drawing.Size(90, 35);
             this.button47.TabIndex = 7;
             this.button47.Text = "√2";
             this.button47.UseVisualStyleBackColor = true;
@@ -1135,29 +1136,29 @@ namespace Calc
             // buttonPsi
             // 
             this.buttonPsi.Font = new System.Drawing.Font("Times New Roman", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonPsi.Location = new System.Drawing.Point(33, 231);
+            this.buttonPsi.Location = new System.Drawing.Point(19, 231);
             this.buttonPsi.Name = "buttonPsi";
-            this.buttonPsi.Size = new System.Drawing.Size(100, 40);
+            this.buttonPsi.Size = new System.Drawing.Size(90, 35);
             this.buttonPsi.TabIndex = 6;
             this.buttonPsi.Text = "φ";
             this.buttonPsi.UseVisualStyleBackColor = true;
             // 
             // goldenButton
             // 
-            this.goldenButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.goldenButton.Location = new System.Drawing.Point(33, 166);
+            this.goldenButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.goldenButton.Location = new System.Drawing.Point(19, 166);
             this.goldenButton.Name = "goldenButton";
-            this.goldenButton.Size = new System.Drawing.Size(120, 40);
+            this.goldenButton.Size = new System.Drawing.Size(110, 35);
             this.goldenButton.TabIndex = 5;
             this.goldenButton.Text = "Golden ratio";
             this.goldenButton.UseVisualStyleBackColor = true;
             // 
             // eButton
             // 
-            this.eButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.eButton.Location = new System.Drawing.Point(33, 101);
+            this.eButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.eButton.Location = new System.Drawing.Point(19, 101);
             this.eButton.Name = "eButton";
-            this.eButton.Size = new System.Drawing.Size(100, 40);
+            this.eButton.Size = new System.Drawing.Size(90, 35);
             this.eButton.TabIndex = 4;
             this.eButton.Text = "e";
             this.eButton.UseVisualStyleBackColor = true;
@@ -1165,18 +1166,18 @@ namespace Calc
             // piButton
             // 
             this.piButton.Font = new System.Drawing.Font("Times New Roman", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.piButton.Location = new System.Drawing.Point(33, 36);
+            this.piButton.Location = new System.Drawing.Point(19, 36);
             this.piButton.Name = "piButton";
-            this.piButton.Size = new System.Drawing.Size(100, 40);
+            this.piButton.Size = new System.Drawing.Size(90, 35);
             this.piButton.TabIndex = 3;
             this.piButton.Text = "π";
             this.piButton.UseVisualStyleBackColor = true;
             // 
             // tabPage1
             // 
-            this.tabPage1.Location = new System.Drawing.Point(4, 54);
+            this.tabPage1.Location = new System.Drawing.Point(4, 46);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Size = new System.Drawing.Size(452, 424);
+            this.tabPage1.Size = new System.Drawing.Size(415, 432);
             this.tabPage1.TabIndex = 8;
             this.tabPage1.Text = "Favorites";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -1316,9 +1317,9 @@ namespace Calc
             // expressionTextBox
             // 
             this.expressionTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.expressionTextBox.Location = new System.Drawing.Point(466, 72);
+            this.expressionTextBox.Location = new System.Drawing.Point(425, 72);
             this.expressionTextBox.Name = "expressionTextBox";
-            this.expressionTextBox.Size = new System.Drawing.Size(377, 116);
+            this.expressionTextBox.Size = new System.Drawing.Size(403, 116);
             this.expressionTextBox.TabIndex = 1;
             this.expressionTextBox.Text = "";
             this.expressionTextBox.WordWrap = false;
@@ -1330,7 +1331,7 @@ namespace Calc
             // 
             this.DecRadioButton.AutoSize = true;
             this.DecRadioButton.Checked = true;
-            this.DecRadioButton.Location = new System.Drawing.Point(518, 193);
+            this.DecRadioButton.Location = new System.Drawing.Point(480, 193);
             this.DecRadioButton.Name = "DecRadioButton";
             this.DecRadioButton.Size = new System.Drawing.Size(45, 17);
             this.DecRadioButton.TabIndex = 2;
@@ -1342,7 +1343,7 @@ namespace Calc
             // HexRadioButton
             // 
             this.HexRadioButton.AutoSize = true;
-            this.HexRadioButton.Location = new System.Drawing.Point(468, 192);
+            this.HexRadioButton.Location = new System.Drawing.Point(430, 192);
             this.HexRadioButton.Name = "HexRadioButton";
             this.HexRadioButton.Size = new System.Drawing.Size(44, 17);
             this.HexRadioButton.TabIndex = 3;
@@ -1354,7 +1355,7 @@ namespace Calc
             // OctRadioButton
             // 
             this.OctRadioButton.AutoSize = true;
-            this.OctRadioButton.Location = new System.Drawing.Point(569, 193);
+            this.OctRadioButton.Location = new System.Drawing.Point(531, 193);
             this.OctRadioButton.Name = "OctRadioButton";
             this.OctRadioButton.Size = new System.Drawing.Size(42, 17);
             this.OctRadioButton.TabIndex = 4;
@@ -1366,7 +1367,7 @@ namespace Calc
             // BinRadioButton
             // 
             this.BinRadioButton.AutoSize = true;
-            this.BinRadioButton.Location = new System.Drawing.Point(617, 194);
+            this.BinRadioButton.Location = new System.Drawing.Point(579, 194);
             this.BinRadioButton.Name = "BinRadioButton";
             this.BinRadioButton.Size = new System.Drawing.Size(40, 17);
             this.BinRadioButton.TabIndex = 5;
@@ -1578,10 +1579,10 @@ namespace Calc
             this.resultTextBox.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.resultTextBox.DetectUrls = false;
             this.resultTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.resultTextBox.Location = new System.Drawing.Point(466, 4);
+            this.resultTextBox.Location = new System.Drawing.Point(425, 4);
             this.resultTextBox.Name = "resultTextBox";
             this.resultTextBox.ReadOnly = true;
-            this.resultTextBox.Size = new System.Drawing.Size(377, 70);
+            this.resultTextBox.Size = new System.Drawing.Size(403, 70);
             this.resultTextBox.TabIndex = 24;
             this.resultTextBox.Text = "";
             this.resultTextBox.WordWrap = false;
@@ -2076,15 +2077,15 @@ namespace Calc
             // syntaxTextBox
             // 
             this.syntaxTextBox.ForeColor = System.Drawing.Color.Black;
-            this.syntaxTextBox.Location = new System.Drawing.Point(709, 191);
+            this.syntaxTextBox.Location = new System.Drawing.Point(666, 191);
             this.syntaxTextBox.Name = "syntaxTextBox";
             this.syntaxTextBox.ReadOnly = true;
-            this.syntaxTextBox.Size = new System.Drawing.Size(134, 20);
+            this.syntaxTextBox.Size = new System.Drawing.Size(162, 20);
             this.syntaxTextBox.TabIndex = 39;
             // 
             // memoryComboBox
             // 
-            this.memoryComboBox.Location = new System.Drawing.Point(563, 216);
+            this.memoryComboBox.Location = new System.Drawing.Point(554, 216);
             this.memoryComboBox.Name = "memoryComboBox";
             this.memoryComboBox.Size = new System.Drawing.Size(106, 21);
             this.memoryComboBox.TabIndex = 42;
@@ -2092,7 +2093,7 @@ namespace Calc
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(466, 218);
+            this.label1.Location = new System.Drawing.Point(457, 216);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(91, 13);
             this.label1.TabIndex = 41;
