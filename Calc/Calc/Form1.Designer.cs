@@ -200,6 +200,8 @@ namespace Calc
             this.memoryComboBox = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.histUpButton = new System.Windows.Forms.Button();
+            this.histDownButton = new System.Windows.Forms.Button();
             this.TabControl.SuspendLayout();
             this.GeneralTab.SuspendLayout();
             this.ProgrammerTab.SuspendLayout();
@@ -249,10 +251,10 @@ namespace Calc
             this.GeneralTab.Controls.Add(this.roundButton);
             this.GeneralTab.Controls.Add(this.absButton);
             this.GeneralTab.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.GeneralTab.Location = new System.Drawing.Point(4, 46);
+            this.GeneralTab.Location = new System.Drawing.Point(4, 54);
             this.GeneralTab.Name = "GeneralTab";
             this.GeneralTab.Padding = new System.Windows.Forms.Padding(3);
-            this.GeneralTab.Size = new System.Drawing.Size(415, 432);
+            this.GeneralTab.Size = new System.Drawing.Size(415, 424);
             this.GeneralTab.TabIndex = 1;
             this.GeneralTab.Text = "General";
             this.GeneralTab.UseVisualStyleBackColor = true;
@@ -399,10 +401,10 @@ namespace Calc
             this.ProgrammerTab.Controls.Add(this.fracButton);
             this.ProgrammerTab.Controls.Add(this.coielButton);
             this.ProgrammerTab.Controls.Add(this.binNegButton);
-            this.ProgrammerTab.Location = new System.Drawing.Point(4, 46);
+            this.ProgrammerTab.Location = new System.Drawing.Point(4, 54);
             this.ProgrammerTab.Name = "ProgrammerTab";
             this.ProgrammerTab.Padding = new System.Windows.Forms.Padding(3);
-            this.ProgrammerTab.Size = new System.Drawing.Size(415, 432);
+            this.ProgrammerTab.Size = new System.Drawing.Size(415, 424);
             this.ProgrammerTab.TabIndex = 2;
             this.ProgrammerTab.Text = "Programmer";
             this.ProgrammerTab.UseVisualStyleBackColor = true;
@@ -532,10 +534,10 @@ namespace Calc
             this.TrigonometricTab.Controls.Add(this.tgButton);
             this.TrigonometricTab.Controls.Add(this.cosButton);
             this.TrigonometricTab.Controls.Add(this.sinButton);
-            this.TrigonometricTab.Location = new System.Drawing.Point(4, 46);
+            this.TrigonometricTab.Location = new System.Drawing.Point(4, 54);
             this.TrigonometricTab.Name = "TrigonometricTab";
             this.TrigonometricTab.Padding = new System.Windows.Forms.Padding(3);
-            this.TrigonometricTab.Size = new System.Drawing.Size(415, 432);
+            this.TrigonometricTab.Size = new System.Drawing.Size(415, 424);
             this.TrigonometricTab.TabIndex = 3;
             this.TrigonometricTab.Text = "Trigonometric";
             this.TrigonometricTab.UseVisualStyleBackColor = true;
@@ -725,10 +727,10 @@ namespace Calc
             this.PowerTab.Controls.Add(this.rootButton);
             this.PowerTab.Controls.Add(this.powerButton);
             this.PowerTab.Controls.Add(this.expButton);
-            this.PowerTab.Location = new System.Drawing.Point(4, 46);
+            this.PowerTab.Location = new System.Drawing.Point(4, 54);
             this.PowerTab.Name = "PowerTab";
             this.PowerTab.Padding = new System.Windows.Forms.Padding(3);
-            this.PowerTab.Size = new System.Drawing.Size(415, 432);
+            this.PowerTab.Size = new System.Drawing.Size(415, 424);
             this.PowerTab.TabIndex = 4;
             this.PowerTab.Text = "Power";
             this.PowerTab.UseVisualStyleBackColor = true;
@@ -903,10 +905,10 @@ namespace Calc
             this.ConversionTab.Controls.Add(this.metYardbutton);
             this.ConversionTab.Controls.Add(this.radDegButton);
             this.ConversionTab.Controls.Add(this.degRadButton);
-            this.ConversionTab.Location = new System.Drawing.Point(4, 46);
+            this.ConversionTab.Location = new System.Drawing.Point(4, 54);
             this.ConversionTab.Name = "ConversionTab";
             this.ConversionTab.Padding = new System.Windows.Forms.Padding(3);
-            this.ConversionTab.Size = new System.Drawing.Size(415, 432);
+            this.ConversionTab.Size = new System.Drawing.Size(415, 424);
             this.ConversionTab.TabIndex = 6;
             this.ConversionTab.Text = "Conversion";
             this.ConversionTab.UseVisualStyleBackColor = true;
@@ -1015,10 +1017,10 @@ namespace Calc
             // 
             this.ConstantsTab.Controls.Add(this.groupBox2);
             this.ConstantsTab.Controls.Add(this.groupBox1);
-            this.ConstantsTab.Location = new System.Drawing.Point(4, 46);
+            this.ConstantsTab.Location = new System.Drawing.Point(4, 54);
             this.ConstantsTab.Name = "ConstantsTab";
             this.ConstantsTab.Padding = new System.Windows.Forms.Padding(3);
-            this.ConstantsTab.Size = new System.Drawing.Size(415, 432);
+            this.ConstantsTab.Size = new System.Drawing.Size(415, 424);
             this.ConstantsTab.TabIndex = 7;
             this.ConstantsTab.Text = "Constants";
             this.ConstantsTab.UseVisualStyleBackColor = true;
@@ -1175,9 +1177,9 @@ namespace Calc
             // 
             // tabPage1
             // 
-            this.tabPage1.Location = new System.Drawing.Point(4, 46);
+            this.tabPage1.Location = new System.Drawing.Point(4, 54);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Size = new System.Drawing.Size(415, 432);
+            this.tabPage1.Size = new System.Drawing.Size(415, 424);
             this.tabPage1.TabIndex = 8;
             this.tabPage1.Text = "Favorites";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -2105,12 +2107,32 @@ namespace Calc
             this.toolTip1.InitialDelay = 500;
             this.toolTip1.ReshowDelay = 100;
             // 
+            // histUpButton
+            // 
+            this.histUpButton.Image = global::Calc.Properties.Resources.up1;
+            this.histUpButton.Location = new System.Drawing.Point(666, 217);
+            this.histUpButton.Name = "histUpButton";
+            this.histUpButton.Size = new System.Drawing.Size(75, 23);
+            this.histUpButton.TabIndex = 43;
+            this.histUpButton.UseVisualStyleBackColor = true;
+            // 
+            // histDownButton
+            // 
+            this.histDownButton.Image = global::Calc.Properties.Resources.down1;
+            this.histDownButton.Location = new System.Drawing.Point(753, 217);
+            this.histDownButton.Name = "histDownButton";
+            this.histDownButton.Size = new System.Drawing.Size(75, 23);
+            this.histDownButton.TabIndex = 44;
+            this.histDownButton.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(857, 498);
+            this.Controls.Add(this.histDownButton);
+            this.Controls.Add(this.histUpButton);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.memoryComboBox);
             this.Controls.Add(this.syntaxTextBox);
@@ -2348,6 +2370,8 @@ namespace Calc
         private System.Windows.Forms.Button gcdButton;
         private System.Windows.Forms.Button lcmButton;
         private System.Windows.Forms.Button button52;
+        private System.Windows.Forms.Button histUpButton;
+        private System.Windows.Forms.Button histDownButton;
 
 
 
