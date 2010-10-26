@@ -33,8 +33,6 @@ namespace Calc
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GrafForm));
             this.xTrackBar = new System.Windows.Forms.TrackBar();
-            this.yBox = new System.Windows.Forms.TextBox();
-            this.xBox = new System.Windows.Forms.TextBox();
             this.functionDeclaration = new System.Windows.Forms.TextBox();
             this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
             this.yTrackBar = new System.Windows.Forms.TrackBar();
@@ -65,6 +63,9 @@ namespace Calc
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.GrafSurface2D = new NPlot.Windows.PlotSurface2D();
+            this.skin = new DMSoft.SkinCrafter();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.xTrackBar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.yTrackBar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.YMinNumericUpDown)).BeginInit();
@@ -73,6 +74,8 @@ namespace Calc
             ((System.ComponentModel.ISupportInitialize)(this.XMinNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ZMaxNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.XMaxNumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
             this.SuspendLayout();
             // 
             // xTrackBar
@@ -82,21 +85,6 @@ namespace Calc
             this.xTrackBar.Size = new System.Drawing.Size(669, 45);
             this.xTrackBar.TabIndex = 1;
             this.xTrackBar.TickStyle = System.Windows.Forms.TickStyle.None;
-            // 
-            // yBox
-            // 
-            this.yBox.Enabled = false;
-            this.yBox.Location = new System.Drawing.Point(711, 468);
-            this.yBox.Name = "yBox";
-            this.yBox.Size = new System.Drawing.Size(54, 20);
-            this.yBox.TabIndex = 2;
-            // 
-            // xBox
-            // 
-            this.xBox.Location = new System.Drawing.Point(588, 468);
-            this.xBox.Name = "xBox";
-            this.xBox.Size = new System.Drawing.Size(52, 20);
-            this.xBox.TabIndex = 4;
             // 
             // functionDeclaration
             // 
@@ -210,51 +198,52 @@ namespace Calc
             // 
             // buttonZoomIn
             // 
-            this.buttonZoomIn.Location = new System.Drawing.Point(12, 403);
+            this.buttonZoomIn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonZoomIn.BackgroundImage")));
+            this.buttonZoomIn.Image = ((System.Drawing.Image)(resources.GetObject("buttonZoomIn.Image")));
+            this.buttonZoomIn.Location = new System.Drawing.Point(27, 403);
             this.buttonZoomIn.Name = "buttonZoomIn";
-            this.buttonZoomIn.Size = new System.Drawing.Size(75, 23);
+            this.buttonZoomIn.Size = new System.Drawing.Size(45, 35);
             this.buttonZoomIn.TabIndex = 25;
-            this.buttonZoomIn.Text = "Zoom In";
             this.buttonZoomIn.UseVisualStyleBackColor = true;
             // 
             // buttonZoomOut
             // 
-            this.buttonZoomOut.Location = new System.Drawing.Point(105, 403);
+            this.buttonZoomOut.Image = ((System.Drawing.Image)(resources.GetObject("buttonZoomOut.Image")));
+            this.buttonZoomOut.Location = new System.Drawing.Point(120, 403);
             this.buttonZoomOut.Name = "buttonZoomOut";
-            this.buttonZoomOut.Size = new System.Drawing.Size(75, 23);
+            this.buttonZoomOut.Size = new System.Drawing.Size(45, 35);
             this.buttonZoomOut.TabIndex = 26;
-            this.buttonZoomOut.Text = "Zoom Out";
             this.buttonZoomOut.UseVisualStyleBackColor = true;
             this.buttonZoomOut.Click += new System.EventHandler(this.buttonZoomOut_Click);
             // 
             // button1
             // 
             this.button1.Enabled = false;
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
             this.button1.Location = new System.Drawing.Point(31, 468);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(45, 35);
             this.button1.TabIndex = 27;
-            this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = true;
             // 
             // button2
             // 
             this.button2.Enabled = false;
+            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
             this.button2.Location = new System.Drawing.Point(117, 469);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(45, 35);
             this.button2.TabIndex = 28;
-            this.button2.Text = "button2";
             this.button2.UseVisualStyleBackColor = true;
             // 
             // button3
             // 
             this.button3.Enabled = false;
+            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
             this.button3.Location = new System.Drawing.Point(74, 502);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(45, 35);
             this.button3.TabIndex = 29;
-            this.button3.Text = "button3";
             this.button3.UseVisualStyleBackColor = true;
             // 
             // button4
@@ -265,7 +254,6 @@ namespace Calc
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(45, 35);
             this.button4.TabIndex = 30;
-            this.button4.Text = "button4";
             this.button4.UseVisualStyleBackColor = true;
             // 
             // YMinNumericUpDown
@@ -427,12 +415,6 @@ namespace Calc
             this.label3.TabIndex = 41;
             this.label3.Text = "Function declaration:";
             // 
-            // skinCrafter1
-            // 
-            this.skin = new SkinCrafter();
-            this.skin.SkinFile = "Micron_xp ST.skf";
-
-            // 
             // GrafSurface2D
             // 
             this.GrafSurface2D.AutoScaleAutoGeneratedAxes = false;
@@ -456,17 +438,58 @@ namespace Calc
             this.GrafSurface2D.YAxis1 = null;
             this.GrafSurface2D.YAxis2 = null;
             // 
+            // skin
+            // 
+            this.skin.SkinFile = "Micron_xp ST.skf";
+            // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.DecimalPlaces = 2;
+            this.numericUpDown1.Enabled = false;
+            this.numericUpDown1.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            65536});
+            this.numericUpDown1.Location = new System.Drawing.Point(702, 468);
+            this.numericUpDown1.Minimum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            -2147483648});
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(55, 20);
+            this.numericUpDown1.TabIndex = 43;
+            // 
+            // numericUpDown2
+            // 
+            this.numericUpDown2.DecimalPlaces = 2;
+            this.numericUpDown2.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            65536});
+            this.numericUpDown2.Location = new System.Drawing.Point(579, 469);
+            this.numericUpDown2.Minimum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            -2147483648});
+            this.numericUpDown2.Name = "numericUpDown2";
+            this.numericUpDown2.Size = new System.Drawing.Size(55, 20);
+            this.numericUpDown2.TabIndex = 44;
+            // 
             // GrafForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1008, 562);
+            this.Controls.Add(this.numericUpDown2);
+            this.Controls.Add(this.numericUpDown1);
             this.Controls.Add(this.GrafSurface2D);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.xBox);
-            this.Controls.Add(this.yBox);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.buttonCreate);
             this.Controls.Add(this.XMaxNumericUpDown);
@@ -504,6 +527,8 @@ namespace Calc
             ((System.ComponentModel.ISupportInitialize)(this.XMinNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ZMaxNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.XMaxNumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -512,8 +537,6 @@ namespace Calc
         #endregion
 
         private System.Windows.Forms.TrackBar xTrackBar;
-        private System.Windows.Forms.TextBox yBox;
-        private System.Windows.Forms.TextBox xBox;
         private System.Windows.Forms.TextBox functionDeclaration;
         private System.Windows.Forms.CheckedListBox checkedListBox1;
         private System.Windows.Forms.TrackBar yTrackBar;
@@ -544,6 +567,8 @@ namespace Calc
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private NPlot.Windows.PlotSurface2D GrafSurface2D;
-        private SkinCrafter skin; 
+        private SkinCrafter skin;
+        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.NumericUpDown numericUpDown2; 
     }
 }
