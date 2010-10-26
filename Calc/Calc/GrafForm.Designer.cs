@@ -63,7 +63,7 @@ namespace Calc
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.GrafSurface2D = new NPlot.Windows.PlotSurface2D();
-            this.skin = new DMSoft.SkinCrafter();
+            //this.skin = new DMSoft.SkinCrafter();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.xTrackBar)).BeginInit();
@@ -440,7 +440,7 @@ namespace Calc
             // 
             // skin
             // 
-            this.skin.SkinFile = "Micron_xp ST.skf";
+            //this.skin.SkinFile = "Micron_xp ST.skf";
             // 
             // numericUpDown1
             // 
@@ -567,7 +567,7 @@ namespace Calc
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private NPlot.Windows.PlotSurface2D GrafSurface2D;
-        private SkinCrafter skin;
+        //private SkinCrafter skin;
         private System.Windows.Forms.NumericUpDown numericUpDown1;
         private System.Windows.Forms.NumericUpDown numericUpDown2; 
     }

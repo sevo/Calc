@@ -35,18 +35,14 @@ namespace Calc
             this.buttonPlot = new System.Windows.Forms.Button();
             this.fibonacciButton = new System.Windows.Forms.Button();
             this.pytagorasButton = new System.Windows.Forms.Button();
-            this.modButton = new System.Windows.Forms.Button();
             this.randomButton = new System.Windows.Forms.Button();
             this.factorialButton = new System.Windows.Forms.Button();
             this.primeButton = new System.Windows.Forms.Button();
             this.sumButton = new System.Windows.Forms.Button();
             this.digitButton = new System.Windows.Forms.Button();
             this.roundButton = new System.Windows.Forms.Button();
-            this.floorButton = new System.Windows.Forms.Button();
             this.absButton = new System.Windows.Forms.Button();
             this.ProgrammerTab = new System.Windows.Forms.TabPage();
-            this.gcdButton = new System.Windows.Forms.Button();
-            this.lcmButton = new System.Windows.Forms.Button();
             this.andButton = new System.Windows.Forms.Button();
             this.orButton = new System.Windows.Forms.Button();
             this.binRightButton = new System.Windows.Forms.Button();
@@ -195,11 +191,15 @@ namespace Calc
             this.tabPage7 = new System.Windows.Forms.TabPage();
             this.tabPage8 = new System.Windows.Forms.TabPage();
             this.tabPage9 = new System.Windows.Forms.TabPage();
-            this.skin = new DMSoft.SkinCrafter();
             this.syntaxTextBox = new System.Windows.Forms.TextBox();
             this.memoryComboBox = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.modButton = new System.Windows.Forms.Button();
+            this.floorButton = new System.Windows.Forms.Button();
+            this.gcdButton = new System.Windows.Forms.Button();
+            this.lcmButton = new System.Windows.Forms.Button();
+            this.button52 = new System.Windows.Forms.Button();
             this.TabControl.SuspendLayout();
             this.GeneralTab.SuspendLayout();
             this.ProgrammerTab.SuspendLayout();
@@ -236,17 +236,17 @@ namespace Calc
             // 
             // GeneralTab
             // 
+            this.GeneralTab.Controls.Add(this.gcdButton);
+            this.GeneralTab.Controls.Add(this.lcmButton);
             this.GeneralTab.Controls.Add(this.buttonPlot);
             this.GeneralTab.Controls.Add(this.fibonacciButton);
             this.GeneralTab.Controls.Add(this.pytagorasButton);
-            this.GeneralTab.Controls.Add(this.modButton);
             this.GeneralTab.Controls.Add(this.randomButton);
             this.GeneralTab.Controls.Add(this.factorialButton);
             this.GeneralTab.Controls.Add(this.primeButton);
             this.GeneralTab.Controls.Add(this.sumButton);
             this.GeneralTab.Controls.Add(this.digitButton);
             this.GeneralTab.Controls.Add(this.roundButton);
-            this.GeneralTab.Controls.Add(this.floorButton);
             this.GeneralTab.Controls.Add(this.absButton);
             this.GeneralTab.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.GeneralTab.Location = new System.Drawing.Point(4, 54);
@@ -289,17 +289,6 @@ namespace Calc
             this.pytagorasButton.Text = "Pytagoras";
             this.pytagorasButton.UseVisualStyleBackColor = true;
             this.pytagorasButton.Click += new System.EventHandler(this.buttonFun_Click);
-            // 
-            // modButton
-            // 
-            this.modButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.modButton.Location = new System.Drawing.Point(200, 137);
-            this.modButton.Name = "modButton";
-            this.modButton.Size = new System.Drawing.Size(100, 40);
-            this.modButton.TabIndex = 10;
-            this.modButton.Text = "Mod";
-            this.modButton.UseVisualStyleBackColor = true;
-            this.modButton.Click += new System.EventHandler(this.buttonNum_Click);
             // 
             // randomButton
             // 
@@ -367,17 +356,6 @@ namespace Calc
             this.roundButton.UseVisualStyleBackColor = true;
             this.roundButton.Click += new System.EventHandler(this.buttonFun_Click);
             // 
-            // floorButton
-            // 
-            this.floorButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.floorButton.Location = new System.Drawing.Point(200, 50);
-            this.floorButton.Name = "floorButton";
-            this.floorButton.Size = new System.Drawing.Size(100, 40);
-            this.floorButton.TabIndex = 3;
-            this.floorButton.Text = "Floor";
-            this.floorButton.UseVisualStyleBackColor = true;
-            this.floorButton.Click += new System.EventHandler(this.buttonFun_Click);
-            // 
             // absButton
             // 
             this.absButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
@@ -391,8 +369,9 @@ namespace Calc
             // 
             // ProgrammerTab
             // 
-            this.ProgrammerTab.Controls.Add(this.gcdButton);
-            this.ProgrammerTab.Controls.Add(this.lcmButton);
+            this.ProgrammerTab.Controls.Add(this.button52);
+            this.ProgrammerTab.Controls.Add(this.modButton);
+            this.ProgrammerTab.Controls.Add(this.floorButton);
             this.ProgrammerTab.Controls.Add(this.andButton);
             this.ProgrammerTab.Controls.Add(this.orButton);
             this.ProgrammerTab.Controls.Add(this.binRightButton);
@@ -403,52 +382,30 @@ namespace Calc
             this.ProgrammerTab.Location = new System.Drawing.Point(4, 54);
             this.ProgrammerTab.Name = "ProgrammerTab";
             this.ProgrammerTab.Padding = new System.Windows.Forms.Padding(3);
-            this.ProgrammerTab.Size = new System.Drawing.Size(499, 395);
+            this.ProgrammerTab.Size = new System.Drawing.Size(499, 424);
             this.ProgrammerTab.TabIndex = 2;
             this.ProgrammerTab.Text = "Programmer";
             this.ProgrammerTab.UseVisualStyleBackColor = true;
             // 
-            // gcdButton
-            // 
-            this.gcdButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.gcdButton.Location = new System.Drawing.Point(128, 265);
-            this.gcdButton.Name = "gcdButton";
-            this.gcdButton.Size = new System.Drawing.Size(100, 40);
-            this.gcdButton.TabIndex = 40;
-            this.gcdButton.Text = "GCD";
-            this.gcdButton.UseVisualStyleBackColor = true;
-            this.gcdButton.Click += new System.EventHandler(this.buttonFun_Click);
-            // 
-            // lcmButton
-            // 
-            this.lcmButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lcmButton.Location = new System.Drawing.Point(273, 265);
-            this.lcmButton.Name = "lcmButton";
-            this.lcmButton.Size = new System.Drawing.Size(100, 40);
-            this.lcmButton.TabIndex = 39;
-            this.lcmButton.Text = "LCM";
-            this.lcmButton.UseVisualStyleBackColor = true;
-            this.lcmButton.Click += new System.EventHandler(this.buttonFun_Click);
-            // 
             // andButton
             // 
             this.andButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.andButton.Location = new System.Drawing.Point(128, 125);
+            this.andButton.Location = new System.Drawing.Point(55, 125);
             this.andButton.Name = "andButton";
             this.andButton.Size = new System.Drawing.Size(100, 40);
             this.andButton.TabIndex = 10;
-            this.andButton.Text = "And";
+            this.andButton.Text = "AND";
             this.andButton.UseVisualStyleBackColor = true;
             this.andButton.Click += new System.EventHandler(this.buttonNum_Click);
             // 
             // orButton
             // 
             this.orButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.orButton.Location = new System.Drawing.Point(273, 125);
+            this.orButton.Location = new System.Drawing.Point(345, 126);
             this.orButton.Name = "orButton";
             this.orButton.Size = new System.Drawing.Size(100, 40);
             this.orButton.TabIndex = 9;
-            this.orButton.Text = "Or";
+            this.orButton.Text = "OR";
             this.orButton.UseVisualStyleBackColor = true;
             this.orButton.Click += new System.EventHandler(this.buttonNum_Click);
             // 
@@ -528,7 +485,7 @@ namespace Calc
             this.TrigonometricTab.Location = new System.Drawing.Point(4, 54);
             this.TrigonometricTab.Name = "TrigonometricTab";
             this.TrigonometricTab.Padding = new System.Windows.Forms.Padding(3);
-            this.TrigonometricTab.Size = new System.Drawing.Size(499, 395);
+            this.TrigonometricTab.Size = new System.Drawing.Size(499, 424);
             this.TrigonometricTab.TabIndex = 3;
             this.TrigonometricTab.Text = "Trigonometric";
             this.TrigonometricTab.UseVisualStyleBackColor = true;
@@ -721,7 +678,7 @@ namespace Calc
             this.PowerTab.Location = new System.Drawing.Point(4, 54);
             this.PowerTab.Name = "PowerTab";
             this.PowerTab.Padding = new System.Windows.Forms.Padding(3);
-            this.PowerTab.Size = new System.Drawing.Size(499, 395);
+            this.PowerTab.Size = new System.Drawing.Size(499, 424);
             this.PowerTab.TabIndex = 4;
             this.PowerTab.Text = "Power";
             this.PowerTab.UseVisualStyleBackColor = true;
@@ -813,7 +770,7 @@ namespace Calc
             this.StatisticalTab.Location = new System.Drawing.Point(4, 54);
             this.StatisticalTab.Name = "StatisticalTab";
             this.StatisticalTab.Padding = new System.Windows.Forms.Padding(3);
-            this.StatisticalTab.Size = new System.Drawing.Size(499, 395);
+            this.StatisticalTab.Size = new System.Drawing.Size(499, 424);
             this.StatisticalTab.TabIndex = 5;
             this.StatisticalTab.Text = "Statistical";
             this.StatisticalTab.UseVisualStyleBackColor = true;
@@ -899,7 +856,7 @@ namespace Calc
             this.ConversionTab.Location = new System.Drawing.Point(4, 54);
             this.ConversionTab.Name = "ConversionTab";
             this.ConversionTab.Padding = new System.Windows.Forms.Padding(3);
-            this.ConversionTab.Size = new System.Drawing.Size(499, 395);
+            this.ConversionTab.Size = new System.Drawing.Size(499, 424);
             this.ConversionTab.TabIndex = 6;
             this.ConversionTab.Text = "Conversion";
             this.ConversionTab.UseVisualStyleBackColor = true;
@@ -1011,7 +968,7 @@ namespace Calc
             this.ConstantsTab.Location = new System.Drawing.Point(4, 54);
             this.ConstantsTab.Name = "ConstantsTab";
             this.ConstantsTab.Padding = new System.Windows.Forms.Padding(3);
-            this.ConstantsTab.Size = new System.Drawing.Size(499, 395);
+            this.ConstantsTab.Size = new System.Drawing.Size(499, 424);
             this.ConstantsTab.TabIndex = 7;
             this.ConstantsTab.Text = "Constants";
             this.ConstantsTab.UseVisualStyleBackColor = true;
@@ -1171,7 +1128,7 @@ namespace Calc
             // 
             this.tabPage1.Location = new System.Drawing.Point(4, 54);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Size = new System.Drawing.Size(499, 395);
+            this.tabPage1.Size = new System.Drawing.Size(499, 424);
             this.tabPage1.TabIndex = 8;
             this.tabPage1.Text = "Favorites";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -2068,12 +2025,9 @@ namespace Calc
             this.tabPage9.Size = new System.Drawing.Size(200, 100);
             this.tabPage9.TabIndex = 0;
             // 
-            // skin
-            // 
-            this.skin.SkinFile = "micron_xp ST.skf";
-            // 
             // syntaxTextBox
             // 
+            this.syntaxTextBox.ForeColor = System.Drawing.Color.Black;
             this.syntaxTextBox.Location = new System.Drawing.Point(709, 189);
             this.syntaxTextBox.Name = "syntaxTextBox";
             this.syntaxTextBox.ReadOnly = true;
@@ -2101,6 +2055,55 @@ namespace Calc
             this.toolTip1.AutoPopDelay = 8000;
             this.toolTip1.InitialDelay = 500;
             this.toolTip1.ReshowDelay = 100;
+            // 
+            // modButton
+            // 
+            this.modButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.modButton.Location = new System.Drawing.Point(273, 266);
+            this.modButton.Name = "modButton";
+            this.modButton.Size = new System.Drawing.Size(100, 40);
+            this.modButton.TabIndex = 42;
+            this.modButton.Text = "Mod";
+            this.modButton.UseVisualStyleBackColor = true;
+            // 
+            // floorButton
+            // 
+            this.floorButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.floorButton.Location = new System.Drawing.Point(127, 266);
+            this.floorButton.Name = "floorButton";
+            this.floorButton.Size = new System.Drawing.Size(100, 40);
+            this.floorButton.TabIndex = 41;
+            this.floorButton.Text = "Floor";
+            this.floorButton.UseVisualStyleBackColor = true;
+            // 
+            // gcdButton
+            // 
+            this.gcdButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.gcdButton.Location = new System.Drawing.Point(200, 50);
+            this.gcdButton.Name = "gcdButton";
+            this.gcdButton.Size = new System.Drawing.Size(100, 40);
+            this.gcdButton.TabIndex = 42;
+            this.gcdButton.Text = "GCD";
+            this.gcdButton.UseVisualStyleBackColor = true;
+            // 
+            // lcmButton
+            // 
+            this.lcmButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lcmButton.Location = new System.Drawing.Point(200, 133);
+            this.lcmButton.Name = "lcmButton";
+            this.lcmButton.Size = new System.Drawing.Size(100, 40);
+            this.lcmButton.TabIndex = 41;
+            this.lcmButton.Text = "LCM";
+            this.lcmButton.UseVisualStyleBackColor = true;
+            // 
+            // button52
+            // 
+            this.button52.Location = new System.Drawing.Point(200, 126);
+            this.button52.Name = "button52";
+            this.button52.Size = new System.Drawing.Size(100, 40);
+            this.button52.TabIndex = 43;
+            this.button52.Text = "XOR";
+            this.button52.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -2219,18 +2222,14 @@ namespace Calc
         private System.Windows.Forms.Button buttonE;
         private System.Windows.Forms.Button buttonF;
         private System.Windows.Forms.Button absButton;
-        private System.Windows.Forms.Button modButton;
         private System.Windows.Forms.Button randomButton;
         private System.Windows.Forms.Button factorialButton;
         private System.Windows.Forms.Button primeButton;
         private System.Windows.Forms.Button sumButton;
         private System.Windows.Forms.Button digitButton;
         private System.Windows.Forms.Button roundButton;
-        private System.Windows.Forms.Button floorButton;
         private System.Windows.Forms.Button fibonacciButton;
         private System.Windows.Forms.Button pytagorasButton;
-        private System.Windows.Forms.Button gcdButton;
-        private System.Windows.Forms.Button lcmButton;
         private System.Windows.Forms.Button andButton;
         private System.Windows.Forms.Button orButton;
         private System.Windows.Forms.Button binRightButton;
@@ -2334,7 +2333,7 @@ namespace Calc
 
         private System.Windows.Forms.Button buttonPlot;
 
-        private SkinCrafter skin;
+        //private SkinCrafter skin;
         private System.Windows.Forms.Button buttonPsi;
         private System.Windows.Forms.Button button47;
         private System.Windows.Forms.Button button48;
@@ -2344,6 +2343,11 @@ namespace Calc
         private System.Windows.Forms.TextBox syntaxTextBox;
         private System.Windows.Forms.ComboBox memoryComboBox;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button modButton;
+        private System.Windows.Forms.Button floorButton;
+        private System.Windows.Forms.Button gcdButton;
+        private System.Windows.Forms.Button lcmButton;
+        private System.Windows.Forms.Button button52;
 
 
 
