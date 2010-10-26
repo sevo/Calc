@@ -74,6 +74,13 @@ namespace Calc.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap down2 {
+            get {
+                object obj = ResourceManager.GetObject("down2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap up {
             get {
                 object obj = ResourceManager.GetObject("up", resourceCulture);
@@ -84,6 +91,13 @@ namespace Calc.Properties {
         internal static System.Drawing.Bitmap up1 {
             get {
                 object obj = ResourceManager.GetObject("up1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap up2 {
+            get {
+                object obj = ResourceManager.GetObject("up2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

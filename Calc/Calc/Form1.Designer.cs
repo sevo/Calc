@@ -200,8 +200,8 @@ namespace Calc
             this.memoryComboBox = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.histUpButton = new System.Windows.Forms.Button();
             this.histDownButton = new System.Windows.Forms.Button();
+            this.histUpButton = new System.Windows.Forms.Button();
             this.TabControl.SuspendLayout();
             this.GeneralTab.SuspendLayout();
             this.ProgrammerTab.SuspendLayout();
@@ -2107,23 +2107,23 @@ namespace Calc
             this.toolTip1.InitialDelay = 500;
             this.toolTip1.ReshowDelay = 100;
             // 
-            // histUpButton
-            // 
-            this.histUpButton.Image = global::Calc.Properties.Resources.up1;
-            this.histUpButton.Location = new System.Drawing.Point(666, 217);
-            this.histUpButton.Name = "histUpButton";
-            this.histUpButton.Size = new System.Drawing.Size(75, 23);
-            this.histUpButton.TabIndex = 43;
-            this.histUpButton.UseVisualStyleBackColor = true;
-            // 
             // histDownButton
             // 
-            this.histDownButton.Image = global::Calc.Properties.Resources.down1;
-            this.histDownButton.Location = new System.Drawing.Point(753, 217);
+            this.histDownButton.Image = global::Calc.Properties.Resources.down2;
+            this.histDownButton.Location = new System.Drawing.Point(834, 168);
             this.histDownButton.Name = "histDownButton";
-            this.histDownButton.Size = new System.Drawing.Size(75, 23);
+            this.histDownButton.Size = new System.Drawing.Size(23, 23);
             this.histDownButton.TabIndex = 44;
             this.histDownButton.UseVisualStyleBackColor = true;
+            // 
+            // histUpButton
+            // 
+            this.histUpButton.Image = global::Calc.Properties.Resources.up2;
+            this.histUpButton.Location = new System.Drawing.Point(834, 72);
+            this.histUpButton.Name = "histUpButton";
+            this.histUpButton.Size = new System.Drawing.Size(23, 23);
+            this.histUpButton.TabIndex = 43;
+            this.histUpButton.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
