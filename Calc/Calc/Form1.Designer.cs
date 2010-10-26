@@ -200,6 +200,8 @@ namespace Calc
             this.memoryComboBox = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.histUpButton = new System.Windows.Forms.Button();
+            this.button54 = new System.Windows.Forms.Button();
             this.TabControl.SuspendLayout();
             this.GeneralTab.SuspendLayout();
             this.ProgrammerTab.SuspendLayout();
@@ -827,7 +829,7 @@ namespace Calc
             // medianButton
             // 
             this.medianButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.medianButton.Location = new System.Drawing.Point(277, 73);
+            this.medianButton.Location = new System.Drawing.Point(257, 73);
             this.medianButton.Name = "medianButton";
             this.medianButton.Size = new System.Drawing.Size(140, 40);
             this.medianButton.TabIndex = 8;
@@ -838,7 +840,7 @@ namespace Calc
             // dispButton
             // 
             this.dispButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.dispButton.Location = new System.Drawing.Point(277, 167);
+            this.dispButton.Location = new System.Drawing.Point(257, 167);
             this.dispButton.Name = "dispButton";
             this.dispButton.Size = new System.Drawing.Size(140, 40);
             this.dispButton.TabIndex = 7;
@@ -849,7 +851,7 @@ namespace Calc
             // avgButton
             // 
             this.avgButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.avgButton.Location = new System.Drawing.Point(277, 263);
+            this.avgButton.Location = new System.Drawing.Point(257, 263);
             this.avgButton.Name = "avgButton";
             this.avgButton.Size = new System.Drawing.Size(140, 40);
             this.avgButton.TabIndex = 6;
@@ -860,7 +862,7 @@ namespace Calc
             // valButton
             // 
             this.valButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.valButton.Location = new System.Drawing.Point(57, 263);
+            this.valButton.Location = new System.Drawing.Point(37, 263);
             this.valButton.Name = "valButton";
             this.valButton.Size = new System.Drawing.Size(140, 40);
             this.valButton.TabIndex = 5;
@@ -871,7 +873,7 @@ namespace Calc
             // combButton
             // 
             this.combButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.combButton.Location = new System.Drawing.Point(57, 168);
+            this.combButton.Location = new System.Drawing.Point(37, 168);
             this.combButton.Name = "combButton";
             this.combButton.Size = new System.Drawing.Size(140, 40);
             this.combButton.TabIndex = 4;
@@ -882,7 +884,7 @@ namespace Calc
             // permuButton
             // 
             this.permuButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.permuButton.Location = new System.Drawing.Point(57, 73);
+            this.permuButton.Location = new System.Drawing.Point(37, 73);
             this.permuButton.Name = "permuButton";
             this.permuButton.Size = new System.Drawing.Size(140, 40);
             this.permuButton.TabIndex = 3;
@@ -2104,12 +2106,32 @@ namespace Calc
             this.toolTip1.InitialDelay = 500;
             this.toolTip1.ReshowDelay = 100;
             // 
+            // histUpButton
+            // 
+            this.histUpButton.Image = global::Calc.Properties.Resources.down;
+            this.histUpButton.Location = new System.Drawing.Point(692, 217);
+            this.histUpButton.Name = "histUpButton";
+            this.histUpButton.Size = new System.Drawing.Size(75, 23);
+            this.histUpButton.TabIndex = 43;
+            this.histUpButton.UseVisualStyleBackColor = true;
+            // 
+            // button54
+            // 
+            this.button54.Image = global::Calc.Properties.Resources.up;
+            this.button54.Location = new System.Drawing.Point(775, 218);
+            this.button54.Name = "button54";
+            this.button54.Size = new System.Drawing.Size(75, 23);
+            this.button54.TabIndex = 44;
+            this.button54.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(857, 498);
+            this.Controls.Add(this.button54);
+            this.Controls.Add(this.histUpButton);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.memoryComboBox);
             this.Controls.Add(this.syntaxTextBox);
@@ -2347,6 +2369,8 @@ namespace Calc
         private System.Windows.Forms.Button gcdButton;
         private System.Windows.Forms.Button lcmButton;
         private System.Windows.Forms.Button button52;
+        private System.Windows.Forms.Button histUpButton;
+        private System.Windows.Forms.Button button54;
 
 
 
