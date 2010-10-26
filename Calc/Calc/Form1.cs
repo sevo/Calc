@@ -475,10 +475,6 @@ namespace Calc
             //ak sa nejaky znak zmazal tak sa posunie nastavenie kurzora
         }
 
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
 
     }
 }
