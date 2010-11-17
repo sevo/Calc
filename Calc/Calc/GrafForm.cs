@@ -24,19 +24,55 @@ namespace Calc
         {   
             InitializeComponent();
             mainWindow = main_window;
+
+            functions = mainWindow.functions;
+            if (functions.Count != 0)
+            { 
+                for (int i = 0; i < functions.Count; i++)
+                {
+                    checkedListBox.Items.Add(((Function)functions[i]).label, true);
+                }
+            }
+
+            if (functions.Count != 0)
+            {
+                Thread t = new Thread(resetValuesThread);
+                System.Threading.Timer timer = new System.Threading.Timer(mainWindow.abortGettingResult, t, checkedListBox.Items.Count * 1000, Timeout.Infinite);
+                t.Start();
+                t.Join();
+            }
+
             AddFunkcia(funkcia);
-            
+
             this.grafOpened = grafOpened;
             DrawGraf();
         }
         ~GrafForm()
         {
+            mainWindow.functions = functions;
+
             grafOpened = false;
         }
         public GrafForm(ref bool grafOpened, Form1 main_window)
         {
             InitializeComponent();
             mainWindow = main_window;
+
+            functions = mainWindow.functions;
+            if (functions.Count != 0)
+            {
+                for (int i = 0; i < functions.Count; i++)
+                {
+                    checkedListBox.Items.Add(((Function)functions[i]).label, true);
+                }
+            }
+            if (functions.Count != 0)
+            {
+                Thread t = new Thread(resetValuesThread);
+                System.Threading.Timer timer = new System.Threading.Timer(mainWindow.abortGettingResult, t, checkedListBox.Items.Count * 1000, Timeout.Infinite);
+                t.Start();
+                t.Join();
+            }
 
             this.grafOpened = grafOpened;
             DrawGraf();
@@ -49,7 +85,28 @@ namespace Calc
                 funkcia=funkcia.Remove(0, 1);
                 funkcia=funkcia.Insert(0, "f(x)");
             }
-            checkedListBox.Items.Add(funkcia, true);
+            //checkedListBox.Items.Add(funkcia, true);
+            functionDeclaration.Text = funkcia;
+
+            Thread t = new Thread(DefineFunctionThread);
+            System.Threading.Timer timer = new System.Threading.Timer(mainWindow.abortGettingResult, t, 100, Timeout.Infinite);
+            t.Start();
+            t.Join();
+
+            if (!functionDeclaration.BackColor.Equals(Color.Red))
+            {
+                String function = functionDeclaration.Text;
+                String body = function.Substring(function.IndexOf("=") + 1, function.Length - function.IndexOf("=") - 1);
+                drawFunction = body;
+                Thread t1 = new Thread(getValuesThread);
+                System.Threading.Timer timer1 = new System.Threading.Timer(mainWindow.abortGettingResult, t1, 1000, Timeout.Infinite);
+                t1.Start();
+                t1.Join();
+            }
+            DrawGraf();
+            updateListBox();
+
+
         }
 
         public int DefineFunction(String function)

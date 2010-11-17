@@ -19,6 +19,7 @@ namespace Calc
 {
     public partial class Form1 : Form
     {
+        public ArrayList functions = new ArrayList();//sem sa budu odkladat funkcie ak sa zavrie okno s grafom
         public System.Diagnostics.Process bc;
         public StreamReader bcOut;
         public StreamWriter bcIn;
@@ -28,6 +29,11 @@ namespace Calc
         private bool isShiftDown=false;
         int history_index;
         ArrayList history = new ArrayList();
+        public Decimal MinX;
+        public Decimal MaxX;
+        public Decimal MinY;
+        public Decimal MaxY;
+        public Decimal X;
 
         public Form1()
         {
