@@ -30,6 +30,7 @@ namespace Calc
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.TabControl = new System.Windows.Forms.TabControl();
             this.GeneralTab = new System.Windows.Forms.TabPage();
             this.gcdButton = new System.Windows.Forms.Button();
@@ -2109,7 +2110,7 @@ namespace Calc
             // 
             // histDownButton
             // 
-            this.histDownButton.Image = global::Calc.Properties.Resources.down2;
+            this.histDownButton.Image = ((System.Drawing.Image)(resources.GetObject("histDownButton.Image")));
             this.histDownButton.Location = new System.Drawing.Point(834, 168);
             this.histDownButton.Name = "histDownButton";
             this.histDownButton.Size = new System.Drawing.Size(23, 23);
@@ -2118,7 +2119,7 @@ namespace Calc
             // 
             // histUpButton
             // 
-            this.histUpButton.Image = global::Calc.Properties.Resources.up2;
+            this.histUpButton.Image = ((System.Drawing.Image)(resources.GetObject("histUpButton.Image")));
             this.histUpButton.Location = new System.Drawing.Point(834, 72);
             this.histUpButton.Name = "histUpButton";
             this.histUpButton.Size = new System.Drawing.Size(23, 23);

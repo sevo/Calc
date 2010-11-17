@@ -63,9 +63,8 @@ namespace Calc
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.GrafSurface2D = new NPlot.Windows.PlotSurface2D();
-            //this.skin = new DMSoft.SkinCrafter();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
+            this.YnumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.XnumericUpDown = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.xTrackBar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.yTrackBar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.YMinNumericUpDown)).BeginInit();
@@ -74,17 +73,20 @@ namespace Calc
             ((System.ComponentModel.ISupportInitialize)(this.XMinNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ZMaxNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.XMaxNumericUpDown)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.YnumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.XnumericUpDown)).BeginInit();
             this.SuspendLayout();
             // 
             // xTrackBar
             // 
             this.xTrackBar.Location = new System.Drawing.Point(326, 443);
+            this.xTrackBar.Maximum = 400;
             this.xTrackBar.Name = "xTrackBar";
             this.xTrackBar.Size = new System.Drawing.Size(669, 45);
             this.xTrackBar.TabIndex = 1;
             this.xTrackBar.TickStyle = System.Windows.Forms.TickStyle.None;
+            this.xTrackBar.Value = 200;
+            this.xTrackBar.Scroll += new System.EventHandler(this.xTrackBar_Scroll);
             // 
             // functionDeclaration
             // 
@@ -205,6 +207,7 @@ namespace Calc
             this.buttonZoomIn.Size = new System.Drawing.Size(45, 35);
             this.buttonZoomIn.TabIndex = 25;
             this.buttonZoomIn.UseVisualStyleBackColor = true;
+            this.buttonZoomIn.Click += new System.EventHandler(this.buttonZoomIn_Click);
             // 
             // buttonZoomOut
             // 
@@ -265,6 +268,11 @@ namespace Calc
             0,
             65536});
             this.YMinNumericUpDown.Location = new System.Drawing.Point(239, 399);
+            this.YMinNumericUpDown.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
             this.YMinNumericUpDown.Minimum = new decimal(new int[] {
             10000,
             0,
@@ -273,6 +281,12 @@ namespace Calc
             this.YMinNumericUpDown.Name = "YMinNumericUpDown";
             this.YMinNumericUpDown.Size = new System.Drawing.Size(43, 20);
             this.YMinNumericUpDown.TabIndex = 31;
+            this.YMinNumericUpDown.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            -2147483648});
+            this.YMinNumericUpDown.ValueChanged += new System.EventHandler(this.YMinNumericUpDown_ValueChanged);
             // 
             // ZMinNumericUpDown
             // 
@@ -284,6 +298,11 @@ namespace Calc
             0,
             65536});
             this.ZMinNumericUpDown.Location = new System.Drawing.Point(239, 470);
+            this.ZMinNumericUpDown.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
             this.ZMinNumericUpDown.Minimum = new decimal(new int[] {
             10000,
             0,
@@ -292,6 +311,7 @@ namespace Calc
             this.ZMinNumericUpDown.Name = "ZMinNumericUpDown";
             this.ZMinNumericUpDown.Size = new System.Drawing.Size(43, 20);
             this.ZMinNumericUpDown.TabIndex = 32;
+            this.ZMinNumericUpDown.ValueChanged += new System.EventHandler(this.ZMinNumericUpDown_ValueChanged);
             // 
             // YMaxNumericUpDown
             // 
@@ -302,6 +322,11 @@ namespace Calc
             0,
             65536});
             this.YMaxNumericUpDown.Location = new System.Drawing.Point(239, 42);
+            this.YMaxNumericUpDown.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
             this.YMaxNumericUpDown.Minimum = new decimal(new int[] {
             10000,
             0,
@@ -310,6 +335,12 @@ namespace Calc
             this.YMaxNumericUpDown.Name = "YMaxNumericUpDown";
             this.YMaxNumericUpDown.Size = new System.Drawing.Size(43, 20);
             this.YMaxNumericUpDown.TabIndex = 33;
+            this.YMaxNumericUpDown.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            this.YMaxNumericUpDown.ValueChanged += new System.EventHandler(this.YMaxNumericUpDown_ValueChanged);
             // 
             // XMinNumericUpDown
             // 
@@ -320,6 +351,11 @@ namespace Calc
             0,
             65536});
             this.XMinNumericUpDown.Location = new System.Drawing.Point(334, 470);
+            this.XMinNumericUpDown.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
             this.XMinNumericUpDown.Minimum = new decimal(new int[] {
             10000,
             0,
@@ -328,6 +364,12 @@ namespace Calc
             this.XMinNumericUpDown.Name = "XMinNumericUpDown";
             this.XMinNumericUpDown.Size = new System.Drawing.Size(43, 20);
             this.XMinNumericUpDown.TabIndex = 34;
+            this.XMinNumericUpDown.Value = new decimal(new int[] {
+            10,
+            0,
+            0,
+            -2147483648});
+            this.XMinNumericUpDown.ValueChanged += new System.EventHandler(this.XMinNumericUpDown_ValueChanged);
             // 
             // ZMaxNumericUpDown
             // 
@@ -339,6 +381,11 @@ namespace Calc
             0,
             65536});
             this.ZMaxNumericUpDown.Location = new System.Drawing.Point(952, 5);
+            this.ZMaxNumericUpDown.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
             this.ZMaxNumericUpDown.Minimum = new decimal(new int[] {
             10000,
             0,
@@ -347,6 +394,7 @@ namespace Calc
             this.ZMaxNumericUpDown.Name = "ZMaxNumericUpDown";
             this.ZMaxNumericUpDown.Size = new System.Drawing.Size(43, 20);
             this.ZMaxNumericUpDown.TabIndex = 35;
+            this.ZMaxNumericUpDown.ValueChanged += new System.EventHandler(this.ZMaxNumericUpDown_ValueChanged);
             // 
             // XMaxNumericUpDown
             // 
@@ -357,6 +405,11 @@ namespace Calc
             0,
             65536});
             this.XMaxNumericUpDown.Location = new System.Drawing.Point(943, 466);
+            this.XMaxNumericUpDown.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
             this.XMaxNumericUpDown.Minimum = new decimal(new int[] {
             10000,
             0,
@@ -365,6 +418,12 @@ namespace Calc
             this.XMaxNumericUpDown.Name = "XMaxNumericUpDown";
             this.XMaxNumericUpDown.Size = new System.Drawing.Size(43, 20);
             this.XMaxNumericUpDown.TabIndex = 36;
+            this.XMaxNumericUpDown.Value = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.XMaxNumericUpDown.ValueChanged += new System.EventHandler(this.XMaxNumericUpDown_ValueChanged);
             // 
             // buttonCreate
             // 
@@ -438,54 +497,62 @@ namespace Calc
             this.GrafSurface2D.YAxis1 = null;
             this.GrafSurface2D.YAxis2 = null;
             // 
-            // skin
+            // YnumericUpDown
             // 
-            //this.skin.SkinFile = "Micron_xp ST.skf";
-            // 
-            // numericUpDown1
-            // 
-            this.numericUpDown1.DecimalPlaces = 2;
-            this.numericUpDown1.Enabled = false;
-            this.numericUpDown1.Increment = new decimal(new int[] {
+            this.YnumericUpDown.DecimalPlaces = 2;
+            this.YnumericUpDown.Enabled = false;
+            this.YnumericUpDown.Increment = new decimal(new int[] {
             1,
             0,
             0,
             65536});
-            this.numericUpDown1.Location = new System.Drawing.Point(702, 468);
-            this.numericUpDown1.Minimum = new decimal(new int[] {
+            this.YnumericUpDown.Location = new System.Drawing.Point(702, 468);
+            this.YnumericUpDown.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.YnumericUpDown.Minimum = new decimal(new int[] {
             10000,
             0,
             0,
             -2147483648});
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(55, 20);
-            this.numericUpDown1.TabIndex = 43;
+            this.YnumericUpDown.Name = "YnumericUpDown";
+            this.YnumericUpDown.Size = new System.Drawing.Size(55, 20);
+            this.YnumericUpDown.TabIndex = 43;
+            this.YnumericUpDown.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
             // 
-            // numericUpDown2
+            // XnumericUpDown
             // 
-            this.numericUpDown2.DecimalPlaces = 2;
-            this.numericUpDown2.Increment = new decimal(new int[] {
+            this.XnumericUpDown.DecimalPlaces = 2;
+            this.XnumericUpDown.Increment = new decimal(new int[] {
             1,
             0,
             0,
             65536});
-            this.numericUpDown2.Location = new System.Drawing.Point(579, 469);
-            this.numericUpDown2.Minimum = new decimal(new int[] {
+            this.XnumericUpDown.Location = new System.Drawing.Point(579, 469);
+            this.XnumericUpDown.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.XnumericUpDown.Minimum = new decimal(new int[] {
             10000,
             0,
             0,
             -2147483648});
-            this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(55, 20);
-            this.numericUpDown2.TabIndex = 44;
+            this.XnumericUpDown.Name = "XnumericUpDown";
+            this.XnumericUpDown.Size = new System.Drawing.Size(55, 20);
+            this.XnumericUpDown.TabIndex = 44;
+            this.XnumericUpDown.ValueChanged += new System.EventHandler(this.numericUpDown2_ValueChanged);
             // 
             // GrafForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1008, 562);
-            this.Controls.Add(this.numericUpDown2);
-            this.Controls.Add(this.numericUpDown1);
+            this.Controls.Add(this.XnumericUpDown);
+            this.Controls.Add(this.YnumericUpDown);
             this.Controls.Add(this.GrafSurface2D);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -527,8 +594,8 @@ namespace Calc
             ((System.ComponentModel.ISupportInitialize)(this.XMinNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ZMaxNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.XMaxNumericUpDown)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.YnumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.XnumericUpDown)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -568,7 +635,7 @@ namespace Calc
         private System.Windows.Forms.Label label3;
         private NPlot.Windows.PlotSurface2D GrafSurface2D;
         //private SkinCrafter skin;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.NumericUpDown numericUpDown2; 
+        private System.Windows.Forms.NumericUpDown YnumericUpDown;
+        private System.Windows.Forms.NumericUpDown XnumericUpDown; 
     }
 }
