@@ -19,9 +19,9 @@ namespace Calc
 {
     public partial class Form1 : Form
     {
-        System.Diagnostics.Process bc;
-        StreamReader bcOut;
-        StreamWriter bcIn;
+        public System.Diagnostics.Process bc;
+        public StreamReader bcOut;
+        public StreamWriter bcIn;
         float memory = 0.0f;
         protected Boolean graphOpened;
         protected GrafForm grafoveOkno;
@@ -74,7 +74,7 @@ namespace Calc
             }
             catch (Exception e)
             {
-                resultTextBox.Text = "Error: unable to run bc.exe";
+                resultTextBox.Text = "Error: unable to run bc.exe";                
             }
             bcOut = bc.StandardOutput;
             bcIn = bc.StandardInput;
@@ -124,7 +124,7 @@ namespace Calc
         /// funkcia pre timer na ukoncenie vlakna kde sa ziskava vysledok a aj programu bc
         /// </summary>
         /// <param name="data"></param>
-        private void abortGettingResult(object data)
+        public void abortGettingResult(object data)
         {
             if (((Thread)data).IsAlive)
             {
@@ -178,7 +178,7 @@ namespace Calc
             {
                 if (grafoveOkno==null || grafoveOkno.IsDisposed)   //grafove okno este neni otvorene
                 {
-                    grafoveOkno = new GrafForm(text,ref graphOpened);
+                    grafoveOkno = new GrafForm(text,ref graphOpened,this);
                     grafoveOkno.Visible = true;
                     graphOpened = true;        
                 }
@@ -211,7 +211,7 @@ namespace Calc
             {
                 if (grafoveOkno == null || grafoveOkno.IsDisposed)   //grafove okno este neni otvorene
                 {
-                    grafoveOkno = new GrafForm(text, ref graphOpened);
+                    grafoveOkno = new GrafForm(text, ref graphOpened,this);
                     grafoveOkno.Visible = true;
                     graphOpened = true;
                 }
@@ -229,7 +229,7 @@ namespace Calc
             {
                 if (grafoveOkno == null || grafoveOkno.IsDisposed)   //grafove okno este neni otvorene
                 {
-                    grafoveOkno = new GrafForm(ref graphOpened);
+                    grafoveOkno = new GrafForm(ref graphOpened,this);
                     grafoveOkno.Visible = true;
                     graphOpened = true;
                 }

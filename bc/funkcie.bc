@@ -230,3 +230,10 @@ define fibonacci(n){
   a=(a-c(a(1)*4*n)/a)/s5
   return a
 }
+
+define frun(b,m,n){
+for(i=0;i<n;i++){
+print run(b),"\n";
+b+=m;
+}
+}

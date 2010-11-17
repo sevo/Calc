@@ -3,6 +3,7 @@ namespace Calc
 {
     partial class GrafForm
     {
+
         /// <summary>
         /// Required designer variable.
         /// </summary>
@@ -34,7 +35,7 @@ namespace Calc
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GrafForm));
             this.xTrackBar = new System.Windows.Forms.TrackBar();
             this.functionDeclaration = new System.Windows.Forms.TextBox();
-            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
+            this.checkedListBox = new System.Windows.Forms.CheckedListBox();
             this.yTrackBar = new System.Windows.Forms.TrackBar();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -58,7 +59,7 @@ namespace Calc
             this.ZMaxNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.XMaxNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.buttonCreate = new System.Windows.Forms.Button();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.listBox = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -80,12 +81,12 @@ namespace Calc
             // xTrackBar
             // 
             this.xTrackBar.Location = new System.Drawing.Point(326, 443);
-            this.xTrackBar.Maximum = 400;
+            this.xTrackBar.Maximum = 200;
             this.xTrackBar.Name = "xTrackBar";
             this.xTrackBar.Size = new System.Drawing.Size(669, 45);
             this.xTrackBar.TabIndex = 1;
             this.xTrackBar.TickStyle = System.Windows.Forms.TickStyle.None;
-            this.xTrackBar.Value = 200;
+            this.xTrackBar.Value = 100;
             this.xTrackBar.Scroll += new System.EventHandler(this.xTrackBar_Scroll);
             // 
             // functionDeclaration
@@ -95,14 +96,17 @@ namespace Calc
             this.functionDeclaration.Size = new System.Drawing.Size(193, 20);
             this.functionDeclaration.TabIndex = 5;
             this.functionDeclaration.Text = "f(x)=";
+            this.functionDeclaration.TextChanged += new System.EventHandler(this.functionDeclaration_TextChanged);
+            this.functionDeclaration.MouseClick += new System.Windows.Forms.MouseEventHandler(this.functionDeclaration_MouseClick);
             // 
-            // checkedListBox1
+            // checkedListBox
             // 
-            this.checkedListBox1.FormattingEnabled = true;
-            this.checkedListBox1.Location = new System.Drawing.Point(12, 30);
-            this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(193, 214);
-            this.checkedListBox1.TabIndex = 8;
+            this.checkedListBox.FormattingEnabled = true;
+            this.checkedListBox.Location = new System.Drawing.Point(12, 30);
+            this.checkedListBox.Name = "checkedListBox";
+            this.checkedListBox.Size = new System.Drawing.Size(193, 214);
+            this.checkedListBox.TabIndex = 8;
+            this.checkedListBox.MouseUp += new System.Windows.Forms.MouseEventHandler(this.checkedListBox_MouseUp);
             // 
             // yTrackBar
             // 
@@ -179,6 +183,7 @@ namespace Calc
             this.buttonSelectAll.TabIndex = 22;
             this.buttonSelectAll.Text = "Select All";
             this.buttonSelectAll.UseVisualStyleBackColor = true;
+            this.buttonSelectAll.Click += new System.EventHandler(this.buttonSelectAll_Click);
             // 
             // buttonInverseSellection
             // 
@@ -188,6 +193,7 @@ namespace Calc
             this.buttonInverseSellection.TabIndex = 23;
             this.buttonInverseSellection.Text = "Inverse Selection";
             this.buttonInverseSellection.UseVisualStyleBackColor = true;
+            this.buttonInverseSellection.Click += new System.EventHandler(this.buttonInverseSellection_Click);
             // 
             // buttonRemove
             // 
@@ -197,6 +203,7 @@ namespace Calc
             this.buttonRemove.TabIndex = 24;
             this.buttonRemove.Text = "Remove";
             this.buttonRemove.UseVisualStyleBackColor = true;
+            this.buttonRemove.Click += new System.EventHandler(this.buttonRemove_Click);
             // 
             // buttonZoomIn
             // 
@@ -263,10 +270,10 @@ namespace Calc
             // 
             this.YMinNumericUpDown.DecimalPlaces = 2;
             this.YMinNumericUpDown.Increment = new decimal(new int[] {
-            1,
+            2,
             0,
             0,
-            65536});
+            0});
             this.YMinNumericUpDown.Location = new System.Drawing.Point(239, 399);
             this.YMinNumericUpDown.Maximum = new decimal(new int[] {
             10000,
@@ -293,10 +300,10 @@ namespace Calc
             this.ZMinNumericUpDown.DecimalPlaces = 2;
             this.ZMinNumericUpDown.Enabled = false;
             this.ZMinNumericUpDown.Increment = new decimal(new int[] {
-            1,
+            2,
             0,
             0,
-            65536});
+            0});
             this.ZMinNumericUpDown.Location = new System.Drawing.Point(239, 470);
             this.ZMinNumericUpDown.Maximum = new decimal(new int[] {
             10000,
@@ -317,10 +324,10 @@ namespace Calc
             // 
             this.YMaxNumericUpDown.DecimalPlaces = 2;
             this.YMaxNumericUpDown.Increment = new decimal(new int[] {
-            1,
+            2,
             0,
             0,
-            65536});
+            0});
             this.YMaxNumericUpDown.Location = new System.Drawing.Point(239, 42);
             this.YMaxNumericUpDown.Maximum = new decimal(new int[] {
             10000,
@@ -346,10 +353,10 @@ namespace Calc
             // 
             this.XMinNumericUpDown.DecimalPlaces = 2;
             this.XMinNumericUpDown.Increment = new decimal(new int[] {
-            1,
+            2,
             0,
             0,
-            65536});
+            0});
             this.XMinNumericUpDown.Location = new System.Drawing.Point(334, 470);
             this.XMinNumericUpDown.Maximum = new decimal(new int[] {
             10000,
@@ -376,10 +383,10 @@ namespace Calc
             this.ZMaxNumericUpDown.DecimalPlaces = 2;
             this.ZMaxNumericUpDown.Enabled = false;
             this.ZMaxNumericUpDown.Increment = new decimal(new int[] {
-            1,
+            2,
             0,
             0,
-            65536});
+            0});
             this.ZMaxNumericUpDown.Location = new System.Drawing.Point(952, 5);
             this.ZMaxNumericUpDown.Maximum = new decimal(new int[] {
             10000,
@@ -400,10 +407,10 @@ namespace Calc
             // 
             this.XMaxNumericUpDown.DecimalPlaces = 2;
             this.XMaxNumericUpDown.Increment = new decimal(new int[] {
-            1,
+            2,
             0,
             0,
-            65536});
+            0});
             this.XMaxNumericUpDown.Location = new System.Drawing.Point(943, 466);
             this.XMaxNumericUpDown.Maximum = new decimal(new int[] {
             10000,
@@ -435,13 +442,13 @@ namespace Calc
             this.buttonCreate.UseVisualStyleBackColor = true;
             this.buttonCreate.Click += new System.EventHandler(this.buttonCreate_Click);
             // 
-            // listBox1
+            // listBox
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(544, 494);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(234, 56);
-            this.listBox1.TabIndex = 38;
+            this.listBox.FormattingEnabled = true;
+            this.listBox.Location = new System.Drawing.Point(544, 494);
+            this.listBox.Name = "listBox";
+            this.listBox.Size = new System.Drawing.Size(234, 56);
+            this.listBox.TabIndex = 38;
             // 
             // label1
             // 
@@ -501,11 +508,6 @@ namespace Calc
             // 
             this.YnumericUpDown.DecimalPlaces = 2;
             this.YnumericUpDown.Enabled = false;
-            this.YnumericUpDown.Increment = new decimal(new int[] {
-            1,
-            0,
-            0,
-            65536});
             this.YnumericUpDown.Location = new System.Drawing.Point(702, 468);
             this.YnumericUpDown.Maximum = new decimal(new int[] {
             10000,
@@ -525,11 +527,6 @@ namespace Calc
             // XnumericUpDown
             // 
             this.XnumericUpDown.DecimalPlaces = 2;
-            this.XnumericUpDown.Increment = new decimal(new int[] {
-            1,
-            0,
-            0,
-            65536});
             this.XnumericUpDown.Location = new System.Drawing.Point(579, 469);
             this.XnumericUpDown.Maximum = new decimal(new int[] {
             10000,
@@ -557,7 +554,7 @@ namespace Calc
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.listBox);
             this.Controls.Add(this.buttonCreate);
             this.Controls.Add(this.XMaxNumericUpDown);
             this.Controls.Add(this.ZMaxNumericUpDown);
@@ -582,7 +579,7 @@ namespace Calc
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.yTrackBar);
-            this.Controls.Add(this.checkedListBox1);
+            this.Controls.Add(this.checkedListBox);
             this.Controls.Add(this.functionDeclaration);
             this.Name = "GrafForm";
             this.Text = "Graf";
@@ -605,7 +602,7 @@ namespace Calc
 
         private System.Windows.Forms.TrackBar xTrackBar;
         private System.Windows.Forms.TextBox functionDeclaration;
-        private System.Windows.Forms.CheckedListBox checkedListBox1;
+        private System.Windows.Forms.CheckedListBox checkedListBox;
         private System.Windows.Forms.TrackBar yTrackBar;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
@@ -629,7 +626,7 @@ namespace Calc
         private System.Windows.Forms.NumericUpDown ZMaxNumericUpDown;
         private System.Windows.Forms.NumericUpDown XMaxNumericUpDown;
         private System.Windows.Forms.Button buttonCreate;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox listBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
