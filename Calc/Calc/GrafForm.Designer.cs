@@ -81,12 +81,12 @@ namespace Calc
             // xTrackBar
             // 
             this.xTrackBar.Location = new System.Drawing.Point(326, 443);
-            this.xTrackBar.Maximum = 200;
+            this.xTrackBar.Maximum = 100;
             this.xTrackBar.Name = "xTrackBar";
             this.xTrackBar.Size = new System.Drawing.Size(669, 45);
             this.xTrackBar.TabIndex = 1;
             this.xTrackBar.TickStyle = System.Windows.Forms.TickStyle.None;
-            this.xTrackBar.Value = 100;
+            this.xTrackBar.Value = 50;
             this.xTrackBar.Scroll += new System.EventHandler(this.xTrackBar_Scroll);
             // 
             // functionDeclaration

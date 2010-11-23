@@ -14,7 +14,7 @@ namespace Calc
     public partial class GrafForm : Form
     {
         private static Mutex functionsMutex = new Mutex(false, "functionsMutex");
-        private int N = 200; 
+        private int N = 100; 
         private Boolean grafOpened;
         private Form1 mainWindow;
         private ArrayList functions = new ArrayList();
@@ -326,11 +326,14 @@ namespace Calc
 
         private void YMinNumericUpDown_ValueChanged(object sender, EventArgs e)
         {
+            if (YMinNumericUpDown.Value >= YMaxNumericUpDown.Value) { YMinNumericUpDown.Value = YMaxNumericUpDown.Value - 1; return; }
             DrawGraf();
         }
 
         private void YMaxNumericUpDown_ValueChanged(object sender, EventArgs e)
         {
+            if (YMaxNumericUpDown.Value <= YMinNumericUpDown.Value) { YMaxNumericUpDown.Value = YMinNumericUpDown.Value + 1; return; }
+            if (checkedListBox.Items.Count == 0) return;
             Thread t = new Thread(resetValuesThread);
             System.Threading.Timer timer = new System.Threading.Timer(mainWindow.abortGettingResult, t, checkedListBox.Items.Count*1000, Timeout.Infinite);
             t.Start();
@@ -340,11 +343,13 @@ namespace Calc
 
         private void XMinNumericUpDown_ValueChanged(object sender, EventArgs e)
         {
+            if (XMinNumericUpDown.Value >= XMaxNumericUpDown.Value) { XMinNumericUpDown.Value = XMaxNumericUpDown.Value - 1; return; }
+            if (checkedListBox.Items.Count == 0) { DrawGraf(); return; }
             Thread t = new Thread(resetValuesThread);
             System.Threading.Timer timer = new System.Threading.Timer(mainWindow.abortGettingResult, t, checkedListBox.Items.Count * 1000, Timeout.Infinite);
-            t.Start();
-            t.Join();
-            DrawGraf();
+                t.Start();
+                t.Join();
+                DrawGraf();
         }
 
         private void ZMinNumericUpDown_ValueChanged(object sender, EventArgs e)
@@ -354,6 +359,12 @@ namespace Calc
 
         private void XMaxNumericUpDown_ValueChanged(object sender, EventArgs e)
         {
+            if (XMaxNumericUpDown.Value <= XMinNumericUpDown.Value) { XMaxNumericUpDown.Value = XMinNumericUpDown.Value + 1; return; }
+            if (checkedListBox.Items.Count == 0) { DrawGraf(); return; }
+            Thread t = new Thread(resetValuesThread);
+            System.Threading.Timer timer = new System.Threading.Timer(mainWindow.abortGettingResult, t, checkedListBox.Items.Count * 1000, Timeout.Infinite);
+            t.Start();
+            t.Join();
             DrawGraf();
         }
 
