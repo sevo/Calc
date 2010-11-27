@@ -162,6 +162,7 @@ namespace Calc
             Button b = sender as Button;
             string s = b.Text.ToLower();
             s = s.Insert(s.Length, "()");
+            s=s.Replace(" ", string.Empty);
             int cursorPosition = expressionTextBox.SelectionStart;
             expressionTextBox.Text = expressionTextBox.Text.Substring(0, cursorPosition) + s + expressionTextBox.Text.Substring(cursorPosition, expressionTextBox.Text.Length - cursorPosition);
             expressionTextBox.SelectionStart = cursorPosition + s.Length - 1;

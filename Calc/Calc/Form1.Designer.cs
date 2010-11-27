@@ -269,6 +269,7 @@ namespace Calc
             this.gcdButton.TabIndex = 42;
             this.gcdButton.Text = "GCD";
             this.gcdButton.UseVisualStyleBackColor = true;
+            this.gcdButton.Click += new System.EventHandler(this.buttonFun_Click);
             // 
             // lcmButton
             // 
@@ -279,6 +280,7 @@ namespace Calc
             this.lcmButton.TabIndex = 41;
             this.lcmButton.Text = "LCM";
             this.lcmButton.UseVisualStyleBackColor = true;
+            this.lcmButton.Click += new System.EventHandler(this.buttonFun_Click);
             // 
             // buttonPlot
             // 
@@ -419,6 +421,7 @@ namespace Calc
             this.xorButton.TabIndex = 43;
             this.xorButton.Text = "XOR";
             this.xorButton.UseVisualStyleBackColor = true;
+            this.xorButton.Click += new System.EventHandler(this.buttonFun_Click);
             // 
             // modButton
             // 
@@ -429,6 +432,7 @@ namespace Calc
             this.modButton.TabIndex = 42;
             this.modButton.Text = "Mod";
             this.modButton.UseVisualStyleBackColor = true;
+            this.modButton.Click += new System.EventHandler(this.buttonFun_Click);
             // 
             // floorButton
             // 
@@ -439,6 +443,7 @@ namespace Calc
             this.floorButton.TabIndex = 41;
             this.floorButton.Text = "Floor";
             this.floorButton.UseVisualStyleBackColor = true;
+            this.floorButton.Click += new System.EventHandler(this.buttonFun_Click);
             // 
             // andButton
             // 
@@ -745,6 +750,7 @@ namespace Calc
             this.xrootButton.TabIndex = 9;
             this.xrootButton.Text = "xth Root";
             this.xrootButton.UseVisualStyleBackColor = true;
+            this.xrootButton.Click += new System.EventHandler(this.buttonFun_Click);
             // 
             // logButton
             // 
