@@ -452,7 +452,9 @@ namespace Calc
         {
             int length = expressionTextBox.Text.Length;
             int cursor_position = expressionTextBox.SelectionStart;
-            
+
+            kontrolaZatvoriek(expressionTextBox.Text);
+
             if (DecRadioButton.Checked == true)
             {
                 String[] num = {"A","B","C","D","E","F"};
@@ -481,6 +483,29 @@ namespace Calc
             //ak sa nejaky znak zmazal tak sa posunie nastavenie kurzora
         }
 
-
+        private void kontrolaZatvoriek(string text)
+        {
+            Stack<char> zatv = new Stack<char>();
+            foreach (char p in text)
+            {
+                if (p == '(')
+                {
+                    zatv.Push('(');
+                }
+                if (p == ')')
+                {
+                    if (zatv.Count == 0)
+                    {
+                        syntaxTextBox.Text = "Missing \"(\"";
+                        return;
+                    }
+                    zatv.Pop();
+                }
+            }
+            if (zatv.Count > 0)
+                syntaxTextBox.Text = "Missing \")\"";
+            else
+                syntaxTextBox.Text = "OK";
+        }
     }
 }

@@ -46,7 +46,7 @@ namespace Calc
             this.roundButton = new System.Windows.Forms.Button();
             this.absButton = new System.Windows.Forms.Button();
             this.ProgrammerTab = new System.Windows.Forms.TabPage();
-            this.button52 = new System.Windows.Forms.Button();
+            this.xorButton = new System.Windows.Forms.Button();
             this.modButton = new System.Windows.Forms.Button();
             this.floorButton = new System.Windows.Forms.Button();
             this.andButton = new System.Windows.Forms.Button();
@@ -74,7 +74,7 @@ namespace Calc
             this.cosButton = new System.Windows.Forms.Button();
             this.sinButton = new System.Windows.Forms.Button();
             this.PowerTab = new System.Windows.Forms.TabPage();
-            this.button51 = new System.Windows.Forms.Button();
+            this.xrootButton = new System.Windows.Forms.Button();
             this.logButton = new System.Windows.Forms.Button();
             this.lnButton = new System.Windows.Forms.Button();
             this.lgButton = new System.Windows.Forms.Button();
@@ -85,7 +85,7 @@ namespace Calc
             this.medianButton = new System.Windows.Forms.Button();
             this.dispButton = new System.Windows.Forms.Button();
             this.avgButton = new System.Windows.Forms.Button();
-            this.valButton = new System.Windows.Forms.Button();
+            this.varButton = new System.Windows.Forms.Button();
             this.combButton = new System.Windows.Forms.Button();
             this.permuButton = new System.Windows.Forms.Button();
             this.ConversionTab = new System.Windows.Forms.TabPage();
@@ -392,7 +392,7 @@ namespace Calc
             // 
             // ProgrammerTab
             // 
-            this.ProgrammerTab.Controls.Add(this.button52);
+            this.ProgrammerTab.Controls.Add(this.xorButton);
             this.ProgrammerTab.Controls.Add(this.modButton);
             this.ProgrammerTab.Controls.Add(this.floorButton);
             this.ProgrammerTab.Controls.Add(this.andButton);
@@ -410,15 +410,15 @@ namespace Calc
             this.ProgrammerTab.Text = "Programmer";
             this.ProgrammerTab.UseVisualStyleBackColor = true;
             // 
-            // button52
+            // xorButton
             // 
-            this.button52.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button52.Location = new System.Drawing.Point(159, 141);
-            this.button52.Name = "button52";
-            this.button52.Size = new System.Drawing.Size(90, 35);
-            this.button52.TabIndex = 43;
-            this.button52.Text = "XOR";
-            this.button52.UseVisualStyleBackColor = true;
+            this.xorButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.xorButton.Location = new System.Drawing.Point(159, 141);
+            this.xorButton.Name = "xorButton";
+            this.xorButton.Size = new System.Drawing.Size(90, 35);
+            this.xorButton.TabIndex = 43;
+            this.xorButton.Text = "XOR";
+            this.xorButton.UseVisualStyleBackColor = true;
             // 
             // modButton
             // 
@@ -721,7 +721,7 @@ namespace Calc
             // 
             // PowerTab
             // 
-            this.PowerTab.Controls.Add(this.button51);
+            this.PowerTab.Controls.Add(this.xrootButton);
             this.PowerTab.Controls.Add(this.logButton);
             this.PowerTab.Controls.Add(this.lnButton);
             this.PowerTab.Controls.Add(this.lgButton);
@@ -736,15 +736,15 @@ namespace Calc
             this.PowerTab.Text = "Power";
             this.PowerTab.UseVisualStyleBackColor = true;
             // 
-            // button51
+            // xrootButton
             // 
-            this.button51.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button51.Location = new System.Drawing.Point(234, 177);
-            this.button51.Name = "button51";
-            this.button51.Size = new System.Drawing.Size(90, 35);
-            this.button51.TabIndex = 9;
-            this.button51.Text = "xth Root";
-            this.button51.UseVisualStyleBackColor = true;
+            this.xrootButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.xrootButton.Location = new System.Drawing.Point(234, 177);
+            this.xrootButton.Name = "xrootButton";
+            this.xrootButton.Size = new System.Drawing.Size(90, 35);
+            this.xrootButton.TabIndex = 9;
+            this.xrootButton.Text = "xth Root";
+            this.xrootButton.UseVisualStyleBackColor = true;
             // 
             // logButton
             // 
@@ -817,7 +817,7 @@ namespace Calc
             this.StatisticalTab.Controls.Add(this.medianButton);
             this.StatisticalTab.Controls.Add(this.dispButton);
             this.StatisticalTab.Controls.Add(this.avgButton);
-            this.StatisticalTab.Controls.Add(this.valButton);
+            this.StatisticalTab.Controls.Add(this.varButton);
             this.StatisticalTab.Controls.Add(this.combButton);
             this.StatisticalTab.Controls.Add(this.permuButton);
             this.StatisticalTab.Location = new System.Drawing.Point(4, 54);
@@ -861,16 +861,16 @@ namespace Calc
             this.avgButton.UseVisualStyleBackColor = true;
             this.avgButton.Click += new System.EventHandler(this.buttonFun_Click);
             // 
-            // valButton
+            // varButton
             // 
-            this.valButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.valButton.Location = new System.Drawing.Point(36, 283);
-            this.valButton.Name = "valButton";
-            this.valButton.Size = new System.Drawing.Size(120, 35);
-            this.valButton.TabIndex = 5;
-            this.valButton.Text = "Variation";
-            this.valButton.UseVisualStyleBackColor = true;
-            this.valButton.Click += new System.EventHandler(this.buttonFun_Click);
+            this.varButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.varButton.Location = new System.Drawing.Point(36, 283);
+            this.varButton.Name = "varButton";
+            this.varButton.Size = new System.Drawing.Size(120, 35);
+            this.varButton.TabIndex = 5;
+            this.varButton.Text = "Variation";
+            this.varButton.UseVisualStyleBackColor = true;
+            this.varButton.Click += new System.EventHandler(this.buttonFun_Click);
             // 
             // combButton
             // 
@@ -2329,7 +2329,7 @@ namespace Calc
         private System.Windows.Forms.TabPage tabPage9;
         private System.Windows.Forms.Button combButton;
         private System.Windows.Forms.Button permuButton;
-        private System.Windows.Forms.Button valButton;
+        private System.Windows.Forms.Button varButton;
         private System.Windows.Forms.Button medianButton;
         private System.Windows.Forms.Button dispButton;
         private System.Windows.Forms.Button avgButton;
@@ -2362,7 +2362,7 @@ namespace Calc
         private System.Windows.Forms.Button button48;
         private System.Windows.Forms.Button button50;
         private System.Windows.Forms.Button button49;
-        private System.Windows.Forms.Button button51;
+        private System.Windows.Forms.Button xrootButton;
         private System.Windows.Forms.TextBox syntaxTextBox;
         private System.Windows.Forms.ComboBox memoryComboBox;
         private System.Windows.Forms.Label label1;
@@ -2370,7 +2370,7 @@ namespace Calc
         private System.Windows.Forms.Button floorButton;
         private System.Windows.Forms.Button gcdButton;
         private System.Windows.Forms.Button lcmButton;
-        private System.Windows.Forms.Button button52;
+        private System.Windows.Forms.Button xorButton;
         private System.Windows.Forms.Button histUpButton;
         private System.Windows.Forms.Button histDownButton;
 
