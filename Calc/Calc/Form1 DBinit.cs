@@ -298,6 +298,37 @@ namespace Calc
             str += "INFO: returns average differnce betwen numbers and\n their averge value B\n";
             toolTip1.SetToolTip(dispButton, str);
 
+            // *** c ***
+            str = "Speed of Light. M/s\n";
+            toolTip1.SetToolTip(cButton, str);
+
+            // *** mp ***
+            str = "Proton mass. Kg\n";
+            toolTip1.SetToolTip(mpButton, str);
+
+            // *** me ***
+            str = "Electron mass. Kg\n";
+            toolTip1.SetToolTip(meButton, str);
+
+            // *** ee ***
+            str = "Elementary charge. Coulombs\n";
+            toolTip1.SetToolTip(eeeButton, str);
+
+            // *** ee ***
+            str = "Distance to closest allien planet. Light Years*mass of sun\n";
+            toolTip1.SetToolTip(sqButton, str);
+
+            // *** h ***
+            str = "Planc Constant. \n";
+            toolTip1.SetToolTip(hButton, str);
+
+            // *** e ***
+            str = "Base of natural logaritm. \n";
+            toolTip1.SetToolTip(eButton, str);
+
+            str = "Magic number \n";
+            toolTip1.SetToolTip(piButton, str);
+
             foreach (object j in tabPage5.Controls)
             {
                 if (j is Button)

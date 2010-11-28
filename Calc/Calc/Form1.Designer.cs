@@ -101,15 +101,15 @@ namespace Calc
             this.degRadButton = new System.Windows.Forms.Button();
             this.ConstantsTab = new System.Windows.Forms.TabPage();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.button50 = new System.Windows.Forms.Button();
-            this.button49 = new System.Windows.Forms.Button();
-            this.button48 = new System.Windows.Forms.Button();
+            this.eeeButton = new System.Windows.Forms.Button();
+            this.meButton = new System.Windows.Forms.Button();
+            this.mpButton = new System.Windows.Forms.Button();
             this.ggButton = new System.Windows.Forms.Button();
             this.GButton = new System.Windows.Forms.Button();
             this.hButton = new System.Windows.Forms.Button();
             this.cButton = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button47 = new System.Windows.Forms.Button();
+            this.sqButton = new System.Windows.Forms.Button();
             this.buttonPsi = new System.Windows.Forms.Button();
             this.goldenButton = new System.Windows.Forms.Button();
             this.eButton = new System.Windows.Forms.Button();
@@ -1034,9 +1034,9 @@ namespace Calc
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.button50);
-            this.groupBox2.Controls.Add(this.button49);
-            this.groupBox2.Controls.Add(this.button48);
+            this.groupBox2.Controls.Add(this.eeeButton);
+            this.groupBox2.Controls.Add(this.meButton);
+            this.groupBox2.Controls.Add(this.mpButton);
             this.groupBox2.Controls.Add(this.ggButton);
             this.groupBox2.Controls.Add(this.GButton);
             this.groupBox2.Controls.Add(this.hButton);
@@ -1048,35 +1048,38 @@ namespace Calc
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Physical";
             // 
-            // button50
+            // eeeButton
             // 
-            this.button50.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button50.Location = new System.Drawing.Point(17, 296);
-            this.button50.Name = "button50";
-            this.button50.Size = new System.Drawing.Size(90, 35);
-            this.button50.TabIndex = 9;
-            this.button50.Text = "e";
-            this.button50.UseVisualStyleBackColor = true;
+            this.eeeButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.eeeButton.Location = new System.Drawing.Point(17, 296);
+            this.eeeButton.Name = "eeeButton";
+            this.eeeButton.Size = new System.Drawing.Size(90, 35);
+            this.eeeButton.TabIndex = 9;
+            this.eeeButton.Text = "e";
+            this.eeeButton.UseVisualStyleBackColor = true;
+            this.eeeButton.Click += new System.EventHandler(this.eeeButton_Click);
             // 
-            // button49
+            // meButton
             // 
-            this.button49.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button49.Location = new System.Drawing.Point(128, 230);
-            this.button49.Name = "button49";
-            this.button49.Size = new System.Drawing.Size(90, 35);
-            this.button49.TabIndex = 8;
-            this.button49.Text = "me";
-            this.button49.UseVisualStyleBackColor = true;
+            this.meButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.meButton.Location = new System.Drawing.Point(128, 230);
+            this.meButton.Name = "meButton";
+            this.meButton.Size = new System.Drawing.Size(90, 35);
+            this.meButton.TabIndex = 8;
+            this.meButton.Text = "me";
+            this.meButton.UseVisualStyleBackColor = true;
+            this.meButton.Click += new System.EventHandler(this.mebutton_Click);
             // 
-            // button48
+            // mpButton
             // 
-            this.button48.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button48.Location = new System.Drawing.Point(17, 231);
-            this.button48.Name = "button48";
-            this.button48.Size = new System.Drawing.Size(90, 35);
-            this.button48.TabIndex = 7;
-            this.button48.Text = "mp";
-            this.button48.UseVisualStyleBackColor = true;
+            this.mpButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.mpButton.Location = new System.Drawing.Point(17, 231);
+            this.mpButton.Name = "mpButton";
+            this.mpButton.Size = new System.Drawing.Size(90, 35);
+            this.mpButton.TabIndex = 7;
+            this.mpButton.Text = "mp";
+            this.mpButton.UseVisualStyleBackColor = true;
+            this.mpButton.Click += new System.EventHandler(this.mpButton_Click);
             // 
             // ggButton
             // 
@@ -1087,6 +1090,7 @@ namespace Calc
             this.ggButton.TabIndex = 6;
             this.ggButton.Text = "g";
             this.ggButton.UseVisualStyleBackColor = true;
+            this.ggButton.Click += new System.EventHandler(this.ggButton_Click);
             // 
             // GButton
             // 
@@ -1097,6 +1101,7 @@ namespace Calc
             this.GButton.TabIndex = 5;
             this.GButton.Text = "G";
             this.GButton.UseVisualStyleBackColor = true;
+            this.GButton.Click += new System.EventHandler(this.GButton_Click);
             // 
             // hButton
             // 
@@ -1107,6 +1112,7 @@ namespace Calc
             this.hButton.TabIndex = 4;
             this.hButton.Text = "h";
             this.hButton.UseVisualStyleBackColor = true;
+            this.hButton.Click += new System.EventHandler(this.hButton_Click);
             // 
             // cButton
             // 
@@ -1117,10 +1123,11 @@ namespace Calc
             this.cButton.TabIndex = 3;
             this.cButton.Text = "c";
             this.cButton.UseVisualStyleBackColor = true;
+            this.cButton.Click += new System.EventHandler(this.cButton_Click);
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.button47);
+            this.groupBox1.Controls.Add(this.sqButton);
             this.groupBox1.Controls.Add(this.buttonPsi);
             this.groupBox1.Controls.Add(this.goldenButton);
             this.groupBox1.Controls.Add(this.eButton);
@@ -1132,15 +1139,16 @@ namespace Calc
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Mathematical";
             // 
-            // button47
+            // sqButton
             // 
-            this.button47.Font = new System.Drawing.Font("Times New Roman", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button47.Location = new System.Drawing.Point(19, 296);
-            this.button47.Name = "button47";
-            this.button47.Size = new System.Drawing.Size(90, 35);
-            this.button47.TabIndex = 7;
-            this.button47.Text = "√2";
-            this.button47.UseVisualStyleBackColor = true;
+            this.sqButton.Font = new System.Drawing.Font("Times New Roman", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.sqButton.Location = new System.Drawing.Point(19, 296);
+            this.sqButton.Name = "sqButton";
+            this.sqButton.Size = new System.Drawing.Size(90, 35);
+            this.sqButton.TabIndex = 7;
+            this.sqButton.Text = "√2";
+            this.sqButton.UseVisualStyleBackColor = true;
+            this.sqButton.Click += new System.EventHandler(this.sqbutton_Click);
             // 
             // buttonPsi
             // 
@@ -1161,6 +1169,7 @@ namespace Calc
             this.goldenButton.TabIndex = 5;
             this.goldenButton.Text = "Golden ratio";
             this.goldenButton.UseVisualStyleBackColor = true;
+            this.goldenButton.Click += new System.EventHandler(this.goldenButton_Click);
             // 
             // eButton
             // 
@@ -1171,16 +1180,18 @@ namespace Calc
             this.eButton.TabIndex = 4;
             this.eButton.Text = "e";
             this.eButton.UseVisualStyleBackColor = true;
+            this.eButton.Click += new System.EventHandler(this.eButton_Click);
             // 
             // piButton
             // 
             this.piButton.Font = new System.Drawing.Font("Times New Roman", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.piButton.Location = new System.Drawing.Point(19, 36);
+            this.piButton.Location = new System.Drawing.Point(19, 33);
             this.piButton.Name = "piButton";
             this.piButton.Size = new System.Drawing.Size(90, 35);
             this.piButton.TabIndex = 3;
             this.piButton.Text = "π";
             this.piButton.UseVisualStyleBackColor = true;
+            this.piButton.Click += new System.EventHandler(this.piButton_Click);
             // 
             // tabPage1
             // 
@@ -2098,6 +2109,7 @@ namespace Calc
             this.memoryComboBox.Name = "memoryComboBox";
             this.memoryComboBox.Size = new System.Drawing.Size(106, 21);
             this.memoryComboBox.TabIndex = 42;
+            this.memoryComboBox.SelectedIndexChanged += new System.EventHandler(this.memoryComboBox_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -2364,10 +2376,10 @@ namespace Calc
 
         //private SkinCrafter skin;
         private System.Windows.Forms.Button buttonPsi;
-        private System.Windows.Forms.Button button47;
-        private System.Windows.Forms.Button button48;
-        private System.Windows.Forms.Button button50;
-        private System.Windows.Forms.Button button49;
+        private System.Windows.Forms.Button sqButton;
+        private System.Windows.Forms.Button mpButton;
+        private System.Windows.Forms.Button eeeButton;
+        private System.Windows.Forms.Button meButton;
         private System.Windows.Forms.Button xrootButton;
         private System.Windows.Forms.TextBox syntaxTextBox;
         private System.Windows.Forms.ComboBox memoryComboBox;
