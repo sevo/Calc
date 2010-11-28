@@ -45,7 +45,9 @@ namespace Calc
             grafoveOkno = null;
             InitializeTooltips();
             pamet = new string[10];
-            
+            for (int i = 0; i < 10; i++)
+                pamet[i] = "Memory " + (1 + i).ToString();
+            memoryComboBox.SelectedIndex = 0;
         }
 
         ~Form1()
@@ -313,56 +315,58 @@ namespace Calc
 
         private void buttonMS_Click(object sender, EventArgs e)
         {
-            Thread t = new Thread(getResult);
+            /*Thread t = new Thread(getResult);
             System.Threading.Timer timer = new System.Threading.Timer(abortGettingResult, t, 1000, Timeout.Infinite);
             t.Start();
-            t.Join();
-            try
-            {
-                memory = float.Parse(resultTextBox.Text);
-            }
-            catch (FormatException err) { }
+            t.Join();*/
+            int index = memoryComboBox.SelectedIndex;
+            pamet[index] = expressionTextBox.Text;
+            refreshMemory();
         }
 
         private void buttonMR_Click(object sender, EventArgs e)
         {
             int cursorPosition = expressionTextBox.SelectionStart;
-            expressionTextBox.Text = expressionTextBox.Text.Substring(0, cursorPosition) + memory.ToString() + expressionTextBox.Text.Substring(cursorPosition, expressionTextBox.Text.Length - cursorPosition);
-            expressionTextBox.SelectionStart = cursorPosition + memory.ToString().Length;
+            int index = memoryComboBox.SelectedIndex;
+            if (pamet[index].StartsWith("Memory")) return;
+            expressionTextBox.Text = expressionTextBox.Text.Substring(0, cursorPosition) + pamet[index] + expressionTextBox.Text.Substring(cursorPosition, expressionTextBox.Text.Length - cursorPosition);
+            expressionTextBox.SelectionStart = cursorPosition + pamet[index].Length;
+            refreshMemory();
         }
 
         private void buttonMC_Click(object sender, EventArgs e)
         {
-            memory = 0.0f;
+            int index = memoryComboBox.SelectedIndex;
+            pamet[index] = "Memory " + (index + 1).ToString();
+            refreshMemory();
         }
 
         private void buttonMplus_Click(object sender, EventArgs e)
         {
-            expressionTextBox.Text = memory.ToString() + "+(" + expressionTextBox.Text + ")";
-            Thread t = new Thread(getResult);
+            int index = memoryComboBox.SelectedIndex;
+            if (pamet[index].StartsWith("Memory")) return;
+            string what = pamet[index].ToString() + "+(" + expressionTextBox.Text + ")";
+            pamet[index] = what;
+            refreshMemory();
+            /*Thread t = new Thread(getResult);
             System.Threading.Timer timer = new System.Threading.Timer(abortGettingResult, t, 1000, Timeout.Infinite);
             t.Start();
-            t.Join();
-            try
-            {              
-                    memory = float.Parse(resultTextBox.Text);
-            }
-            catch (FormatException err) { }
+            t.Join();*/
+            
 
         }
 
         private void buttonMminus_Click(object sender, EventArgs e)
         {
-            expressionTextBox.Text = memory.ToString() + "-(" + expressionTextBox.Text + ")";
-            Thread t = new Thread(getResult);
+            int index = memoryComboBox.SelectedIndex;
+            if (pamet[index].StartsWith("Memory")) return;
+            string what = pamet[index].ToString() + "-(" + expressionTextBox.Text + ")";
+            /*Thread t = new Thread(getResult);
             System.Threading.Timer timer = new System.Threading.Timer(abortGettingResult, t, 1000, Timeout.Infinite);
             t.Start();
-            t.Join();
-            try
-            {
-                    memory = float.Parse(resultTextBox.Text);
-            }
-            catch (FormatException err) { }
+            t.Join();*/
+            pamet[index] = what;
+            refreshMemory();
         }
 
         private void buttonAns_Click(object sender, EventArgs e)
@@ -597,6 +601,14 @@ namespace Calc
             int cursorPosition = expressionTextBox.SelectionStart;
             expressionTextBox.Text = expressionTextBox.Text.Substring(0, cursorPosition) + s + expressionTextBox.Text.Substring(cursorPosition, expressionTextBox.Text.Length - cursorPosition);
             expressionTextBox.SelectionStart = cursorPosition + s.Length;
+        }
+
+        private void refreshMemory()
+        {
+            for (int i = 0; i < 10; i++)
+            {
+                memoryComboBox.Items[i] = pamet[i];
+            }
         }
 
     }

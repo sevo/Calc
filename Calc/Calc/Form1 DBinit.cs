@@ -326,8 +326,22 @@ namespace Calc
             str = "Base of natural logaritm. \n";
             toolTip1.SetToolTip(eButton, str);
 
+            // *** pi ***
             str = "Magic number \n";
             toolTip1.SetToolTip(piButton, str);
+
+            // *** g ***
+            str = "gravitational acceleration m/s/s \n";
+            toolTip1.SetToolTip(ggButton, str);
+
+            // *** G ***
+            str = "gravitational constant m/kg \n";
+            toolTip1.SetToolTip(GButton, str);
+
+
+            // *** Plot ***
+            str = "Opens new window for plots \n";
+            toolTip1.SetToolTip(buttonPlot, str);
 
             foreach (object j in tabPage5.Controls)
             {

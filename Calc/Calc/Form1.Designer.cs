@@ -2105,16 +2105,26 @@ namespace Calc
             // 
             // memoryComboBox
             // 
+            this.memoryComboBox.Items.AddRange(new object[] {
+            "Memory 1",
+            "Memory 2",
+            "Memory 3",
+            "Memory 4",
+            "Memory 5",
+            "Memory 6",
+            "Memory 7",
+            "Memory 8",
+            "Memory 9",
+            "Memory 10"});
             this.memoryComboBox.Location = new System.Drawing.Point(554, 216);
             this.memoryComboBox.Name = "memoryComboBox";
-            this.memoryComboBox.Size = new System.Drawing.Size(106, 21);
+            this.memoryComboBox.Size = new System.Drawing.Size(218, 21);
             this.memoryComboBox.TabIndex = 42;
-            this.memoryComboBox.SelectedIndexChanged += new System.EventHandler(this.memoryComboBox_SelectedIndexChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(457, 216);
+            this.label1.Location = new System.Drawing.Point(457, 219);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(91, 13);
             this.label1.TabIndex = 41;
