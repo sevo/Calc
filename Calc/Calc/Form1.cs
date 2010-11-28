@@ -35,6 +35,8 @@ namespace Calc
         public Decimal MaxY;
         public Decimal X;
         protected string[] pamet;
+        List<Button> favButtons;
+        Button[] delButtons;
 
         public Form1()
         {
@@ -45,9 +47,26 @@ namespace Calc
             grafoveOkno = null;
             InitializeTooltips();
             pamet = new string[10];
+            delButtons=new Button[7];
             for (int i = 0; i < 10; i++)
                 pamet[i] = "Memory " + (1 + i).ToString();
             memoryComboBox.SelectedIndex = 0;
+            delButtons[0] = Del0; ;
+            delButtons[1] = Del1; ;
+            delButtons[2] = Del2; ;
+            delButtons[3] = Del3; ;
+            delButtons[4] = Del4; ;
+            delButtons[5] = Del5; ;
+            delButtons[6] = Del6; ;
+            Del0.Hide();
+            Del1.Hide();
+            Del2.Hide();
+            Del3.Hide();
+            Del4.Hide();
+            Del5.Hide();
+            Del6.Hide();
+
+            favButtons = new List<Button>();
         }
 
         ~Form1()
@@ -609,6 +628,123 @@ namespace Calc
             {
                 memoryComboBox.Items[i] = pamet[i];
             }
+        }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ComboBox cb = sender as ComboBox;
+            switch (cb.SelectedItem.ToString())
+            {
+                case "General":
+                    changeOtherCombobox(GeneralTab);
+                    break;
+                case "Programmer":
+                    changeOtherCombobox(ProgrammerTab);
+                    break;
+                case "Trigonometric":
+                    changeOtherCombobox(TrigonometricTab);
+                    break;
+                case "Power":
+                    changeOtherCombobox(PowerTab);
+                    break;
+                case "Statistical":
+                    changeOtherCombobox(StatisticalTab);
+                    break;
+                case "Conversion":
+                    changeOtherCombobox(ConversionTab);
+                    break;
+                case "Constants":
+                    changeOtherCombobox(ConstantsTab.Controls[0]);
+                    changeOtherCombobox(ConstantsTab.Controls[1]);
+                    break;
+                default: throw new InvalidDataException("Selected index in favorites");
+            }
+        }
+
+        private void changeOtherCombobox(Control c)
+        {
+            Fav2ComboBox.Items.Clear();
+            foreach (object o in c.Controls)
+            {
+                if (o is Button)
+                {
+                    Button b = o as Button;
+                    Fav2ComboBox.Items.Add(b.Text);
+                }
+            }
+        }
+
+        private void addButton_Click(object sender, EventArgs e)
+        {
+            
+            TabPage where=null;
+            if (favButtons.Count >= 7)
+            {
+                MessageBox.Show("Too much buttons, delete some first");
+                return;
+            }
+            switch (Fav1ComboBox.SelectedItem.ToString())
+            {
+                case "General":
+                    where = GeneralTab;
+                    break;
+                case "Programmer":
+                    where = ProgrammerTab;
+                    break;
+                case "Trigonometric":
+                    where = TrigonometricTab;
+                    break;
+                case "Power":
+                    where = PowerTab;
+                    break;
+                case "Statistical":
+                    where = StatisticalTab;
+                    break;
+                case "Conversion":
+                    where = ConversionTab;
+                    break;
+                case "Constants":
+                    //changeOtherCombobox(ConstantsTab.Controls[0]);
+                    //changeOtherCombobox(ConstantsTab.Controls[1]);
+                    break;
+                default: throw new InvalidDataException("Selected index in favorites");
+            }
+
+            foreach (Button b in where.Controls)
+            {
+                if (Fav2ComboBox.SelectedItem.ToString() == b.Text)
+                {
+                    Button novy = new Button();
+                    novy.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+                    novy.UseVisualStyleBackColor = true;
+                    novy.Size = b.Size;
+                    novy.Text = b.Text;
+                    favButtons.Add(novy);
+                    favoritesTab.Controls.Add(novy);
+                    reorganizeFav();
+                    return;
+                }
+            }
+        }
+
+        private void reorganizeFav()
+        {
+            Del0.Show();
+            for (int i = 0; i <  favButtons.Count; i++)
+            {
+                favButtons[i].Location = new System.Drawing.Point(80, 8 + (i * 50));
+                delButtons[i].Show();
+            }
+        }
+
+        private void Del_Click(object sender, EventArgs e)
+        {
+            delButtons[favButtons.Count-1].Hide();
+            Button b = sender as Button;
+            int i = Int32.Parse(b.Name.Substring(b.Name.Length - 1));
+            favoritesTab.Controls.Remove(favButtons[i]);
+            favButtons.RemoveAt(i);
+            reorganizeFav();
         }
 
     }
