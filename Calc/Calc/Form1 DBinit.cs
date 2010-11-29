@@ -43,13 +43,30 @@ namespace Calc
             str += "INFO: returns sum of all numbers";
             toolTip1.SetToolTip(sumButton, str);
 
-            // *** sum *** 
+            // *** abs *** 
             str = "FORMAT: absolute(A)\n";
             str += "\t A-> number\n";
             str += "\n";
             str += "INFO: returns positive value of A";
             str += "\n\t ABSOLUTE CALCULATOR";
             toolTip1.SetToolTip(absButton, str);
+
+            // *** Digits *** 
+            str = "FORMAT: digits(A)\n";
+            str += "\t A-> number\n";
+            str += "\n";
+            str += "INFO: returns sum of all digits of A";
+            toolTip1.SetToolTip(digitButton, str);
+
+            // *** Round *** 
+            str = "FORMAT: round(A, B)\n";
+            str += "\t A-> number\n";
+            str += "\t B-> integer\n";
+            str += "\n";
+            str += "INFO: returns rounded A. A is rounded to decimals\n";
+            str += "whem B is zero. B represents number of digits to be\n";
+            str += "rounded to.";
+            toolTip1.SetToolTip(roundButton, str);
 
             // *** factorial***
             str = "FORMAT: factorial(X)\n";

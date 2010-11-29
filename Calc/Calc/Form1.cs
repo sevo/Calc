@@ -191,6 +191,26 @@ namespace Calc
             expressionTextBox.SelectionStart = cursorPosition + s.Length - 1;
         }
 
+        private void buttonFav_Click(object sender, EventArgs e)
+        {
+            Button but = sender as Button;
+            foreach (Control.ControlCollection c in new Control.ControlCollection[] { GeneralTab.Controls, ProgrammerTab.Controls, TrigonometricTab.Controls, powerButton.Controls, StatisticalTab.Controls, ConversionTab.Controls, groupBox1.Controls, groupBox2.Controls })
+            {
+                foreach (Control cc in c)
+                {
+                    Button b = cc as Button;
+                    if (b.Text == but.Text)
+                    {
+                        favoritesTab.Controls.Add(b);
+                        b.PerformClick();
+                        favoritesTab.Controls.Remove(b);
+                        c.Add(b);
+                        return;
+                    }
+                }
+            }
+        }
+
         private void buttonFun2_Click(object sender, EventArgs e)
         {
             Button b = sender as Button;
@@ -236,7 +256,7 @@ namespace Calc
             else
             {               
                 Thread t = new Thread(getResult);
-                System.Threading.Timer timer = new System.Threading.Timer(abortGettingResult, t, 1000, Timeout.Infinite);
+                System.Threading.Timer timer = new System.Threading.Timer(abortGettingResult, t, 1250, Timeout.Infinite);
                 t.Start();
             }
         }
@@ -547,7 +567,15 @@ namespace Calc
 
         private void piButton_Click(object sender, EventArgs e)
         {
-            string s = "3.14159265";
+            string s = "pi";
+            int cursorPosition = expressionTextBox.SelectionStart;
+            expressionTextBox.Text = expressionTextBox.Text.Substring(0, cursorPosition) + s + expressionTextBox.Text.Substring(cursorPosition, expressionTextBox.Text.Length - cursorPosition);
+            expressionTextBox.SelectionStart = cursorPosition + s.Length;
+        }
+
+        private void psiButton_Click(object sender, EventArgs e)
+        {
+            string s = "psi";
             int cursorPosition = expressionTextBox.SelectionStart;
             expressionTextBox.Text = expressionTextBox.Text.Substring(0, cursorPosition) + s + expressionTextBox.Text.Substring(cursorPosition, expressionTextBox.Text.Length - cursorPosition);
             expressionTextBox.SelectionStart = cursorPosition + s.Length;
@@ -555,7 +583,7 @@ namespace Calc
 
         private void eButton_Click(object sender, EventArgs e)
         {
-            string s = "2.71828183";
+            string s = "e";
             int cursorPosition = expressionTextBox.SelectionStart;
             expressionTextBox.Text = expressionTextBox.Text.Substring(0, cursorPosition) + s + expressionTextBox.Text.Substring(cursorPosition, expressionTextBox.Text.Length - cursorPosition);
             expressionTextBox.SelectionStart = cursorPosition + s.Length;
@@ -688,7 +716,7 @@ namespace Calc
         private void addButton_Click(object sender, EventArgs e)
         {
             
-            TabPage where=null;
+            Control.ControlCollection where=null;
             if (favButtons.Count >= 7)
             {
                 MessageBox.Show("Too much buttons, delete some first");
@@ -697,31 +725,30 @@ namespace Calc
             switch (Fav1ComboBox.SelectedItem.ToString())
             {
                 case "General":
-                    where = GeneralTab;
+                    where = GeneralTab.Controls;
                     break;
                 case "Programmer":
-                    where = ProgrammerTab;
+                    where = ProgrammerTab.Controls;
                     break;
                 case "Trigonometric":
-                    where = TrigonometricTab;
+                    where = TrigonometricTab.Controls;
                     break;
                 case "Power":
-                    where = PowerTab;
+                    where = PowerTab.Controls;
                     break;
                 case "Statistical":
-                    where = StatisticalTab;
+                    where = StatisticalTab.Controls;
                     break;
                 case "Conversion":
-                    where = ConversionTab;
+                    where = ConversionTab.Controls;
                     break;
                 case "Constants":
-                    //changeOtherCombobox(ConstantsTab.Controls[0]);
-                    //changeOtherCombobox(ConstantsTab.Controls[1]);
+                    where = groupBox1.Controls;
                     break;
                 default: throw new InvalidDataException("Selected index in favorites");
             }
 
-            foreach (Button b in where.Controls)
+            foreach (Button b in where)
             {
                 if (Fav2ComboBox.SelectedItem.ToString() == b.Text)
                 {
@@ -730,6 +757,8 @@ namespace Calc
                     novy.UseVisualStyleBackColor = true;
                     novy.Size = b.Size;
                     novy.Text = b.Text;
+                    novy.Click += new EventHandler(buttonFav_Click);
+                    
                     favButtons.Add(novy);
                     favoritesTab.Controls.Add(novy);
                     reorganizeFav();

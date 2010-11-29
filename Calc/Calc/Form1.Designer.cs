@@ -1167,6 +1167,7 @@ namespace Calc
             this.buttonPsi.TabIndex = 6;
             this.buttonPsi.Text = "φ";
             this.buttonPsi.UseVisualStyleBackColor = true;
+            this.buttonPsi.Click += new System.EventHandler(this.psiButton_Click);
             // 
             // goldenButton
             // 
