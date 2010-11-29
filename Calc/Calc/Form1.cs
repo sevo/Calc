@@ -747,5 +747,25 @@ namespace Calc
             reorganizeFav();
         }
 
+        private void histUpButton_Click(object sender, EventArgs e)
+        {
+            if (history_index > 0) history_index--;
+            expressionTextBox.Text = history[history_index].ToString();
+        }
+
+        private void histDownButton_Click(object sender, EventArgs e)
+        {
+            if (history_index < history.Count - 1)
+            {
+                history_index++;
+                expressionTextBox.Text = history[history_index].ToString();
+            }
+            else
+            {
+                history_index = history.Count;
+                expressionTextBox.Text = "";
+            }
+        }
+
     }
 }

@@ -126,9 +126,7 @@ namespace Calc
         {
             try
             {
-                if(DefineFunction(functionDeclaration.Text)==1)
-                    checkedListBox.Items.Add(functionDeclaration.Text,true);
-                else
+                if (DefineFunction(functionDeclaration.Text) != 1)
                     functionDeclaration.BackColor = Color.Red;
             }
             catch (ThreadAbortException err)//if the function has incorrect syntax, exeption is raised
@@ -139,15 +137,15 @@ namespace Calc
 
         double[] getValues(string function)
         {
-            double[] values = new double[N];
+            double[] values = new double[N+1];
 
             String run = "define run(x) {return " + function + "};3";
             mainWindow.bcIn.WriteLine(run);
             mainWindow.bcOut.ReadLine();//if bc returns something, function was accepted, so we can retur success
-            String frun = "frun(" + XMinNumericUpDown.Value.ToString() + "," + (((double)XMaxNumericUpDown.Value - (double)XMinNumericUpDown.Value) / (double)N).ToString().Replace(",", ".") + "," + N.ToString() + ")";
+            String frun = "frun(" + XMinNumericUpDown.Value.ToString() + "," + (((double)XMaxNumericUpDown.Value - (double)XMinNumericUpDown.Value) / (double)(N)).ToString().Replace(",", ".") + "," + (N+1).ToString() + ")";
             mainWindow.bcIn.WriteLine(frun);
 
-            for (int i = 0; i < N; i++)
+            for (int i = 0; i < N+1; i++)
             {
                 try
                 {
@@ -190,7 +188,7 @@ namespace Calc
             {
                 functionsMutex.WaitOne();
                 Random random = new Random();
-                Function funkcia = new Function(N);
+                Function funkcia = new Function(N+1);
                 funkcia.label = functionDeclaration.Text;
                 funkcia.colorR = (random.Next(230) + random.Next(230)) / 2;
                 funkcia.colorG = (random.Next(230) + random.Next(230)) / 2;
@@ -214,6 +212,7 @@ namespace Calc
                 t.Start();
                 t.Join();
 
+
                 if (!functionDeclaration.BackColor.Equals(Color.Red))
                 {
                     String function = functionDeclaration.Text;
@@ -223,6 +222,10 @@ namespace Calc
                     System.Threading.Timer timer1 = new System.Threading.Timer(mainWindow.abortGettingResult, t1, 1000, Timeout.Infinite);
                     t1.Start();
                     t1.Join();
+                    if (!functionDeclaration.BackColor.Equals(Color.Red))
+                    {
+                        checkedListBox.Items.Add(functionDeclaration.Text, true);
+                    }
                 }
                 DrawGraf();
                 updateListBox();
@@ -277,14 +280,14 @@ namespace Calc
                 double start = (double)XMinNumericUpDown.Value;
                 double end = (double)XMaxNumericUpDown.Value;
                 Random random = new Random();
-                double[] xs = new double[N];
+                double[] xs = new double[N+1];
 
                 double x = start;
-                for (int i = 0; i < N; ++i)
+                for (int i = 0; i < N+1; i++)
                 {
 
                     xs[i] = x;
-                    x += ((end - start) / N);
+                    x += ((end - start) / (N));//mozno tu treba N+1
                 }
                 functionsMutex.WaitOne();
                 for (int i = 0; i < functions.Count; i++)
@@ -379,7 +382,7 @@ namespace Calc
             if (XnumericUpDown.Value > XMaxNumericUpDown.Value) XnumericUpDown.Value = (decimal)XMaxNumericUpDown.Value;
             if (XnumericUpDown.Value < XMinNumericUpDown.Value) XnumericUpDown.Value = (decimal)XMinNumericUpDown.Value;
             
-            xTrackBar.Value = (int)(((double)XnumericUpDown.Value - (double)XMinNumericUpDown.Value) * N / ((double)XMaxNumericUpDown.Value - (double)XMinNumericUpDown.Value));
+            xTrackBar.Value = (int)(((double)XnumericUpDown.Value - (double)XMinNumericUpDown.Value) * (N) / ((double)XMaxNumericUpDown.Value - (double)XMinNumericUpDown.Value));
 
             updateListBox();
             
@@ -395,7 +398,8 @@ namespace Calc
                 if (checkedListBox.GetItemChecked(i))
                 {
                     String text = ((Function)functions[i]).label.Substring(0, ((Function)functions[i]).label.IndexOf("(") + 1);
-                    text += XnumericUpDown.Value.ToString() + ")=" + ((Function)functions[i]).data[xTrackBar.Value].ToString();
+                    text += XnumericUpDown.Value.ToString() + ")=" + 
+                        ((Function)functions[i]).data[xTrackBar.Value].ToString();
                     listBox.Items.Add(text);
                 }
             }
@@ -433,7 +437,7 @@ namespace Calc
 
         private void xTrackBar_Scroll(object sender, EventArgs e)
         {
-            XnumericUpDown.Value = (decimal)((double)XMinNumericUpDown.Value + (((double)xTrackBar.Value / N) * ((double)XMaxNumericUpDown.Value - (double)XMinNumericUpDown.Value)));           
+            XnumericUpDown.Value = (decimal)((double)XMinNumericUpDown.Value + (((double)(xTrackBar.Value) / N) * ((double)XMaxNumericUpDown.Value - (double)XMinNumericUpDown.Value)));           
         }
 
         private void buttonInverseSellection_Click(object sender, EventArgs e)
@@ -490,6 +494,11 @@ namespace Calc
         private void functionDeclaration_MouseClick(object sender, MouseEventArgs e)
         {
             functionDeclaration.BackColor = Color.White;
+        }
+
+        private void functionDeclaration_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter) buttonCreate_Click(sender, e);
         }
     }
 

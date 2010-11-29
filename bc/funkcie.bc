@@ -1,4 +1,4 @@
-scale=10;
+scale=11;
 define pi(){return(a(1)*4)}         ; pi  = pi()
                                       e   = e(1)
 define phi(){return((1+sqrt(5))/2)} ; phi = phi()
@@ -134,15 +134,44 @@ define ln(x) {
   return l(x)
 }
 
+define power(x,y) {
+ auto os,p,ix,iy,fy,st;
+ if(y==0) return 1
+ if(x==0) return 0
+ os=scale;scale=0
+  ix=x/1;iy=y/1;fy=y-iy
+ scale=os;scale=length(x/1)
+ if(y!=iy&&x<0){
+   st=id_frac_(fy)
+   if(st==0)return  pow(-x,y) # even/odd
+   if(st==1)return -pow(-x,y) #  odd/odd
+   print "pow error: "
+   if(st==2)print "even root"
+   if(st==3)print "irrational power"
+   print " of a negative number\n"
+   return 0
+ }
+ if(y==iy) {
+   if(x==ix){p=ix^iy;if(iy>0){scale=0;p/=1};scale=os;return p/1}
+   scale*=2;p=x^iy;scale=os;return p/1
+ }
+ p=ix^iy*e(fy/1*l(x))
+ scale=os*3
+ if(ix)p*=(x/ix)^iy
+ scale=os
+os = 0
+ return p/1
+ #The above is usually faster and more accurate than
+ # return( e(y*l(x)) );
+}
+
 # y-th root of x [ x^(1/y) ]
-define root(x,y) {
-  auto os,iy,iz,z,xn;
-  z = x^(1/y)
-  os=scale;scale=0;if(x==x/1&&y==(iy=y/1)){
-   if((xn=(iz=1+z/1)^iy)==x){scale=os;return iz}
-   if((xn=(iz-=1)^iy)==x){scale=os;return iz}
-  }
-  scale=os;return z
+define xthroot(x,y) {
+	return power(x,1/y)
+}
+
+define root(x) {
+	return power(x,1/2)
 }
 
 define log(base,x) {

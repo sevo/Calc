@@ -54,7 +54,7 @@ namespace Calc
             this.binRightButton = new System.Windows.Forms.Button();
             this.binLeftButton = new System.Windows.Forms.Button();
             this.fracButton = new System.Windows.Forms.Button();
-            this.coielButton = new System.Windows.Forms.Button();
+            this.ceilButton = new System.Windows.Forms.Button();
             this.binNegButton = new System.Windows.Forms.Button();
             this.TrigonometricTab = new System.Windows.Forms.TabPage();
             this.archypcothButton = new System.Windows.Forms.Button();
@@ -410,7 +410,7 @@ namespace Calc
             this.ProgrammerTab.Controls.Add(this.binRightButton);
             this.ProgrammerTab.Controls.Add(this.binLeftButton);
             this.ProgrammerTab.Controls.Add(this.fracButton);
-            this.ProgrammerTab.Controls.Add(this.coielButton);
+            this.ProgrammerTab.Controls.Add(this.ceilButton);
             this.ProgrammerTab.Controls.Add(this.binNegButton);
             this.ProgrammerTab.Location = new System.Drawing.Point(4, 54);
             this.ProgrammerTab.Name = "ProgrammerTab";
@@ -508,16 +508,16 @@ namespace Calc
             this.fracButton.UseVisualStyleBackColor = true;
             this.fracButton.Click += new System.EventHandler(this.buttonFun_Click);
             // 
-            // coielButton
+            // ceilButton
             // 
-            this.coielButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.coielButton.Location = new System.Drawing.Point(219, 212);
-            this.coielButton.Name = "coielButton";
-            this.coielButton.Size = new System.Drawing.Size(90, 35);
-            this.coielButton.TabIndex = 5;
-            this.coielButton.Text = "Coiel";
-            this.coielButton.UseVisualStyleBackColor = true;
-            this.coielButton.Click += new System.EventHandler(this.buttonFun_Click);
+            this.ceilButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.ceilButton.Location = new System.Drawing.Point(219, 212);
+            this.ceilButton.Name = "ceilButton";
+            this.ceilButton.Size = new System.Drawing.Size(90, 35);
+            this.ceilButton.TabIndex = 5;
+            this.ceilButton.Text = "Ceil";
+            this.ceilButton.UseVisualStyleBackColor = true;
+            this.ceilButton.Click += new System.EventHandler(this.buttonFun_Click);
             // 
             // binNegButton
             // 
@@ -800,7 +800,7 @@ namespace Calc
             this.rootButton.Name = "rootButton";
             this.rootButton.Size = new System.Drawing.Size(90, 35);
             this.rootButton.TabIndex = 5;
-            this.rootButton.Text = "2nd Root";
+            this.rootButton.Text = "Root";
             this.rootButton.UseVisualStyleBackColor = true;
             this.rootButton.Click += new System.EventHandler(this.buttonFun_Click);
             // 
@@ -2244,6 +2244,7 @@ namespace Calc
             this.histDownButton.Size = new System.Drawing.Size(23, 23);
             this.histDownButton.TabIndex = 44;
             this.histDownButton.UseVisualStyleBackColor = true;
+            this.histDownButton.Click += new System.EventHandler(this.histDownButton_Click);
             // 
             // histUpButton
             // 
@@ -2253,6 +2254,7 @@ namespace Calc
             this.histUpButton.Size = new System.Drawing.Size(23, 23);
             this.histUpButton.TabIndex = 43;
             this.histUpButton.UseVisualStyleBackColor = true;
+            this.histUpButton.Click += new System.EventHandler(this.histUpButton_Click);
             // 
             // Form1
             // 
@@ -2386,7 +2388,7 @@ namespace Calc
         private System.Windows.Forms.Button binRightButton;
         private System.Windows.Forms.Button binLeftButton;
         private System.Windows.Forms.Button fracButton;
-        private System.Windows.Forms.Button coielButton;
+        private System.Windows.Forms.Button ceilButton;
         private System.Windows.Forms.Button binNegButton;
         private System.Windows.Forms.TabPage favoritesTab;
         private System.Windows.Forms.Button archypcothButton;

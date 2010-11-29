@@ -84,7 +84,7 @@ namespace Calc
             this.xTrackBar.Maximum = 100;
             this.xTrackBar.Name = "xTrackBar";
             this.xTrackBar.Size = new System.Drawing.Size(669, 45);
-            this.xTrackBar.TabIndex = 1;
+            this.xTrackBar.TabIndex = 5;
             this.xTrackBar.TickStyle = System.Windows.Forms.TickStyle.None;
             this.xTrackBar.Value = 50;
             this.xTrackBar.Scroll += new System.EventHandler(this.xTrackBar_Scroll);
@@ -94,9 +94,10 @@ namespace Calc
             this.functionDeclaration.Location = new System.Drawing.Point(12, 323);
             this.functionDeclaration.Name = "functionDeclaration";
             this.functionDeclaration.Size = new System.Drawing.Size(193, 20);
-            this.functionDeclaration.TabIndex = 5;
+            this.functionDeclaration.TabIndex = 1;
             this.functionDeclaration.Text = "f(x)=";
             this.functionDeclaration.TextChanged += new System.EventHandler(this.functionDeclaration_TextChanged);
+            this.functionDeclaration.KeyDown += new System.Windows.Forms.KeyEventHandler(this.functionDeclaration_KeyDown);
             this.functionDeclaration.MouseClick += new System.Windows.Forms.MouseEventHandler(this.functionDeclaration_MouseClick);
             // 
             // checkedListBox
