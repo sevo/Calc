@@ -251,18 +251,46 @@ namespace Calc
             toolTip1.SetToolTip(hypcosbutton, str);
 
             // *** hyptg ***
-            str = "FORMAT: hypcos(A)\n";
+            str = "FORMAT: hyptg(A)\n";
             str += "\t A -> number\n";
             str += "\n";
             str += "INFO: returns hyptagent of A.\n";
             toolTip1.SetToolTip(hyptgButton, str);
 
             // *** hypcotg ***
-            str = "FORMAT: hypcos(A)\n";
+            str = "FORMAT: hypcotg(A)\n";
             str += "\t A -> number\n";
             str += "\n";
             str += "INFO: returns hypcotagent of A.\n";
             toolTip1.SetToolTip(hypcotgButton, str);
+
+            // *** archypsin ***
+            str = "FORMAT: hyparcsin(A)\n";
+            str += "\t A -> number\n";
+            str += "\n";
+            str += "INFO: returns hyparcsine of A.\n";
+            toolTip1.SetToolTip(archypsinButton, str);
+
+            // *** archypcos ***
+            str = "FORMAT: hyparcos(A)\n";
+            str += "\t A -> number\n";
+            str += "\n";
+            str += "INFO: returns hyparcosine of A.\n";
+            toolTip1.SetToolTip(archypcosButton, str);
+
+            // *** archyptg ***
+            str = "FORMAT: hyparctg(A)\n";
+            str += "\t A -> number\n";
+            str += "\n";
+            str += "INFO: returns hyparctangent of A.\n";
+            toolTip1.SetToolTip(archyptgButton, str);
+
+            // *** archypcotg ***
+            str = "FORMAT: hyparcotg(A)\n";
+            str += "\t A -> number\n";
+            str += "\n";
+            str += "INFO: returns hyparcotangent of A.\n";
+            toolTip1.SetToolTip(archypcothButton, str);
 
             // *** arccos ***
             str = "FORMAT: arccos(A)\n";
