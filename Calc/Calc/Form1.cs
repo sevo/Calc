@@ -191,6 +191,17 @@ namespace Calc
             expressionTextBox.SelectionStart = cursorPosition + s.Length - 1;
         }
 
+        private void buttonFun2_Click(object sender, EventArgs e)
+        {
+            Button b = sender as Button;
+            string s = b.Text.ToLower();
+            s = s.Insert(s.Length, "(,)");
+            s = s.Replace(" ", string.Empty);
+            int cursorPosition = expressionTextBox.SelectionStart;
+            expressionTextBox.Text = expressionTextBox.Text.Substring(0, cursorPosition) + s + expressionTextBox.Text.Substring(cursorPosition, expressionTextBox.Text.Length - cursorPosition);
+            expressionTextBox.SelectionStart = cursorPosition + s.Length - 2;
+        }
+
         private void buttonEquals_Click(object sender, EventArgs e)
         {
             String text = "";

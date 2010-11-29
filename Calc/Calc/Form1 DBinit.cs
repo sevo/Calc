@@ -22,7 +22,6 @@ namespace Calc
             str += "Fibonacci retracement, and are used in computer\n";
             str += "algorithms such as the Fibonacci search technique\n";
             str += "and the Fibonacci heap data structure.";
-            //Tooltipy.Add(fibonacciButton.Text, str);
             toolTip1.SetToolTip(fibonacciButton, str);
 
             // *** pytagor ***
@@ -43,6 +42,14 @@ namespace Calc
             str += "\n";
             str += "INFO: returns sum of all numbers";
             toolTip1.SetToolTip(sumButton, str);
+
+            // *** sum *** 
+            str = "FORMAT: absolute(A)\n";
+            str += "\t A-> number\n";
+            str += "\n";
+            str += "INFO: returns positive value of A";
+            str += "\n\t ABSOLUTE CALCULATOR";
+            toolTip1.SetToolTip(absButton, str);
 
             // *** factorial***
             str = "FORMAT: factorial(X)\n";
@@ -69,6 +76,20 @@ namespace Calc
             str += "INFO: returns 1 if the number is prime number,\n otherwise returns 0.";
             toolTip1.SetToolTip(primeButton, str);
 
+            // *** GCD ***
+            str = "FORMAT: gcd(A, B)\n";
+            str += "\t A, B -> integer\n";
+            str += "\n";
+            str += "INFO: Finds the biggest integer which divides both A and B";
+            toolTip1.SetToolTip(gcdButton, str);
+
+            // *** LCM ***
+            str = "FORMAT: lcm(A, B)\n";
+            str += "\t A, B -> integer\n";
+            str += "\n";
+            str += "INFO: Finds the lowest integer which is multiply of both A and B";
+            toolTip1.SetToolTip(lcmButton, str);
+
             // *** random ***
             str = "FORMAT: random()\n";
             str += "\t A -> upper limit\n";
@@ -79,7 +100,7 @@ namespace Calc
 
 
             // *** binLeft ***
-            str = "FORMAT: A << B\n";
+            str = "FORMAT: left(A, B)\n";
             str += "\t A -> integer\n";
             str += "\t B -> integer\n";
             str += "\n";
@@ -87,18 +108,18 @@ namespace Calc
             toolTip1.SetToolTip(binLeftButton, str);
 
             // *** binNeg ***
-            str = "FORMAT: A!\n";
+            str = "FORMAT: not(A)\n";
             str += "\t A -> integer\n";
             str += "\n";
             str += "INFO: returns number A binary negated\n";
-            toolTip1.SetToolTip(binLeftButton, str);
+            toolTip1.SetToolTip(binNegButton, str);
 
-            // *** binNeg ***
-            str = "FORMAT: A!\n";
+            // *** binRight ***
+            str = "FORMAT: right(A, B)\n";
             str += "\t A -> integer\n";
+            str += "\t B -> integer\n";
             str += "\n";
-            str += "INFO: returns number thats in binary have 0 changed\n";
-            str += "to 1 and 1 changed to 0\n";
+            str += "INFO: returns number A binary moved B-times to right side\n";
             toolTip1.SetToolTip(binRightButton, str);
 
             // *** And ***
@@ -127,8 +148,23 @@ namespace Calc
             str += "INFO: returns number which in binary have 1 where\n";
             str += "A or B had 1,not both, otherwise 0\n";
             toolTip1.SetToolTip(xorButton, str);
-            //TODO: Coel, frac atd
-            // *** Flor ***
+
+
+            // *** Ceil ***
+            str = "FORMAT: ceil(A)\n";
+            str += "\t A -> number\n";
+            str += "\n";
+            str += "INFO: returns number rounded up\n";
+            toolTip1.SetToolTip(ceilButton, str);
+
+            // *** Frac ***
+            str = "FORMAT: frac(A)\n";
+            str += "\t A -> number\n";
+            str += "\n";
+            str += "INFO: returns the decimal part of number\n";
+            toolTip1.SetToolTip(fracButton, str);
+
+            // *** Floor ***
             str = "FORMAT: floor(A)\n";
             str += "\t A -> number\n";
             str += "\n";
@@ -221,8 +257,8 @@ namespace Calc
             str += "INFO: returns number A powered by 2\n";
             toolTip1.SetToolTip(expButton, str);
 
-            // *** 2nd root ***
-            str = "FORMAT: 2throot(A)\n";
+            // ***root ***
+            str = "FORMAT: root(A)\n";
             str += "\t A -> positive number \n";
             str += "\n";
             str += "INFO: returns square root of A\n";
