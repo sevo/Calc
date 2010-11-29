@@ -1063,7 +1063,7 @@ namespace Calc
             this.eeeButton.Name = "eeeButton";
             this.eeeButton.Size = new System.Drawing.Size(90, 35);
             this.eeeButton.TabIndex = 9;
-            this.eeeButton.Text = "e";
+            this.eeeButton.Text = "ec";
             this.eeeButton.UseVisualStyleBackColor = true;
             this.eeeButton.Click += new System.EventHandler(this.eeeButton_Click);
             // 

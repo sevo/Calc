@@ -236,6 +236,34 @@ namespace Calc
             str += "Arcsine is reverse function os sine\n";
             toolTip1.SetToolTip(arcsinButton, str);
 
+            // *** hypsin ***
+            str = "FORMAT: hypsin(A)\n";
+            str += "\t A -> number\n";
+            str += "\n";
+            str += "INFO: returns hypsine of A.\n";
+            toolTip1.SetToolTip(hypsinButton, str);
+
+            // *** hypcos ***
+            str = "FORMAT: hypcos(A)\n";
+            str += "\t A -> number\n";
+            str += "\n";
+            str += "INFO: returns hypcosine of A.\n";
+            toolTip1.SetToolTip(hypcosbutton, str);
+
+            // *** hyptg ***
+            str = "FORMAT: hypcos(A)\n";
+            str += "\t A -> number\n";
+            str += "\n";
+            str += "INFO: returns hyptagent of A.\n";
+            toolTip1.SetToolTip(hyptgButton, str);
+
+            // *** hypcotg ***
+            str = "FORMAT: hypcos(A)\n";
+            str += "\t A -> number\n";
+            str += "\n";
+            str += "INFO: returns hypcotagent of A.\n";
+            toolTip1.SetToolTip(hypcotgButton, str);
+
             // *** arccos ***
             str = "FORMAT: arccos(A)\n";
             str += "\t A -> number\n";

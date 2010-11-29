@@ -655,7 +655,7 @@ namespace Calc
 
         private void GButton_Click(object sender, EventArgs e)
         {
-            string s = "9.8";
+            string s = "6.67428*power(10,-11)";
             int cursorPosition = expressionTextBox.SelectionStart;
             expressionTextBox.Text = expressionTextBox.Text.Substring(0, cursorPosition) + s + expressionTextBox.Text.Substring(cursorPosition, expressionTextBox.Text.Length - cursorPosition);
             expressionTextBox.SelectionStart = cursorPosition + s.Length;
@@ -675,34 +675,36 @@ namespace Calc
             switch (cb.SelectedItem.ToString())
             {
                 case "General":
-                    changeOtherCombobox(GeneralTab);
+                    changeOtherCombobox(GeneralTab, true);
                     break;
                 case "Programmer":
-                    changeOtherCombobox(ProgrammerTab);
+                    changeOtherCombobox(ProgrammerTab, true);
                     break;
                 case "Trigonometric":
-                    changeOtherCombobox(TrigonometricTab);
+                    changeOtherCombobox(TrigonometricTab, true);
                     break;
                 case "Power":
-                    changeOtherCombobox(PowerTab);
+                    changeOtherCombobox(PowerTab, true);
                     break;
                 case "Statistical":
-                    changeOtherCombobox(StatisticalTab);
+                    changeOtherCombobox(StatisticalTab, true);
                     break;
                 case "Conversion":
-                    changeOtherCombobox(ConversionTab);
+                    changeOtherCombobox(ConversionTab, true);
                     break;
                 case "Constants":
-                    changeOtherCombobox(ConstantsTab.Controls[0]);
-                    changeOtherCombobox(ConstantsTab.Controls[1]);
+                    changeOtherCombobox(ConstantsTab.Controls[0], true);
+                    changeOtherCombobox(ConstantsTab.Controls[1], false);
                     break;
                 default: throw new InvalidDataException("Selected index in favorites");
             }
         }
 
-        private void changeOtherCombobox(Control c)
+        private void changeOtherCombobox(Control c, bool erase) 
         {
-            Fav2ComboBox.Items.Clear();
+            if(erase)
+             Fav2ComboBox.Items.Clear();
+
             foreach (object o in c.Controls)
             {
                 if (o is Button)
@@ -758,7 +760,22 @@ namespace Calc
                     novy.Size = b.Size;
                     novy.Text = b.Text;
                     novy.Click += new EventHandler(buttonFav_Click);
-                    
+                    favButtons.Add(novy);
+                    favoritesTab.Controls.Add(novy);
+                    reorganizeFav();
+                    return;
+                }
+            }
+            foreach (Button b in groupBox2.Controls)
+            {
+                if (Fav2ComboBox.SelectedItem.ToString() == b.Text)
+                {
+                    Button novy = new Button();
+                    novy.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+                    novy.UseVisualStyleBackColor = true;
+                    novy.Size = b.Size;
+                    novy.Text = b.Text;
+                    novy.Click += new EventHandler(buttonFav_Click);
                     favButtons.Add(novy);
                     favoritesTab.Controls.Add(novy);
                     reorganizeFav();
