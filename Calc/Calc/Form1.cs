@@ -34,6 +34,9 @@ namespace Calc
         public Decimal MinY;
         public Decimal MaxY;
         public Decimal X;
+        protected string[] pamet;
+        List<Button> favButtons;
+        Button[] delButtons;
 
         public Form1()
         {
@@ -43,7 +46,27 @@ namespace Calc
             expressionTextBox.Select();
             grafoveOkno = null;
             InitializeTooltips();
-            
+            pamet = new string[10];
+            delButtons=new Button[7];
+            for (int i = 0; i < 10; i++)
+                pamet[i] = "Memory " + (1 + i).ToString();
+            memoryComboBox.SelectedIndex = 0;
+            delButtons[0] = Del0; ;
+            delButtons[1] = Del1; ;
+            delButtons[2] = Del2; ;
+            delButtons[3] = Del3; ;
+            delButtons[4] = Del4; ;
+            delButtons[5] = Del5; ;
+            delButtons[6] = Del6; ;
+            Del0.Hide();
+            Del1.Hide();
+            Del2.Hide();
+            Del3.Hide();
+            Del4.Hide();
+            Del5.Hide();
+            Del6.Hide();
+
+            favButtons = new List<Button>();
         }
 
         ~Form1()
@@ -162,6 +185,7 @@ namespace Calc
             Button b = sender as Button;
             string s = b.Text.ToLower();
             s = s.Insert(s.Length, "()");
+            s=s.Replace(" ", string.Empty);
             int cursorPosition = expressionTextBox.SelectionStart;
             expressionTextBox.Text = expressionTextBox.Text.Substring(0, cursorPosition) + s + expressionTextBox.Text.Substring(cursorPosition, expressionTextBox.Text.Length - cursorPosition);
             expressionTextBox.SelectionStart = cursorPosition + s.Length - 1;
@@ -310,56 +334,58 @@ namespace Calc
 
         private void buttonMS_Click(object sender, EventArgs e)
         {
-            Thread t = new Thread(getResult);
+            /*Thread t = new Thread(getResult);
             System.Threading.Timer timer = new System.Threading.Timer(abortGettingResult, t, 1000, Timeout.Infinite);
             t.Start();
-            t.Join();
-            try
-            {
-                memory = float.Parse(resultTextBox.Text);
-            }
-            catch (FormatException err) { }
+            t.Join();*/
+            int index = memoryComboBox.SelectedIndex;
+            pamet[index] = expressionTextBox.Text;
+            refreshMemory();
         }
 
         private void buttonMR_Click(object sender, EventArgs e)
         {
             int cursorPosition = expressionTextBox.SelectionStart;
-            expressionTextBox.Text = expressionTextBox.Text.Substring(0, cursorPosition) + memory.ToString() + expressionTextBox.Text.Substring(cursorPosition, expressionTextBox.Text.Length - cursorPosition);
-            expressionTextBox.SelectionStart = cursorPosition + memory.ToString().Length;
+            int index = memoryComboBox.SelectedIndex;
+            if (pamet[index].StartsWith("Memory")) return;
+            expressionTextBox.Text = expressionTextBox.Text.Substring(0, cursorPosition) + pamet[index] + expressionTextBox.Text.Substring(cursorPosition, expressionTextBox.Text.Length - cursorPosition);
+            expressionTextBox.SelectionStart = cursorPosition + pamet[index].Length;
+            refreshMemory();
         }
 
         private void buttonMC_Click(object sender, EventArgs e)
         {
-            memory = 0.0f;
+            int index = memoryComboBox.SelectedIndex;
+            pamet[index] = "Memory " + (index + 1).ToString();
+            refreshMemory();
         }
 
         private void buttonMplus_Click(object sender, EventArgs e)
         {
-            expressionTextBox.Text = memory.ToString() + "+(" + expressionTextBox.Text + ")";
-            Thread t = new Thread(getResult);
+            int index = memoryComboBox.SelectedIndex;
+            if (pamet[index].StartsWith("Memory")) return;
+            string what = pamet[index].ToString() + "+(" + expressionTextBox.Text + ")";
+            pamet[index] = what;
+            refreshMemory();
+            /*Thread t = new Thread(getResult);
             System.Threading.Timer timer = new System.Threading.Timer(abortGettingResult, t, 1000, Timeout.Infinite);
             t.Start();
-            t.Join();
-            try
-            {              
-                    memory = float.Parse(resultTextBox.Text);
-            }
-            catch (FormatException err) { }
+            t.Join();*/
+            
 
         }
 
         private void buttonMminus_Click(object sender, EventArgs e)
         {
-            expressionTextBox.Text = memory.ToString() + "-(" + expressionTextBox.Text + ")";
-            Thread t = new Thread(getResult);
+            int index = memoryComboBox.SelectedIndex;
+            if (pamet[index].StartsWith("Memory")) return;
+            string what = pamet[index].ToString() + "-(" + expressionTextBox.Text + ")";
+            /*Thread t = new Thread(getResult);
             System.Threading.Timer timer = new System.Threading.Timer(abortGettingResult, t, 1000, Timeout.Infinite);
             t.Start();
-            t.Join();
-            try
-            {
-                    memory = float.Parse(resultTextBox.Text);
-            }
-            catch (FormatException err) { }
+            t.Join();*/
+            pamet[index] = what;
+            refreshMemory();
         }
 
         private void buttonAns_Click(object sender, EventArgs e)
@@ -452,7 +478,9 @@ namespace Calc
         {
             int length = expressionTextBox.Text.Length;
             int cursor_position = expressionTextBox.SelectionStart;
-            
+
+            kontrolaZatvoriek(expressionTextBox.Text);
+
             if (DecRadioButton.Checked == true)
             {
                 String[] num = {"A","B","C","D","E","F"};
@@ -481,6 +509,243 @@ namespace Calc
             //ak sa nejaky znak zmazal tak sa posunie nastavenie kurzora
         }
 
+        private void kontrolaZatvoriek(string text)
+        {
+            Stack<char> zatv = new Stack<char>();
+            foreach (char p in text)
+            {
+                if (p == '(')
+                {
+                    zatv.Push('(');
+                }
+                if (p == ')')
+                {
+                    if (zatv.Count == 0)
+                    {
+                        syntaxTextBox.Text = "Missing \"(\"";
+                        return;
+                    }
+                    zatv.Pop();
+                }
+            }
+            if (zatv.Count > 0)
+                syntaxTextBox.Text = "Missing \")\"";
+            else
+                syntaxTextBox.Text = "OK";
+        }
+
+        private void piButton_Click(object sender, EventArgs e)
+        {
+            string s = "3.14159265";
+            int cursorPosition = expressionTextBox.SelectionStart;
+            expressionTextBox.Text = expressionTextBox.Text.Substring(0, cursorPosition) + s + expressionTextBox.Text.Substring(cursorPosition, expressionTextBox.Text.Length - cursorPosition);
+            expressionTextBox.SelectionStart = cursorPosition + s.Length;
+        }
+
+        private void eButton_Click(object sender, EventArgs e)
+        {
+            string s = "2.71828183";
+            int cursorPosition = expressionTextBox.SelectionStart;
+            expressionTextBox.Text = expressionTextBox.Text.Substring(0, cursorPosition) + s + expressionTextBox.Text.Substring(cursorPosition, expressionTextBox.Text.Length - cursorPosition);
+            expressionTextBox.SelectionStart = cursorPosition + s.Length;
+        }
+
+        private void goldenButton_Click(object sender, EventArgs e)
+        {
+            string s = "1.61803399";
+            int cursorPosition = expressionTextBox.SelectionStart;
+            expressionTextBox.Text = expressionTextBox.Text.Substring(0, cursorPosition) + s + expressionTextBox.Text.Substring(cursorPosition, expressionTextBox.Text.Length - cursorPosition);
+            expressionTextBox.SelectionStart = cursorPosition + s.Length;
+        }
+
+        private void sqbutton_Click(object sender, EventArgs e)
+        {
+            string s = "1.41421356237309504880";
+            int cursorPosition = expressionTextBox.SelectionStart;
+            expressionTextBox.Text = expressionTextBox.Text.Substring(0, cursorPosition) + s + expressionTextBox.Text.Substring(cursorPosition, expressionTextBox.Text.Length - cursorPosition);
+            expressionTextBox.SelectionStart = cursorPosition + s.Length;
+        }
+
+        private void cButton_Click(object sender, EventArgs e)
+        {
+            string s = "299792458";
+            int cursorPosition = expressionTextBox.SelectionStart;
+            expressionTextBox.Text = expressionTextBox.Text.Substring(0, cursorPosition) + s + expressionTextBox.Text.Substring(cursorPosition, expressionTextBox.Text.Length - cursorPosition);
+            expressionTextBox.SelectionStart = cursorPosition + s.Length;
+        }
+
+        private void mebutton_Click(object sender, EventArgs e)
+        {
+            string s = "9.10938188*power(10, -31)";
+            int cursorPosition = expressionTextBox.SelectionStart;
+            expressionTextBox.Text = expressionTextBox.Text.Substring(0, cursorPosition) + s + expressionTextBox.Text.Substring(cursorPosition, expressionTextBox.Text.Length - cursorPosition);
+            expressionTextBox.SelectionStart = cursorPosition + s.Length;
+        }
+
+        private void mpButton_Click(object sender, EventArgs e)
+        {
+            string s = "1.67262158*power(10, -27)";
+            int cursorPosition = expressionTextBox.SelectionStart;
+            expressionTextBox.Text = expressionTextBox.Text.Substring(0, cursorPosition) + s + expressionTextBox.Text.Substring(cursorPosition, expressionTextBox.Text.Length - cursorPosition);
+            expressionTextBox.SelectionStart = cursorPosition + s.Length;
+        }
+
+        private void hButton_Click(object sender, EventArgs e)
+        {
+            string s = "6.626068*power(10, -34)";
+            int cursorPosition = expressionTextBox.SelectionStart;
+            expressionTextBox.Text = expressionTextBox.Text.Substring(0, cursorPosition) + s + expressionTextBox.Text.Substring(cursorPosition, expressionTextBox.Text.Length - cursorPosition);
+            expressionTextBox.SelectionStart = cursorPosition + s.Length;
+        }
+
+        private void eeeButton_Click(object sender, EventArgs e)
+        {
+            string s = "1.60217646*power(10, -19)";
+            int cursorPosition = expressionTextBox.SelectionStart;
+            expressionTextBox.Text = expressionTextBox.Text.Substring(0, cursorPosition) + s + expressionTextBox.Text.Substring(cursorPosition, expressionTextBox.Text.Length - cursorPosition);
+            expressionTextBox.SelectionStart = cursorPosition + s.Length;
+        }
+
+        private void ggButton_Click(object sender, EventArgs e)
+        {
+            string s = "9.8066";
+            int cursorPosition = expressionTextBox.SelectionStart;
+            expressionTextBox.Text = expressionTextBox.Text.Substring(0, cursorPosition) + s + expressionTextBox.Text.Substring(cursorPosition, expressionTextBox.Text.Length - cursorPosition);
+            expressionTextBox.SelectionStart = cursorPosition + s.Length;
+        }
+
+        private void GButton_Click(object sender, EventArgs e)
+        {
+            string s = "9.8";
+            int cursorPosition = expressionTextBox.SelectionStart;
+            expressionTextBox.Text = expressionTextBox.Text.Substring(0, cursorPosition) + s + expressionTextBox.Text.Substring(cursorPosition, expressionTextBox.Text.Length - cursorPosition);
+            expressionTextBox.SelectionStart = cursorPosition + s.Length;
+        }
+
+        private void refreshMemory()
+        {
+            for (int i = 0; i < 10; i++)
+            {
+                memoryComboBox.Items[i] = pamet[i];
+            }
+        }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ComboBox cb = sender as ComboBox;
+            switch (cb.SelectedItem.ToString())
+            {
+                case "General":
+                    changeOtherCombobox(GeneralTab);
+                    break;
+                case "Programmer":
+                    changeOtherCombobox(ProgrammerTab);
+                    break;
+                case "Trigonometric":
+                    changeOtherCombobox(TrigonometricTab);
+                    break;
+                case "Power":
+                    changeOtherCombobox(PowerTab);
+                    break;
+                case "Statistical":
+                    changeOtherCombobox(StatisticalTab);
+                    break;
+                case "Conversion":
+                    changeOtherCombobox(ConversionTab);
+                    break;
+                case "Constants":
+                    changeOtherCombobox(ConstantsTab.Controls[0]);
+                    changeOtherCombobox(ConstantsTab.Controls[1]);
+                    break;
+                default: throw new InvalidDataException("Selected index in favorites");
+            }
+        }
+
+        private void changeOtherCombobox(Control c)
+        {
+            Fav2ComboBox.Items.Clear();
+            foreach (object o in c.Controls)
+            {
+                if (o is Button)
+                {
+                    Button b = o as Button;
+                    Fav2ComboBox.Items.Add(b.Text);
+                }
+            }
+        }
+
+        private void addButton_Click(object sender, EventArgs e)
+        {
+            
+            TabPage where=null;
+            if (favButtons.Count >= 7)
+            {
+                MessageBox.Show("Too much buttons, delete some first");
+                return;
+            }
+            switch (Fav1ComboBox.SelectedItem.ToString())
+            {
+                case "General":
+                    where = GeneralTab;
+                    break;
+                case "Programmer":
+                    where = ProgrammerTab;
+                    break;
+                case "Trigonometric":
+                    where = TrigonometricTab;
+                    break;
+                case "Power":
+                    where = PowerTab;
+                    break;
+                case "Statistical":
+                    where = StatisticalTab;
+                    break;
+                case "Conversion":
+                    where = ConversionTab;
+                    break;
+                case "Constants":
+                    //changeOtherCombobox(ConstantsTab.Controls[0]);
+                    //changeOtherCombobox(ConstantsTab.Controls[1]);
+                    break;
+                default: throw new InvalidDataException("Selected index in favorites");
+            }
+
+            foreach (Button b in where.Controls)
+            {
+                if (Fav2ComboBox.SelectedItem.ToString() == b.Text)
+                {
+                    Button novy = new Button();
+                    novy.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+                    novy.UseVisualStyleBackColor = true;
+                    novy.Size = b.Size;
+                    novy.Text = b.Text;
+                    favButtons.Add(novy);
+                    favoritesTab.Controls.Add(novy);
+                    reorganizeFav();
+                    return;
+                }
+            }
+        }
+
+        private void reorganizeFav()
+        {
+            Del0.Show();
+            for (int i = 0; i <  favButtons.Count; i++)
+            {
+                favButtons[i].Location = new System.Drawing.Point(80, 8 + (i * 50));
+                delButtons[i].Show();
+            }
+        }
+
+        private void Del_Click(object sender, EventArgs e)
+        {
+            delButtons[favButtons.Count-1].Hide();
+            Button b = sender as Button;
+            int i = Int32.Parse(b.Name.Substring(b.Name.Length - 1));
+            favoritesTab.Controls.Remove(favButtons[i]);
+            favButtons.RemoveAt(i);
+            reorganizeFav();
+        }
 
     }
 }

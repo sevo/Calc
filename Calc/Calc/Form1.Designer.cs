@@ -46,7 +46,7 @@ namespace Calc
             this.roundButton = new System.Windows.Forms.Button();
             this.absButton = new System.Windows.Forms.Button();
             this.ProgrammerTab = new System.Windows.Forms.TabPage();
-            this.button52 = new System.Windows.Forms.Button();
+            this.xorButton = new System.Windows.Forms.Button();
             this.modButton = new System.Windows.Forms.Button();
             this.floorButton = new System.Windows.Forms.Button();
             this.andButton = new System.Windows.Forms.Button();
@@ -74,7 +74,7 @@ namespace Calc
             this.cosButton = new System.Windows.Forms.Button();
             this.sinButton = new System.Windows.Forms.Button();
             this.PowerTab = new System.Windows.Forms.TabPage();
-            this.button51 = new System.Windows.Forms.Button();
+            this.xrootButton = new System.Windows.Forms.Button();
             this.logButton = new System.Windows.Forms.Button();
             this.lnButton = new System.Windows.Forms.Button();
             this.lgButton = new System.Windows.Forms.Button();
@@ -85,7 +85,7 @@ namespace Calc
             this.medianButton = new System.Windows.Forms.Button();
             this.dispButton = new System.Windows.Forms.Button();
             this.avgButton = new System.Windows.Forms.Button();
-            this.valButton = new System.Windows.Forms.Button();
+            this.varButton = new System.Windows.Forms.Button();
             this.combButton = new System.Windows.Forms.Button();
             this.permuButton = new System.Windows.Forms.Button();
             this.ConversionTab = new System.Windows.Forms.TabPage();
@@ -101,21 +101,30 @@ namespace Calc
             this.degRadButton = new System.Windows.Forms.Button();
             this.ConstantsTab = new System.Windows.Forms.TabPage();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.button50 = new System.Windows.Forms.Button();
-            this.button49 = new System.Windows.Forms.Button();
-            this.button48 = new System.Windows.Forms.Button();
+            this.eeeButton = new System.Windows.Forms.Button();
+            this.meButton = new System.Windows.Forms.Button();
+            this.mpButton = new System.Windows.Forms.Button();
             this.ggButton = new System.Windows.Forms.Button();
             this.GButton = new System.Windows.Forms.Button();
             this.hButton = new System.Windows.Forms.Button();
             this.cButton = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button47 = new System.Windows.Forms.Button();
+            this.sqButton = new System.Windows.Forms.Button();
             this.buttonPsi = new System.Windows.Forms.Button();
             this.goldenButton = new System.Windows.Forms.Button();
             this.eButton = new System.Windows.Forms.Button();
             this.piButton = new System.Windows.Forms.Button();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.favoritesTab = new System.Windows.Forms.TabPage();
+            this.Del6 = new System.Windows.Forms.Button();
+            this.Del5 = new System.Windows.Forms.Button();
+            this.Del4 = new System.Windows.Forms.Button();
+            this.Del3 = new System.Windows.Forms.Button();
+            this.Del2 = new System.Windows.Forms.Button();
+            this.Del1 = new System.Windows.Forms.Button();
+            this.Del0 = new System.Windows.Forms.Button();
+            this.addButton = new System.Windows.Forms.Button();
+            this.Fav2ComboBox = new System.Windows.Forms.ComboBox();
+            this.Fav1ComboBox = new System.Windows.Forms.ComboBox();
             this.button10 = new System.Windows.Forms.Button();
             this.button11 = new System.Windows.Forms.Button();
             this.button12 = new System.Windows.Forms.Button();
@@ -170,7 +179,6 @@ namespace Calc
             this.button22 = new System.Windows.Forms.Button();
             this.button23 = new System.Windows.Forms.Button();
             this.button24 = new System.Windows.Forms.Button();
-            this.button25 = new System.Windows.Forms.Button();
             this.button26 = new System.Windows.Forms.Button();
             this.button27 = new System.Windows.Forms.Button();
             this.button28 = new System.Windows.Forms.Button();
@@ -213,7 +221,7 @@ namespace Calc
             this.ConstantsTab.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            this.tabPage2.SuspendLayout();
+            this.favoritesTab.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.tabPage4.SuspendLayout();
             this.SuspendLayout();
@@ -227,7 +235,7 @@ namespace Calc
             this.TabControl.Controls.Add(this.StatisticalTab);
             this.TabControl.Controls.Add(this.ConversionTab);
             this.TabControl.Controls.Add(this.ConstantsTab);
-            this.TabControl.Controls.Add(this.tabPage1);
+            this.TabControl.Controls.Add(this.favoritesTab);
             this.TabControl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.TabControl.Location = new System.Drawing.Point(0, 4);
             this.TabControl.Multiline = true;
@@ -269,6 +277,7 @@ namespace Calc
             this.gcdButton.TabIndex = 42;
             this.gcdButton.Text = "GCD";
             this.gcdButton.UseVisualStyleBackColor = true;
+            this.gcdButton.Click += new System.EventHandler(this.buttonFun_Click);
             // 
             // lcmButton
             // 
@@ -279,6 +288,7 @@ namespace Calc
             this.lcmButton.TabIndex = 41;
             this.lcmButton.Text = "LCM";
             this.lcmButton.UseVisualStyleBackColor = true;
+            this.lcmButton.Click += new System.EventHandler(this.buttonFun_Click);
             // 
             // buttonPlot
             // 
@@ -392,7 +402,7 @@ namespace Calc
             // 
             // ProgrammerTab
             // 
-            this.ProgrammerTab.Controls.Add(this.button52);
+            this.ProgrammerTab.Controls.Add(this.xorButton);
             this.ProgrammerTab.Controls.Add(this.modButton);
             this.ProgrammerTab.Controls.Add(this.floorButton);
             this.ProgrammerTab.Controls.Add(this.andButton);
@@ -410,15 +420,16 @@ namespace Calc
             this.ProgrammerTab.Text = "Programmer";
             this.ProgrammerTab.UseVisualStyleBackColor = true;
             // 
-            // button52
+            // xorButton
             // 
-            this.button52.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button52.Location = new System.Drawing.Point(159, 141);
-            this.button52.Name = "button52";
-            this.button52.Size = new System.Drawing.Size(90, 35);
-            this.button52.TabIndex = 43;
-            this.button52.Text = "XOR";
-            this.button52.UseVisualStyleBackColor = true;
+            this.xorButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.xorButton.Location = new System.Drawing.Point(159, 141);
+            this.xorButton.Name = "xorButton";
+            this.xorButton.Size = new System.Drawing.Size(90, 35);
+            this.xorButton.TabIndex = 43;
+            this.xorButton.Text = "XOR";
+            this.xorButton.UseVisualStyleBackColor = true;
+            this.xorButton.Click += new System.EventHandler(this.buttonFun_Click);
             // 
             // modButton
             // 
@@ -429,6 +440,7 @@ namespace Calc
             this.modButton.TabIndex = 42;
             this.modButton.Text = "Mod";
             this.modButton.UseVisualStyleBackColor = true;
+            this.modButton.Click += new System.EventHandler(this.buttonFun_Click);
             // 
             // floorButton
             // 
@@ -439,6 +451,7 @@ namespace Calc
             this.floorButton.TabIndex = 41;
             this.floorButton.Text = "Floor";
             this.floorButton.UseVisualStyleBackColor = true;
+            this.floorButton.Click += new System.EventHandler(this.buttonFun_Click);
             // 
             // andButton
             // 
@@ -721,7 +734,7 @@ namespace Calc
             // 
             // PowerTab
             // 
-            this.PowerTab.Controls.Add(this.button51);
+            this.PowerTab.Controls.Add(this.xrootButton);
             this.PowerTab.Controls.Add(this.logButton);
             this.PowerTab.Controls.Add(this.lnButton);
             this.PowerTab.Controls.Add(this.lgButton);
@@ -736,15 +749,16 @@ namespace Calc
             this.PowerTab.Text = "Power";
             this.PowerTab.UseVisualStyleBackColor = true;
             // 
-            // button51
+            // xrootButton
             // 
-            this.button51.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button51.Location = new System.Drawing.Point(234, 177);
-            this.button51.Name = "button51";
-            this.button51.Size = new System.Drawing.Size(90, 35);
-            this.button51.TabIndex = 9;
-            this.button51.Text = "xth Root";
-            this.button51.UseVisualStyleBackColor = true;
+            this.xrootButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.xrootButton.Location = new System.Drawing.Point(234, 177);
+            this.xrootButton.Name = "xrootButton";
+            this.xrootButton.Size = new System.Drawing.Size(90, 35);
+            this.xrootButton.TabIndex = 9;
+            this.xrootButton.Text = "xth Root";
+            this.xrootButton.UseVisualStyleBackColor = true;
+            this.xrootButton.Click += new System.EventHandler(this.buttonFun_Click);
             // 
             // logButton
             // 
@@ -817,7 +831,7 @@ namespace Calc
             this.StatisticalTab.Controls.Add(this.medianButton);
             this.StatisticalTab.Controls.Add(this.dispButton);
             this.StatisticalTab.Controls.Add(this.avgButton);
-            this.StatisticalTab.Controls.Add(this.valButton);
+            this.StatisticalTab.Controls.Add(this.varButton);
             this.StatisticalTab.Controls.Add(this.combButton);
             this.StatisticalTab.Controls.Add(this.permuButton);
             this.StatisticalTab.Location = new System.Drawing.Point(4, 54);
@@ -861,16 +875,16 @@ namespace Calc
             this.avgButton.UseVisualStyleBackColor = true;
             this.avgButton.Click += new System.EventHandler(this.buttonFun_Click);
             // 
-            // valButton
+            // varButton
             // 
-            this.valButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.valButton.Location = new System.Drawing.Point(36, 283);
-            this.valButton.Name = "valButton";
-            this.valButton.Size = new System.Drawing.Size(120, 35);
-            this.valButton.TabIndex = 5;
-            this.valButton.Text = "Variation";
-            this.valButton.UseVisualStyleBackColor = true;
-            this.valButton.Click += new System.EventHandler(this.buttonFun_Click);
+            this.varButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.varButton.Location = new System.Drawing.Point(36, 283);
+            this.varButton.Name = "varButton";
+            this.varButton.Size = new System.Drawing.Size(120, 35);
+            this.varButton.TabIndex = 5;
+            this.varButton.Text = "Variation";
+            this.varButton.UseVisualStyleBackColor = true;
+            this.varButton.Click += new System.EventHandler(this.buttonFun_Click);
             // 
             // combButton
             // 
@@ -1028,9 +1042,9 @@ namespace Calc
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.button50);
-            this.groupBox2.Controls.Add(this.button49);
-            this.groupBox2.Controls.Add(this.button48);
+            this.groupBox2.Controls.Add(this.eeeButton);
+            this.groupBox2.Controls.Add(this.meButton);
+            this.groupBox2.Controls.Add(this.mpButton);
             this.groupBox2.Controls.Add(this.ggButton);
             this.groupBox2.Controls.Add(this.GButton);
             this.groupBox2.Controls.Add(this.hButton);
@@ -1042,35 +1056,38 @@ namespace Calc
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Physical";
             // 
-            // button50
+            // eeeButton
             // 
-            this.button50.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button50.Location = new System.Drawing.Point(17, 296);
-            this.button50.Name = "button50";
-            this.button50.Size = new System.Drawing.Size(90, 35);
-            this.button50.TabIndex = 9;
-            this.button50.Text = "e";
-            this.button50.UseVisualStyleBackColor = true;
+            this.eeeButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.eeeButton.Location = new System.Drawing.Point(17, 296);
+            this.eeeButton.Name = "eeeButton";
+            this.eeeButton.Size = new System.Drawing.Size(90, 35);
+            this.eeeButton.TabIndex = 9;
+            this.eeeButton.Text = "e";
+            this.eeeButton.UseVisualStyleBackColor = true;
+            this.eeeButton.Click += new System.EventHandler(this.eeeButton_Click);
             // 
-            // button49
+            // meButton
             // 
-            this.button49.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button49.Location = new System.Drawing.Point(128, 230);
-            this.button49.Name = "button49";
-            this.button49.Size = new System.Drawing.Size(90, 35);
-            this.button49.TabIndex = 8;
-            this.button49.Text = "me";
-            this.button49.UseVisualStyleBackColor = true;
+            this.meButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.meButton.Location = new System.Drawing.Point(128, 230);
+            this.meButton.Name = "meButton";
+            this.meButton.Size = new System.Drawing.Size(90, 35);
+            this.meButton.TabIndex = 8;
+            this.meButton.Text = "me";
+            this.meButton.UseVisualStyleBackColor = true;
+            this.meButton.Click += new System.EventHandler(this.mebutton_Click);
             // 
-            // button48
+            // mpButton
             // 
-            this.button48.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button48.Location = new System.Drawing.Point(17, 231);
-            this.button48.Name = "button48";
-            this.button48.Size = new System.Drawing.Size(90, 35);
-            this.button48.TabIndex = 7;
-            this.button48.Text = "mp";
-            this.button48.UseVisualStyleBackColor = true;
+            this.mpButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.mpButton.Location = new System.Drawing.Point(17, 231);
+            this.mpButton.Name = "mpButton";
+            this.mpButton.Size = new System.Drawing.Size(90, 35);
+            this.mpButton.TabIndex = 7;
+            this.mpButton.Text = "mp";
+            this.mpButton.UseVisualStyleBackColor = true;
+            this.mpButton.Click += new System.EventHandler(this.mpButton_Click);
             // 
             // ggButton
             // 
@@ -1081,6 +1098,7 @@ namespace Calc
             this.ggButton.TabIndex = 6;
             this.ggButton.Text = "g";
             this.ggButton.UseVisualStyleBackColor = true;
+            this.ggButton.Click += new System.EventHandler(this.ggButton_Click);
             // 
             // GButton
             // 
@@ -1091,6 +1109,7 @@ namespace Calc
             this.GButton.TabIndex = 5;
             this.GButton.Text = "G";
             this.GButton.UseVisualStyleBackColor = true;
+            this.GButton.Click += new System.EventHandler(this.GButton_Click);
             // 
             // hButton
             // 
@@ -1101,6 +1120,7 @@ namespace Calc
             this.hButton.TabIndex = 4;
             this.hButton.Text = "h";
             this.hButton.UseVisualStyleBackColor = true;
+            this.hButton.Click += new System.EventHandler(this.hButton_Click);
             // 
             // cButton
             // 
@@ -1111,10 +1131,11 @@ namespace Calc
             this.cButton.TabIndex = 3;
             this.cButton.Text = "c";
             this.cButton.UseVisualStyleBackColor = true;
+            this.cButton.Click += new System.EventHandler(this.cButton_Click);
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.button47);
+            this.groupBox1.Controls.Add(this.sqButton);
             this.groupBox1.Controls.Add(this.buttonPsi);
             this.groupBox1.Controls.Add(this.goldenButton);
             this.groupBox1.Controls.Add(this.eButton);
@@ -1126,15 +1147,16 @@ namespace Calc
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Mathematical";
             // 
-            // button47
+            // sqButton
             // 
-            this.button47.Font = new System.Drawing.Font("Times New Roman", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button47.Location = new System.Drawing.Point(19, 296);
-            this.button47.Name = "button47";
-            this.button47.Size = new System.Drawing.Size(90, 35);
-            this.button47.TabIndex = 7;
-            this.button47.Text = "√2";
-            this.button47.UseVisualStyleBackColor = true;
+            this.sqButton.Font = new System.Drawing.Font("Times New Roman", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.sqButton.Location = new System.Drawing.Point(19, 296);
+            this.sqButton.Name = "sqButton";
+            this.sqButton.Size = new System.Drawing.Size(90, 35);
+            this.sqButton.TabIndex = 7;
+            this.sqButton.Text = "√2";
+            this.sqButton.UseVisualStyleBackColor = true;
+            this.sqButton.Click += new System.EventHandler(this.sqbutton_Click);
             // 
             // buttonPsi
             // 
@@ -1155,6 +1177,7 @@ namespace Calc
             this.goldenButton.TabIndex = 5;
             this.goldenButton.Text = "Golden ratio";
             this.goldenButton.UseVisualStyleBackColor = true;
+            this.goldenButton.Click += new System.EventHandler(this.goldenButton_Click);
             // 
             // eButton
             // 
@@ -1165,47 +1188,152 @@ namespace Calc
             this.eButton.TabIndex = 4;
             this.eButton.Text = "e";
             this.eButton.UseVisualStyleBackColor = true;
+            this.eButton.Click += new System.EventHandler(this.eButton_Click);
             // 
             // piButton
             // 
             this.piButton.Font = new System.Drawing.Font("Times New Roman", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.piButton.Location = new System.Drawing.Point(19, 36);
+            this.piButton.Location = new System.Drawing.Point(19, 33);
             this.piButton.Name = "piButton";
             this.piButton.Size = new System.Drawing.Size(90, 35);
             this.piButton.TabIndex = 3;
             this.piButton.Text = "π";
             this.piButton.UseVisualStyleBackColor = true;
+            this.piButton.Click += new System.EventHandler(this.piButton_Click);
             // 
-            // tabPage1
+            // favoritesTab
             // 
-            this.tabPage1.Location = new System.Drawing.Point(4, 54);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Size = new System.Drawing.Size(415, 424);
-            this.tabPage1.TabIndex = 8;
-            this.tabPage1.Text = "Favorites";
-            this.tabPage1.UseVisualStyleBackColor = true;
+            this.favoritesTab.Controls.Add(this.Del6);
+            this.favoritesTab.Controls.Add(this.Del5);
+            this.favoritesTab.Controls.Add(this.Del4);
+            this.favoritesTab.Controls.Add(this.Del3);
+            this.favoritesTab.Controls.Add(this.Del2);
+            this.favoritesTab.Controls.Add(this.Del1);
+            this.favoritesTab.Controls.Add(this.Del0);
+            this.favoritesTab.Controls.Add(this.addButton);
+            this.favoritesTab.Controls.Add(this.Fav2ComboBox);
+            this.favoritesTab.Controls.Add(this.Fav1ComboBox);
+            this.favoritesTab.Location = new System.Drawing.Point(4, 54);
+            this.favoritesTab.Name = "favoritesTab";
+            this.favoritesTab.Size = new System.Drawing.Size(415, 424);
+            this.favoritesTab.TabIndex = 8;
+            this.favoritesTab.Text = "Favorites";
+            this.favoritesTab.UseVisualStyleBackColor = true;
             // 
-            // tabPage2
+            // Del6
             // 
-            this.tabPage2.Controls.Add(this.button10);
-            this.tabPage2.Controls.Add(this.button11);
-            this.tabPage2.Controls.Add(this.button12);
-            this.tabPage2.Controls.Add(this.button13);
-            this.tabPage2.Controls.Add(this.button14);
-            this.tabPage2.Controls.Add(this.button15);
-            this.tabPage2.Controls.Add(this.button16);
-            this.tabPage2.Controls.Add(this.button17);
-            this.tabPage2.Controls.Add(this.button18);
-            this.tabPage2.Controls.Add(this.button19);
-            this.tabPage2.Controls.Add(this.button20);
-            this.tabPage2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.tabPage2.Location = new System.Drawing.Point(4, 54);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(499, 479);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "General";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.Del6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.Del6.Location = new System.Drawing.Point(17, 314);
+            this.Del6.Name = "Del6";
+            this.Del6.Size = new System.Drawing.Size(49, 23);
+            this.Del6.TabIndex = 9;
+            this.Del6.Text = "Delete";
+            this.Del6.UseVisualStyleBackColor = true;
+            this.Del6.Click += new System.EventHandler(this.Del_Click);
+            // 
+            // Del5
+            // 
+            this.Del5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.Del5.Location = new System.Drawing.Point(17, 264);
+            this.Del5.Name = "Del5";
+            this.Del5.Size = new System.Drawing.Size(49, 23);
+            this.Del5.TabIndex = 8;
+            this.Del5.Text = "Delete";
+            this.Del5.UseVisualStyleBackColor = true;
+            this.Del5.Click += new System.EventHandler(this.Del_Click);
+            // 
+            // Del4
+            // 
+            this.Del4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.Del4.Location = new System.Drawing.Point(17, 214);
+            this.Del4.Name = "Del4";
+            this.Del4.Size = new System.Drawing.Size(49, 23);
+            this.Del4.TabIndex = 7;
+            this.Del4.Text = "Delete";
+            this.Del4.UseVisualStyleBackColor = true;
+            this.Del4.Click += new System.EventHandler(this.Del_Click);
+            // 
+            // Del3
+            // 
+            this.Del3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.Del3.Location = new System.Drawing.Point(17, 164);
+            this.Del3.Name = "Del3";
+            this.Del3.Size = new System.Drawing.Size(49, 23);
+            this.Del3.TabIndex = 6;
+            this.Del3.Text = "Delete";
+            this.Del3.UseVisualStyleBackColor = true;
+            this.Del3.Click += new System.EventHandler(this.Del_Click);
+            // 
+            // Del2
+            // 
+            this.Del2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.Del2.Location = new System.Drawing.Point(17, 114);
+            this.Del2.Name = "Del2";
+            this.Del2.Size = new System.Drawing.Size(49, 23);
+            this.Del2.TabIndex = 5;
+            this.Del2.Text = "Delete";
+            this.Del2.UseVisualStyleBackColor = true;
+            this.Del2.Click += new System.EventHandler(this.Del_Click);
+            // 
+            // Del1
+            // 
+            this.Del1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.Del1.Location = new System.Drawing.Point(17, 64);
+            this.Del1.Name = "Del1";
+            this.Del1.Size = new System.Drawing.Size(49, 23);
+            this.Del1.TabIndex = 4;
+            this.Del1.Text = "Delete";
+            this.Del1.UseVisualStyleBackColor = true;
+            this.Del1.Click += new System.EventHandler(this.Del_Click);
+            // 
+            // Del0
+            // 
+            this.Del0.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.Del0.Location = new System.Drawing.Point(17, 14);
+            this.Del0.Name = "Del0";
+            this.Del0.Size = new System.Drawing.Size(49, 23);
+            this.Del0.TabIndex = 3;
+            this.Del0.Text = "Delete";
+            this.Del0.UseVisualStyleBackColor = true;
+            this.Del0.Click += new System.EventHandler(this.Del_Click);
+            // 
+            // addButton
+            // 
+            this.addButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.addButton.Location = new System.Drawing.Point(294, 394);
+            this.addButton.Name = "addButton";
+            this.addButton.Size = new System.Drawing.Size(75, 23);
+            this.addButton.TabIndex = 2;
+            this.addButton.Text = "add";
+            this.addButton.UseVisualStyleBackColor = true;
+            this.addButton.Click += new System.EventHandler(this.addButton_Click);
+            // 
+            // Fav2ComboBox
+            // 
+            this.Fav2ComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.Fav2ComboBox.FormattingEnabled = true;
+            this.Fav2ComboBox.Location = new System.Drawing.Point(157, 396);
+            this.Fav2ComboBox.Name = "Fav2ComboBox";
+            this.Fav2ComboBox.Size = new System.Drawing.Size(121, 21);
+            this.Fav2ComboBox.TabIndex = 1;
+            // 
+            // Fav1ComboBox
+            // 
+            this.Fav1ComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.Fav1ComboBox.FormattingEnabled = true;
+            this.Fav1ComboBox.Items.AddRange(new object[] {
+            "General",
+            "Programmer",
+            "Trigonometric",
+            "Power",
+            "Statistical",
+            "Conversion",
+            "Constants"});
+            this.Fav1ComboBox.Location = new System.Drawing.Point(17, 396);
+            this.Fav1ComboBox.Name = "Fav1ComboBox";
+            this.Fav1ComboBox.Size = new System.Drawing.Size(121, 21);
+            this.Fav1ComboBox.TabIndex = 0;
+            this.Fav1ComboBox.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
             // button10
             // 
@@ -1756,7 +1884,6 @@ namespace Calc
             this.tabPage3.Controls.Add(this.button22);
             this.tabPage3.Controls.Add(this.button23);
             this.tabPage3.Controls.Add(this.button24);
-            this.tabPage3.Controls.Add(this.button25);
             this.tabPage3.Controls.Add(this.button26);
             this.tabPage3.Controls.Add(this.button27);
             this.tabPage3.Controls.Add(this.button28);
@@ -1808,16 +1935,6 @@ namespace Calc
             this.button24.TabIndex = 9;
             this.button24.Text = "Or";
             this.button24.UseVisualStyleBackColor = true;
-            // 
-            // button25
-            // 
-            this.button25.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button25.Location = new System.Drawing.Point(300, 85);
-            this.button25.Name = "button25";
-            this.button25.Size = new System.Drawing.Size(90, 28);
-            this.button25.TabIndex = 8;
-            this.button25.Text = ">>";
-            this.button25.UseVisualStyleBackColor = true;
             // 
             // button26
             // 
@@ -2088,15 +2205,26 @@ namespace Calc
             // 
             // memoryComboBox
             // 
+            this.memoryComboBox.Items.AddRange(new object[] {
+            "Memory 1",
+            "Memory 2",
+            "Memory 3",
+            "Memory 4",
+            "Memory 5",
+            "Memory 6",
+            "Memory 7",
+            "Memory 8",
+            "Memory 9",
+            "Memory 10"});
             this.memoryComboBox.Location = new System.Drawing.Point(554, 216);
             this.memoryComboBox.Name = "memoryComboBox";
-            this.memoryComboBox.Size = new System.Drawing.Size(106, 21);
+            this.memoryComboBox.Size = new System.Drawing.Size(218, 21);
             this.memoryComboBox.TabIndex = 42;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(457, 216);
+            this.label1.Location = new System.Drawing.Point(457, 219);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(91, 13);
             this.label1.TabIndex = 41;
@@ -2111,7 +2239,7 @@ namespace Calc
             // histDownButton
             // 
             this.histDownButton.Image = ((System.Drawing.Image)(resources.GetObject("histDownButton.Image")));
-            this.histDownButton.Location = new System.Drawing.Point(834, 168);
+            this.histDownButton.Location = new System.Drawing.Point(833, 168);
             this.histDownButton.Name = "histDownButton";
             this.histDownButton.Size = new System.Drawing.Size(23, 23);
             this.histDownButton.TabIndex = 44;
@@ -2120,7 +2248,7 @@ namespace Calc
             // histUpButton
             // 
             this.histUpButton.Image = ((System.Drawing.Image)(resources.GetObject("histUpButton.Image")));
-            this.histUpButton.Location = new System.Drawing.Point(834, 72);
+            this.histUpButton.Location = new System.Drawing.Point(833, 72);
             this.histUpButton.Name = "histUpButton";
             this.histUpButton.Size = new System.Drawing.Size(23, 23);
             this.histUpButton.TabIndex = 43;
@@ -2188,7 +2316,7 @@ namespace Calc
             this.ConstantsTab.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
-            this.tabPage2.ResumeLayout(false);
+            this.favoritesTab.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
             this.tabPage4.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -2260,7 +2388,7 @@ namespace Calc
         private System.Windows.Forms.Button fracButton;
         private System.Windows.Forms.Button coielButton;
         private System.Windows.Forms.Button binNegButton;
-        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage favoritesTab;
         private System.Windows.Forms.Button archypcothButton;
         private System.Windows.Forms.Button archyptgButton;
         private System.Windows.Forms.Button archypcosButton;
@@ -2300,7 +2428,7 @@ namespace Calc
         private System.Windows.Forms.Button button22;
         private System.Windows.Forms.Button button23;
         private System.Windows.Forms.Button button24;
-        private System.Windows.Forms.Button button25;
+
         private System.Windows.Forms.Button button26;
         private System.Windows.Forms.Button button27;
         private System.Windows.Forms.Button button28;
@@ -2329,7 +2457,7 @@ namespace Calc
         private System.Windows.Forms.TabPage tabPage9;
         private System.Windows.Forms.Button combButton;
         private System.Windows.Forms.Button permuButton;
-        private System.Windows.Forms.Button valButton;
+        private System.Windows.Forms.Button varButton;
         private System.Windows.Forms.Button medianButton;
         private System.Windows.Forms.Button dispButton;
         private System.Windows.Forms.Button avgButton;
@@ -2358,11 +2486,11 @@ namespace Calc
 
         //private SkinCrafter skin;
         private System.Windows.Forms.Button buttonPsi;
-        private System.Windows.Forms.Button button47;
-        private System.Windows.Forms.Button button48;
-        private System.Windows.Forms.Button button50;
-        private System.Windows.Forms.Button button49;
-        private System.Windows.Forms.Button button51;
+        private System.Windows.Forms.Button sqButton;
+        private System.Windows.Forms.Button mpButton;
+        private System.Windows.Forms.Button eeeButton;
+        private System.Windows.Forms.Button meButton;
+        private System.Windows.Forms.Button xrootButton;
         private System.Windows.Forms.TextBox syntaxTextBox;
         private System.Windows.Forms.ComboBox memoryComboBox;
         private System.Windows.Forms.Label label1;
@@ -2370,9 +2498,19 @@ namespace Calc
         private System.Windows.Forms.Button floorButton;
         private System.Windows.Forms.Button gcdButton;
         private System.Windows.Forms.Button lcmButton;
-        private System.Windows.Forms.Button button52;
+        private System.Windows.Forms.Button xorButton;
         private System.Windows.Forms.Button histUpButton;
         private System.Windows.Forms.Button histDownButton;
+        private System.Windows.Forms.ComboBox Fav2ComboBox;
+        private System.Windows.Forms.ComboBox Fav1ComboBox;
+        private System.Windows.Forms.Button Del6;
+        private System.Windows.Forms.Button Del5;
+        private System.Windows.Forms.Button Del4;
+        private System.Windows.Forms.Button Del3;
+        private System.Windows.Forms.Button Del2;
+        private System.Windows.Forms.Button Del1;
+        private System.Windows.Forms.Button Del0;
+        private System.Windows.Forms.Button addButton;
 
 
 
