@@ -289,6 +289,37 @@ namespace Calc
             expressionTextBox.SelectionStart = cursorPosition + s.Length - 1;
         }
 
+        private void buttonFav_Click(object sender, EventArgs e)
+        {
+            Button but = sender as Button;
+            foreach (Control.ControlCollection c in new Control.ControlCollection[] { GeneralTab.Controls, ProgrammerTab.Controls, TrigonometricTab.Controls, powerButton.Controls, StatisticalTab.Controls, ConversionTab.Controls, groupBox1.Controls, groupBox2.Controls })
+            {
+                foreach (Control cc in c)
+                {
+                    Button b = cc as Button;
+                    if (b.Text == but.Text)
+                    {
+                        favoritesTab.Controls.Add(b);
+                        b.PerformClick();
+                        favoritesTab.Controls.Remove(b);
+                        c.Add(b);
+                        return;
+                    }
+                }
+            }
+        }
+
+        private void buttonFun2_Click(object sender, EventArgs e)
+        {
+            Button b = sender as Button;
+            string s = b.Text.ToLower();
+            s = s.Insert(s.Length, "(,)");
+            s = s.Replace(" ", string.Empty);
+            int cursorPosition = expressionTextBox.SelectionStart;
+            expressionTextBox.Text = expressionTextBox.Text.Substring(0, cursorPosition) + s + expressionTextBox.Text.Substring(cursorPosition, expressionTextBox.Text.Length - cursorPosition);
+            expressionTextBox.SelectionStart = cursorPosition + s.Length - 2;
+        }
+
         private void buttonEquals_Click(object sender, EventArgs e)
         {
             String text = "";
@@ -323,7 +354,7 @@ namespace Calc
             else
             {               
                 Thread t = new Thread(getResult);
-                System.Threading.Timer timer = new System.Threading.Timer(abortGettingResult, t, 1000, Timeout.Infinite);
+                System.Threading.Timer timer = new System.Threading.Timer(abortGettingResult, t, 1250, Timeout.Infinite);
                 t.Start();
             }
         }
@@ -677,6 +708,14 @@ namespace Calc
             expressionTextBox.SelectionStart = cursorPosition + s.Length;
         }
 
+        private void psiButton_Click(object sender, EventArgs e)
+        {
+            string s = "psi";
+            int cursorPosition = expressionTextBox.SelectionStart;
+            expressionTextBox.Text = expressionTextBox.Text.Substring(0, cursorPosition) + s + expressionTextBox.Text.Substring(cursorPosition, expressionTextBox.Text.Length - cursorPosition);
+            expressionTextBox.SelectionStart = cursorPosition + s.Length;
+        }
+
         private void eButton_Click(object sender, EventArgs e)
         {
             string s = "e";
@@ -771,34 +810,36 @@ namespace Calc
             switch (cb.SelectedItem.ToString())
             {
                 case "General":
-                    changeOtherCombobox(GeneralTab);
+                    changeOtherCombobox(GeneralTab, true);
                     break;
                 case "Programmer":
-                    changeOtherCombobox(ProgrammerTab);
+                    changeOtherCombobox(ProgrammerTab, true);
                     break;
                 case "Trigonometric":
-                    changeOtherCombobox(TrigonometricTab);
+                    changeOtherCombobox(TrigonometricTab, true);
                     break;
                 case "Power":
-                    changeOtherCombobox(PowerTab);
+                    changeOtherCombobox(PowerTab, true);
                     break;
                 case "Statistical":
-                    changeOtherCombobox(StatisticalTab);
+                    changeOtherCombobox(StatisticalTab, true);
                     break;
                 case "Conversion":
-                    changeOtherCombobox(ConversionTab);
+                    changeOtherCombobox(ConversionTab, true);
                     break;
                 case "Constants":
-                    changeOtherCombobox(ConstantsTab.Controls[0]);
-                    changeOtherCombobox(ConstantsTab.Controls[1]);
+                    changeOtherCombobox(ConstantsTab.Controls[0], true);
+                    changeOtherCombobox(ConstantsTab.Controls[1], false);
                     break;
                 default: throw new InvalidDataException("Selected index in favorites");
             }
         }
 
-        private void changeOtherCombobox(Control c)
+        private void changeOtherCombobox(Control c, bool erase) 
         {
-            Fav2ComboBox.Items.Clear();
+            if(erase)
+             Fav2ComboBox.Items.Clear();
+
             foreach (object o in c.Controls)
             {
                 if (o is Button)
@@ -812,7 +853,7 @@ namespace Calc
         private void addButton_Click(object sender, EventArgs e)
         {
             
-            TabPage where=null;
+            Control.ControlCollection where=null;
             if (favButtons.Count >= 7)
             {
                 MessageBox.Show("Too much buttons, delete some first");
@@ -821,31 +862,30 @@ namespace Calc
             switch (Fav1ComboBox.SelectedItem.ToString())
             {
                 case "General":
-                    where = GeneralTab;
+                    where = GeneralTab.Controls;
                     break;
                 case "Programmer":
-                    where = ProgrammerTab;
+                    where = ProgrammerTab.Controls;
                     break;
                 case "Trigonometric":
-                    where = TrigonometricTab;
+                    where = TrigonometricTab.Controls;
                     break;
                 case "Power":
-                    where = PowerTab;
+                    where = PowerTab.Controls;
                     break;
                 case "Statistical":
-                    where = StatisticalTab;
+                    where = StatisticalTab.Controls;
                     break;
                 case "Conversion":
-                    where = ConversionTab;
+                    where = ConversionTab.Controls;
                     break;
                 case "Constants":
-                    //changeOtherCombobox(ConstantsTab.Controls[0]);
-                    //changeOtherCombobox(ConstantsTab.Controls[1]);
+                    where = groupBox1.Controls;
                     break;
                 default: throw new InvalidDataException("Selected index in favorites");
             }
 
-            foreach (Button b in where.Controls)
+            foreach (Button b in where)
             {
                 if (Fav2ComboBox.SelectedItem.ToString() == b.Text)
                 {
@@ -854,6 +894,23 @@ namespace Calc
                     novy.UseVisualStyleBackColor = true;
                     novy.Size = b.Size;
                     novy.Text = b.Text;
+                    novy.Click += new EventHandler(buttonFav_Click);
+                    favButtons.Add(novy);
+                    favoritesTab.Controls.Add(novy);
+                    reorganizeFav();
+                    return;
+                }
+            }
+            foreach (Button b in groupBox2.Controls)
+            {
+                if (Fav2ComboBox.SelectedItem.ToString() == b.Text)
+                {
+                    Button novy = new Button();
+                    novy.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+                    novy.UseVisualStyleBackColor = true;
+                    novy.Size = b.Size;
+                    novy.Text = b.Text;
+                    novy.Click += new EventHandler(buttonFav_Click);
                     favButtons.Add(novy);
                     favoritesTab.Controls.Add(novy);
                     reorganizeFav();
@@ -990,5 +1047,6 @@ namespace Calc
             expressionTextBox.SelectionStart = cursorPosition + s.Length - 1;
         }
 
+       
     }
 }

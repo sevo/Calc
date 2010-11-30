@@ -277,7 +277,7 @@ namespace Calc
             this.gcdButton.TabIndex = 42;
             this.gcdButton.Text = "GCD";
             this.gcdButton.UseVisualStyleBackColor = true;
-            this.gcdButton.Click += new System.EventHandler(this.buttonFun_Click);
+            this.gcdButton.Click += new System.EventHandler(this.buttonFun2_Click);
             // 
             // lcmButton
             // 
@@ -288,7 +288,7 @@ namespace Calc
             this.lcmButton.TabIndex = 41;
             this.lcmButton.Text = "LCM";
             this.lcmButton.UseVisualStyleBackColor = true;
-            this.lcmButton.Click += new System.EventHandler(this.buttonFun_Click);
+            this.lcmButton.Click += new System.EventHandler(this.buttonFun2_Click);
             // 
             // buttonPlot
             // 
@@ -321,7 +321,7 @@ namespace Calc
             this.pythagorasButton.TabIndex = 11;
             this.pythagorasButton.Text = "Pythagoras";
             this.pythagorasButton.UseVisualStyleBackColor = true;
-            this.pythagorasButton.Click += new System.EventHandler(this.buttonFun_Click);
+            this.pythagorasButton.Click += new System.EventHandler(this.buttonFun2_Click);
             // 
             // randomButton
             // 
@@ -365,7 +365,7 @@ namespace Calc
             this.sumButton.TabIndex = 6;
             this.sumButton.Text = "Sum";
             this.sumButton.UseVisualStyleBackColor = true;
-            this.sumButton.Click += new System.EventHandler(this.buttonFun_Click);
+            this.sumButton.Click += new System.EventHandler(this.buttonFun2_Click);
             // 
             // digitButton
             // 
@@ -440,7 +440,7 @@ namespace Calc
             this.modButton.TabIndex = 42;
             this.modButton.Text = "Mod";
             this.modButton.UseVisualStyleBackColor = true;
-            this.modButton.Click += new System.EventHandler(this.buttonFun_Click);
+            this.modButton.Click += new System.EventHandler(this.buttonFun2_Click);
             // 
             // floorButton
             // 
@@ -484,7 +484,7 @@ namespace Calc
             this.binRightButton.TabIndex = 8;
             this.binRightButton.Text = "Right";
             this.binRightButton.UseVisualStyleBackColor = true;
-            this.binRightButton.Click += new System.EventHandler(this.buttonNum_Click);
+            this.binRightButton.Click += new System.EventHandler(this.buttonFun2_Click);
             // 
             // binLeftButton
             // 
@@ -495,7 +495,7 @@ namespace Calc
             this.binLeftButton.TabIndex = 7;
             this.binLeftButton.Text = "Left";
             this.binLeftButton.UseVisualStyleBackColor = true;
-            this.binLeftButton.Click += new System.EventHandler(this.buttonNum_Click);
+            this.binLeftButton.Click += new System.EventHandler(this.buttonFun2_Click);
             // 
             // fracButton
             // 
@@ -528,7 +528,7 @@ namespace Calc
             this.binNegButton.TabIndex = 4;
             this.binNegButton.Text = "Neg";
             this.binNegButton.UseVisualStyleBackColor = true;
-            this.binNegButton.Click += new System.EventHandler(this.buttonNum_Click);
+            this.binNegButton.Click += new System.EventHandler(this.buttonFun_Click);
             // 
             // TrigonometricTab
             // 
@@ -758,7 +758,7 @@ namespace Calc
             this.xrootButton.TabIndex = 9;
             this.xrootButton.Text = "xth Root";
             this.xrootButton.UseVisualStyleBackColor = true;
-            this.xrootButton.Click += new System.EventHandler(this.buttonFun_Click);
+            this.xrootButton.Click += new System.EventHandler(this.buttonFun2_Click);
             // 
             // logButton
             // 
@@ -769,7 +769,7 @@ namespace Calc
             this.logButton.TabIndex = 8;
             this.logButton.Text = "Log";
             this.logButton.UseVisualStyleBackColor = true;
-            this.logButton.Click += new System.EventHandler(this.buttonFun_Click);
+            this.logButton.Click += new System.EventHandler(this.buttonFun2_Click);
             // 
             // lnButton
             // 
@@ -813,7 +813,7 @@ namespace Calc
             this.powerButton.TabIndex = 4;
             this.powerButton.Text = "Power";
             this.powerButton.UseVisualStyleBackColor = true;
-            this.powerButton.Click += new System.EventHandler(this.buttonFun_Click);
+            this.powerButton.Click += new System.EventHandler(this.buttonFun2_Click);
             // 
             // expButton
             // 
@@ -851,7 +851,7 @@ namespace Calc
             this.medianButton.TabIndex = 8;
             this.medianButton.Text = "Median";
             this.medianButton.UseVisualStyleBackColor = true;
-            this.medianButton.Click += new System.EventHandler(this.buttonFun_Click);
+            this.medianButton.Click += new System.EventHandler(this.buttonFun2_Click);
             // 
             // dispButton
             // 
@@ -862,7 +862,7 @@ namespace Calc
             this.dispButton.TabIndex = 7;
             this.dispButton.Text = "Dispersion";
             this.dispButton.UseVisualStyleBackColor = true;
-            this.dispButton.Click += new System.EventHandler(this.buttonFun_Click);
+            this.dispButton.Click += new System.EventHandler(this.buttonFun2_Click);
             // 
             // avgButton
             // 
@@ -873,7 +873,7 @@ namespace Calc
             this.avgButton.TabIndex = 6;
             this.avgButton.Text = "Average";
             this.avgButton.UseVisualStyleBackColor = true;
-            this.avgButton.Click += new System.EventHandler(this.buttonFun_Click);
+            this.avgButton.Click += new System.EventHandler(this.buttonFun2_Click);
             // 
             // varButton
             // 
@@ -884,7 +884,7 @@ namespace Calc
             this.varButton.TabIndex = 5;
             this.varButton.Text = "Variation";
             this.varButton.UseVisualStyleBackColor = true;
-            this.varButton.Click += new System.EventHandler(this.buttonFun_Click);
+            this.varButton.Click += new System.EventHandler(this.buttonFun2_Click);
             // 
             // combButton
             // 
@@ -895,7 +895,7 @@ namespace Calc
             this.combButton.TabIndex = 4;
             this.combButton.Text = "Combination";
             this.combButton.UseVisualStyleBackColor = true;
-            this.combButton.Click += new System.EventHandler(this.buttonFun_Click);
+            this.combButton.Click += new System.EventHandler(this.buttonFun2_Click);
             // 
             // permuButton
             // 
@@ -1178,6 +1178,7 @@ namespace Calc
             this.buttonPsi.Text = "φ";
             this.buttonPsi.UseVisualStyleBackColor = true;
             this.buttonPsi.Click += new System.EventHandler(this.buttonPsi_Click);
+            this.buttonPsi.Click += new System.EventHandler(this.psiButton_Click);
             // 
             // goldenButton
             // 

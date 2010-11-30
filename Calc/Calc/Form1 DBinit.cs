@@ -22,7 +22,6 @@ namespace Calc
             str += "Fibonacci retracement, and are used in computer\n";
             str += "algorithms such as the Fibonacci search technique\n";
             str += "and the Fibonacci heap data structure.";
-            //Tooltipy.Add(fibonacciButton.Text, str);
             toolTip1.SetToolTip(fibonacciButton, str);
 
             // *** pytagor ***
@@ -43,6 +42,31 @@ namespace Calc
             str += "\n";
             str += "INFO: returns sum of all numbers";
             toolTip1.SetToolTip(sumButton, str);
+
+            // *** abs *** 
+            str = "FORMAT: absolute(A)\n";
+            str += "\t A-> number\n";
+            str += "\n";
+            str += "INFO: returns positive value of A";
+            str += "\n\t ABSOLUTE CALCULATOR";
+            toolTip1.SetToolTip(absButton, str);
+
+            // *** Digits *** 
+            str = "FORMAT: digits(A)\n";
+            str += "\t A-> number\n";
+            str += "\n";
+            str += "INFO: returns sum of all digits of A";
+            toolTip1.SetToolTip(digitButton, str);
+
+            // *** Round *** 
+            str = "FORMAT: round(A, B)\n";
+            str += "\t A-> number\n";
+            str += "\t B-> integer\n";
+            str += "\n";
+            str += "INFO: returns rounded A. A is rounded to decimals\n";
+            str += "whem B is zero. B represents number of digits to be\n";
+            str += "rounded to.";
+            toolTip1.SetToolTip(roundButton, str);
 
             // *** factorial***
             str = "FORMAT: factorial(X)\n";
@@ -69,6 +93,20 @@ namespace Calc
             str += "INFO: returns 1 if the number is prime number,\n otherwise returns 0.";
             toolTip1.SetToolTip(primeButton, str);
 
+            // *** GCD ***
+            str = "FORMAT: gcd(A, B)\n";
+            str += "\t A, B -> integer\n";
+            str += "\n";
+            str += "INFO: Finds the biggest integer which divides both A and B";
+            toolTip1.SetToolTip(gcdButton, str);
+
+            // *** LCM ***
+            str = "FORMAT: lcm(A, B)\n";
+            str += "\t A, B -> integer\n";
+            str += "\n";
+            str += "INFO: Finds the lowest integer which is multiply of both A and B";
+            toolTip1.SetToolTip(lcmButton, str);
+
             // *** random ***
             str = "FORMAT: random()\n";
             str += "\t A -> upper limit\n";
@@ -93,7 +131,7 @@ namespace Calc
             str += "INFO: returns number A binary negated\n";
             toolTip1.SetToolTip(binNegButton, str);
 
-            // *** binRight ***
+            // *** binNeg ***
             str = "FORMAT: right(A,B)\n";
             str += "\t A -> integer\n";
             str += "\t B -> integer\n";
@@ -129,7 +167,21 @@ namespace Calc
             str += "just one of A and B have 1, not both, otherwise 0\n";
             toolTip1.SetToolTip(xorButton, str);
 
-            //TODO: Coel, frac atd
+
+            // *** Ceil ***
+            str = "FORMAT: ceil(A)\n";
+            str += "\t A -> number\n";
+            str += "\n";
+            str += "INFO: returns number rounded up\n";
+            toolTip1.SetToolTip(ceilButton, str);
+
+            // *** Frac ***
+            str = "FORMAT: frac(A)\n";
+            str += "\t A -> number\n";
+            str += "\n";
+            str += "INFO: returns the decimal part of number\n";
+            toolTip1.SetToolTip(fracButton, str);
+
             // *** Floor ***
             str = "FORMAT: floor(A)\n";
             str += "\t A -> number\n";
@@ -198,6 +250,62 @@ namespace Calc
             str += "INFO: returns Arcsine of A.\n";
             str += "Arcsine is reverse function of sine\n";
             toolTip1.SetToolTip(arcsinButton, str);
+
+            // *** hypsin ***
+            str = "FORMAT: hypsin(A)\n";
+            str += "\t A -> number\n";
+            str += "\n";
+            str += "INFO: returns hypsine of A.\n";
+            toolTip1.SetToolTip(hypsinButton, str);
+
+            // *** hypcos ***
+            str = "FORMAT: hypcos(A)\n";
+            str += "\t A -> number\n";
+            str += "\n";
+            str += "INFO: returns hypcosine of A.\n";
+            toolTip1.SetToolTip(hypcosbutton, str);
+
+            // *** hyptg ***
+            str = "FORMAT: hyptg(A)\n";
+            str += "\t A -> number\n";
+            str += "\n";
+            str += "INFO: returns hyptagent of A.\n";
+            toolTip1.SetToolTip(hyptgButton, str);
+
+            // *** hypcotg ***
+            str = "FORMAT: hypcotg(A)\n";
+            str += "\t A -> number\n";
+            str += "\n";
+            str += "INFO: returns hypcotagent of A.\n";
+            toolTip1.SetToolTip(hypcotgButton, str);
+
+            // *** archypsin ***
+            str = "FORMAT: hyparcsin(A)\n";
+            str += "\t A -> number\n";
+            str += "\n";
+            str += "INFO: returns hyparcsine of A.\n";
+            toolTip1.SetToolTip(hyparcsinButton, str);
+
+            // *** archypcos ***
+            str = "FORMAT: hyparcos(A)\n";
+            str += "\t A -> number\n";
+            str += "\n";
+            str += "INFO: returns hyparcosine of A.\n";
+            toolTip1.SetToolTip(hyparccosButton, str);
+
+            // *** archyptg ***
+            str = "FORMAT: hyparctg(A)\n";
+            str += "\t A -> number\n";
+            str += "\n";
+            str += "INFO: returns hyparctangent of A.\n";
+            toolTip1.SetToolTip(hyparctgButton, str);
+
+            // *** archypcotg ***
+            str = "FORMAT: hyparcotg(A)\n";
+            str += "\t A -> number\n";
+            str += "\n";
+            str += "INFO: returns hyparcotangent of A.\n";
+            toolTip1.SetToolTip(hyparccotgButton, str);
 
             // *** arccos ***
             str = "FORMAT: arccos(A)\n";
