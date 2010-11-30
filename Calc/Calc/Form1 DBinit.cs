@@ -424,7 +424,7 @@ namespace Calc
             toolTip1.SetToolTip(eeeButton, str);
 
             // *** ee ***
-            str = "Distance to closest allien planet. Light Years*mass of sun\n";
+            str = "1.41421356\n";
             toolTip1.SetToolTip(sqButton, str);
 
             // *** h ***
