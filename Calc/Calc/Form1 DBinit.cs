@@ -35,7 +35,7 @@ namespace Calc
             str += "right angle) is equal to the sum of the areas of the\n";
             str += "squares whose sides are the two legs (the two sides\n";
             str += "that meet at a right angle).";
-            toolTip1.SetToolTip(pytagorasButton, str);
+            toolTip1.SetToolTip(pythagorasButton, str);
 
             // *** sum *** 
             str = "FORMAT: sum(A,B,C,...)\n";
@@ -79,56 +79,58 @@ namespace Calc
 
 
             // *** binLeft ***
-            str = "FORMAT: A << B\n";
+            str = "FORMAT: left(A,B)\n";
             str += "\t A -> integer\n";
             str += "\t B -> integer\n";
             str += "\n";
-            str += "INFO: returns number A binary moved B-times to left side\n";
+            str += "INFO: returns number A binary moved B-times to the left side\n";
             toolTip1.SetToolTip(binLeftButton, str);
 
             // *** binNeg ***
-            str = "FORMAT: A!\n";
+            str = "FORMAT: neg(A)\n";
             str += "\t A -> integer\n";
             str += "\n";
             str += "INFO: returns number A binary negated\n";
-            toolTip1.SetToolTip(binLeftButton, str);
+            toolTip1.SetToolTip(binNegButton, str);
 
-            // *** binNeg ***
-            str = "FORMAT: A!\n";
+            // *** binRight ***
+            str = "FORMAT: right(A,B)\n";
             str += "\t A -> integer\n";
+            str += "\t B -> integer\n";
             str += "\n";
-            str += "INFO: returns number thats in binary have 0 changed\n";
-            str += "to 1 and 1 changed to 0\n";
+            str += "INFO: returns number A binary moved B-times to the right side\n";
             toolTip1.SetToolTip(binRightButton, str);
 
             // *** And ***
-            str = "FORMAT: A and B\n";
+            str = "FORMAT: and(A,B)\n";
             str += "\t A -> integer\n";
             str += "\t B -> integer\n";
             str += "\n";
-            str += "INFO: returns number which in binary have 1 where\n";
-            str += "A and B had one, otherwise 0\n";
+            str += "INFO: binary and operation returns number which\n";
+            str += " in binary have 1 where both A and B\n";
+            str += " have one, otherwise 0\n";
             toolTip1.SetToolTip(andButton, str);
 
             // *** Or ***
-            str = "FORMAT: A or B\n";
+            str = "FORMAT: or(A,B)\n";
             str += "\t A -> integer\n";
             str += "\t B -> integer\n";
             str += "\n";
-            str += "INFO: returns number which in binary have 1 where\n";
-            str += "A, B or Both had 1, otherwise 0\n";
+            str += "INFO: binary or operation returns number which in binary have 1 where\n";
+            str += "at least one of A or B have 1, otherwise 0\n";
             toolTip1.SetToolTip(orButton, str);
 
             // *** Xor ***
-            str = "FORMAT: A or B\n";
+            str = "FORMAT: xor(A,B)\n";
             str += "\t A -> integer\n";
             str += "\t B -> integer\n";
             str += "\n";
-            str += "INFO: returns number which in binary have 1 where\n";
-            str += "A or B had 1,not both, otherwise 0\n";
+            str += "INFO: binary xor operation returns number which in binary have 1 where\n";
+            str += "just one of A and B have 1, not both, otherwise 0\n";
             toolTip1.SetToolTip(xorButton, str);
+
             //TODO: Coel, frac atd
-            // *** Flor ***
+            // *** Floor ***
             str = "FORMAT: floor(A)\n";
             str += "\t A -> number\n";
             str += "\n";
@@ -140,8 +142,22 @@ namespace Calc
             str += "\t A -> integer\n";
             str += "\t B -> integer\n";
             str += "\n";
-            str += "INFO: returns rest after dividing A by B\n"; //CHECK!!!!!!!!!!!!!!!!!!!!
+            str += "INFO: returns rest after division of A by B\n"; //CHECK!!!!!!!!!!!!!!!!!!!!
             toolTip1.SetToolTip(modButton, str);
+
+            //*** Frac ***
+            str = "FORMAT: floor(A)\n";
+            str += "\t A -> number\n";
+            str += "\n";
+            str += "INFO: returns part of number A after decimal point\n";
+            toolTip1.SetToolTip(fracButton, str);
+
+            // *** Ceil ***
+            str = "FORMAT: ceil(A)\n";
+            str += "\t A -> integer\n";
+            str += "\n";
+            str += "INFO: returns integer rounded up\n";
+            toolTip1.SetToolTip(ceilButton, str);
 
             // *** sin ***
             str = "FORMAT: sin(A)\n";
@@ -180,7 +196,7 @@ namespace Calc
             str += "\t A -> number\n";
             str += "\n";
             str += "INFO: returns Arcsine of A.\n";
-            str += "Arcsine is reverse function os sine\n";
+            str += "Arcsine is reverse function of sine\n";
             toolTip1.SetToolTip(arcsinButton, str);
 
             // *** arccos ***
@@ -188,7 +204,7 @@ namespace Calc
             str += "\t A -> number\n";
             str += "\n";
             str += "INFO: returns Arccosine of A.\n";
-            str += "Arccosine is reverse function os cosine\n";
+            str += "Arccosine is reverse function of cosine\n";
             toolTip1.SetToolTip(arcosButton, str);
 
             // *** arctg ***
@@ -196,16 +212,78 @@ namespace Calc
             str += "\t A -> number\n";
             str += "\n";
             str += "INFO: returns Arctangent of A.\n";
-            str += "Arctangent is reverse function os tangent\n";
+            str += "Arctangent is reverse function of tangent\n";
             toolTip1.SetToolTip(arctgButton, str);
 
             // *** arccotg ***
-            str = "FORMAT: arctg(A)\n";
+            str = "FORMAT: arccotg(A)\n";
             str += "\t A -> number\n";
             str += "\n";
             str += "INFO: returns Arccotangent of A.\n";
-            str += "Arcotangent is reverse function os cotangent\n";
+            str += "Arcotangent is reverse function of cotangent\n";
             toolTip1.SetToolTip(arcotgButton, str);
+
+            //TODO: hyper voloviny
+            // *** hypsin ***
+            str = "FORMAT: hypsin(A)\n";
+            str += "\t A -> radians\n";
+            str += "\n";
+            str += "INFO: returns hyperbolic sine of A.\n";
+            str += "Hymerbolic sine is trigonometric function of angle\n";
+            toolTip1.SetToolTip(hypsinButton, str);
+
+            // *** hypcos ***
+            str = "FORMAT: hypcos(A)\n";
+            str += "\t A -> radians\n";
+            str += "\n";
+            str += "INFO: returns hyperbolic cosine of A. \n";
+            str += "Hyperbolic cosine is trigonometric function of angle\n";
+            toolTip1.SetToolTip(hypcosbutton, str);
+
+            // *** hyptg ***
+            str = "FORMAT: hyptg(A)\n";
+            str += "\t A -> radians\n";
+            str += "\n";
+            str += "INFO: returns Hyperbolic tangent of A.\n";
+            str += "Hyperbolic tangent have infinite values in 1/2PI + k*PI where k is integer \n";
+            toolTip1.SetToolTip(hyptgButton, str);
+
+            // *** hypcotg ***
+            str = "FORMAT: hypcotg(A)\n";
+            str += "\t A -> radians\n";
+            str += "\n";
+            str += "INFO: returns hyperbolic cotangent of A.\n";
+            str += "Hyperbolic cotangent is trigonometric function of angle\n";
+            toolTip1.SetToolTip(hypcotgButton, str);
+
+            // *** hyparcsin ***
+            str = "FORMAT: hyparcsin(A)\n";
+            str += "\t A -> number\n";
+            str += "\n";
+            str += "INFO: returns hyperbolic arcsine of A.\n";
+            toolTip1.SetToolTip(hyparcsinButton, str);
+
+            // *** hyparccos ***
+            str = "FORMAT: hyparccos(A)\n";
+            str += "\t A -> number\n";
+            str += "\n";
+            str += "INFO: returns hyperbolic arccosine of A.\n";
+            toolTip1.SetToolTip(hyparccosButton, str);
+
+            // *** hyparctg ***
+            str = "FORMAT: hyparctg(A)\n";
+            str += "\t A -> number\n";
+            str += "\n";
+            str += "INFO: returns hyperbolic arctangent of A.\n";
+            toolTip1.SetToolTip(hyparctgButton, str);
+
+            // *** hyparccotg ***
+            str = "FORMAT: hyparccotg(A)\n";
+            str += "\t A -> number\n";
+            str += "\n";
+            str += "INFO: returns hyperbolic arccotangent of A.\n";
+            toolTip1.SetToolTip(hyparccotgButton, str);
+
 
             // *** power ***
             str = "FORMAT: power(A, B)\n";
@@ -213,16 +291,16 @@ namespace Calc
             str += "\n";
             str += "INFO: returns number A powered by B\n";
             toolTip1.SetToolTip(powerButton, str);
-            //TODO: hyper voloviny
+            
             // *** exp ***
             str = "FORMAT: exp(A)\n";
             str += "\t A -> number\n";
             str += "\n";
-            str += "INFO: returns number A powered by 2\n";
+            str += "INFO: returns number e powered by A\n";
             toolTip1.SetToolTip(expButton, str);
 
-            // *** 2nd root ***
-            str = "FORMAT: 2throot(A)\n";
+            // *** Root ***
+            str = "FORMAT: root(A)\n";
             str += "\t A -> positive number \n";
             str += "\n";
             str += "INFO: returns square root of A\n";
@@ -253,7 +331,7 @@ namespace Calc
             str = "FORMAT: log(A, B)\n";
             str += "\t A -> positive number \n";
             str += "\n";
-            str += "INFO: returns  logarithm with base B of A\n";
+            str += "INFO: returns  logarithm with base A of B\n";
             toolTip1.SetToolTip(logButton, str);
 
             // *** permutation ***
@@ -264,14 +342,14 @@ namespace Calc
             toolTip1.SetToolTip(permuButton, str);
 
             // *** combination ***
-            str = "FORMAT: permutation(A, B)\n";
+            str = "FORMAT: combination(A, B)\n";
             str += "\t A, B -> positive integer \n";
             str += "\n";
             str += "INFO: returns A above B\n";
             toolTip1.SetToolTip(combButton, str);
 
             // *** variation ***
-            str = "FORMAT: permutation(A, B)\n";
+            str = "FORMAT: variation(A, B)\n";
             str += "\t A, B -> positive integer \n";
             str += "\n";
             str += "INFO: returns variation of B items from A items\n";
@@ -299,31 +377,31 @@ namespace Calc
             toolTip1.SetToolTip(dispButton, str);
 
             // *** c ***
-            str = "Speed of Light. M/s\n";
+            str = "Speed of Light. [m/s]\n";
             toolTip1.SetToolTip(cButton, str);
 
             // *** mp ***
-            str = "Proton mass. Kg\n";
+            str = "Proton mass. [Kg]";
             toolTip1.SetToolTip(mpButton, str);
 
             // *** me ***
-            str = "Electron mass. Kg\n";
+            str = "Electron mass [Kg]\n";
             toolTip1.SetToolTip(meButton, str);
 
-            // *** ee ***
-            str = "Elementary charge. Coulombs\n";
+            // *** ec ***
+            str = "Elementary charge. [C]\n";
             toolTip1.SetToolTip(eeeButton, str);
 
             // *** ee ***
-            str = "Distance to closest allien planet. Light Years*mass of sun\n";
+            str = "Suqare root of 2\n";
             toolTip1.SetToolTip(sqButton, str);
 
             // *** h ***
-            str = "Planc Constant. \n";
+            str = "Planc Constant [J*s] \n";
             toolTip1.SetToolTip(hButton, str);
 
             // *** e ***
-            str = "Base of natural logaritm. \n";
+            str = "Euler's number. \n";
             toolTip1.SetToolTip(eButton, str);
 
             // *** pi ***
@@ -331,12 +409,20 @@ namespace Calc
             toolTip1.SetToolTip(piButton, str);
 
             // *** g ***
-            str = "gravitational acceleration m/s/s \n";
+            str = "Acceleration of gravity [m/s^2] \n";
             toolTip1.SetToolTip(ggButton, str);
 
             // *** G ***
-            str = "gravitational constant m/kg \n";
+            str = "Newtonian constant of gravitation [m^3/(kg^1*s^2)] \n";
             toolTip1.SetToolTip(GButton, str);
+
+            // *** Golden ratio ***
+            str = "Golden ratio \n";
+            toolTip1.SetToolTip(goldenButton, str);
+
+            // *** PSI ***
+            str = "Pound-force per square inch \n";
+            toolTip1.SetToolTip(buttonPsi, str);
 
 
             // *** Plot ***
@@ -352,6 +438,165 @@ namespace Calc
 
                 }
             }
+
+            // *** Absolute ***
+            str = "FORMAT: absolute(A)\n";
+            str += "\t A -> number \n";
+            str += "\n";
+            str += "INFO: returns absolute value of a number\n";
+            toolTip1.SetToolTip(absButton, str);
+
+            // *** GCD ***
+            str = "FORMAT: gcd(A,B)\n";
+            str += "\t A -> integer \n";
+            str += "\t B -> integer \n";
+            str += "\n";
+            str += "INFO: Greatest common divisor of numbers A and B\n";
+            toolTip1.SetToolTip(gcdButton, str);
+
+            // *** Pythagoras ***
+            str = "FORMAT: pythagoras(A,B)\n";
+            str += "\t A -> number \n";
+            str += "\t B -> number \n";
+            str += "\n";
+            str += "INFO: Lenght of vector [A,B]\n";
+            toolTip1.SetToolTip(pythagorasButton, str);
+
+            // *** Digits Sum ***
+            str = "FORMAT: digitssum(A)\n";
+            str += "\t A -> integer \n";
+            str += "\n";
+            str += "INFO: Sum of digits in number A with base 10\n";
+            toolTip1.SetToolTip(digitButton, str);
+
+            // *** LCM ***
+            str = "FORMAT: lcm(A,B)\n";
+            str += "\t A -> integer \n";
+            str += "\t B -> integer \n";
+            str += "\n";
+            str += "INFO: Lowest common denominator of numbers A and B\n";
+            toolTip1.SetToolTip(lcmButton, str);
+
+            // *** Random ***
+            str = "FORMAT: random()\n";
+            str += "\n";
+            str += "INFO: Random number\n";
+            toolTip1.SetToolTip(randomButton, str);
+
+            // *** Factorial ***
+            str = "FORMAT: factorial(A)\n";
+            str += "\t A -> integer \n";
+            str += "\n";
+            str += "INFO: Factorial of A\n";
+            toolTip1.SetToolTip(factorialButton, str);
+
+            // *** Round ***
+            str = "FORMAT: round(A,B)\n";
+            str += "\t A -> number \n";
+            str += "\t B -> integer \n";
+            str += "\n";
+            str += "INFO: Returns numer A rounded for B digits after decimal point\n";
+            toolTip1.SetToolTip(roundButton, str);
+
+            // *** Fibonacci ***
+            str = "FORMAT: fibonacci(A,B)\n";
+            str += "\t A -> integer \n";
+            str += "\n";
+            str += "INFO: Returnd A-th member of Fibonacci number\n";
+            toolTip1.SetToolTip(fibonacciButton, str);
+
+            // *** Prime ***
+            str = "FORMAT: prime(A)\n";
+            str += "\t A -> integer \n";
+            str += "\n";
+            str += "INFO: Returns 1 if A is a prime number, otherwise 0\n";
+            toolTip1.SetToolTip(primeButton, str);
+
+            // *** SUM ***
+            str = "FORMAT: sum(A,B,...)\n";
+            str += "\t A -> integer \n";
+            str += "\t B -> integer \n";
+            str += "\n";
+            str += "INFO: Returns sum of arguments\n";
+            toolTip1.SetToolTip(sumButton, str);
+
+            // *** toYards ***
+            str = "FORMAT: toyards(A)\n";
+            str += "\t A -> number \n";
+            str += "\n";
+            str += "INFO: Conversion of A metres to yards \n";
+            toolTip1.SetToolTip(metYardbutton, str);
+
+            // *** toMetres ***
+            str = "FORMAT: tometer(A)\n";
+            str += "\t A -> number \n";
+            str += "\n";
+            str += "INFO: Conversion of A yards to metres \n";
+            toolTip1.SetToolTip(yardMetButton, str);
+
+            // *** toRadian ***
+            str = "FORMAT: toradian(A)\n";
+            str += "\t A -> number \n";
+            str += "\n";
+            str += "INFO: Conversion of A radians to degrees \n";
+            toolTip1.SetToolTip(degRadButton, str);
+
+            // *** toDegrees ***
+            str = "FORMAT: todegree(A)\n";
+            str += "\t A -> number \n";
+            str += "\n";
+            str += "INFO: Conversion of A degrees to radians \n";
+            toolTip1.SetToolTip(radDegButton, str);
+
+            // *** toEuro ***
+            str = "FORMAT: toeuro(A)\n";
+            str += "\t A -> number \n";
+            str += "\n";
+            str += "INFO: Conversion of A euoro to dolars \n";
+            toolTip1.SetToolTip(usdEurButton, str);
+
+            // *** toDolars ***
+            str = "FORMAT: todolar(A)\n";
+            str += "\t A -> number \n";
+            str += "\n";
+            str += "INFO: Conversion of A dolars to euro \n";
+            toolTip1.SetToolTip(eurUsdButton, str);
+
+            // *** toPound ***
+            str = "FORMAT: topound(A)\n";
+            str += "\t A -> number \n";
+            str += "\n";
+            str += "INFO: Conversion of A kilograms to poundss \n";
+            toolTip1.SetToolTip(kgLbbutton, str);
+
+            // *** toKilogram ***
+            str = "FORMAT: tokilogram(A)\n";
+            str += "\t A -> number \n";
+            str += "\n";
+            str += "INFO: Conversion of A pounds to kilograms \n";
+            toolTip1.SetToolTip(lbKgButton, str);
+
+            // *** toCelsius ***
+            str = "FORMAT: tocelsius(A)\n";
+            str += "\t A -> number \n";
+            str += "\n";
+            str += "INFO: Conversion of A Celsius degrees to Kelvin degrees\n";
+            toolTip1.SetToolTip(kelCelbutton, str);
+
+            // *** toKelvin ***
+            str = "FORMAT: tokelvin(A)\n";
+            str += "\t A -> number \n";
+            str += "\n";
+            str += "INFO: Conversion of A Kelvin degrees to Celsius degrees \n";
+            toolTip1.SetToolTip(celKelButton, str);
+
+            // *** Histroy up ***
+            str = "Previews command in history of used commands\n";
+            toolTip1.SetToolTip(histUpButton, str);
+
+            // *** History down ***
+            str = "Next command in history of used commands\n";
+            toolTip1.SetToolTip(histDownButton, str);
         }
     }
 }

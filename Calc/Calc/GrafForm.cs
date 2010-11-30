@@ -151,7 +151,7 @@ namespace Calc
                 {
                     values[i] = float.Parse(mainWindow.bcOut.ReadLine().Replace(".", ","));//the last line won't be in result
                 }
-                catch (FormatException err) { }
+                catch (FormatException err) { values[i] = 0; }
             }
             mainWindow.bcOut.ReadLine();
             return values;

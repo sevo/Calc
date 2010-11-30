@@ -37,7 +37,7 @@ namespace Calc
             this.lcmButton = new System.Windows.Forms.Button();
             this.buttonPlot = new System.Windows.Forms.Button();
             this.fibonacciButton = new System.Windows.Forms.Button();
-            this.pytagorasButton = new System.Windows.Forms.Button();
+            this.pythagorasButton = new System.Windows.Forms.Button();
             this.randomButton = new System.Windows.Forms.Button();
             this.factorialButton = new System.Windows.Forms.Button();
             this.primeButton = new System.Windows.Forms.Button();
@@ -57,10 +57,10 @@ namespace Calc
             this.ceilButton = new System.Windows.Forms.Button();
             this.binNegButton = new System.Windows.Forms.Button();
             this.TrigonometricTab = new System.Windows.Forms.TabPage();
-            this.archypcothButton = new System.Windows.Forms.Button();
-            this.archyptgButton = new System.Windows.Forms.Button();
-            this.archypcosButton = new System.Windows.Forms.Button();
-            this.archypsinButton = new System.Windows.Forms.Button();
+            this.hyparccotgButton = new System.Windows.Forms.Button();
+            this.hyparctgButton = new System.Windows.Forms.Button();
+            this.hyparccosButton = new System.Windows.Forms.Button();
+            this.hyparcsinButton = new System.Windows.Forms.Button();
             this.hypcotgButton = new System.Windows.Forms.Button();
             this.hyptgButton = new System.Windows.Forms.Button();
             this.hypcosbutton = new System.Windows.Forms.Button();
@@ -91,7 +91,7 @@ namespace Calc
             this.ConversionTab = new System.Windows.Forms.TabPage();
             this.kgLbbutton = new System.Windows.Forms.Button();
             this.lbKgButton = new System.Windows.Forms.Button();
-            this.button46 = new System.Windows.Forms.Button();
+            this.eurUsdButton = new System.Windows.Forms.Button();
             this.usdEurButton = new System.Windows.Forms.Button();
             this.kelCelbutton = new System.Windows.Forms.Button();
             this.celKelButton = new System.Windows.Forms.Button();
@@ -251,7 +251,7 @@ namespace Calc
             this.GeneralTab.Controls.Add(this.lcmButton);
             this.GeneralTab.Controls.Add(this.buttonPlot);
             this.GeneralTab.Controls.Add(this.fibonacciButton);
-            this.GeneralTab.Controls.Add(this.pytagorasButton);
+            this.GeneralTab.Controls.Add(this.pythagorasButton);
             this.GeneralTab.Controls.Add(this.randomButton);
             this.GeneralTab.Controls.Add(this.factorialButton);
             this.GeneralTab.Controls.Add(this.primeButton);
@@ -273,7 +273,7 @@ namespace Calc
             this.gcdButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.gcdButton.Location = new System.Drawing.Point(157, 49);
             this.gcdButton.Name = "gcdButton";
-            this.gcdButton.Size = new System.Drawing.Size(90, 35);
+            this.gcdButton.Size = new System.Drawing.Size(97, 35);
             this.gcdButton.TabIndex = 42;
             this.gcdButton.Text = "GCD";
             this.gcdButton.UseVisualStyleBackColor = true;
@@ -284,7 +284,7 @@ namespace Calc
             this.lcmButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lcmButton.Location = new System.Drawing.Point(157, 131);
             this.lcmButton.Name = "lcmButton";
-            this.lcmButton.Size = new System.Drawing.Size(90, 35);
+            this.lcmButton.Size = new System.Drawing.Size(97, 35);
             this.lcmButton.TabIndex = 41;
             this.lcmButton.Text = "LCM";
             this.lcmButton.UseVisualStyleBackColor = true;
@@ -295,7 +295,7 @@ namespace Calc
             this.buttonPlot.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.buttonPlot.Location = new System.Drawing.Point(157, 219);
             this.buttonPlot.Name = "buttonPlot";
-            this.buttonPlot.Size = new System.Drawing.Size(90, 35);
+            this.buttonPlot.Size = new System.Drawing.Size(97, 35);
             this.buttonPlot.TabIndex = 13;
             this.buttonPlot.Text = "Plot";
             this.buttonPlot.UseVisualStyleBackColor = true;
@@ -306,29 +306,29 @@ namespace Calc
             this.fibonacciButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.fibonacciButton.Location = new System.Drawing.Point(37, 304);
             this.fibonacciButton.Name = "fibonacciButton";
-            this.fibonacciButton.Size = new System.Drawing.Size(90, 35);
+            this.fibonacciButton.Size = new System.Drawing.Size(97, 35);
             this.fibonacciButton.TabIndex = 12;
             this.fibonacciButton.Text = "Fibonacci";
             this.fibonacciButton.UseVisualStyleBackColor = true;
             this.fibonacciButton.Click += new System.EventHandler(this.buttonFun_Click);
             // 
-            // pytagorasButton
+            // pythagorasButton
             // 
-            this.pytagorasButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.pytagorasButton.Location = new System.Drawing.Point(277, 49);
-            this.pytagorasButton.Name = "pytagorasButton";
-            this.pytagorasButton.Size = new System.Drawing.Size(90, 35);
-            this.pytagorasButton.TabIndex = 11;
-            this.pytagorasButton.Text = "Pytagoras";
-            this.pytagorasButton.UseVisualStyleBackColor = true;
-            this.pytagorasButton.Click += new System.EventHandler(this.buttonFun_Click);
+            this.pythagorasButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.pythagorasButton.Location = new System.Drawing.Point(277, 49);
+            this.pythagorasButton.Name = "pythagorasButton";
+            this.pythagorasButton.Size = new System.Drawing.Size(97, 35);
+            this.pythagorasButton.TabIndex = 11;
+            this.pythagorasButton.Text = "Pythagoras";
+            this.pythagorasButton.UseVisualStyleBackColor = true;
+            this.pythagorasButton.Click += new System.EventHandler(this.buttonFun_Click);
             // 
             // randomButton
             // 
             this.randomButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.randomButton.Location = new System.Drawing.Point(277, 134);
             this.randomButton.Name = "randomButton";
-            this.randomButton.Size = new System.Drawing.Size(90, 35);
+            this.randomButton.Size = new System.Drawing.Size(97, 35);
             this.randomButton.TabIndex = 9;
             this.randomButton.Text = "Random";
             this.randomButton.UseVisualStyleBackColor = true;
@@ -339,7 +339,7 @@ namespace Calc
             this.factorialButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.factorialButton.Location = new System.Drawing.Point(37, 219);
             this.factorialButton.Name = "factorialButton";
-            this.factorialButton.Size = new System.Drawing.Size(90, 35);
+            this.factorialButton.Size = new System.Drawing.Size(97, 35);
             this.factorialButton.TabIndex = 8;
             this.factorialButton.Text = "Factorial";
             this.factorialButton.UseVisualStyleBackColor = true;
@@ -350,7 +350,7 @@ namespace Calc
             this.primeButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.primeButton.Location = new System.Drawing.Point(157, 304);
             this.primeButton.Name = "primeButton";
-            this.primeButton.Size = new System.Drawing.Size(90, 35);
+            this.primeButton.Size = new System.Drawing.Size(97, 35);
             this.primeButton.TabIndex = 7;
             this.primeButton.Text = "Prime";
             this.primeButton.UseVisualStyleBackColor = true;
@@ -361,7 +361,7 @@ namespace Calc
             this.sumButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.sumButton.Location = new System.Drawing.Point(277, 304);
             this.sumButton.Name = "sumButton";
-            this.sumButton.Size = new System.Drawing.Size(90, 35);
+            this.sumButton.Size = new System.Drawing.Size(97, 35);
             this.sumButton.TabIndex = 6;
             this.sumButton.Text = "Sum";
             this.sumButton.UseVisualStyleBackColor = true;
@@ -372,7 +372,7 @@ namespace Calc
             this.digitButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.digitButton.Location = new System.Drawing.Point(37, 134);
             this.digitButton.Name = "digitButton";
-            this.digitButton.Size = new System.Drawing.Size(90, 35);
+            this.digitButton.Size = new System.Drawing.Size(97, 35);
             this.digitButton.TabIndex = 5;
             this.digitButton.Text = "Digits Sum";
             this.digitButton.UseVisualStyleBackColor = true;
@@ -383,7 +383,7 @@ namespace Calc
             this.roundButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.roundButton.Location = new System.Drawing.Point(277, 219);
             this.roundButton.Name = "roundButton";
-            this.roundButton.Size = new System.Drawing.Size(90, 35);
+            this.roundButton.Size = new System.Drawing.Size(97, 35);
             this.roundButton.TabIndex = 4;
             this.roundButton.Text = "Round";
             this.roundButton.UseVisualStyleBackColor = true;
@@ -394,7 +394,7 @@ namespace Calc
             this.absButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.absButton.Location = new System.Drawing.Point(37, 49);
             this.absButton.Name = "absButton";
-            this.absButton.Size = new System.Drawing.Size(90, 35);
+            this.absButton.Size = new System.Drawing.Size(97, 35);
             this.absButton.TabIndex = 2;
             this.absButton.Text = "Absolute";
             this.absButton.UseVisualStyleBackColor = true;
@@ -482,7 +482,7 @@ namespace Calc
             this.binRightButton.Name = "binRightButton";
             this.binRightButton.Size = new System.Drawing.Size(90, 35);
             this.binRightButton.TabIndex = 8;
-            this.binRightButton.Text = ">>";
+            this.binRightButton.Text = "Right";
             this.binRightButton.UseVisualStyleBackColor = true;
             this.binRightButton.Click += new System.EventHandler(this.buttonNum_Click);
             // 
@@ -493,7 +493,7 @@ namespace Calc
             this.binLeftButton.Name = "binLeftButton";
             this.binLeftButton.Size = new System.Drawing.Size(90, 35);
             this.binLeftButton.TabIndex = 7;
-            this.binLeftButton.Text = "<<";
+            this.binLeftButton.Text = "Left";
             this.binLeftButton.UseVisualStyleBackColor = true;
             this.binLeftButton.Click += new System.EventHandler(this.buttonNum_Click);
             // 
@@ -526,16 +526,16 @@ namespace Calc
             this.binNegButton.Name = "binNegButton";
             this.binNegButton.Size = new System.Drawing.Size(90, 35);
             this.binNegButton.TabIndex = 4;
-            this.binNegButton.Text = "!";
+            this.binNegButton.Text = "Neg";
             this.binNegButton.UseVisualStyleBackColor = true;
             this.binNegButton.Click += new System.EventHandler(this.buttonNum_Click);
             // 
             // TrigonometricTab
             // 
-            this.TrigonometricTab.Controls.Add(this.archypcothButton);
-            this.TrigonometricTab.Controls.Add(this.archyptgButton);
-            this.TrigonometricTab.Controls.Add(this.archypcosButton);
-            this.TrigonometricTab.Controls.Add(this.archypsinButton);
+            this.TrigonometricTab.Controls.Add(this.hyparccotgButton);
+            this.TrigonometricTab.Controls.Add(this.hyparctgButton);
+            this.TrigonometricTab.Controls.Add(this.hyparccosButton);
+            this.TrigonometricTab.Controls.Add(this.hyparcsinButton);
             this.TrigonometricTab.Controls.Add(this.hypcotgButton);
             this.TrigonometricTab.Controls.Add(this.hyptgButton);
             this.TrigonometricTab.Controls.Add(this.hypcosbutton);
@@ -556,56 +556,56 @@ namespace Calc
             this.TrigonometricTab.Text = "Trigonometric";
             this.TrigonometricTab.UseVisualStyleBackColor = true;
             // 
-            // archypcothButton
+            // hyparccotgButton
             // 
-            this.archypcothButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.archypcothButton.Location = new System.Drawing.Point(314, 321);
-            this.archypcothButton.Name = "archypcothButton";
-            this.archypcothButton.Size = new System.Drawing.Size(90, 35);
-            this.archypcothButton.TabIndex = 20;
-            this.archypcothButton.Text = "Hyparcotg";
-            this.archypcothButton.UseVisualStyleBackColor = true;
-            this.archypcothButton.Click += new System.EventHandler(this.buttonFun_Click);
+            this.hyparccotgButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.hyparccotgButton.Location = new System.Drawing.Point(308, 321);
+            this.hyparccotgButton.Name = "hyparccotgButton";
+            this.hyparccotgButton.Size = new System.Drawing.Size(101, 35);
+            this.hyparccotgButton.TabIndex = 20;
+            this.hyparccotgButton.Text = "Hyparccotg";
+            this.hyparccotgButton.UseVisualStyleBackColor = true;
+            this.hyparccotgButton.Click += new System.EventHandler(this.buttonFun_Click);
             // 
-            // archyptgButton
+            // hyparctgButton
             // 
-            this.archyptgButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.archyptgButton.Location = new System.Drawing.Point(214, 321);
-            this.archyptgButton.Name = "archyptgButton";
-            this.archyptgButton.Size = new System.Drawing.Size(90, 35);
-            this.archyptgButton.TabIndex = 19;
-            this.archyptgButton.Text = "Hyparctg";
-            this.archyptgButton.UseVisualStyleBackColor = true;
-            this.archyptgButton.Click += new System.EventHandler(this.buttonFun_Click);
+            this.hyparctgButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.hyparctgButton.Location = new System.Drawing.Point(208, 321);
+            this.hyparctgButton.Name = "hyparctgButton";
+            this.hyparctgButton.Size = new System.Drawing.Size(101, 35);
+            this.hyparctgButton.TabIndex = 19;
+            this.hyparctgButton.Text = "Hyparctg";
+            this.hyparctgButton.UseVisualStyleBackColor = true;
+            this.hyparctgButton.Click += new System.EventHandler(this.buttonFun_Click);
             // 
-            // archypcosButton
+            // hyparccosButton
             // 
-            this.archypcosButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.archypcosButton.Location = new System.Drawing.Point(114, 321);
-            this.archypcosButton.Name = "archypcosButton";
-            this.archypcosButton.Size = new System.Drawing.Size(90, 35);
-            this.archypcosButton.TabIndex = 18;
-            this.archypcosButton.Text = "Hyparcos";
-            this.archypcosButton.UseVisualStyleBackColor = true;
-            this.archypcosButton.Click += new System.EventHandler(this.buttonFun_Click);
+            this.hyparccosButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.hyparccosButton.Location = new System.Drawing.Point(108, 321);
+            this.hyparccosButton.Name = "hyparccosButton";
+            this.hyparccosButton.Size = new System.Drawing.Size(101, 35);
+            this.hyparccosButton.TabIndex = 18;
+            this.hyparccosButton.Text = "Hyparccos";
+            this.hyparccosButton.UseVisualStyleBackColor = true;
+            this.hyparccosButton.Click += new System.EventHandler(this.buttonFun_Click);
             // 
-            // archypsinButton
+            // hyparcsinButton
             // 
-            this.archypsinButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.archypsinButton.Location = new System.Drawing.Point(14, 321);
-            this.archypsinButton.Name = "archypsinButton";
-            this.archypsinButton.Size = new System.Drawing.Size(90, 35);
-            this.archypsinButton.TabIndex = 17;
-            this.archypsinButton.Text = "Hyparcsin";
-            this.archypsinButton.UseVisualStyleBackColor = true;
-            this.archypsinButton.Click += new System.EventHandler(this.buttonFun_Click);
+            this.hyparcsinButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.hyparcsinButton.Location = new System.Drawing.Point(8, 321);
+            this.hyparcsinButton.Name = "hyparcsinButton";
+            this.hyparcsinButton.Size = new System.Drawing.Size(101, 35);
+            this.hyparcsinButton.TabIndex = 17;
+            this.hyparcsinButton.Text = "Hyparcsin";
+            this.hyparcsinButton.UseVisualStyleBackColor = true;
+            this.hyparcsinButton.Click += new System.EventHandler(this.buttonFun_Click);
             // 
             // hypcotgButton
             // 
             this.hypcotgButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.hypcotgButton.Location = new System.Drawing.Point(314, 231);
+            this.hypcotgButton.Location = new System.Drawing.Point(308, 231);
             this.hypcotgButton.Name = "hypcotgButton";
-            this.hypcotgButton.Size = new System.Drawing.Size(90, 35);
+            this.hypcotgButton.Size = new System.Drawing.Size(101, 35);
             this.hypcotgButton.TabIndex = 16;
             this.hypcotgButton.Text = "Hypcotg";
             this.hypcotgButton.UseVisualStyleBackColor = true;
@@ -614,9 +614,9 @@ namespace Calc
             // hyptgButton
             // 
             this.hyptgButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.hyptgButton.Location = new System.Drawing.Point(214, 231);
+            this.hyptgButton.Location = new System.Drawing.Point(208, 231);
             this.hyptgButton.Name = "hyptgButton";
-            this.hyptgButton.Size = new System.Drawing.Size(90, 35);
+            this.hyptgButton.Size = new System.Drawing.Size(101, 35);
             this.hyptgButton.TabIndex = 15;
             this.hyptgButton.Text = "Hyptg";
             this.hyptgButton.UseVisualStyleBackColor = true;
@@ -625,9 +625,9 @@ namespace Calc
             // hypcosbutton
             // 
             this.hypcosbutton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.hypcosbutton.Location = new System.Drawing.Point(114, 231);
+            this.hypcosbutton.Location = new System.Drawing.Point(108, 231);
             this.hypcosbutton.Name = "hypcosbutton";
-            this.hypcosbutton.Size = new System.Drawing.Size(90, 35);
+            this.hypcosbutton.Size = new System.Drawing.Size(101, 35);
             this.hypcosbutton.TabIndex = 14;
             this.hypcosbutton.Text = "Hypcos";
             this.hypcosbutton.UseVisualStyleBackColor = true;
@@ -636,9 +636,9 @@ namespace Calc
             // hypsinButton
             // 
             this.hypsinButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.hypsinButton.Location = new System.Drawing.Point(14, 231);
+            this.hypsinButton.Location = new System.Drawing.Point(8, 231);
             this.hypsinButton.Name = "hypsinButton";
-            this.hypsinButton.Size = new System.Drawing.Size(90, 35);
+            this.hypsinButton.Size = new System.Drawing.Size(101, 35);
             this.hypsinButton.TabIndex = 13;
             this.hypsinButton.Text = "Hypsin";
             this.hypsinButton.UseVisualStyleBackColor = true;
@@ -647,20 +647,20 @@ namespace Calc
             // arcotgButton
             // 
             this.arcotgButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.arcotgButton.Location = new System.Drawing.Point(314, 142);
+            this.arcotgButton.Location = new System.Drawing.Point(308, 142);
             this.arcotgButton.Name = "arcotgButton";
-            this.arcotgButton.Size = new System.Drawing.Size(90, 35);
+            this.arcotgButton.Size = new System.Drawing.Size(101, 35);
             this.arcotgButton.TabIndex = 12;
-            this.arcotgButton.Text = "Arcotg";
+            this.arcotgButton.Text = "Arccotg";
             this.arcotgButton.UseVisualStyleBackColor = true;
             this.arcotgButton.Click += new System.EventHandler(this.buttonFun_Click);
             // 
             // arctgButton
             // 
             this.arctgButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.arctgButton.Location = new System.Drawing.Point(214, 141);
+            this.arctgButton.Location = new System.Drawing.Point(208, 141);
             this.arctgButton.Name = "arctgButton";
-            this.arctgButton.Size = new System.Drawing.Size(90, 35);
+            this.arctgButton.Size = new System.Drawing.Size(101, 35);
             this.arctgButton.TabIndex = 11;
             this.arctgButton.Text = "Arctg";
             this.arctgButton.UseVisualStyleBackColor = true;
@@ -669,20 +669,20 @@ namespace Calc
             // arcosButton
             // 
             this.arcosButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.arcosButton.Location = new System.Drawing.Point(114, 141);
+            this.arcosButton.Location = new System.Drawing.Point(108, 141);
             this.arcosButton.Name = "arcosButton";
-            this.arcosButton.Size = new System.Drawing.Size(90, 35);
+            this.arcosButton.Size = new System.Drawing.Size(101, 35);
             this.arcosButton.TabIndex = 10;
-            this.arcosButton.Text = "Arcos";
+            this.arcosButton.Text = "Arccos";
             this.arcosButton.UseVisualStyleBackColor = true;
             this.arcosButton.Click += new System.EventHandler(this.buttonFun_Click);
             // 
             // arcsinButton
             // 
             this.arcsinButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.arcsinButton.Location = new System.Drawing.Point(14, 141);
+            this.arcsinButton.Location = new System.Drawing.Point(8, 141);
             this.arcsinButton.Name = "arcsinButton";
-            this.arcsinButton.Size = new System.Drawing.Size(90, 35);
+            this.arcsinButton.Size = new System.Drawing.Size(101, 35);
             this.arcsinButton.TabIndex = 9;
             this.arcsinButton.Text = "Arcsin";
             this.arcsinButton.UseVisualStyleBackColor = true;
@@ -691,9 +691,9 @@ namespace Calc
             // cotgButton
             // 
             this.cotgButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.cotgButton.Location = new System.Drawing.Point(314, 51);
+            this.cotgButton.Location = new System.Drawing.Point(308, 51);
             this.cotgButton.Name = "cotgButton";
-            this.cotgButton.Size = new System.Drawing.Size(90, 35);
+            this.cotgButton.Size = new System.Drawing.Size(101, 35);
             this.cotgButton.TabIndex = 8;
             this.cotgButton.Text = "Cotg";
             this.cotgButton.UseVisualStyleBackColor = true;
@@ -702,9 +702,9 @@ namespace Calc
             // tgButton
             // 
             this.tgButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.tgButton.Location = new System.Drawing.Point(214, 51);
+            this.tgButton.Location = new System.Drawing.Point(208, 51);
             this.tgButton.Name = "tgButton";
-            this.tgButton.Size = new System.Drawing.Size(90, 35);
+            this.tgButton.Size = new System.Drawing.Size(101, 35);
             this.tgButton.TabIndex = 7;
             this.tgButton.Text = "Tg";
             this.tgButton.UseVisualStyleBackColor = true;
@@ -713,9 +713,9 @@ namespace Calc
             // cosButton
             // 
             this.cosButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.cosButton.Location = new System.Drawing.Point(114, 51);
+            this.cosButton.Location = new System.Drawing.Point(108, 51);
             this.cosButton.Name = "cosButton";
-            this.cosButton.Size = new System.Drawing.Size(90, 35);
+            this.cosButton.Size = new System.Drawing.Size(101, 35);
             this.cosButton.TabIndex = 6;
             this.cosButton.Text = "Cos";
             this.cosButton.UseVisualStyleBackColor = true;
@@ -724,9 +724,9 @@ namespace Calc
             // sinButton
             // 
             this.sinButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.sinButton.Location = new System.Drawing.Point(14, 51);
+            this.sinButton.Location = new System.Drawing.Point(8, 51);
             this.sinButton.Name = "sinButton";
-            this.sinButton.Size = new System.Drawing.Size(90, 35);
+            this.sinButton.Size = new System.Drawing.Size(101, 35);
             this.sinButton.TabIndex = 5;
             this.sinButton.Text = "Sin";
             this.sinButton.UseVisualStyleBackColor = true;
@@ -912,7 +912,7 @@ namespace Calc
             // 
             this.ConversionTab.Controls.Add(this.kgLbbutton);
             this.ConversionTab.Controls.Add(this.lbKgButton);
-            this.ConversionTab.Controls.Add(this.button46);
+            this.ConversionTab.Controls.Add(this.eurUsdButton);
             this.ConversionTab.Controls.Add(this.usdEurButton);
             this.ConversionTab.Controls.Add(this.kelCelbutton);
             this.ConversionTab.Controls.Add(this.celKelButton);
@@ -937,6 +937,7 @@ namespace Calc
             this.kgLbbutton.TabIndex = 42;
             this.kgLbbutton.Text = "Kilograms -> Pounds";
             this.kgLbbutton.UseVisualStyleBackColor = true;
+            this.kgLbbutton.Click += new System.EventHandler(this.kgLbbutton_Click);
             // 
             // lbKgButton
             // 
@@ -947,16 +948,18 @@ namespace Calc
             this.lbKgButton.TabIndex = 41;
             this.lbKgButton.Text = "Pounds -> Kilograms";
             this.lbKgButton.UseVisualStyleBackColor = true;
+            this.lbKgButton.Click += new System.EventHandler(this.lbKgButton_Click);
             // 
-            // button46
+            // eurUsdButton
             // 
-            this.button46.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button46.Location = new System.Drawing.Point(41, 294);
-            this.button46.Name = "button46";
-            this.button46.Size = new System.Drawing.Size(150, 28);
-            this.button46.TabIndex = 40;
-            this.button46.Text = "€ -> $";
-            this.button46.UseVisualStyleBackColor = true;
+            this.eurUsdButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.eurUsdButton.Location = new System.Drawing.Point(41, 294);
+            this.eurUsdButton.Name = "eurUsdButton";
+            this.eurUsdButton.Size = new System.Drawing.Size(150, 28);
+            this.eurUsdButton.TabIndex = 40;
+            this.eurUsdButton.Text = "€ -> $";
+            this.eurUsdButton.UseVisualStyleBackColor = true;
+            this.eurUsdButton.Click += new System.EventHandler(this.button46_Click);
             // 
             // usdEurButton
             // 
@@ -967,6 +970,7 @@ namespace Calc
             this.usdEurButton.TabIndex = 39;
             this.usdEurButton.Text = "$ -> €";
             this.usdEurButton.UseVisualStyleBackColor = true;
+            this.usdEurButton.Click += new System.EventHandler(this.usdEurButton_Click);
             // 
             // kelCelbutton
             // 
@@ -977,6 +981,7 @@ namespace Calc
             this.kelCelbutton.TabIndex = 9;
             this.kelCelbutton.Text = "Kelvin -> Celzius";
             this.kelCelbutton.UseVisualStyleBackColor = true;
+            this.kelCelbutton.Click += new System.EventHandler(this.kelCelbutton_Click);
             // 
             // celKelButton
             // 
@@ -987,6 +992,7 @@ namespace Calc
             this.celKelButton.TabIndex = 8;
             this.celKelButton.Text = "Celzius -> Kelvin";
             this.celKelButton.UseVisualStyleBackColor = true;
+            this.celKelButton.Click += new System.EventHandler(this.celKelButton_Click);
             // 
             // yardMetButton
             // 
@@ -997,6 +1003,7 @@ namespace Calc
             this.yardMetButton.TabIndex = 7;
             this.yardMetButton.Text = "Yards -> Meters";
             this.yardMetButton.UseVisualStyleBackColor = true;
+            this.yardMetButton.Click += new System.EventHandler(this.yardMetButton_Click);
             // 
             // metYardbutton
             // 
@@ -1007,6 +1014,7 @@ namespace Calc
             this.metYardbutton.TabIndex = 6;
             this.metYardbutton.Text = "Meters -> Yards";
             this.metYardbutton.UseVisualStyleBackColor = true;
+            this.metYardbutton.Click += new System.EventHandler(this.metYardbutton_Click);
             // 
             // radDegButton
             // 
@@ -1017,6 +1025,7 @@ namespace Calc
             this.radDegButton.TabIndex = 5;
             this.radDegButton.Text = "Radians -> Degrees";
             this.radDegButton.UseVisualStyleBackColor = true;
+            this.radDegButton.Click += new System.EventHandler(this.radDegButton_Click);
             // 
             // degRadButton
             // 
@@ -1027,6 +1036,7 @@ namespace Calc
             this.degRadButton.TabIndex = 4;
             this.degRadButton.Text = "Degrees -> Radians";
             this.degRadButton.UseVisualStyleBackColor = true;
+            this.degRadButton.Click += new System.EventHandler(this.degRadButton_Click);
             // 
             // ConstantsTab
             // 
@@ -1058,12 +1068,12 @@ namespace Calc
             // 
             // eeeButton
             // 
-            this.eeeButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.eeeButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.eeeButton.Location = new System.Drawing.Point(17, 296);
             this.eeeButton.Name = "eeeButton";
             this.eeeButton.Size = new System.Drawing.Size(90, 35);
             this.eeeButton.TabIndex = 9;
-            this.eeeButton.Text = "e";
+            this.eeeButton.Text = "ec";
             this.eeeButton.UseVisualStyleBackColor = true;
             this.eeeButton.Click += new System.EventHandler(this.eeeButton_Click);
             // 
@@ -1167,6 +1177,7 @@ namespace Calc
             this.buttonPsi.TabIndex = 6;
             this.buttonPsi.Text = "φ";
             this.buttonPsi.UseVisualStyleBackColor = true;
+            this.buttonPsi.Click += new System.EventHandler(this.buttonPsi_Click);
             // 
             // goldenButton
             // 
@@ -2382,7 +2393,7 @@ namespace Calc
         private System.Windows.Forms.Button digitButton;
         private System.Windows.Forms.Button roundButton;
         private System.Windows.Forms.Button fibonacciButton;
-        private System.Windows.Forms.Button pytagorasButton;
+        private System.Windows.Forms.Button pythagorasButton;
         private System.Windows.Forms.Button andButton;
         private System.Windows.Forms.Button orButton;
         private System.Windows.Forms.Button binRightButton;
@@ -2391,10 +2402,10 @@ namespace Calc
         private System.Windows.Forms.Button ceilButton;
         private System.Windows.Forms.Button binNegButton;
         private System.Windows.Forms.TabPage favoritesTab;
-        private System.Windows.Forms.Button archypcothButton;
-        private System.Windows.Forms.Button archyptgButton;
-        private System.Windows.Forms.Button archypcosButton;
-        private System.Windows.Forms.Button archypsinButton;
+        private System.Windows.Forms.Button hyparccotgButton;
+        private System.Windows.Forms.Button hyparctgButton;
+        private System.Windows.Forms.Button hyparccosButton;
+        private System.Windows.Forms.Button hyparcsinButton;
         private System.Windows.Forms.Button hypcotgButton;
         private System.Windows.Forms.Button hyptgButton;
         private System.Windows.Forms.Button hypcosbutton;
@@ -2470,7 +2481,7 @@ namespace Calc
         private System.Windows.Forms.Button radDegButton;
         private System.Windows.Forms.Button kelCelbutton;
         private System.Windows.Forms.Button usdEurButton;
-        private System.Windows.Forms.Button button46;
+        private System.Windows.Forms.Button eurUsdButton;
         private System.Windows.Forms.Button lbKgButton;
         private System.Windows.Forms.Button kgLbbutton;
         private System.Windows.Forms.GroupBox groupBox1;

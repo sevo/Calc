@@ -37,6 +37,104 @@ namespace Calc
         protected string[] pamet;
         List<Button> favButtons;
         Button[] delButtons;
+        int stary_zaklad = 10; //zaklad ciselnej sustavy v ktoerej sa aktualne pracuje
+        int novy_zaklad = 10;//zaklad ciselnej sustavy do ktorej chceme konvertovat
+        /// <summary>
+        /// funkcia rozdeli string na podstringy tak ze postupnost cisel bude v samostatnom stringu
+        /// </summary>
+        /// <param name="z"></param>
+        /// <param name="s"></param>
+        /// <returns></returns>
+        private List<string> konvertuj(int z, string s)
+        {
+            string k = string.Empty;
+            int nl; //junk int
+            bool haveNum = false;
+            List<string> slova/*, cisla*/;
+            slova = new List<string>();
+            //cisla=new List<string>();
+            for (int i = 0; i < s.Length; i++)
+            {
+                if (Int32.TryParse(s[i].ToString(), out nl) || s[i] == '.')
+                {
+                    if (!haveNum)
+                    {
+                        slova.Add(k);
+                        k = string.Empty;
+                    }
+                    k += (s[i]);
+                    haveNum = true;
+                }
+                else if (z == 16 && (s[i] == 'A' || s[i] == 'B' || s[i] == 'C' || s[i] == 'D' || s[i] == 'E' || s[i] == 'F'))
+                {
+                    if (!haveNum)
+                    {
+                        slova.Add(k);
+                        k = string.Empty;
+                    }
+                    k += (s[i]);
+                    haveNum = true;
+
+                }
+                else
+                {
+                    if (haveNum)
+                    {
+                        slova.Add(k);
+                        k = string.Empty;
+                    }
+                    k += s[i];
+                    haveNum = false;
+                }
+            }
+            slova.Add(k);
+            return slova;
+        }
+
+        /// <summary>
+        /// funkcia ktoru vykonava vlakno na ziskanie vysledku z programu bc
+        /// </summary>
+        private void ConvertBase()
+        {
+            List<string> zoznam = konvertuj(stary_zaklad, expressionTextBox.Text);          
+            expressionTextBox.Text = "";
+            try
+            {
+                bcIn.WriteLine("ibase = A");
+
+                bcIn.WriteLine("obase = " + novy_zaklad.ToString());//nastavenie potrebnej sustavy
+                bcIn.WriteLine("ibase = " + stary_zaklad.ToString());
+                for (int i = 0; i < zoznam.Count; i++)
+                {                    
+                    Match m = Regex.Match(zoznam[i], "1|2|3|4|5|6|7|8|9|0|A|B|C|D|E|F");
+                    if (m.Success)
+                    {
+                        bcIn.WriteLine(zoznam[i]);//vlozenie vyrazu na vstup programu                        
+                        string line = "";
+                        if ((line = bcOut.ReadLine()) != null)
+                        {
+                            expressionTextBox.Text += line;
+                        }
+                    }
+                    else expressionTextBox.Text += zoznam[i];
+                }
+
+                String result = "";
+                bcIn.WriteLine(resultTextBox.Text);
+                if ((result = bcOut.ReadLine()) != null)
+                {
+                    resultTextBox.Text = result;
+                }
+
+                bcIn.WriteLine("ibase = A");
+                bcIn.WriteLine("ibase = " + novy_zaklad.ToString());
+                stary_zaklad = novy_zaklad;
+            }
+            catch (ThreadAbortException e)
+            {
+                if (resultTextBox.Text == "") resultTextBox.Text = "Unable to convert expression.";
+            }
+        }
 
         public Form1()
         {
@@ -403,75 +501,112 @@ namespace Calc
 
         private void HexRadioButton_CheckedChanged(object sender, EventArgs e)
         {
-            buttonA.Enabled = true;
-            buttonB.Enabled = true;
-            buttonC.Enabled = true;
-            buttonD.Enabled = true;
-            buttonE.Enabled = true;
-            buttonF.Enabled = true;
-            button2.Enabled = true;
-            button3.Enabled = true;
-            button4.Enabled = true;
-            button5.Enabled = true;
-            button6.Enabled = true;
-            button7.Enabled = true;
-            button8.Enabled = true;
-            button9.Enabled = true;
+            if (HexRadioButton.Checked)
+            {
+                //expressionTextBox.Text = ConvertBase(expressionTextBox.Text, zaklad, 16);
+                novy_zaklad = 16;
+                Thread t = new Thread(ConvertBase);
+                System.Threading.Timer timer = new System.Threading.Timer(abortGettingResult, t, 1000, Timeout.Infinite);
+                t.Start();
+                t.Join();
+                //stary_zaklad = 16;
+                buttonA.Enabled = true;
+                buttonB.Enabled = true;
+                buttonC.Enabled = true;
+                buttonD.Enabled = true;
+                buttonE.Enabled = true;
+                buttonF.Enabled = true;
+                button2.Enabled = true;
+                button3.Enabled = true;
+                button4.Enabled = true;
+                button5.Enabled = true;
+                button6.Enabled = true;
+                button7.Enabled = true;
+                button8.Enabled = true;
+                button9.Enabled = true;
+            }
         }
 
         private void DecRadioButton_CheckedChanged(object sender, EventArgs e)
         {
-            buttonA.Enabled = false;
-            buttonB.Enabled = false;
-            buttonC.Enabled = false;
-            buttonD.Enabled = false;
-            buttonE.Enabled = false;
-            buttonF.Enabled = false;
-            button2.Enabled = true;
-            button3.Enabled = true;
-            button4.Enabled = true;
-            button5.Enabled = true;
-            button6.Enabled = true;
-            button7.Enabled = true;
-            button8.Enabled = true;
-            button9.Enabled = true;
+            if (DecRadioButton.Checked)
+            {
+                novy_zaklad = 10;
+                Thread t = new Thread(ConvertBase);
+                System.Threading.Timer timer = new System.Threading.Timer(abortGettingResult, t, 1000, Timeout.Infinite);
+                t.Start();
+                t.Join();
+                //stary_zaklad = 10;
+                buttonA.Enabled = false;
+                buttonB.Enabled = false;
+                buttonC.Enabled = false;
+                buttonD.Enabled = false;
+                buttonE.Enabled = false;
+                buttonF.Enabled = false;
+                button2.Enabled = true;
+                button3.Enabled = true;
+                button4.Enabled = true;
+                button5.Enabled = true;
+                button6.Enabled = true;
+                button7.Enabled = true;
+                button8.Enabled = true;
+                button9.Enabled = true;
+            }
 
         }
 
         private void OctRadioButton_CheckedChanged(object sender, EventArgs e)
         {
-            buttonA.Enabled = false;
-            buttonB.Enabled = false;
-            buttonC.Enabled = false;
-            buttonD.Enabled = false;
-            buttonE.Enabled = false;
-            buttonF.Enabled = false;
-            button2.Enabled = true;
-            button3.Enabled = true;
-            button4.Enabled = true;
-            button5.Enabled = true;
-            button6.Enabled = true;
-            button7.Enabled = true;
-            button8.Enabled = false;
-            button9.Enabled = false;
+            if (OctRadioButton.Checked)
+            {
+                novy_zaklad = 8;
+                Thread t = new Thread(ConvertBase);
+                System.Threading.Timer timer = new System.Threading.Timer(abortGettingResult, t, 1000, Timeout.Infinite);
+                t.Start();
+                t.Join();
+                //stary_zaklad = 8;
+                buttonA.Enabled = false;
+                buttonB.Enabled = false;
+                buttonC.Enabled = false;
+                buttonD.Enabled = false;
+                buttonE.Enabled = false;
+                buttonF.Enabled = false;
+                button2.Enabled = true;
+                button3.Enabled = true;
+                button4.Enabled = true;
+                button5.Enabled = true;
+                button6.Enabled = true;
+                button7.Enabled = true;
+                button8.Enabled = false;
+                button9.Enabled = false;
+            }
         }
 
         private void BinRadioButton_CheckedChanged(object sender, EventArgs e)
         {
-            buttonA.Enabled = false;
-            buttonB.Enabled = false;
-            buttonC.Enabled = false;
-            buttonD.Enabled = false;
-            buttonE.Enabled = false;
-            buttonF.Enabled = false;
-            button2.Enabled = false;
-            button3.Enabled = false;
-            button4.Enabled = false;
-            button5.Enabled = false;
-            button6.Enabled = false;
-            button7.Enabled = false;
-            button8.Enabled = false;
-            button9.Enabled = false;
+            if (BinRadioButton.Checked)
+            {
+                novy_zaklad = 2;
+                Thread t = new Thread(ConvertBase);
+                System.Threading.Timer timer = new System.Threading.Timer(abortGettingResult, t, 1000, Timeout.Infinite);
+                t.Start();
+                t.Join();
+                //stary_zaklad = 2;
+                buttonA.Enabled = false;
+                buttonB.Enabled = false;
+                buttonC.Enabled = false;
+                buttonD.Enabled = false;
+                buttonE.Enabled = false;
+                buttonF.Enabled = false;
+                button2.Enabled = false;
+                button3.Enabled = false;
+                button4.Enabled = false;
+                button5.Enabled = false;
+                button6.Enabled = false;
+                button7.Enabled = false;
+                button8.Enabled = false;
+                button9.Enabled = false;
+            }
             }
 
         private void expressionTextBox_TextChanged(object sender, EventArgs e)
@@ -536,7 +671,7 @@ namespace Calc
 
         private void piButton_Click(object sender, EventArgs e)
         {
-            string s = "3.14159265";
+            string s = "pi";
             int cursorPosition = expressionTextBox.SelectionStart;
             expressionTextBox.Text = expressionTextBox.Text.Substring(0, cursorPosition) + s + expressionTextBox.Text.Substring(cursorPosition, expressionTextBox.Text.Length - cursorPosition);
             expressionTextBox.SelectionStart = cursorPosition + s.Length;
@@ -544,7 +679,7 @@ namespace Calc
 
         private void eButton_Click(object sender, EventArgs e)
         {
-            string s = "2.71828183";
+            string s = "e";
             int cursorPosition = expressionTextBox.SelectionStart;
             expressionTextBox.Text = expressionTextBox.Text.Substring(0, cursorPosition) + s + expressionTextBox.Text.Substring(cursorPosition, expressionTextBox.Text.Length - cursorPosition);
             expressionTextBox.SelectionStart = cursorPosition + s.Length;
@@ -616,7 +751,7 @@ namespace Calc
 
         private void GButton_Click(object sender, EventArgs e)
         {
-            string s = "9.8";
+            string s = "6.67428*power(10,-11)";
             int cursorPosition = expressionTextBox.SelectionStart;
             expressionTextBox.Text = expressionTextBox.Text.Substring(0, cursorPosition) + s + expressionTextBox.Text.Substring(cursorPosition, expressionTextBox.Text.Length - cursorPosition);
             expressionTextBox.SelectionStart = cursorPosition + s.Length;
@@ -765,6 +900,94 @@ namespace Calc
                 history_index = history.Count;
                 expressionTextBox.Text = "";
             }
+        }
+
+        private void buttonPsi_Click(object sender, EventArgs e)
+        {
+            string s = "psi";
+            int cursorPosition = expressionTextBox.SelectionStart;
+            expressionTextBox.Text = expressionTextBox.Text.Substring(0, cursorPosition) + s + expressionTextBox.Text.Substring(cursorPosition, expressionTextBox.Text.Length - cursorPosition);
+            expressionTextBox.SelectionStart = cursorPosition + s.Length;
+        }
+
+        private void metYardbutton_Click(object sender, EventArgs e)
+        {
+            string s = "toyard()";
+            int cursorPosition = expressionTextBox.SelectionStart;
+            expressionTextBox.Text = expressionTextBox.Text.Substring(0, cursorPosition) + s + expressionTextBox.Text.Substring(cursorPosition, expressionTextBox.Text.Length - cursorPosition);
+            expressionTextBox.SelectionStart = cursorPosition + s.Length-1;
+        }
+
+        private void yardMetButton_Click(object sender, EventArgs e)
+        {
+            string s = "tometer()";
+            int cursorPosition = expressionTextBox.SelectionStart;
+            expressionTextBox.Text = expressionTextBox.Text.Substring(0, cursorPosition) + s + expressionTextBox.Text.Substring(cursorPosition, expressionTextBox.Text.Length - cursorPosition);
+            expressionTextBox.SelectionStart = cursorPosition + s.Length - 1;
+        }
+
+        private void degRadButton_Click(object sender, EventArgs e)
+        {
+            string s = "toradian()";
+            int cursorPosition = expressionTextBox.SelectionStart;
+            expressionTextBox.Text = expressionTextBox.Text.Substring(0, cursorPosition) + s + expressionTextBox.Text.Substring(cursorPosition, expressionTextBox.Text.Length - cursorPosition);
+            expressionTextBox.SelectionStart = cursorPosition + s.Length - 1;
+        }
+
+        private void radDegButton_Click(object sender, EventArgs e)
+        {
+            string s = "todegree()";
+            int cursorPosition = expressionTextBox.SelectionStart;
+            expressionTextBox.Text = expressionTextBox.Text.Substring(0, cursorPosition) + s + expressionTextBox.Text.Substring(cursorPosition, expressionTextBox.Text.Length - cursorPosition);
+            expressionTextBox.SelectionStart = cursorPosition + s.Length - 1;
+        }
+
+        private void usdEurButton_Click(object sender, EventArgs e)
+        {
+            string s = "toeuro()";
+            int cursorPosition = expressionTextBox.SelectionStart;
+            expressionTextBox.Text = expressionTextBox.Text.Substring(0, cursorPosition) + s + expressionTextBox.Text.Substring(cursorPosition, expressionTextBox.Text.Length - cursorPosition);
+            expressionTextBox.SelectionStart = cursorPosition + s.Length - 1;
+        }
+
+        private void button46_Click(object sender, EventArgs e)
+        {
+            string s = "todolar()";
+            int cursorPosition = expressionTextBox.SelectionStart;
+            expressionTextBox.Text = expressionTextBox.Text.Substring(0, cursorPosition) + s + expressionTextBox.Text.Substring(cursorPosition, expressionTextBox.Text.Length - cursorPosition);
+            expressionTextBox.SelectionStart = cursorPosition + s.Length - 1;
+        }
+
+        private void lbKgButton_Click(object sender, EventArgs e)
+        {
+            string s = "tokilogram()";
+            int cursorPosition = expressionTextBox.SelectionStart;
+            expressionTextBox.Text = expressionTextBox.Text.Substring(0, cursorPosition) + s + expressionTextBox.Text.Substring(cursorPosition, expressionTextBox.Text.Length - cursorPosition);
+            expressionTextBox.SelectionStart = cursorPosition + s.Length - 1;
+        }
+
+        private void kgLbbutton_Click(object sender, EventArgs e)
+        {
+            string s = "topound()";
+            int cursorPosition = expressionTextBox.SelectionStart;
+            expressionTextBox.Text = expressionTextBox.Text.Substring(0, cursorPosition) + s + expressionTextBox.Text.Substring(cursorPosition, expressionTextBox.Text.Length - cursorPosition);
+            expressionTextBox.SelectionStart = cursorPosition + s.Length - 1;
+        }
+
+        private void kelCelbutton_Click(object sender, EventArgs e)
+        {
+            string s = "tocelsius()";
+            int cursorPosition = expressionTextBox.SelectionStart;
+            expressionTextBox.Text = expressionTextBox.Text.Substring(0, cursorPosition) + s + expressionTextBox.Text.Substring(cursorPosition, expressionTextBox.Text.Length - cursorPosition);
+            expressionTextBox.SelectionStart = cursorPosition + s.Length - 1;
+        }
+
+        private void celKelButton_Click(object sender, EventArgs e)
+        {
+            string s = "tokelvin()";
+            int cursorPosition = expressionTextBox.SelectionStart;
+            expressionTextBox.Text = expressionTextBox.Text.Substring(0, cursorPosition) + s + expressionTextBox.Text.Substring(cursorPosition, expressionTextBox.Text.Length - cursorPosition);
+            expressionTextBox.SelectionStart = cursorPosition + s.Length - 1;
         }
 
     }
