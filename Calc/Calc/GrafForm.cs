@@ -150,6 +150,8 @@ namespace Calc
                 try
                 {
                     values[i] = float.Parse(mainWindow.bcOut.ReadLine().Replace(".", ","));//the last line won't be in result
+                    if (values[i] > 1000000) values[i] = 1000000;
+                    if (values[i] < -1000000) values[i] = -1000000;
                 }
                 catch (FormatException err) { values[i] = 0; }
             }

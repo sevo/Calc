@@ -440,10 +440,33 @@ namespace Calc
             if (e.KeyCode == Keys.Enter && isShiftDown)//a zmaz enter ktory sa zapisal pri odpaleni vypoctu
             {
                 int cursorPosition = expressionTextBox.SelectionStart;
-                expressionTextBox.Text = expressionTextBox.Text.Substring(0, cursorPosition - 1) + expressionTextBox.Text.Substring(cursorPosition, expressionTextBox.Text.Length - cursorPosition);
-                expressionTextBox.SelectionStart = cursorPosition - 1;
+                expressionTextBox.Text = expressionTextBox.Text.Substring(0, cursorPosition) + expressionTextBox.Text.Substring(cursorPosition, expressionTextBox.Text.Length - cursorPosition);
+                expressionTextBox.SelectionStart = cursorPosition;// -1;
             }
             if (e.KeyCode == Keys.ShiftKey) isShiftDown = false;
+        }
+
+        private void something_KeyDown(object sender, KeyEventArgs e)//odstranil som lebo chceme aby sa dal ten vyraz nejako formatovat
+        {
+            if (e.KeyCode == Keys.PageUp)
+            {
+                if (history_index > 0) history_index--;
+                expressionTextBox.Text = history[history_index].ToString();
+
+            }
+            if (e.KeyCode == Keys.PageDown)
+            {
+                if (history_index < history.Count - 1)
+                {
+                    history_index++;
+                    expressionTextBox.Text = history[history_index].ToString();
+                }
+                else
+                {
+                    history_index = history.Count;
+                    expressionTextBox.Text = "";
+                }
+            }
         }  
 
         private void buttonC_Click(object sender, EventArgs e)
@@ -1045,8 +1068,6 @@ namespace Calc
             int cursorPosition = expressionTextBox.SelectionStart;
             expressionTextBox.Text = expressionTextBox.Text.Substring(0, cursorPosition) + s + expressionTextBox.Text.Substring(cursorPosition, expressionTextBox.Text.Length - cursorPosition);
             expressionTextBox.SelectionStart = cursorPosition + s.Length - 1;
-        }
-
-       
+        }  
     }
 }

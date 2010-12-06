@@ -1177,7 +1177,6 @@ namespace Calc
             this.buttonPsi.TabIndex = 6;
             this.buttonPsi.Text = "φ";
             this.buttonPsi.UseVisualStyleBackColor = true;
-            this.buttonPsi.Click += new System.EventHandler(this.buttonPsi_Click);
             this.buttonPsi.Click += new System.EventHandler(this.psiButton_Click);
             // 
             // goldenButton
@@ -2320,6 +2319,7 @@ namespace Calc
             this.Controls.Add(this.TabControl);
             this.Name = "Form1";
             this.Text = "Calc";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.something_KeyDown);           
             this.TabControl.ResumeLayout(false);
             this.GeneralTab.ResumeLayout(false);
             this.ProgrammerTab.ResumeLayout(false);
@@ -2335,7 +2335,11 @@ namespace Calc
             this.tabPage4.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
-
+            //ked si chces pozret designer tak nasledujuce 4 riadky musis odstranit, nieje to automaticky generovane, tak si s tym ten strojcek neporadi
+            for (int i = 0; i < this.Controls.Count; i++)
+            {
+                this.Controls[i].KeyDown += new System.Windows.Forms.KeyEventHandler(this.something_KeyDown);
+            }
         }
 
         #endregion
