@@ -10,3 +10,14 @@ E:\C++\ICP\Calc\Calc\obj\Release\Calc.pdb
 E:\C++\ICP\Calc\Calc\bin\Release\NPlot.dll
 E:\C++\ICP\Calc\Calc\bin\Release\skincrafter_.net2.0_vs2008.dll
 E:\C++\ICP\Calc\Calc\bin\Release\NPlot.xml
+D:\skola\stu\3.rocnik\zima\ICP\projekt\Calc\Calc\Calc\obj\Release\Calc.exe
+D:\skola\stu\3.rocnik\zima\ICP\projekt\Calc\Calc\Calc\bin\Release\Calc.exe
+D:\skola\stu\3.rocnik\zima\ICP\projekt\Calc\Calc\Calc\bin\Release\Calc.pdb
+D:\skola\stu\3.rocnik\zima\ICP\projekt\Calc\Calc\Calc\bin\Release\NPlot.dll
+D:\skola\stu\3.rocnik\zima\ICP\projekt\Calc\Calc\Calc\bin\Release\NPlot.xml
+D:\skola\stu\3.rocnik\zima\ICP\projekt\Calc\Calc\Calc\obj\Release\ResolveAssemblyReference.cache
+D:\skola\stu\3.rocnik\zima\ICP\projekt\Calc\Calc\Calc\obj\Release\Calc.Form1.resources
+D:\skola\stu\3.rocnik\zima\ICP\projekt\Calc\Calc\Calc\obj\Release\Calc.GrafForm.resources
+D:\skola\stu\3.rocnik\zima\ICP\projekt\Calc\Calc\Calc\obj\Release\Calc.Properties.Resources.resources
+D:\skola\stu\3.rocnik\zima\ICP\projekt\Calc\Calc\Calc\obj\Release\Calc.csproj.GenerateResource.Cache
+D:\skola\stu\3.rocnik\zima\ICP\projekt\Calc\Calc\Calc\obj\Release\Calc.pdb

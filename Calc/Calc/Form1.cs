@@ -181,7 +181,8 @@ namespace Calc
             try
             {
          
-                String strCommand = "..\\..\\..\\..\\bc\\bc.exe";//cesta k programu
+                //String strCommand = "..\\..\\..\\..\\bc\\bc.exe";//cesta k programu
+                String strCommand = ".\\bc\\bc.exe";//cesta k programu
 
                 bc.StartInfo.FileName = strCommand;
 
@@ -206,7 +207,8 @@ namespace Calc
             bcOut = bc.StandardOutput;
             bcIn = bc.StandardInput;
 
-            TextReader functions = new StreamReader("..\\..\\..\\..\\bc\\funkcie.bc");
+            //TextReader functions = new StreamReader("..\\..\\..\\..\\bc\\funkcie.bc");
+            TextReader functions = new StreamReader(".\\bc\\funkcie.bc");
             String line = "";
             //resultTextBox.Text = line;
             while ((line = functions.ReadLine()) != null)
