@@ -2336,10 +2336,10 @@ namespace Calc
             this.ResumeLayout(false);
             this.PerformLayout();
             //ked si chces pozret designer tak nasledujuce 4 riadky musis odstranit, nieje to automaticky generovane, tak si s tym ten strojcek neporadi
-/*            for (int i = 0; i < this.Controls.Count; i++)
+            for (int i = 0; i < this.Controls.Count; i++)
             {
                 this.Controls[i].KeyDown += new System.Windows.Forms.KeyEventHandler(this.something_KeyDown);
-            }*/
+            }
         }
 
         #endregion

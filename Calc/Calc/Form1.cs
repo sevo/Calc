@@ -417,13 +417,13 @@ namespace Calc
             if (e.KeyCode == Keys.Enter && isShiftDown)buttonEquals_Click(sender, e);
             if (e.KeyCode == Keys.PageUp) 
             {
-                if (history_index>0) history_index--;
-                expressionTextBox.Text = history[history_index].ToString();
+                if (history_index > 0 && history.Count != 0) history_index--;
+                if (history.Count != 0) expressionTextBox.Text = history[history_index].ToString();
 
             }
             if (e.KeyCode == Keys.PageDown)
             {
-                if (history_index < history.Count - 1)
+                if (history_index < history.Count - 1 && history.Count != 0)
                 {
                     history_index++;
                     expressionTextBox.Text = history[history_index].ToString();
@@ -452,13 +452,13 @@ namespace Calc
         {
             if (e.KeyCode == Keys.PageUp)
             {
-                if (history_index > 0) history_index--;
-                expressionTextBox.Text = history[history_index].ToString();
+                if (history_index > 0 && history.Count != 0) history_index--;
+                if (history.Count != 0) expressionTextBox.Text = history[history_index].ToString();
 
             }
             if (e.KeyCode == Keys.PageDown)
             {
-                if (history_index < history.Count - 1)
+                if (history_index < history.Count - 1 && history.Count != 0)
                 {
                     history_index++;
                     expressionTextBox.Text = history[history_index].ToString();
