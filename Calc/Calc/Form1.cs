@@ -294,7 +294,7 @@ namespace Calc
         private void buttonFav_Click(object sender, EventArgs e)
         {
             Button but = sender as Button;
-            foreach (Control.ControlCollection c in new Control.ControlCollection[] { GeneralTab.Controls, ProgrammerTab.Controls, TrigonometricTab.Controls, powerButton.Controls, StatisticalTab.Controls, ConversionTab.Controls, groupBox1.Controls, groupBox2.Controls })
+            foreach (Control.ControlCollection c in new Control.ControlCollection[] { GeneralTab.Controls, ProgrammerTab.Controls, TrigonometricTab.Controls, PowerTab.Controls, StatisticalTab.Controls, ConversionTab.Controls, groupBox1.Controls, groupBox2.Controls })
             {
                 foreach (Control cc in c)
                 {
@@ -832,6 +832,7 @@ namespace Calc
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
             ComboBox cb = sender as ComboBox;
+            Fav2ComboBox.SelectedIndex = -1;
             switch (cb.SelectedItem.ToString())
             {
                 case "General":
@@ -879,6 +880,10 @@ namespace Calc
         {
             
             Control.ControlCollection where=null;
+            if (Fav1ComboBox.SelectedIndex == -1 || Fav2ComboBox.SelectedIndex == -1)
+            {
+                return; //neni nic vybrate
+            }
             if (favButtons.Count >= 7)
             {
                 MessageBox.Show("Too much buttons, delete some first");
@@ -947,11 +952,13 @@ namespace Calc
         private void reorganizeFav()
         {
             Del0.Show();
-            for (int i = 0; i <  favButtons.Count; i++)
+            int i=0;
+            for (i = 0; i <  favButtons.Count; i++)
             {
                 favButtons[i].Location = new System.Drawing.Point(80, 8 + (i * 50));
                 delButtons[i].Show();
             }
+            delButtons[i].Hide();
         }
 
         private void Del_Click(object sender, EventArgs e)
