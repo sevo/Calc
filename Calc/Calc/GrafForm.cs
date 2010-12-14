@@ -53,7 +53,7 @@ namespace Calc
 
             grafOpened = false;
         }
-        public GrafForm(ref bool grafOpened, Form1 main_window)
+        public GrafForm(String funkcia, ref bool grafOpened, Form1 main_window,bool warning)
         {
             InitializeComponent();
             mainWindow = main_window;
@@ -76,10 +76,15 @@ namespace Calc
 
             this.grafOpened = grafOpened;
             DrawGraf();
+            if (warning) 
+            { 
+                MessageBox.Show("Function '" + funkcia + "' have incorrect format!\nIt should be 'function_name(x)=function_body'", "Error!");
+                functionDeclaration.Text = funkcia;
+            }
         }
 
         public void AddFunkcia(string funkcia)
-        {
+        {            
             if (funkcia[0] == 'y' || funkcia[0] == 'Y')
             {
                 funkcia=funkcia.Remove(0, 1);
@@ -102,18 +107,20 @@ namespace Calc
                 System.Threading.Timer timer1 = new System.Threading.Timer(mainWindow.abortGettingResult, t1, 1000, Timeout.Infinite);
                 t1.Start();
                 t1.Join();
+                if (!functionDeclaration.BackColor.Equals(Color.Red))
+                {
+                    checkedListBox.Items.Add(functionDeclaration.Text, true);
+                }
             }
             DrawGraf();
             updateListBox();
-
-
         }
 
         public int DefineFunction(String function)
         {
             String body = "";
             body = function.Substring(function.IndexOf("=") + 1, function.Length - function.IndexOf("=") - 1);
-            if (body == "")//return -1 if function is wrong
+            if (body == "")//returns -1 if function is wrong
             {
                 return -1;
             }

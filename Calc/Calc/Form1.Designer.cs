@@ -208,6 +208,7 @@ namespace Calc
             this.syntaxTextBox = new System.Windows.Forms.TextBox();
             this.memoryComboBox = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.histDownButton = new System.Windows.Forms.Button();
             this.histUpButton = new System.Windows.Forms.Button();
@@ -2241,6 +2242,15 @@ namespace Calc
             this.label1.TabIndex = 41;
             this.label1.Text = "Memory Location:";
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(618, 197);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(42, 13);
+            this.label2.TabIndex = 41;
+            this.label2.Text = "Syntax:";
+            // 
             // toolTip1
             // 
             this.toolTip1.AutoPopDelay = 8000;
@@ -2276,6 +2286,7 @@ namespace Calc
             this.Controls.Add(this.histDownButton);
             this.Controls.Add(this.histUpButton);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.memoryComboBox);
             this.Controls.Add(this.syntaxTextBox);
             this.Controls.Add(this.buttonF);
@@ -2319,7 +2330,7 @@ namespace Calc
             this.Controls.Add(this.TabControl);
             this.Name = "Form1";
             this.Text = "Calc";
-            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.something_KeyDown);           
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.something_KeyDown);
             this.TabControl.ResumeLayout(false);
             this.GeneralTab.ResumeLayout(false);
             this.ProgrammerTab.ResumeLayout(false);
@@ -2340,6 +2351,7 @@ namespace Calc
             {
                 this.Controls[i].KeyDown += new System.Windows.Forms.KeyEventHandler(this.something_KeyDown);
             }
+
         }
 
         #endregion
@@ -2512,6 +2524,7 @@ namespace Calc
         private System.Windows.Forms.TextBox syntaxTextBox;
         private System.Windows.Forms.ComboBox memoryComboBox;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button modButton;
         private System.Windows.Forms.Button floorButton;
         private System.Windows.Forms.Button gcdButton;

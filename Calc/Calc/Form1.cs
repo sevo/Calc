@@ -386,11 +386,12 @@ namespace Calc
                     grafoveOkno.TopMost = false;
                 }
             }
-            else if (text.CompareTo("") == 0)
+            else 
             {
                 if (grafoveOkno == null || grafoveOkno.IsDisposed)   //grafove okno este neni otvorene
                 {
-                    grafoveOkno = new GrafForm(ref graphOpened,this);
+                    if(expressionTextBox.Text.CompareTo("")==0)grafoveOkno = new GrafForm(expressionTextBox.Text,ref graphOpened,this,false);
+                    else grafoveOkno = new GrafForm(expressionTextBox.Text, ref graphOpened, this, true);
                     grafoveOkno.Visible = true;
                     graphOpened = true;
                 }
@@ -404,11 +405,6 @@ namespace Calc
                     grafoveOkno.TopMost = false;
                 }
             }
-            else
-            {
-                resultTextBox.Text = "Not a function.";
-            }
-
         }
 
         private void expressionTextBox_KeyDown(object sender, KeyEventArgs e)//odstranil som lebo chceme aby sa dal ten vyraz nejako formatovat
@@ -973,8 +969,8 @@ namespace Calc
 
         private void histUpButton_Click(object sender, EventArgs e)
         {
-            if (history_index > 0) history_index--;
-            expressionTextBox.Text = history[history_index].ToString();
+            if (history_index > 0 && history.Count != 0) history_index--;
+            if (history.Count != 0) expressionTextBox.Text = history[history_index].ToString();
         }
 
         private void histDownButton_Click(object sender, EventArgs e)
